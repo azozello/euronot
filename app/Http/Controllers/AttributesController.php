@@ -15,6 +15,10 @@ class AttributesController extends Controller
     public function pizda(){
         return 'pizda';
     }
+    public function hui() {
+        return "HUI";
+    }
+
     public function attributes_make(Request $request){
         $parent_f = $request->parent_filter;
         if(!is_null($parent_f)) {
