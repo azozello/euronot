@@ -1,1 +1,0 @@
-<p><img alt="" src="<?php echo $message->embed('/Users/user/work/admin_panel/public/images/flags/2017-10-03 23.17.33.jpg'); ?>" style="height:100px; width:128px" /></p>
