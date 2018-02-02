@@ -1,0 +1,14 @@
+{
+  "name": "text-hover-effects",
+  "homepage": "https://github.com/tonkec/text_hover_effects",
+  "_release": "86df07805b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "86df07805b1d076ef279b60c82e0fe8d1e72b6eb"
+  },
+  "_source": "https://github.com/tonkec/text_hover_effects.git",
+  "_target": "*",
+  "_originalSource": "text-hover-effects",
+  "_direct": true
+}
