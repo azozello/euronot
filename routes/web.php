@@ -35,6 +35,18 @@ Route::get('/fireEvent',function(){
     event(new eventTrigger());
 });
 
+Route::get('/biznes',function(){
+    return view('site.biznes');
+});
+Route::get('/kak',function(){
+    return view('site.kak');
+});
+Route::get('/lenove',function(){
+    return view('site.lenove');
+});
+Route::get('/products',function(){
+    return view('site.products');
+});
 Route::get('/moniki',function(){
     return view('site.moniki');
 });
