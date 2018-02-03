@@ -2,6 +2,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
 <link href="{{ asset('css/icons/icomoon/styles.css') }} " rel="stylesheet"/>
 
+<link href="{{ asset('css/roboto.css')}}" rel="stylesheet"/>
 <link href="{{ asset('css/buts_trap.css')}}" rel="stylesheet"/>
 <link href="{{ asset('css/main.css')}}" rel="stylesheet"/>
 <link href="{{ asset('css/main2.css')}}" rel="stylesheet"/>

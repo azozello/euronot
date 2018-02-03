@@ -35,6 +35,27 @@ Route::get('/fireEvent',function(){
     event(new eventTrigger());
 });
 
+Route::get('/moniki',function(){
+    return view('site.moniki');
+});
+Route::get('/bloki',function(){
+    return view('site.bloki');
+});
+Route::get('/contact',function(){
+    return view('site.contact');
+});
+Route::get('/news',function(){
+    return view('site.news');
+});
+Route::get('/delivery',function(){
+    return view('site.delivery');
+});
+Route::get('/garanty',function(){
+    return view('site.garanty');
+});
+Route::get('/about', function () {
+    return view('site.about');
+});
 Route::get('/no_book', function () {
     return view('site.noubuki');
 });
