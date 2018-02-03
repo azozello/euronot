@@ -35,6 +35,12 @@ Route::get('/fireEvent',function(){
     event(new eventTrigger());
 });
 
+Route::get('/no_book', function () {
+    return view('site.noubuki');
+});
+Route::get('/test_main', function () {
+    return view('site.test_index');
+});
 Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
     Route::get('/laravel-filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show');
     Route::post('/laravel-filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload');
