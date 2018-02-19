@@ -15,7 +15,7 @@
 	<div class="page-header page-header-default">
 		<div class="page-header-content">
 			<div class="page-title">
-				<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Почта</span></h4>
+				<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Подписки</span></h4>
 			</div>
 			<form role="form" method="get" action="{{ route('logout_out') }}" enctype="multipart/form-data">
 				{{ csrf_field() }}
@@ -68,10 +68,10 @@
 				<button type="submit" class="btn btn-success">Обновить</button>
 			</form>
 			<br>
-			<form method="post" action="{{ route('subscription_send') }}" enctype="multipart/form-data">
+
 				<input name="_token" type="hidden" value="{{ csrf_token() }}">
 				<button type="submit" class="btn btn-success">Отправить тестовый email</button>
-			</form>
+			
 		</div>
 		<script type="text/javascript">
             var ckeditor1 = CKEDITOR.replace( 'editor1' );

@@ -26,8 +26,110 @@ function getFileName() {
 }
 
 
+
 $(function () {
+
+
+
+	var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
+
+	var hamburgers = document.querySelectorAll(".hamburger");
+	if (hamburgers.length > 0) {
+		forEach(hamburgers, function(hamburger) {
+			hamburger.addEventListener("click", function() {
+				this.classList.toggle("is-active");
+			}, false);
+		});
+	}
 	$(document).ready(function () {
+
+		function Unloader(){
+
+			var o = this;
+
+			this.unload = function(evt)
+			{
+				var message = "Вы уверены, что хотите покинуть страницу?";
+				if (typeof evt == "undefined") {
+					evt = window.event;
+				}
+				if (evt) {
+					evt.returnValue = message;
+				}
+				return message;
+			};
+
+			this.resetUnload = function()
+			{
+				$(window).off('beforeunload', o.unload);
+
+				setTimeout(function(){
+					$(window).on('beforeunload', o.unload);
+				}, 2000);
+			};
+
+			this.init = function()
+			{
+
+				$(window).on('beforeunload', o.unload);
+				$('a').on('click', function(){o.resetUnload});
+				$(document).on('submit', 'form', function(){$(window).off('beforeunload');});
+				$(document).on('keydown', function(event){
+					if((event.ctrlKey && event.keyCode == 116) || event.keyCode == 116){
+						o.resetUnload;
+					}
+				});
+			};
+			this.init();
+		}
+		$("textarea, input").change(function(){
+			if(typeof window.obUnloader != 'object')
+			{
+				window.obUnloader = new Unloader();
+			}
+		});
+		
+
+
+		$('.page-header .icon-arrow-left52').click(function () {
+			window.history.back();
+		});
+
+
+		$('.navigation-header .hamburger').click(function () {
+
+			var logo = $('.navigation-logo img');
+			logo.hide();
+			var logoSrc = logo.attr('src');
+			var logoSrcBig = '../../public/images/logo.png';
+			var logoSrcLittle = '../../public/images/logo-icon.png';
+
+			if (logoSrc==logoSrcBig){
+				logo.attr('src', logoSrcLittle);
+
+			}
+			if (logoSrc==logoSrcLittle){
+				logo.attr('src', logoSrcBig);
+			}
+			logo.fadeIn();
+
+			$('.sidebar').toggleClass('sidebar-little');
+
+
+
+
+
+
+
+
+		}).hover(function () {
+			if ($(this).hasClass('is-active')){
+				$(this).attr('title', 'Cкрыть меню');
+			}
+			else{
+				$(this).attr('title', 'Показать меню');
+			}
+		});
 
 		var location = window.location.href;
 		var cur_url = '/' + location.split('/').pop();
@@ -794,7 +896,7 @@ $(function () {
 		});
 
 		var max = 0;
-		$("label:not('.switch'):not('.video-label')").each(function () {
+		$("label:not('.switch'):not('.labelIgnore'):not('.video-label')").each(function () {
 			if ($(this).width() > max)
 				max = $(this).width();
 			console.log(max+5);

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: *-fltr*.html
+Disallow: *-p*.html
+Host: https://evronot.com.ua
+Sitemap: https://evronot.com.ua/sitemap.xml

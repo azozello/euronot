@@ -58,12 +58,12 @@
                                     <div class="form-group">
                                         <label>Название*</label>
                                         <input name="name" type="text" id="name" placeholder="Введіть назву*"
-                                               value="{{$language[0]->name}}">
+                                               value="{{$language[0]->language_name}}">
                                     </div>
                                     <div class="form-group ">
                                         <label>URL*</label>
                                         <input name="url" type="text" id="url" placeholder="Введіть URL*"
-                                               value="{{$language[0]->url}}">
+                                               value="{{$language[0]->language_url}}">
                                     </div>
                                     <div class="form-group">
                                         <label>Изображение*</label>

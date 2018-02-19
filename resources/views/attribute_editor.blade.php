@@ -10,30 +10,31 @@
     <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
 
     @include('layouts.styles')
+    <form role="form" method="post" action="{{ route('attributes_make') }}" enctype="multipart/form-data">
     <div class="page-header page-header-default">
         <div class="page-header-content">
             <div class="page-title">
                 <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Редактор атрибутов</span>
                 </h4>
+                {{--<button type="" class="btn bg-teal-400" style="margin-left: 30px">Посмотреть страницу</button>--}}
             </div>
-            <button type="" class="btn bg-teal-400" style="margin-left: 30px">Посмотреть страницу</button>
+                <button type="submit" class="btn bg-teal-400 page-header-btn-right">Обновить</button>
+
         </div>
 
     </div>
     <div class="content">
         <h5 class="panel-title">Редактор атрибутов</h5>
-        <form role="form" method="post" action="{{ route('attributes_make') }}" enctype="multipart/form-data">
+
             <input name="_token" type="hidden" value="{{ csrf_token() }}">
             <input name="number" type="hidden" value="{{$number}}">
-            <div class="form-button">
-                <button type="submit" class="btn bg-teal-400">Обновить</button>
-            </div>
+
 
             <!-- CKEditor default -->
             <div class="panel panel-flat">
                 <div class="product-content">
                     <div class="common">
-                        <table class="products-table-list no-chess table-lang table-lg table-striped" style="width: 100%;" id="table-collapsed_1">
+                        <table class="products-table-list no-chess table-lang table-lg table-striped"  id="table-collapsed_1">
                             <thead>
                             <tr>
                                 <th><span class="checkall"></span></th>
@@ -172,7 +173,7 @@
 
             </div>
 
-        </form>
+
 
         <!-- /CKEditor default -->
 
@@ -203,6 +204,7 @@
 
 
     </div>
+    </form>
     <!-- /content area -->
 
     </div>

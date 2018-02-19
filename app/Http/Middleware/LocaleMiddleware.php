@@ -8,9 +8,9 @@ use Request;
 
 class LocaleMiddleware
 {
-    public static $mainLanguage = 'ua'; //основной язык, который не должен отображаться в URl
+    public static $mainLanguage = 'en'; //основной язык, который не должен отображаться в URl
 
-    public static $languages = ['en','ua']; // Указываем, какие языки будем использовать в приложении.
+    public static $languages = ['en','uk','ru','de']; // Указываем, какие языки будем использовать в приложении.
 
 
     /*

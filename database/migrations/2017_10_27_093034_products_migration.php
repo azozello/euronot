@@ -27,6 +27,7 @@ class ProductsMigration extends Migration
             $table->integer('reserved_quantity')->nullable();
             $table->integer('arriving_quantity')->nullable();
             $table->integer('booked_quantity')->default(0);
+            $table->integer('second_reserved_quantity')->nullable();
             $table->boolean('is_active')->default(1);
             $table->integer('lang_id')->nullable();
             $table->text('product_type')->nullable();

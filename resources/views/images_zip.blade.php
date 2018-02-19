@@ -149,46 +149,15 @@
 				</div>
 			</form>
 		</div>
-
-
-
-
-
-
-		<form method="post" action="{{ route('upload_meta_tags') }}" enctype="multipart/form-data">
-			<input name="_token" type="hidden" value="{{ csrf_token() }}">
-			<div class="col-md-6">
-				<div class="form-group">
-					<label for="usr">Мета-теги</label>
-					<input name="name" type="hidden" value="about_us">
-					<input placeholder="Title*" type="text" class="form-control" name="title" id="title">
-				</div>
-				<div class="form-group">
-					<textarea  placeholder="Description*" class="form-control" rows="5" name="description" id="description"></textarea>
-				</div>
-				<button type="submit" class="btn bg-teal-400">Загрузить</button>
-			</div>
-
-		</form>
 	</div>
 	</div>
 
 	<!-- /page header -->
-	<script>
-        var editor = CKEDITOR.replace( 'editor1' );
-        var editor = CKEDITOR.replace( 'editor2' );
-        var editor = CKEDITOR.replace( 'editor3' );
 
-	</script>
 
 
 	<!-- /panel heading options --
 
-<!-- Footer -->
-	<div class="footer text-muted">
-		&copy; 2017.  by <a href="https://github.com/sayron97" target="_blank">Oleksandr Yefremov</a>
-	</div>
-	<!-- /footer -->
 
 	</div>
 	<!-- /content area -->

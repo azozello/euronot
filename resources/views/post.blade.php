@@ -12,7 +12,7 @@
 	<div class="page-header page-header-default">
 		<div class="page-header-content">
 			<div class="page-title">
-				<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Почта</span></h4>
+				<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Обратная связь</span></h4>
 			</div>
 		</div>
 
@@ -29,11 +29,14 @@
 							<thead>
 								<tr>
 									<th>#</th>
-									<th>ФИО</th>
-					                <th>Телефон</th>
-					                <th>Email</th>
-					                <th>Комментарий</th>
-					                <th>Дата</th>
+									<th>Дата заказа</th>
+					                <th>Номер заказа</th>
+					                <th>Статус заказа</th>
+					                <th>ФИО</th>
+					                <th>Заказали</th>
+					                <th>Сумма заказа</th>
+					                <th>Тип оплаты</th>
+					                <th>Адрес доставки</th>
 					            </tr>
 							</thead>
 							<tbody>

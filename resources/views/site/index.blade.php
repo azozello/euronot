@@ -1,1936 +1,1769 @@
-<html xmlns="http://www.w3.org/1999/xhtml" g_init="2210496201707181159">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>@if(isset($meta_tags[0]->attributes_title)){{$meta_tags[0]->attributes_title}}@endif</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Компьютерная техника бу в интернет-магазине &quot;Евронот&quot;</title>
 	<meta name="description"
-	      content="@if(isset($meta_tags[0]->attributes_description)){{$meta_tags[0]->attributes_description}}@endif">
-	<meta name="keywords" content="CoffeeOK, интернет магазин, интернет магазина кофе, Кофейок, кофейок, coffeeok">
-	<meta name="robots" content="INDEX, FOLLOW">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link rel="icon" href="media/favicon/default/fav32.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="media/favicon/default/fav32.ico" type="image/x-icon">
-	<!-- Google Tag Manager -->
-	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-	<script type="text/javascript" async="" src="//www.googleadservices.com/pagead/conversion_async.js"></script>
-	<script>(function (w, d, s, l, i) {
-		w[l] = w[l] || [];
-		w[l].push({
-			'gtm.start':
-				new Date().getTime(), event: 'gtm.js'
-		});
-		var f = d.getElementsByTagName(s)[0], x = d.getElementById('gtmel'),
-			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-		j.async = true;
-		j.src =
-			'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-		f.parentNode.insertBefore(j, x);
-	})(window, document, 'script', 'dataLayer', 'GTM-TRMDMZW');</script>
-	<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TRMDMZW"></script>
-	<!-- End Google Tag Manager -->
-	<link href="{{ asset('index_app/js/calendar/calendar-win2k-1.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/amasty/amfpc/styles.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/fnt/font.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/fnt/css/font-awesome.min.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/css/style.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/css/jquery-ui.min.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/css/dd.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/bx/jquery.bxslider.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/css/jquery.formstyler.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/mep/mediaelementplayer.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/css/main.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/cd/jquery.countdown.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/sc/jquery.mCustomScrollbar.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/css/gray.min.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/css/animate.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/amasty/amseorichdata/category.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/js/skin/frontend/base/default/css/mana_filters.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/manapro_filteradvanced.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/css/mana_core.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/css/manapro_filtercheckboxes.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/manapro_filterclear.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/manapro_filtercolors.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/manapro_filterexpandcollapse.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/manapro_filtergroup.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/manapro_filterdropdown.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/manapro_filterhelp.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/manapro_filterpositioning.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/manapro_filterradios.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/css/manapro_filtershowmore.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/getup/default/css/manapro_filterslider.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/manapro_filtersuperslider.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/manapro_filtertree.css') }} " rel="stylesheet"/>
-	<link href="{{ asset('index_app/skin/frontend/base/default/css/magnific-popup.css') }} " rel="stylesheet"/>
+	      content="Купить компьютерную бу технику из Европы. Гарантия. Доставка по всей Украине. Магазин «Евронот»"/>
+	<meta name="keywords"
+	      content="Компьютерная техника бу, компьтеры бу, купить ноутбук Киев, купить системник бу в Украине"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<script src="{{ asset('index_app/js/prototype/prototype.js') }}"></script>
-	<script src="{{ asset('index_app/js/lib/jquery/jquery-1.11.3.min.js') }}"></script>
-	<script src="{{ asset('index_app/js/lib/jquery/noconflict.js') }}"></script>
-	<script src="{{ asset('index_app/js/lib/ccard.js') }}"></script>
-	<script src="{{ asset('index_app/js/prototype/validation.js') }}"></script>
-	<script src="{{ asset('index_app/js/scriptaculous/builder.js') }}"></script>
-	<script src="{{ asset('index_app/js/scriptaculous/effects.js') }}"></script>
-	<script src="{{ asset('index_app/js/scriptaculous/dragdrop.js') }}"></script>
-	<script src="{{ asset('index_app/js/scriptaculous/controls.js') }}"></script>
-	<script src="{{ asset('index_app/js/scriptaculous/slider.js') }}"></script>
-	<script src="{{ asset('index_app/js/varien/js.js') }}"></script>
-	<script src="{{ asset('index_app/js/varien/form.js') }}"></script>
-	<script src="{{ asset('index_app/js/mage/translate.js') }}"></script>
-	<script src="{{ asset('index_app/js/mage/cookies.js') }}"></script>
-	<script src="{{ asset('index_app/js/kraken/async.js') }}"></script>
-	<script src="{{ asset('index_app/js/kraken/optimize.v2.min.js') }}"></script>
-	<script src="{{ asset('index_app/js/et/currencymanager/et_currencymanager_round.js') }}"></script>
-	<script src="{{ asset('index_app/js/calendar/calendar.js') }}"></script>
-	<script src="{{ asset('index_app/js/calendar/calendar-setup.js') }}"></script>
-	<script src="{{ asset('index_app/js/jquery/jquery.min.js') }}"></script>
-	<script src="{{ asset('index_app/js/jquery/jquery.printf.js') }}"></script>
-	<script src="{{ asset('index_app/js/mana/core.js') }}"></script>
-	<script src="{{ asset('index_app/js/jquery/history.adapter.jquery.js') }}"></script>
-	<script src="{{ asset('index_app/js/jquery/history.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/js/jquery.mask.min.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/js/jquery-ui.min.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/js/jquery.dd.min.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/bx/jquery.bxslider.min.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/js/jquery.formstyler.min.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/mep/mediaelement-and-player.min.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/js/src/loadingoverlay.min.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/cd/jquery.plugin.min.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/cd/jquery.countdown.min.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/js/jquery.balloon.0.6.2.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/sc/jquery.mCustomScrollbar.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/js/jquery.gray.min.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/js/jquery.sticky-kit.min.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/js/jquery.waypoints.min.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/base/default/js/lazyload.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/vjs/js/main.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/vjs/js/my.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/js/wow.min.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/js/configurableswatches/product-media.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/js/configurableswatches/swatches-list.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/getup/default/js/manapro_filterajax.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/base/default/js/manapro_filtercolors.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/base/default/js/manapro_filterexpandcollapse.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/base/default/js/manapro_filtergroup.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/base/default/js/manapro_filterhelp.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/base/default/js/manapro_filterpositioning.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/base/default/js/manapro_filtershowmore.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/base/default/js/price_slider.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/base/default/js/manapro_filterslider.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/base/default/js/manapro_filtersuperslider.js') }}"></script>
-	<script src="{{ asset('index_app/skin/frontend/base/default/js/manapro_filtertree.js') }}"></script>
-	<script src="{{ asset('index_app/js/jquery.magnific-popup.js') }}"></script>
-	<script src="{{ asset('index_app/js/custom.js') }}"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+	<link href="images/favicon.ico" rel="icon" type="image/x-icon">
 
-	<link rel="next" href="kofe/kofe-v-zernah/page/2">
-	<link rel="canonical" href="kofe/kofe-v-zernah">
+	<script src="{{ asset('index_app/js/jquery.min.js') }}"></script>
+	<link href="{{ asset('index_app/css/main.css') }} " rel="stylesheet"/>
+	<link href="{{ asset('index_app/css/bootstrap.min.css') }} " rel="stylesheet"/>
 
-	<script type="text/javascript">
-		//<![CDATA[
-		Mage.Cookies.path = '/';
-		Mage.Cookies.domain = '.coffeeok.com.ua';
-		//]]>
-	</script>
-	<meta name="viewport" content="initial-scale=1.0, width=device-width">
-
-	<script type="text/javascript">
-		//<![CDATA[
-		optionalZipCountries = ["HK", "IE", "MO", "PA"];
-		//]]>
-	</script>
-	<script type="text/javascript">
-		etCurrencyManagerJsConfig = {
-			"precision": 0,
-			"position": 8,
-			"display": 2,
-			"symbol": "\u0433\u0440\u043d",
-			"zerotext": "",
-			"excludecheckout": "0",
-			"cutzerodecimal": 0,
-			"cutzerodecimal_suffix": ",-",
-			"min_decimal_count": "0"
-		};
-		try {
-			extendProductConfigformatPrice();
-		} catch (e) {
-
-		}
-	</script>
-	<script type="text/javascript">
-		//<![CDATA[
-		enUS = {
-			"m": {
-				"wide": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-				"abbr": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-			}
-		}; // en_US locale reference
-		Calendar._DN = ["\u0432\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u044c\u0435", "\u043f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a", "\u0432\u0442\u043e\u0440\u043d\u0438\u043a", "\u0441\u0440\u0435\u0434\u0430", "\u0447\u0435\u0442\u0432\u0435\u0440\u0433", "\u043f\u044f\u0442\u043d\u0438\u0446\u0430", "\u0441\u0443\u0431\u0431\u043e\u0442\u0430"]; // full day names
-		Calendar._SDN = ["\u0432\u0441", "\u043f\u043d", "\u0432\u0442", "\u0441\u0440", "\u0447\u0442", "\u043f\u0442", "\u0441\u0431"]; // short day names
-		Calendar._FD = 1; // First day of the week. "0" means display Sunday first, "1" means display Monday first, etc.
-		Calendar._MN = ["\u044f\u043d\u0432\u0430\u0440\u044f", "\u0444\u0435\u0432\u0440\u0430\u043b\u044f", "\u043c\u0430\u0440\u0442\u0430", "\u0430\u043f\u0440\u0435\u043b\u044f", "\u043c\u0430\u044f", "\u0438\u044e\u043d\u044f", "\u0438\u044e\u043b\u044f", "\u0430\u0432\u0433\u0443\u0441\u0442\u0430", "\u0441\u0435\u043d\u0442\u044f\u0431\u0440\u044f", "\u043e\u043a\u0442\u044f\u0431\u0440\u044f", "\u043d\u043e\u044f\u0431\u0440\u044f", "\u0434\u0435\u043a\u0430\u0431\u0440\u044f"]; // full month names
-		Calendar._SMN = ["\u044f\u043d\u0432.", "\u0444\u0435\u0432\u0440.", "\u043c\u0430\u0440\u0442\u0430", "\u0430\u043f\u0440.", "\u043c\u0430\u044f", "\u0438\u044e\u043d\u044f", "\u0438\u044e\u043b\u044f", "\u0430\u0432\u0433.", "\u0441\u0435\u043d\u0442.", "\u043e\u043a\u0442.", "\u043d\u043e\u044f\u0431.", "\u0434\u0435\u043a."]; // short month names
-		Calendar._am = "AM"; // am/pm
-		Calendar._pm = "PM";
-
-		// tooltips
-		Calendar._TT = {};
-		Calendar._TT["INFO"] = 'О календаре';
-
-		Calendar._TT["ABOUT"] =
-			'DHTML выбор даты и времени\n' +
-			"(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" +
-			'Последняя версия доступна здесь: http://www.dynarch.com/projects/calendar/\n' +
-			'Распространяется под лицензией GNU LGPL. Посетите http://gnu.org/licenses/lgpl.html для подробной информации.' +
-			'\n\n' +
-			'Выбор даты:\n' +
-			'- Используйте кнопки \xab, \xbb для выбора года\n' +
-			'- Используйте кнопки \u2039  для выбора месяца\n' +
-			'- Держите кнопку мышки нажатой на любой из этих кнопок для более быстрого выбора.';
-		Calendar._TT["ABOUT_TIME"] = '\n\n' +
-			'Выбор времени:\n' +
-			'- Нажмите на любую часть времени для её увеличения\n' +
-			'- или Shift+щелчок мышки для уменьшения\n' +
-			'- или нажмите и тяните для быстрого выделения.';
-
-		Calendar._TT["PREV_YEAR"] = 'Пред. год (не отпускать для меню)';
-		Calendar._TT["PREV_MONTH"] = 'Пред. месяц (не отпускать для меню)';
-		Calendar._TT["GO_TODAY"] = 'Сегодня';
-		Calendar._TT["NEXT_MONTH"] = 'Следу. месяц (не отпускать для меню)';
-		Calendar._TT["NEXT_YEAR"] = 'След. год (не отпускать для меню)';
-		Calendar._TT["SEL_DATE"] = 'Выберите дату';
-		Calendar._TT["DRAG_TO_MOVE"] = 'Тяните, чтобы переместить';
-		Calendar._TT["PART_TODAY"] = ' (' + "\u0441\u0435\u0433\u043e\u0434\u043d\u044f" + ')';
-
-		// the following is to inform that "%s" is to be the first day of week
-		Calendar._TT["DAY_FIRST"] = 'Выводить %s первым';
-
-		// This may be locale-dependent. It specifies the week-end days, as an array
-		// of comma-separated numbers. The numbers are from 0 to 6: 0 means Sunday, 1
-		// means Monday, etc.
-		Calendar._TT["WEEKEND"] = "0,6";
-
-		Calendar._TT["CLOSE"] = 'Закрыть';
-		Calendar._TT["TODAY"] = "\u0441\u0435\u0433\u043e\u0434\u043d\u044f";
-		Calendar._TT["TIME_PART"] = '(Shift+)Нажмите или тяните для изменения значения';
-
-		// date formats
-		Calendar._TT["DEF_DATE_FORMAT"] = "%e %b %Y '\u0433'.";
-		Calendar._TT["TT_DATE_FORMAT"] = "%e %B %Y '\u0433'.";
-
-		Calendar._TT["WK"] = "\u041d\u0435\u0434\u0435\u043b\u044f";
-		Calendar._TT["TIME"] = 'Время:';
-		//]]>
-	</script>
-	<link rel="next" href="kofe/kofe-v-zernah?limit=96">
-	<script type="text/javascript">//<![CDATA[
-	var Translator = new Translate({
-		"HTML tags are not allowed": "\u0422\u0435\u0433\u0438 HTML \u0437\u0430\u043f\u0440\u0435\u0449\u0435\u043d\u044b",
-		"Please select an option.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043e\u0434\u0438\u043d \u0432\u0430\u0440\u0438\u0430\u043d\u0442.",
-		"This is a required field.": "\u042d\u0442\u043e \u043f\u043e\u043b\u0435 \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e \u0434\u043b\u044f \u0437\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f.",
-		"Please enter a valid number in this field.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0432 \u044d\u0442\u043e \u043f\u043e\u043b\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u0447\u0438\u0441\u043b\u043e.",
-		"The value is not within the specified range.": "\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043d\u0435 \u0432\u0445\u043e\u0434\u0438\u0442 \u0432 \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u0434\u0438\u0430\u043f\u0430\u0437\u043e\u043d.",
-		"Please use numbers only in this field. Please avoid spaces or other characters such as dots or commas.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u0432 \u044d\u0442\u043e\u043c \u043f\u043e\u043b\u0435 \u0442\u043e\u043b\u044c\u043a\u043e \u0446\u0438\u0444\u0440\u044b. \u0418\u0437\u0431\u0435\u0433\u0430\u0439\u0442\u0435 \u043f\u0440\u043e\u0431\u0435\u043b\u043e\u0432 \u0438\u043b\u0438 \u0434\u0440\u0443\u0433\u0438\u0445 \u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432, \u043d\u0430\u043f\u043e\u0434\u043e\u0431\u0438\u0435 \u0442\u043e\u0447\u0435\u043a \u0438 \u0437\u0430\u043f\u044f\u0442\u044b\u0445.",
-		"Please use letters only (a-z or A-Z) in this field.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u0432 \u044d\u0442\u043e\u043c \u043f\u043e\u043b\u0435 \u0442\u043e\u043b\u044c\u043a\u043e \u0431\u0443\u043a\u0432\u044b (a-z \u0438\u043b\u0438 A-Z).",
-		"Please use only letters (a-z), numbers (0-9) or underscore(_) in this field, first character should be a letter.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u0432 \u044d\u0442\u043e\u043c \u043f\u043e\u043b\u0435 \u0442\u043e\u043b\u044c\u043a\u043e \u0431\u0443\u043a\u0432\u044b (a-z), \u0446\u0438\u0444\u0440\u044b (0-9) \u0438\u043b\u0438 \u043f\u043e\u0434\u0447\u0451\u0440\u043a\u0438\u0432\u0430\u043d\u0438\u044f(_). \u041f\u0435\u0440\u0432\u044b\u0439 \u0441\u0438\u043c\u0432\u043e\u043b \u0434\u043e\u043b\u0436\u0435\u043d \u0431\u044b\u0442\u044c \u0431\u0443\u043a\u0432\u043e\u0439.",
-		"Please use only letters (a-z or A-Z) or numbers (0-9) only in this field. No spaces or other characters are allowed.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u0432 \u044d\u0442\u043e\u043c \u043f\u043e\u043b\u0435 \u0442\u043e\u043b\u044c\u043a\u043e \u0431\u0443\u043a\u0432\u044b (a-z \u0438\u043b\u0438 A-Z) \u0438\u043b\u0438 \u0446\u0438\u0444\u0440\u044b (0-9). \u041f\u0440\u043e\u0431\u0435\u043b\u044b \u0438 \u0434\u0440\u0443\u0433\u0438\u0435 \u0441\u0438\u043c\u0432\u043e\u043b\u044b \u0437\u0430\u043f\u0440\u0435\u0449\u0435\u043d\u044b.",
-		"Please use only letters (a-z or A-Z) or numbers (0-9) or spaces and # only in this field.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u0432 \u044d\u0442\u043e\u043c \u043f\u043e\u043b\u0435 \u0442\u043e\u043b\u044c\u043a\u043e \u0431\u0443\u043a\u0432\u044b (a-z \u0438\u043b\u0438 A-Z), \u0446\u0438\u0444\u0440\u044b (0-9), \u043f\u0440\u043e\u0431\u0435\u043b\u044b \u0438\u043b\u0438 #.",
-		"Please enter a valid phone number. For example (123) 456-7890 or 123-456-7890.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, (123) 456-7890 \u0438\u043b\u0438 123-456-7890.",
-		"Please enter a valid fax number. For example (123) 456-7890 or 123-456-7890.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440 \u0444\u0430\u043a\u0441\u0430. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, (123) 456-7890 \u0438\u043b\u0438 123-456-7890.",
-		"Please enter a valid date.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u0443\u044e \u0434\u0430\u0442\u0443.",
-		"The From Date value should be less than or equal to the To Date value.": "\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043f\u043e\u043b\u044f \u0421 \u0434\u0430\u0442\u044b \u0434\u043e\u043b\u0436\u043d\u043e \u0431\u044b\u0442\u044c \u043c\u0435\u043d\u044c\u0448\u0435 \u0438\u043b\u0438 \u0440\u0430\u0432\u043d\u044b\u043c \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044e \u043f\u043e\u043b\u044f \u041f\u043e \u0434\u0430\u0442\u0443",
-		"Please enter a valid email address. For example johndoe@domain.com.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u0430\u0434\u0440\u0435\u0441 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u044b (email). \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, ivanivanov@domain.com.",
-		"Please use only visible characters and spaces.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u0442\u043e\u043b\u044c\u043a\u043e \u0432\u0438\u0434\u0438\u043c\u044b\u0435 \u0441\u0438\u043c\u0432\u043e\u043b\u044b \u0438 \u043f\u0440\u043e\u0431\u0435\u043b\u044b.",
-		"Please enter 7 or more characters. Password should contain both numeric and alphabetic characters.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 6 \u0438\u043b\u0438 \u0431\u043e\u043b\u0435\u0435 \u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432. \u041f\u0430\u0440\u043e\u043b\u044c \u0434\u043e\u043b\u0436\u0435\u043d \u0441\u043e\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u043a\u0430\u043a \u0431\u0443\u043a\u0432\u044b, \u0442\u0430\u043a \u0438 \u0446\u0438\u0444\u0440\u044b.",
-		"Please make sure your passwords match.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u0443\u0431\u0435\u0434\u0438\u0442\u0435\u0441\u044c, \u0447\u0442\u043e \u0432\u0430\u0448\u0438 \u043f\u0430\u0440\u043e\u043b\u0438 \u0441\u043e\u0432\u043f\u0430\u0434\u0430\u044e\u0442.",
-		"Please enter a valid URL. Protocol is required (http:\/\/, https:\/\/ or ftp:\/\/)": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u0430\u0434\u0440\u0435\u0441. \u041d\u0435 \u0437\u0430\u0431\u0443\u0434\u044c\u0442\u0435 \u0443\u043a\u0430\u0437\u0430\u0442\u044c \u043f\u0440\u043e\u0442\u043e\u043a\u043e\u043b (http:\/\/, https:\/\/ \u0438\u043b\u0438 ftp:\/\/)",
-		"Please enter a valid URL. For example http:\/\/www.example.com or www.example.com": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u0430\u0434\u0440\u0435\u0441. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, http:\/\/www.example.com \u0438\u043b\u0438 www.example.com",
-		"Please enter a valid URL Key. For example \"example-page\", \"example-page.html\" or \"anotherlevel\/example-page\".": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b URL Key. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \"example-page\", \"example-page.html\" \u0438\u043b\u0438 \"anotherlevel\/example-page\".",
-		"Please enter a valid XML-identifier. For example something_1, block5, id-4.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 XML-\u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, something_1, block5, id-4.",
-		"Please enter a valid social security number. For example 123-45-6789.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440 \u0441\u043e\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u0441\u0442\u0440\u0430\u0445\u043e\u0432\u0430\u043d\u0438\u044f. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, 123-45-6789.",
-		"Please enter a valid zip code. For example 90602 or 90602-1234.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u043f\u043e\u0447\u0442\u043e\u0432\u044b\u0439 \u0438\u043d\u0434\u0435\u043a\u0441. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, 9060 \u0438\u043b\u0438 90602-1234.",
-		"Please enter a valid zip code.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u043f\u043e\u0447\u0442\u043e\u0432\u044b\u0439 \u0438\u043d\u0434\u0435\u043a\u0441.",
-		"Please use this date format: dd\/mm\/yyyy. For example 17\/03\/2006 for the 17th of March, 2006.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u0434\u043b\u044f \u0434\u0430\u0442\u044b \u0444\u043e\u0440\u043c\u0430\u0442: dd\/mm\/yyyy. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, 17\/03\/2006 \u0434\u043b\u044f 17-\u0433\u043e \u043c\u0430\u0440\u0442\u0430 2006 \u0433\u043e\u0434\u0430.",
-		"Please enter a valid $ amount. For example $100.00.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u0443\u044e \u0434\u0435\u043d\u0435\u0436\u043d\u0443\u044e \u0432\u0435\u043b\u0438\u0447\u0438\u043d\u0443. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, $100.00.",
-		"Please select one of the above options.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043e\u0434\u0438\u043d \u0438\u0437 \u0432\u044b\u0448\u0435\u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0445 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u043e\u0432.",
-		"Please select one of the options.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043e\u0434\u0438\u043d \u0438\u0437 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u043e\u0432.",
-		"Please select State\/Province.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0448\u0442\u0430\u0442\/\u043f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044e.",
-		"Please enter a number greater than 0 in this field.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0432 \u044d\u0442\u043e \u043f\u043e\u043b\u0435 \u0447\u0438\u0441\u043b\u043e \u0431\u043e\u043b\u044c\u0448\u0435 0.",
-		"Please enter a number 0 or greater in this field.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0432 \u044d\u0442\u043e \u043f\u043e\u043b\u0435 \u0447\u0438\u0441\u043b\u043e \u043d\u0435 \u043c\u0435\u043d\u044c\u0448\u0435 0.",
-		"Please enter a valid credit card number.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440 \u043a\u0440\u0435\u0434\u0438\u0442\u043d\u043e\u0439 \u043a\u0430\u0440\u0442\u044b.",
-		"Credit card number does not match credit card type.": "\u041d\u043e\u043c\u0435\u0440 \u043a\u0440\u0435\u0434\u0438\u0442\u043d\u043e\u0439 \u043a\u0430\u0440\u0442\u044b \u043d\u0435 \u0441\u043e\u0432\u043f\u0430\u0434\u0430\u0435\u0442 \u0441 \u0442\u0438\u043f\u043e\u043c \u043a\u0430\u0440\u0442\u044b",
-		"Card type does not match credit card number.": "\u0422\u0438\u043f \u043a\u0430\u0440\u0442\u044b \u043d\u0435 \u0441\u043e\u0432\u043f\u0430\u0434\u0430\u0435\u0442 \u0441 \u043d\u043e\u043c\u0435\u0440\u043e\u043c \u043a\u0440\u0435\u0434\u0438\u0442\u043d\u043e\u0439 \u043a\u0430\u0440\u0442\u044b.",
-		"Incorrect credit card expiration date.": "\u041d\u0435\u0432\u0435\u0440\u043d\u0430\u044f \u0434\u0430\u0442\u0430 \u0438\u0441\u0442\u0435\u0447\u0435\u043d\u0438\u044f \u0441\u0440\u043e\u043a\u0430 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f \u0440\u0430\u0441\u0447\u0451\u0442\u043d\u043e\u0439 \u043a\u0430\u0440\u0442\u044b",
-		"Please enter a valid credit card verification number.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u043f\u0440\u043e\u0432\u0435\u0440\u043e\u0447\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440 \u043a\u0440\u0435\u0434\u0438\u0442\u043d\u043e\u0439 \u043a\u0430\u0440\u0442\u044b.",
-		"Please use only letters (a-z or A-Z), numbers (0-9) or underscore(_) in this field, first character should be a letter.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u0432 \u044d\u0442\u043e\u043c \u043f\u043e\u043b\u0435 \u0442\u043e\u043b\u044c\u043a\u043e \u0431\u0443\u043a\u0432\u044b (a-z or A-Z), \u0446\u0438\u0444\u0440\u044b (0-9) \u0438\u043b\u0438 \u043f\u043e\u0434\u0447\u0451\u0440\u043a\u0438\u0432\u0430\u043d\u0438\u044f (_). \u041f\u0435\u0440\u0432\u044b\u0439 \u0441\u0438\u043c\u0432\u043e\u043b \u0434\u043e\u043b\u0436\u0435\u043d \u0431\u044b\u0442\u044c \u0431\u0443\u043a\u0432\u043e\u0439.",
-		"Please input a valid CSS-length. For example 100px or 77pt or 20em or .5ex or 50%.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u0443\u044e CSS - \u0434\u043b\u0438\u043d\u0443. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, 100px \u0438\u043b\u0438 77pt \u0438\u043b\u0438 20em \u0438\u043b\u0438 .5ex \u0438\u043b\u0438 50%.",
-		"Text length does not satisfy specified text range.": "\u0412\u0432\u0435\u0434\u0435\u043d \u043d\u0435\u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u0444\u043e\u0440\u043c\u0430\u0442 \u043d\u043e\u043c\u0435\u0440\u0430.",
-		"Please enter a number lower than 100.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0447\u0438\u0441\u043b\u043e \u043c\u0435\u043d\u044c\u0448\u0435 100.",
-		"Please select a file": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0444\u0430\u0439\u043b",
-		"Please enter issue number or start date for switch\/solo card type.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043d\u043e\u043c\u0435\u0440 \u0432\u043e\u043f\u0440\u043e\u0441\u0430 \u0438\u043b\u0438 \u0434\u0430\u0442\u0443 \u043d\u0430\u0447\u0430\u043b\u0430 \u0434\u043b\u044f \u0442\u0438\u043f\u0430 \u043a\u0430\u0440\u0442\u044b switch\/solo.",
-		"Please wait, loading...": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u0434\u043e\u0436\u0434\u0438\u0442\u0435, \u0438\u0434\u0435\u0442 \u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0430...",
-		"This date is a required value.": "\u042d\u0442\u0430 \u0434\u0430\u0442\u0430 - \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435.",
-		"Please enter a valid day (1-%d).": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u0434\u0435\u043d\u044c (1-%d).",
-		"Please enter a valid month (1-12).": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u043c\u0435\u0441\u044f\u0446 (1-12).",
-		"Please enter a valid year (1900-%d).": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u0433\u043e\u0434 (1900-%d).",
-		"Please enter a valid full date": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u0443\u044e \u043f\u043e\u043b\u043d\u0443\u044e \u0434\u0430\u0442\u0443.",
-		"Please enter a valid date between %s and %s": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u0443\u044e \u0434\u0430\u0442\u0443 \u043c\u0435\u0436\u0434\u0443 %s \u0438 %s",
-		"Please enter a valid date equal to or greater than %s": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u0443\u044e \u0434\u0430\u0442\u0443 \u0440\u0430\u0432\u043d\u0443\u044e \u0438\u043b\u0438 \u0431\u043e\u043b\u044c\u0448\u0435 \u0447\u0435\u043c %s",
-		"Please enter a valid date less than or equal to %s": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u0443\u044e \u0434\u0430\u0442\u0443 \u0440\u0430\u0432\u043d\u0443\u044e \u0438\u043b\u0438 \u043c\u0435\u043d\u044c\u0448\u0435 \u0447\u0435\u043c %s",
-		"Complete": "\u0417\u0430\u0432\u0435\u0440\u0448\u0451\u043d",
-		"Add Products": "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0442\u043e\u0432\u0430\u0440\u044b",
-		"Please choose to register or to checkout as a guest": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0441\u0434\u0435\u043b\u0430\u0439\u0442\u0435 \u0432\u044b\u0431\u043e\u0440: \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c\u0441\u044f \u0438\u043b\u0438 \u043e\u0444\u043e\u0440\u043c\u0438\u0442\u044c \u0437\u0430\u043a\u0430\u0437 \u0431\u0435\u0437 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043d\u0430 \u0441\u0430\u0439\u0442\u0435",
-		"Your order cannot be completed at this time as there is no shipping methods available for it. Please make necessary changes in your shipping address.": "\u0412\u0430\u0448 \u0437\u0430\u043a\u0430\u0437 \u043d\u0435 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0437\u0430\u0432\u0435\u0440\u0448\u0451\u043d \u0432 \u0434\u0430\u043d\u043d\u044b\u0439 \u043c\u043e\u043c\u0435\u043d\u0442, \u043f\u043e\u0441\u043a\u043e\u043b\u044c\u043a\u0443 \u0434\u043b\u044f \u043d\u0435\u0433\u043e \u043d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u0445 \u043c\u0435\u0442\u043e\u0434\u043e\u0432 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u043d\u0435\u0441\u0438\u0442\u0435 \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u044b\u0435 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f \u0432 \u0430\u0434\u0440\u0435\u0441 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438.",
-		"Please specify shipping method.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043c\u0435\u0442\u043e\u0434 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438.",
-		"Your order cannot be completed at this time as there is no payment methods available for it.": "\u0412\u0430\u0448 \u0437\u0430\u043a\u0430\u0437 \u043d\u0435 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0437\u0430\u0432\u0435\u0440\u0448\u0451\u043d \u0432 \u0434\u0430\u043d\u043d\u044b\u0439 \u043c\u043e\u043c\u0435\u043d\u0442, \u043f\u043e\u0441\u043a\u043e\u043b\u044c\u043a\u0443 \u0434\u043b\u044f \u043d\u0435\u0433\u043e \u043d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u0445 \u043c\u0435\u0442\u043e\u0434\u043e\u0432 \u043e\u043f\u043b\u0430\u0442\u044b.",
-		"Please specify payment method.": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043c\u0435\u0442\u043e\u0434 \u043e\u043f\u043b\u0430\u0442\u044b.",
-		"Add to Cart": "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0432 \u043a\u043e\u0440\u0437\u0438\u043d\u0443",
-		"In Stock": "\u0412 \u043d\u0430\u043b\u0438\u0447\u0438\u0438",
-		"Out of Stock": "\u041d\u0435\u0442 \u0432 \u043d\u0430\u043b\u0438\u0447\u0438\u0438"
-	});
-	//]]></script>
-	<script async="" src="https://static.hotjar.com/c/hotjar-698528.js?sv=6"></script>
-	<script src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1002419416/?random=1514212157383&amp;cv=8&amp;fst=1514212157383&amp;num=1&amp;guid=ON&amp;eid=659238991&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1080&amp;u_aw=1920&amp;u_cd=24&amp;u_his=2&amp;u_tz=120&amp;u_java=false&amp;u_nplug=4&amp;u_nmime=5&amp;gtm=Gbe&amp;frm=0&amp;url=https%3A%2F%2Fcoffeeok.com.ua%2Fkofe%2Fkofe-v-zernah&amp;tiba=%D0%9A%D0%BE%D1%84%D0%B5%20%D0%B2%20%D0%B7%D0%B5%D1%80%D0%BD%D0%B0%D1%85%2C%20%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C%20%D0%BA%D0%BE%D1%84%D0%B5%20%D0%B2%20%D0%B7%D0%B5%D1%80%D0%BD%D0%B0%D1%85%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D0%BE%D1%84%D0%B5%D0%BC%D0%B0%D1%88&amp;async=1&amp;rfmt=3&amp;fmt=4"></script>
-	<script async="" src="https://script.hotjar.com/modules-526d80f8c01454f84b75838f21c8706e.js"></script>
-	<style type="text/css">iframe#_hjRemoteVarsFrame {
-		display: none !important;
-		width: 1px !important;
-		height: 1px !important;
-		opacity: 0 !important;
-		pointer-events: none !important;
-	}</style>
-	<style type="text/css">/*
- * contextMenu.js v 1.4.0
- * Author: Sudhanshu Yadav
- * s-yadav.github.com
- * Copyright (c) 2013 Sudhanshu Yadav.
- * Dual licensed under the MIT and GPL licenses
-**/
-
-	.iw-contextMenu {
-		box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10);
-		border: 1px solid #c8c7cc;
-		border-radius: 11px;
-		display: none;
-		z-index: 1000000132;
-		max-width: 300px;
-	}
-
-	.iw-cm-menu {
-		background: #fff;
-		color: #000;
-		margin: 0px;
-		padding: 0px;
-	}
-
-	.iw-curMenu {
-	}
-
-	.iw-cm-menu li {
-		font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif;
-		list-style: none;
-		padding: 10px;
-		padding-right: 20px;
-		border-bottom: 1px solid #c8c7cc;
-		cursor: pointer;
-		position: relative;
-		font-size: 14px;
-		margin: 0;
-		line-height: inherit;
-	}
-
-	.iw-cm-menu li:first-child {
-		border-top-left-radius: 11px;
-		border-top-right-radius: 11px;
-	}
-
-	.iw-cm-menu li:last-child {
-		border-bottom-left-radius: 11px;
-		border-bottom-right-radius: 11px;
-		border-bottom: none;
-	}
-
-	.iw-mOverlay {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0px;
-		left: 0px;
-		background: #FFF;
-		opacity: .5;
-	}
-
-	.iw-contextMenu li.iw-mDisable {
-		opacity: 0.3;
-		cursor: default;
-	}
-
-	.iw-mSelected {
-		background-color: #F6F6F6;
-	}
-
-	.iw-cm-arrow-right {
-		width: 0;
-		height: 0;
-		border-top: 5px solid transparent;
-		border-bottom: 5px solid transparent;
-		border-left: 5px solid #000;
-		position: absolute;
-		right: 5px;
-		top: 50%;
-		margin-top: -5px;
-	}
-
-	.iw-mSelected > .iw-cm-arrow-right {
-	}
-
-	/*context menu css end */</style>
-	<style type="text/css">@-webkit-keyframes load4 {
-		                       0%,
-		                       100% {
-			                       box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-		                       }
-		                       12.5% {
-			                       box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-		                       }
-		                       25% {
-			                       box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-		                       }
-		                       37.5% {
-			                       box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-		                       }
-		                       50% {
-			                       box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-		                       }
-		                       62.5% {
-			                       box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-		                       }
-		                       75% {
-			                       box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
-		                       }
-		                       87.5% {
-			                       box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
-		                       }
-	                       }
-
-	@keyframes load4 {
-		0%,
-		100% {
-			box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-		}
-		12.5% {
-			box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-		}
-		25% {
-			box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-		}
-		37.5% {
-			box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-		}
-		50% {
-			box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-		}
-		62.5% {
-			box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-		}
-		75% {
-			box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
-		}
-		87.5% {
-			box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
-		}
-	}</style>
-	<style type="text/css">/* This is not a zero-length file! */</style>
 </head>
-<body class=" catalog-category-view categorypath-kofe-kofe-v-zernah category-kofe-v-zernah">
-<!-- Google Tag Manager (noscript) -->
-<noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRMDMZW"
-          height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
-<div id="site">
 
-	<div id="head">
-		<div class="head_top">
-			<div class="content">
-				<a class="logo" href="#">
-					<img src="https://coffeeok.com.ua/skin/frontend/getup/default/images/getup-coffeok-logo.png"
-					     alt="КофейОК логотип" class="logo">
-				</a>
+@include('layouts.site.header')
+		<div class="menu-row row hidden-md-down">
+			<nav class="navbar navbar-light bg-faded">
+				<button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
+				        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+				        aria-label="Toggle navigation"></button>
+				<div class="collapse navbar-toggleable-md" id="navbarResponsive">
+					<ul class="nav nav-bar main-menu">
+						<li><a href="products_cat-b_u_noutbuki.html"><span class="sprite sprite-menu-icon-1"></span>Ноутбуки
+						                                                                                             б/у</a>
+						</li>
+						<li><a href="products_cat-sistemnie_bloki.html"><span class="sprite sprite-menu-icon-2"></span>Системные
+						                                                                                                блоки
+						                                                                                                б/у</a>
+						</li>
+						<li><a href="products_cat-monitori.html"><span class="sprite sprite-menu-icon-3"></span>Мониторы
+						                                                                                         б/у</a>
+						</li>
+						<li><a href="products_cat-doc_stancii.html"><span class="sprite sprite-menu-icon-4"></span>Принтеры
+						                                                                                            (NEW)</a>
+						</li>
+						<li><a href="products_cat-remont noutbukov.html"><span
+								class="sprite sprite-menu-icon-5"></span>Док Станции б/у</a></li>
+						<li><a href="#"><span class="sprite sprite-menu-icon-2"></span>Игровые системники</a></li>
+					</ul>
 
-				<div class="head_phone_block">
-					<div class="form">
-						<div class="ddOutOfVision" id="msdrpdd21_msddHolder"
-						     style="height: 0px; overflow: hidden; position: absolute;"><select class="head_phone_sel"
-						                                                                        id="msdrpdd21"
-						                                                                        tabindex="-1">
-							<option value="0"
-							        data-image="https://coffeeok.com.ua/skin/frontend/getup/default/img/head_phone_ico_01.png">
-								Городской
-							</option>
-							<option value="1"
-							        data-image="https://coffeeok.com.ua/skin/frontend/getup/default/img/head_phone_ico_02.png">
-								МТС
-							</option>
-							<option value="2"
-							        data-image="https://coffeeok.com.ua/skin/frontend/getup/default/img/head_phone_ico_03.png">
-								Киевстар
-							</option>
-							<option value="3"
-							        data-image="https://coffeeok.com.ua/skin/frontend/getup/default/img/lifecell-icon.png">
-								Лайф
-							</option>
-						</select></div>
-						<div class="dd ddcommon borderRadius" id="msdrpdd21_msdd" tabindex="0" style="width: 51px;">
-							<div class="ddTitle borderRadiusTp"><span class="divider"></span><span
-									class="arrow arrowoff"></span><span class="ddTitleText " id="msdrpdd21_title"><img
-									src="#skin/frontend/getup/default/img/head_phone_ico_01.png"
-									class="fnone"><span class="ddlabel">Городской</span><span class="description"
-							                                                                  style="display: none;"></span></span>
+				</div>
+			</nav>
+		</div>
+
+		<div class="slider-row row">
+			<div class="owl-carousel owl-carousel1">
+				<div>
+					<a class="button-wrap" href="#">
+					<div class="img" style="margin-top: 0px;">
+						<img src="../index_app/images/slider/20171114111725934.png" alt="HP 8000">
+					</div>
+					<div class="slider-block">
+						<!--<div class="pre-title"></div>
+        <div class="title">HP 8000</div>
+        <div class="description hidden-md-down"></div>-->
+
+							<div class="button"
+							     style="margin-left: 1000px;margin-top: -90px;z-index:100000;position: relative;">Купить</div>
+
+					</div>
+					</a>
+				</div>
+				<div>
+					<a class="button-wrap" href="#">
+					<div class="img" style="margin-top: 0px;">
+						<img src="../index_app/images/slider/20171011175607283.png" alt="новый 4">
+					</div>
+					<div class="slider-block">
+						<!--<div class="pre-title"></div>
+        <div class="title">новый 4</div>
+        <div class="description hidden-md-down"></div>-->
+
+							<div class="button"
+							     style="margin-left: 1000px;margin-top: -90px;z-index:100000;position: relative;">Купить
 							</div>
-							<input id="msdrpdd21_titleText" type="text" autocomplete="off"
-							       class="text shadow borderRadius" style="display: none;">
-							<div class="ddChild ddchild_ border shadow" id="msdrpdd21_child"
-							     style="z-index: 9999; display: none; position: absolute;">
-								<ul>
-									<li class="enabled _msddli_ selected"><img
-											src="#skin/frontend/getup/default/img/head_phone_ico_01.png"
-											class="fnone"><span class="ddlabel">Городской</span>
-										<div class="clear"></div>
-									</li>
-									<li class="enabled _msddli_"><img
-											src="#skin/frontend/getup/default/img/head_phone_ico_02.png"
-											class="fnone"><span class="ddlabel">МТС</span>
-										<div class="clear"></div>
-									</li>
-									<li class="enabled _msddli_"><img
-											src="#skin/frontend/getup/default/img/head_phone_ico_03.png"
-											class="fnone"><span class="ddlabel">Киевстар</span>
-										<div class="clear"></div>
-									</li>
-									<li class="enabled _msddli_"><img
-											src="#skin/frontend/getup/default/img/lifecell-icon.png"
-											class="fnone"><span class="ddlabel">Лайф</span>
-										<div class="clear"></div>
-									</li>
-								</ul>
+
+					</div>
+					</a>
+				</div>
+				<div>
+					<a class="button-wrap" href="#">
+					<div class="img" style="margin-top: 0px;">
+						<img src="../index_app/images/slider/20171011183644378.png" alt="новый 2">
+					</div>
+					<div class="slider-block">
+						<!--<div class="pre-title"></div>
+        <div class="title">новый 2</div>
+        <div class="description hidden-md-down"></div>-->
+
+							<div class="button"
+							     style="margin-left: 1000px;margin-top: -90px;z-index:100000;position: relative;">Купить
+							</div>
+
+					</div>
+					</a>
+				</div>
+				<div>
+					<a class="button-wrap" href="#">
+					<div class="img" style="margin-top: 0px;">
+						<img src="../index_app/images/slider/20171011185712820.png" alt="новый 1">
+					</div>
+					<div class="slider-block">
+						<!--<div class="pre-title"></div>
+        <div class="title">новый 1</div>
+        <div class="description hidden-md-down"></div>-->
+
+							<div class="button"
+							     style="margin-left: 1000px;margin-top: -90px;z-index:100000;position: relative;">Купить
+							</div>
+
+					</div>
+					</a>
+				</div>
+				<div>
+					<a class="button-wrap" href="#">
+					<div class="img" style="margin-top: 0px;">
+						<img src="../index_app/images/slider/20170417164523223.png" alt="">
+					</div>
+					<div class="slider-block">
+						<!--<div class="pre-title"></div>
+        <div class="title"></div>
+        <div class="description hidden-md-down"></div>-->
+
+							<div class="button"
+							     style="margin-left: 1000px;margin-top: -90px;z-index:100000;position: relative;">Купить
+							</div>
+
+					</div>
+					</a>
+				</div>
+				<div>
+					<a class="button-wrap" href="#">
+					<div class="img" style="margin-top: 0px;">
+						<img src="../index_app/images/slider/20170422083315443.png" alt="">
+					</div>
+					<div class="slider-block">
+						<!--<div class="pre-title"></div>
+        <div class="title"></div>
+        <div class="description hidden-md-down"></div>-->
+
+							<div class="button"
+							     style="margin-left: 1000px;margin-top: -90px;z-index:100000;position: relative;">Купить
+							</div>
+
+					</div>
+					</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class="main-info container-fluid">
+	<div class="container">
+		<div class="row"><h1>Интернет магазин компьютерной б/у техники &quot;Евронот&quot;</h1>
+			<div class="col-md-6 hidden-xs-up">
+				<div class="description row">
+					<div class="col-md-2">
+						<div class="line"></div>
+					</div>
+					<div class="col-md-4">
+						<b>Мы предлагаем</b> Вам новые и б/у ноутбуки и планшеты известных брендов. А также компьютерное
+						                     оборудование других производителей по самой выгодной цене в Украине.
+						<br><br>
+						                     На все товары предоставляется гарантия от 3-х месяцев!
+					</div>
+					<div class="col-md-6">
+						<b>Мы дорожим</b> своей репутацией, и именно поэтому сознательно не продаем ремонтированную и
+						                  восстановленную технику. Вся продукция поставляется из Европы.
+						<br><br>
+						                  Также наша компания осуществляет сервис и ремонт компьютерной техники любой
+						                  сложности.
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 img hidden-xs-up">
+				<img src="../index_app/images/brands.jpg" alt="brands">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="content container-fluid">
+	<div class="container">
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" href="#tab_1" role="tab" data-toggle="tab">Хиты продаж</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#tab_2" role="tab" data-toggle="tab">Рекомендуем</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#tab_3" role="tab" data-toggle="tab">Самое новое</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane fade active in" id="tab_1">
+				<div class="products row">
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-263.html">
+									<img alt="Системный блок Dell Precision T3500"
+									     title="Системный блок Dell Precision T3500"
+									     src="../index_app/images/pictures/products/20170524153523553.jpg"/>
+								</a>
+							</div>
+							<a href="products-263.html">
+								<div class="name">Системный блок Dell Precision T3500</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">8'400 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-263.html">
+									<img alt="Системный блок Dell Precision T3500"
+									     title="Системный блок Dell Precision T3500"
+									     src="../index_app/images/pictures/products/20170524153523553.jpg"/>
+								</a>
+							</div>
+							<a href="products-263.html">
+								<div class="name">Системный блок Dell Precision T3500</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">8'400 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box263">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star active"></div>
+											<div class="star5 star active"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">Intel Xeon X5660 / 2.8GHz / 4Гб / 500GB</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-300.html">
+									<img alt="Ноутбук HP 2570p" title="Ноутбук HP 2570p"
+									     src="../index_app/images/pictures/products/20171011121324735.jpg"/>
+								</a>
+							</div>
+							<a href="products-300.html">
+								<div class="name">Ноутбук HP 2570p</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">8'350 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-300.html">
+									<img alt="Ноутбук HP 2570p" title="Ноутбук HP 2570p"
+									     src="../index_app/images/pictures/products/20171011121324735.jpg"/>
+								</a>
+							</div>
+							<a href="products-300.html">
+								<div class="name">Ноутбук HP 2570p</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">8'350 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box300">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star"></div>
+											<div class="star5 star"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">12.5&quot; WXGA 1366x768 HD LED / Intel Core i5-3320M 2,6 ГГц / RAM 4
+							                       ГБ /500 HDD ГБ /Intel® HD Graphics 4000/ Wi-Fi / Bluetooth / Win 7
 							</div>
 						</div>
 					</div>
-					<ul class="phone_list">
-						<li class="vis">(044) 223 90 95</li>
-						<li>(095) 381-95-95</li>
-						<li>(096) 764-95-95</li>
-						<li>(093) 941-95-95</li>
-					</ul>
-					<div class="clear"></div>
-				</div>
-				<a href="{{route('setlocale', ['lang' => 'en'])}}">Английский</a>
-				<a href="{{route('setlocale', ['lang' => 'ua'])}}">Українська</a>
-				<div class="timetable_block">
-					<div class="work schedule">
-						<ul>
-							<li class="act">
-								<div class="dot"></div>
-								<div class="name">ПН</div>
-								<div class="time">9:00 - 19:00</div>
-							</li>
-							<li>
-								<div class="dot"></div>
-								<div class="name">ВТ</div>
-								<div class="time">9:00 - 19:00</div>
-							</li>
-							<li>
-								<div class="dot"></div>
-								<div class="name">СР</div>
-								<div class="time">9:00 - 19:00</div>
-							</li>
-							<li>
-								<div class="dot"></div>
-								<div class="name">ЧТ</div>
-								<div class="time">9:00 - 19:00</div>
-							</li>
-							<li>
-								<div class="dot"></div>
-								<div class="name">ПТ</div>
-								<div class="time">9:00 - 19:00</div>
-							</li>
-							<li>
-								<div class="dot"></div>
-								<div class="name">СБ</div>
-								<div class="time">10:00 - 16:00</div>
-							</li>
-							<li class="sun">
-								<div class="dot"></div>
-								<div class="name">ВС</div>
-								<div class="on">online</div>
-							</li>
-						</ul>
-						<div class="clear"></div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-252.html">
+									<img alt="Ноутбук HP EliteBook 8470p (2,6 ГГц, 8 Гб, 320 Гб, WebCam)"
+									     title="Ноутбук HP EliteBook 8470p (2,6 ГГц, 8 Гб, 320 Гб, WebCam)"
+									     src="../index_app/images/pictures/products/20170511142058222.jpg"/>
+								</a>
+							</div>
+							<a href="products-252.html">
+								<div class="name">Ноутбук HP EliteBook 8470p (2,6 ГГц, 8 Гб, 320 Гб, WebCam)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">9'700 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-252.html">
+									<img alt="Ноутбук HP EliteBook 8470p (2,6 ГГц, 8 Гб, 320 Гб, WebCam)"
+									     title="Ноутбук HP EliteBook 8470p (2,6 ГГц, 8 Гб, 320 Гб, WebCam)"
+									     src="../index_app/images/pictures/products/20170511142058222.jpg"/>
+								</a>
+							</div>
+							<a href="products-252.html">
+								<div class="name">Ноутбук HP EliteBook 8470p (2,6 ГГц, 8 Гб, 320 Гб, WebCam)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">9'700 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box252">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star"></div>
+											<div class="star5 star"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">14&quot; Core i5-3320m 2,6 GHz / 8192Mb / 320 Gb / Wi-Fi, Bluetooth,
+							                       3G,web / Win7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-294.html">
+									<img alt="Ноутбук Dell Latitude E6320" title="Ноутбук Dell Latitude E6320"
+									     src="../index_app/images/pictures/products/20171007114818601.jpg"/>
+								</a>
+							</div>
+							<a href="products-294.html">
+								<div class="name">Ноутбук Dell Latitude E6320</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">6'200 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-294.html">
+									<img alt="Ноутбук Dell Latitude E6320" title="Ноутбук Dell Latitude E6320"
+									     src="../index_app/images/pictures/products/20171007114818601.jpg"/>
+								</a>
+							</div>
+							<a href="products-294.html">
+								<div class="name">Ноутбук Dell Latitude E6320</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">6'200 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box294">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star active"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">13,3&quot;(1366x768) HD LED / Intel Core i5-2520M 2,5 ГГц / RAM 4 ГБ
+							                       /320HDD ГБ /Intel HD Graphics 3000/ Wi-Fi / Bluetooth / Win 7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-248.html">
+									<img alt="Ноутбук HP EliteBook 8570w (2,60 ГГц, 8 Гб, 128 SSD Гб)"
+									     title="Ноутбук HP EliteBook 8570w (2,60 ГГц, 8 Гб, 128 SSD Гб)"
+									     src="../index_app/images/pictures/products/20170511160424692.jpg"/>
+								</a>
+							</div>
+							<a href="products-248.html">
+								<div class="name">Ноутбук HP EliteBook 8570w (2,60 ГГц, 8 Гб, 128 SSD Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">14'530 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-248.html">
+									<img alt="Ноутбук HP EliteBook 8570w (2,60 ГГц, 8 Гб, 128 SSD Гб)"
+									     title="Ноутбук HP EliteBook 8570w (2,60 ГГц, 8 Гб, 128 SSD Гб)"
+									     src="../index_app/images/pictures/products/20170511160424692.jpg"/>
+								</a>
+							</div>
+							<a href="products-248.html">
+								<div class="name">Ноутбук HP EliteBook 8570w (2,60 ГГц, 8 Гб, 128 SSD Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">14'530 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box248">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star"></div>
+											<div class="star5 star"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">15,6 Core i7-3720qm 2,60 GHz / 8192 Mb / 128SSD Gb / Wi-Fi, Bluetooth
+							                       / Win 7 / WebCam
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-167.html">
+									<img alt="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
+									     title="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
+									     src="../index_app/images/pictures/products/20170515181331263.jpeg"/>
+								</a>
+							</div>
+							<a href="products-167.html">
+								<div class="name">Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">6'500 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-167.html">
+									<img alt="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
+									     title="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
+									     src="../index_app/images/pictures/products/20170515181331263.jpeg"/>
+								</a>
+							</div>
+							<a href="products-167.html">
+								<div class="name">Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">6'500 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box167">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star active"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">10,4&#039;&#039;(touch сенсорный) / 1024x768 / Core2Duo U7500 1,06Ghz
+							                       / 2048Mb / 120Gb / Wi-Fi, Bluetooth
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-304.html">
+									<img alt="Монитор NEC MyltiSync LCD2470WVX" title="Монитор NEC MyltiSync LCD2470WVX"
+									     src="../index_app/images/pictures/products/20171108131759508.jpg"/>
+								</a>
+							</div>
+							<a href="products-304.html">
+								<div class="name">Монитор NEC MyltiSync LCD2470WVX</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">2'500 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-304.html">
+									<img alt="Монитор NEC MyltiSync LCD2470WVX" title="Монитор NEC MyltiSync LCD2470WVX"
+									     src="../index_app/images/pictures/products/20171108131759508.jpg"/>
+								</a>
+							</div>
+							<a href="products-304.html">
+								<div class="name">Монитор NEC MyltiSync LCD2470WVX</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">2'500 грн</div>
+							<div class="title_dop">24&quot; 1920x1200 /1000:1 /400cd/m² / VGA, DVI, DisplayPort, USB
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-301.html">
+									<img alt="Ноутбук Fujitsu E753" title="Ноутбук Fujitsu E753"
+									     src="../index_app/images/pictures/products/20171018105032805.jpg"/>
+								</a>
+							</div>
+							<a href="products-301.html">
+								<div class="name">Ноутбук Fujitsu E753</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">14'050 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-301.html">
+									<img alt="Ноутбук Fujitsu E753" title="Ноутбук Fujitsu E753"
+									     src="../index_app/images/pictures/products/20171018105032805.jpg"/>
+								</a>
+							</div>
+							<a href="products-301.html">
+								<div class="name">Ноутбук Fujitsu E753</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">14'050 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box301">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star active"></div>
+											<div class="star5 star active"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">15,6&quot; WXGA 1920x1080 Full HD / Intel Core i5-3340M 2,7 ГГц / RAM
+							                       8 ГБ /256 SSD ГБ /Intel HD Graphics 4000/ Wi-Fi / Bluetooth / Win 7
+							</div>
+						</div>
 					</div>
 				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane fade " id="tab_2">
+				<div class="products row">
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-232.html">
+									<img alt="Ноутбук Lenovo ThinkPad X220 tablet (2,50 ГГц, 4 Гб, 320 Гб)"
+									     title="Ноутбук Lenovo ThinkPad X220 tablet (2,50 ГГц, 4 Гб, 320 Гб)"
+									     src="../index_app/images/pictures/products/20170517120605798.jpg"/>
+								</a>
+							</div>
+							<a href="products-232.html">
+								<div class="name">Ноутбук Lenovo ThinkPad X220 tablet (2,50 ГГц, 4 Гб, 320 Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">8'100 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-232.html">
+									<img alt="Ноутбук Lenovo ThinkPad X220 tablet (2,50 ГГц, 4 Гб, 320 Гб)"
+									     title="Ноутбук Lenovo ThinkPad X220 tablet (2,50 ГГц, 4 Гб, 320 Гб)"
+									     src="../index_app/images/pictures/products/20170517120605798.jpg"/>
+								</a>
+							</div>
+							<a href="products-232.html">
+								<div class="name">Ноутбук Lenovo ThinkPad X220 tablet (2,50 ГГц, 4 Гб, 320 Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">8'100 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box232">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star"></div>
+											<div class="star5 star"></div>
+										</div>
+									</div>
 
-				<div class="timetable_block_mob">
-					ПН — CБ <span>9:00 - 19:00</span><br>ВС <span>online</span>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">12.5&quot; (1366x768) HD LED IPS, матовый, поворотный / Intel Core
+							                       i5-2520M 2,5 ГГц / 4 ГБ RAM / 320 ГБ HDD / Win 7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-296.html">
+									<img alt="Ультрабук Dell Latitude E7440" title="Ультрабук Dell Latitude E7440"
+									     src="../index_app/images/pictures/products/20171009103031141.jpg"/>
+								</a>
+							</div>
+							<a href="products-296.html">
+								<div class="name">Ультрабук Dell Latitude E7440</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">14'100 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-296.html">
+									<img alt="Ультрабук Dell Latitude E7440" title="Ультрабук Dell Latitude E7440"
+									     src="../index_app/images/pictures/products/20171009103031141.jpg"/>
+								</a>
+							</div>
+							<a href="products-296.html">
+								<div class="name">Ультрабук Dell Latitude E7440</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">14'100 грн</div>
+							<div class="title_dop">14&quot; WXGA 1366x768 HD LED / Intel Core i5-4310U 2,0 ГГц / RAM 8
+							                       ГБ /256SSD ГБ /Intel® HD Graphics 4400/ Wi-Fi / Bluetooth / Win 7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-168.html">
+									<img alt="Ноутбук Panasonic Toughbook CF-19 mk4 / (1,20 ГГц, 4 Гб, 320 Гб)"
+									     title="Ноутбук Panasonic Toughbook CF-19 mk4 / (1,20 ГГц, 4 Гб, 320 Гб)"
+									     src="../index_app/images/pictures/products/20170516113202605.jpg"/>
+								</a>
+							</div>
+							<a href="products-168.html">
+								<div class="name">Ноутбук Panasonic Toughbook CF-19 mk4 / (1,20 ГГц, 4 Гб, 320 Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">14'500 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-168.html">
+									<img alt="Ноутбук Panasonic Toughbook CF-19 mk4 / (1,20 ГГц, 4 Гб, 320 Гб)"
+									     title="Ноутбук Panasonic Toughbook CF-19 mk4 / (1,20 ГГц, 4 Гб, 320 Гб)"
+									     src="../index_app/images/pictures/products/20170516113202605.jpg"/>
+								</a>
+							</div>
+							<a href="products-168.html">
+								<div class="name">Ноутбук Panasonic Toughbook CF-19 mk4 / (1,20 ГГц, 4 Гб, 320 Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">14'500 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box168">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star active"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">10,4&#039;&#039;(touch сенсорный) / 1024x768 / Intel Core i5-540UM
+							                       1,2 GHz/ 4Gb DDR3 / 320GB / Wi-Fi, Bluetooth, WWAN / COM / Windows 7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-138.html">
+									<img alt="Ноутбук HP EliteBook 8540p" title="Ноутбук HP EliteBook 8540p"
+									     src="../index_app/images/pictures/products/20170513135758310.png"/>
+								</a>
+							</div>
+							<a href="products-138.html">
+								<div class="name">Ноутбук HP EliteBook 8540p</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">6'690 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-138.html">
+									<img alt="Ноутбук HP EliteBook 8540p" title="Ноутбук HP EliteBook 8540p"
+									     src="../index_app/images/pictures/products/20170513135758310.png"/>
+								</a>
+							</div>
+							<a href="products-138.html">
+								<div class="name">Ноутбук HP EliteBook 8540p</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">6'690 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box138">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star"></div>
+											<div class="star5 star"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">15.6&quot; /Core i5-M540 2,53 GHz / 4096Mb / 500Gb / Wi-Fi,
+							                       Bluetooth, 3G/ Win7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-304.html">
+									<img alt="Монитор NEC MyltiSync LCD2470WVX" title="Монитор NEC MyltiSync LCD2470WVX"
+									     src="../index_app/images/pictures/products/20171108131759508.jpg"/>
+								</a>
+							</div>
+							<a href="products-304.html">
+								<div class="name">Монитор NEC MyltiSync LCD2470WVX</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">2'500 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-304.html">
+									<img alt="Монитор NEC MyltiSync LCD2470WVX" title="Монитор NEC MyltiSync LCD2470WVX"
+									     src="../index_app/images/pictures/products/20171108131759508.jpg"/>
+								</a>
+							</div>
+							<a href="products-304.html">
+								<div class="name">Монитор NEC MyltiSync LCD2470WVX</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">2'500 грн</div>
+							<div class="title_dop">24&quot; 1920x1200 /1000:1 /400cd/m² / VGA, DVI, DisplayPort, USB
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-167.html">
+									<img alt="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
+									     title="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
+									     src="../index_app/images/pictures/products/20170515181331263.jpeg"/>
+								</a>
+							</div>
+							<a href="products-167.html">
+								<div class="name">Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">6'500 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-167.html">
+									<img alt="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
+									     title="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
+									     src="../index_app/images/pictures/products/20170515181331263.jpeg"/>
+								</a>
+							</div>
+							<a href="products-167.html">
+								<div class="name">Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">6'500 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box167">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star active"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">10,4&#039;&#039;(touch сенсорный) / 1024x768 / Core2Duo U7500 1,06Ghz
+							                       / 2048Mb / 120Gb / Wi-Fi, Bluetooth
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-129.html">
+									<img alt="Ноутбук Panasonic Toughbook CF-19 mk3  (1,20 ГГц, 2 Гб, 160 Гб)"
+									     title="Ноутбук Panasonic Toughbook CF-19 mk3  (1,20 ГГц, 2 Гб, 160 Гб)"
+									     src="../index_app/images/pictures/products/20170511164349106.jpg"/>
+								</a>
+							</div>
+							<a href="products-129.html">
+								<div class="name">Ноутбук Panasonic Toughbook CF-19 mk3 (1,20 ГГц, 2 Гб, 160 Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">9'700 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-129.html">
+									<img alt="Ноутбук Panasonic Toughbook CF-19 mk3  (1,20 ГГц, 2 Гб, 160 Гб)"
+									     title="Ноутбук Panasonic Toughbook CF-19 mk3  (1,20 ГГц, 2 Гб, 160 Гб)"
+									     src="../index_app/images/pictures/products/20170511164349106.jpg"/>
+								</a>
+							</div>
+							<a href="products-129.html">
+								<div class="name">Ноутбук Panasonic Toughbook CF-19 mk3 (1,20 ГГц, 2 Гб, 160 Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">9'700 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box129">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star"></div>
+											<div class="star5 star"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">10,4&#039;&#039;(touch Wacom) / 1024x768 / Intel Core2 Duo U9300
+							                       1,2Ghz / 2048Mb / 160Gb / Wi-Fi, Bluetooth, COM / Win7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-302.html">
+									<img alt="Монитор Fujitsu B22W-7" title="Монитор Fujitsu B22W-7"
+									     src="../index_app/images/pictures/products/20171108120638103.jpg"/>
+								</a>
+							</div>
+							<a href="products-302.html">
+								<div class="name">Монитор Fujitsu B22W-7</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">1'900 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-302.html">
+									<img alt="Монитор Fujitsu B22W-7" title="Монитор Fujitsu B22W-7"
+									     src="../index_app/images/pictures/products/20171108120638103.jpg"/>
+								</a>
+							</div>
+							<a href="products-302.html">
+								<div class="name">Монитор Fujitsu B22W-7</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">1'900 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box302">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star active"></div>
+											<div class="star5 star active"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">22&quot; (1680x1050) / 1.000:1 / 250cd/m² / VGA, DVI, DisplayPort,
+							                       USB
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="head_prod_wrapper">
+			</div>
+			<div role="tabpanel" class="tab-pane fade " id="tab_3">
+				<div class="products row">
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-103.html">
+									<img alt="Ноутбук HP Compaq nc6400" title="Ноутбук HP Compaq nc6400"
+									     src="../index_app/images/pictures/products/20170512115827144.jpg"/>
+								</a>
+							</div>
+							<a href="products-103.html">
+								<div class="name">Ноутбук HP Compaq nc6400</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">3'300 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-103.html">
+									<img alt="Ноутбук HP Compaq nc6400" title="Ноутбук HP Compaq nc6400"
+									     src="../index_app/images/pictures/products/20170512115827144.jpg"/>
+								</a>
+							</div>
+							<a href="products-103.html">
+								<div class="name">Ноутбук HP Compaq nc6400</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">3'300 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box103">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star"></div>
+											<div class="star5 star"></div>
+										</div>
+									</div>
 
-					<div id="mini_shopping_cart" class="head_prod_cart">
-						<a href="javascript:" class="ico">
-    	<span class="num">
-            0        </span>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">14&quot; / Core2Duo T2500 2.0 MHz / 2048Mb / 160 Gb / DVD-RW, WI-FI,
+							                       Win7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-274.html">
+									<img alt="Ноутбук Dell Latitude E5440" title="Ноутбук Dell Latitude E5440"
+									     src="../index_app/images/pictures/products/20171018164530294.jpg"/>
+								</a>
+							</div>
+							<a href="products-274.html">
+								<div class="name">Ноутбук Dell Latitude E5440</div>
+							</a>
+							<div class="line"></div>
+							<div class="price"><span>Цену уточняйте</span></div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-274.html">
+									<img alt="Ноутбук Dell Latitude E5440" title="Ноутбук Dell Latitude E5440"
+									     src="../index_app/images/pictures/products/20171018164530294.jpg"/>
+								</a>
+							</div>
+							<a href="products-274.html">
+								<div class="name">Ноутбук Dell Latitude E5440</div>
+							</a>
+							<div class="line"></div>
+							<div class="price"><span>Цену уточняйте</span></div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box274">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star"></div>
+											<div class="star5 star"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">14&quot; 1600x900 HD+ / Intel Core i5-4300U 1,9 ГГц / RAM 8 ГБ / HDD
+							                       500 ГБ / Wi-Fi / Bluetooth / Win 7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-278.html">
+									<img alt="Ноутбук HP Folio 9480m (2,0 ГГц, 8 Гб, 256 SSD Гб)"
+									     title="Ноутбук HP Folio 9480m (2,0 ГГц, 8 Гб, 256 SSD Гб)"
+									     src="../index_app/images/pictures/products/20170427134154568.jpg"/>
+								</a>
+							</div>
+							<a href="products-278.html">
+								<div class="name">Ноутбук HP Folio 9480m (2,0 ГГц, 8 Гб, 256 SSD Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">14'400 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-278.html">
+									<img alt="Ноутбук HP Folio 9480m (2,0 ГГц, 8 Гб, 256 SSD Гб)"
+									     title="Ноутбук HP Folio 9480m (2,0 ГГц, 8 Гб, 256 SSD Гб)"
+									     src="../index_app/images/pictures/products/20170427134154568.jpg"/>
+								</a>
+							</div>
+							<a href="products-278.html">
+								<div class="name">Ноутбук HP Folio 9480m (2,0 ГГц, 8 Гб, 256 SSD Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">14'400 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box278">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star"></div>
+											<div class="star5 star"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">14&quot; (1366x768) WXGA HD / Intel Core i5-4310U 2,0 ГГц / RAM 8 ГБ
+							                       / 256 SSD ГБ / Wi-Fi / Bluetooth / Win 7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-294.html">
+									<img alt="Ноутбук Dell Latitude E6320" title="Ноутбук Dell Latitude E6320"
+									     src="../index_app/images/pictures/products/20171007114818601.jpg"/>
+								</a>
+							</div>
+							<a href="products-294.html">
+								<div class="name">Ноутбук Dell Latitude E6320</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">6'200 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-294.html">
+									<img alt="Ноутбук Dell Latitude E6320" title="Ноутбук Dell Latitude E6320"
+									     src="../index_app/images/pictures/products/20171007114818601.jpg"/>
+								</a>
+							</div>
+							<a href="products-294.html">
+								<div class="name">Ноутбук Dell Latitude E6320</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">6'200 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box294">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star active"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">13,3&quot;(1366x768) HD LED / Intel Core i5-2520M 2,5 ГГц / RAM 4 ГБ
+							                       /320HDD ГБ /Intel HD Graphics 3000/ Wi-Fi / Bluetooth / Win 7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-259.html">
+									<img alt="Ноутбук Dell Precision M6600" title="Ноутбук Dell Precision M6600"
+									     src="../index_app/images/pictures/products/20171018170727392.jpg"/>
+								</a>
+							</div>
+							<a href="products-259.html">
+								<div class="name">Ноутбук Dell Precision M6600</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">18'560 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-259.html">
+									<img alt="Ноутбук Dell Precision M6600" title="Ноутбук Dell Precision M6600"
+									     src="../index_app/images/pictures/products/20171018170727392.jpg"/>
+								</a>
+							</div>
+							<a href="products-259.html">
+								<div class="name">Ноутбук Dell Precision M6600</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">18'560 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box259">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star"></div>
+											<div class="star5 star"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">17.3&quot; / 1600x900 / Core i7-2720QM 2.2GHz / 16384Mb / 256SSD /
+							                       Nvidia Quadro 3000M/DVD-RW / Wi-Fi, Bluetooth / WebCam / Win.7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-296.html">
+									<img alt="Ультрабук Dell Latitude E7440" title="Ультрабук Dell Latitude E7440"
+									     src="../index_app/images/pictures/products/20171009103031141.jpg"/>
+								</a>
+							</div>
+							<a href="products-296.html">
+								<div class="name">Ультрабук Dell Latitude E7440</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">14'100 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-296.html">
+									<img alt="Ультрабук Dell Latitude E7440" title="Ультрабук Dell Latitude E7440"
+									     src="../index_app/images/pictures/products/20171009103031141.jpg"/>
+								</a>
+							</div>
+							<a href="products-296.html">
+								<div class="name">Ультрабук Dell Latitude E7440</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">14'100 грн</div>
+							<div class="title_dop">14&quot; WXGA 1366x768 HD LED / Intel Core i5-4310U 2,0 ГГц / RAM 8
+							                       ГБ /256SSD ГБ /Intel® HD Graphics 4400/ Wi-Fi / Bluetooth / Win 7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-292.html">
+									<img alt="Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)"
+									     title="Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)"
+									     src="../index_app/images/pictures/products/20170829160612307.png"/>
+								</a>
+							</div>
+							<a href="products-292.html">
+								<div class="name">Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">9'290 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-292.html">
+									<img alt="Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)"
+									     title="Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)"
+									     src="images/pictures/products/20170829160612307.png"/>
+								</a>
+							</div>
+							<a href="products-292.html">
+								<div class="name">Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">9'290 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box292">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star active"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">14&quot; WXGA 1366x768 HD LED / Intel Core i5-3427U 1,8 ГГц / RAM 8
+							                       ГБ /128SSD ГБ / Wi-Fi / Bluetooth / Win 7
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="product">
+							<div class="image">
+								<a href="products-293.html">
+									<img alt="Системный блок HP dc7900" title="Системный блок HP dc7900"
+									     src="../index_app/images/pictures/products/20170908160710764.png"/>
+								</a>
+							</div>
+							<a href="products-293.html">
+								<div class="name">Системный блок HP dc7900</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">1'499 грн</div>
+						</div>
+						<div class="product product-hover">
+							<div class="image">
+								<a href="products-293.html">
+									<img alt="Системный блок HP dc7900" title="Системный блок HP dc7900"
+									     src="../index_app/images/pictures/products/20170908160710764.png"/>
+								</a>
+							</div>
+							<a href="products-293.html">
+								<div class="name">Системный блок HP dc7900</div>
+							</a>
+							<div class="line"></div>
+							<div class="price">1'499 грн</div>
+							<div class="rating_block">
+								<div class="rating">
+									<div class="star_box not_rated" id="star_box293">
+										<div class="rate_hide">
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star active"></div>
+										</div>
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="title_dop">DualCore Intel Pentium E5300 2.6 GHz / 2048MB / 80GB</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="prosmotr-ten">
+			<a href="products_cat-b_u_noutbuki.html">
+				<div class="but all-button">Посмотреть все ноутбуки</div>
+			</a>
+		</div>
+		<div class="priemushestva row">
+			<div class="col-lg-2 col-xs-12 title">
+				Наши преимущества
+				<div class="line"></div>
+			</div>
+			<div class="hidden-md-down">
+				<div class="col-lg-2 col-xs-3">
+
+					<div class="block bl1">
+						<a href="#">
+						<img src="../index_app/images/preimushestva-1.png" alt="">
+						<div class="text">Постлизинговая техника.
+						                  (использовалась только
+						                  крупными компаниями
+						                  в служебных целях)
+						</div>
 						</a>
-						<div class="cart_desc">
-							<div class="pr">
-								0&nbsp;грн
-							</div>
-							<div class="col">
-								<a href="javascript:">
-									0 товаров </a>
-							</div>
-						</div>
-						<div id="minicart" class="prod_popup">
+					</div>
 
-							<div class="popup_free_dost ">
-								До бесплатной доставки еще <strong>1&nbsp;200&nbsp;грн</strong>
-								<div class="line">
-									<div class="inner" style="width:0%"></div>
-								</div>
-							</div>
-							<div id="minicart-error-message" class="minicart-message"></div>
-							<div id="minicart-success-message" class="minicart-message"></div>
-							<ul class="prod_popup_list">
-								<p></p>
-								<center>Ваша корзина покупок пуста.</center>
-								<p></p>
-							</ul>
+				</div>
+				<div class="col-lg-2 col-xs-3">
+					<div class="block bl2">
+						<a href="#">
+						<img src="../index_app/images/preimeshestva-2.png" alt="">
+						<div class="text"> Проходит три
+						                   предпродажных теста
+						                   в Европе
 						</div>
+						</a>
 					</div>
 				</div>
-
-				<div class="free_dost">
-					<div class="ico">&nbsp;</div>
-					<div class="n">БЕСПЛАТНАЯ ДОСТАВКА</div>
-					при заказе от 1200 грн.
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div>
-		<div class="head_bottom">
-			<div class="content">
-				<div class="main_menu_wrapper">
-					<div class="mb-top-menu">
-						<ul class="menu">
-							<li class="current-menu-item ">
-								<a href="#kofe">
-									Кофе </a>
-								<div class="sub_menu_block">
-									<div class="cat_block">
-										<p class="h2">Категории</p>
-										<ul class="cat_menu">
-											<li>
-												<a href="#kofe/kofe-v-zernah">
-													Кофе в зернах </a>
-											</li>
-											<li>
-												<a href="#kofe/kofe-molotyy">
-													Кофе молотый </a>
-											</li>
-											<li>
-												<a href="#kofe/kofe-v-monodozah">
-													Кофе в монодозах </a>
-											</li>
-											<li>
-												<a href="#kofe/kofe-v-kapsulah">
-													Кофе в капсулах </a>
-											</li>
-											<li>
-												<a href="#kofe/monosorta-kofe">
-													Моносорта </a>
-											</li>
-											<li>
-												<a href="#kofe/svejaya-objarka">
-													Свежая обжарка </a>
-											</li>
-											<li>
-												<a href="#kofe/aromatizirovannyy">
-													Ароматизированный </a>
-											</li>
-											<li>
-												<a href="#kofe/kofe-bez-kofeina">
-													Кофе без кофеина </a>
-											</li>
-											<li>
-												<a href="#kofe/organicheskiy-kofe">
-													Органический кофе </a>
-											</li>
-										</ul>
-										<ul class="cat_menu_img">
-											<div>
-												<div>
-												</div>
-											</div>
-											<div>
-												<div>
-												</div>
-											</div>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<!--                <div class="brand_block">-->
-									<!--                    --><!--                    -->
-									<!--                    <p class="h2">Бренды</p>-->
-									<!--                    <ul class="brand_menu">-->
-									<!--                        --><!--                        <li>-->
-									<!--                            --><!--                            <a href="-->
-									<!--">-->
-									<!--                                --><!-- -->
-									<!--                            </a>-->
-									<!--                        </li>-->
-									<!--                        --><!--                    </ul>-->
-									<!--<!--                    <a href="-->
-									<!--<!--?display_mode=products" class="all_brand">Товары всех производителей</a>-->
-									<!--                    --><!--                </div>-->
-									<div class="action">
-										<p class="h2">Акции</p>
-										<div class="menu_act_block">
-											<div class="img">
-												<a href="#kofe/kofe-molotyy/kofe-jurado-braziliya-santos-molotyy-250g">
-													<img id="product-collection-image-828"
-													     src="https://coffeeok.com.ua/media/catalog/product/cache/1/thumbnail/x150/17f82f742ffe127f42dca9de82fb58b1/l/_/l_164.png"
-													     alt="">
-												</a>
-											</div>
-											<div class="rating">
-												<div class="stars">
-													<div class="inner" style="width:0%;"></div>
-												</div>
-												<div class="comm">
-													<a href="javascript:">
-														0 отзывов </a>
-												</div>
-											</div>
-											<div class="name">
-												<a href="#kofe/kofe-molotyy/kofe-jurado-braziliya-santos-molotyy-250g">
-													Кофе Jurado Бразилия молотый 250 г </a>
-											</div>
-											<div class="sort">
-                            <span>
-                                                            </span>
-											</div>
-											<div class="price">
-                                                            <span class="old">
-                                    94&nbsp;грн                                </span>
-												<span class="new">
-                                    79&nbsp;грн                                </span>
-											</div>
-										</div>
-									</div>
-									<div class="clear"></div>
-								</div>
-							</li>
-							<li class=" ">
-								<a href="#chay">
-									Чай </a>
-								<div class="sub_menu_block">
-									<div class="cat_block">
-										<p class="h2">Категории</p>
-										<ul class="cat_menu">
-											<li>
-												<a href="#chay/chernyy-chay">
-													Черный чай </a>
-											</li>
-											<li>
-												<a href="#chay/fruktovyy-chay">
-													Фруктовый чай </a>
-											</li>
-											<li>
-												<a href="#chay/zelenyy-chay">
-													Зеленый чай </a>
-											</li>
-											<li>
-												<a href="#chay/belyy-chay">
-													Белый чай </a>
-											</li>
-											<li>
-												<a href="#chay/krasnyy-chay">
-													Красный чай </a>
-											</li>
-											<li>
-												<a href="#chay/jeltyy-chay">
-													Желтый чай </a>
-											</li>
-											<li>
-												<a href="#chay/cvetochnyy-chay">
-													Цветочный чай </a>
-											</li>
-											<li>
-												<a href="#chay/travyanoy-chay">
-													Травяной чай </a>
-											</li>
-											<li>
-												<a href="#chay/ulun-oolong">
-													Улун (Оолонг) </a>
-											</li>
-											<li>
-												<a href="#chay/puer">
-													Пуэр </a>
-											</li>
-											<li>
-												<a href="#chay/kudin">
-													КуДин </a>
-											</li>
-										</ul>
-										<ul class="cat_menu_img">
-											<div>
-												<div>
-												</div>
-											</div>
-											<div>
-												<div>
-												</div>
-											</div>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<!--                <div class="brand_block">-->
-									<!--                    --><!--                    -->
-									<!--                    <p class="h2">Бренды</p>-->
-									<!--                    <ul class="brand_menu">-->
-									<!--                        --><!--                        <li>-->
-									<!--                            --><!--                            <a href="-->
-									<!--">-->
-									<!--                                --><!-- -->
-									<!--                            </a>-->
-									<!--                        </li>-->
-									<!--                        --><!--                    </ul>-->
-									<!--<!--                    <a href="-->
-									<!--<!--?display_mode=products" class="all_brand">Товары всех производителей</a>-->
-									<!--                    --><!--                </div>-->
-									<div class="action">
-										<div class="no_act_img">
-											<div>
-												<img alt="Чай" src="">
-											</div>
-										</div>
-									</div>
-									<div class="clear"></div>
-								</div>
-							</li>
-							<li class=" ">
-								<a style="cursor: default;">
-									Аксессуары </a>
-								<div class="sub_menu_block">
-									<div class="cat_block">
-										<p class="h2">Категории</p>
-										<ul class="cat_menu">
-											<li>
-												<a href="#aksessuary/termosy-i-termokrujki">
-													Термосы и термокружки </a>
-											</li>
-											<li>
-												<a href="#aksessuary/soputstvuyushchie">
-													Сопутствующие товары </a>
-											</li>
-											<li>
-												<a href="#aksessuary/sredstva">
-													Средства по уходу </a>
-											</li>
-											<li>
-												<a href="#aksessuary/chashki-i-stakany">
-													Чашки и стаканы </a>
-											</li>
-											<li>
-												<a href="#aksessuary/posuda">
-													Посуда </a>
-											</li>
-											<li>
-												<a href="#aksessuary/tipody-chayniki">
-													Типоды (для чая) </a>
-											</li>
-										</ul>
-										<ul class="cat_menu_img">
-											<div>
-												<div>
-												</div>
-											</div>
-											<div>
-												<div>
-												</div>
-											</div>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<!--                <div class="brand_block">-->
-									<!--                    --><!--                    -->
-									<!--                    <p class="h2">Бренды</p>-->
-									<!--                    <ul class="brand_menu">-->
-									<!--                        --><!--                        <li>-->
-									<!--                            --><!--                            <a href="-->
-									<!--">-->
-									<!--                                --><!-- -->
-									<!--                            </a>-->
-									<!--                        </li>-->
-									<!--                        --><!--                    </ul>-->
-									<!--<!--                    <a href="-->
-									<!--<!--?display_mode=products" class="all_brand">Товары всех производителей</a>-->
-									<!--                    --><!--                </div>-->
-									<div class="action">
-										<p class="h2">Акции</p>
-										<div class="menu_act_block">
-											<div class="img">
-												<a href="#aksessuary/termosy-i-termokrujki/termokruzhka-starbucks-colorful-stile-355-ml">
-													<img id="product-collection-image-3470"
-													     src="https://coffeeok.com.ua/media/catalog/product/cache/1/thumbnail/x150/17f82f742ffe127f42dca9de82fb58b1/0/1/011066246.jpg"
-													     alt="">
-												</a>
-											</div>
-											<div class="rating">
-												<div class="stars">
-													<div class="inner" style="width:0%;"></div>
-												</div>
-												<div class="comm">
-													<a href="javascript:">
-														0 отзывов </a>
-												</div>
-											</div>
-											<div class="name">
-												<a href="#aksessuary/termosy-i-termokrujki/termokruzhka-starbucks-colorful-stile-355-ml">
-													Термокружка Starbucks Colorful Stile 355 мл </a>
-											</div>
-											<div class="sort">
-                            <span>
-                                                            </span>
-											</div>
-											<div class="price">
-                                                            <span class="old">
-                                    815&nbsp;грн                                </span>
-												<span class="new">
-                                    717&nbsp;грн                                </span>
-											</div>
-										</div>
-									</div>
-									<div class="clear"></div>
-								</div>
-							</li>
-							<li class=" ">
-								<a style="cursor: default;">
-									Сладкое </a>
-								<div class="sub_menu_block">
-									<div class="cat_block">
-										<p class="h2">Категории</p>
-										<ul class="cat_menu">
-											<li>
-												<a href="#sladkoe/shokolad">
-													Шоколад </a>
-											</li>
-											<li>
-												<a href="#sladkoe/siropy">
-													Сиропы </a>
-											</li>
-											<li>
-												<a href="#sladkoe/goryachiy-shokolad-i-kakao">
-													Какао и горячий шоколад </a>
-											</li>
-											<li>
-												<a href="#sladkoe/sahar">
-													Сахар </a>
-											</li>
-											<li>
-												<a href="#sladkoe/slivki">
-													Сливки </a>
-											</li>
-											<li>
-												<a href="#sladkoe/marshmellou">
-													Маршмеллоу </a>
-											</li>
-											<li>
-												<a href="#sladkoe/shokoladnaya-pasta">
-													Шоколадная паста </a>
-											</li>
-											<li>
-												<a href="#sladkoe/med">
-													Мёд </a>
-											</li>
-											<li>
-												<a href="#sladkoe/toppingi">
-													Топпинги </a>
-											</li>
-											<li>
-												<a href="#sladkoe/fruktovoe-pjure">
-													Фруктовое пюре </a>
-											</li>
-											<li>
-												<a href="#sladkoe/pechene">
-													Печенье </a>
-											</li>
-										</ul>
-										<ul class="cat_menu_img">
-											<div>
-												<div>
-												</div>
-											</div>
-											<div>
-												<div>
-												</div>
-											</div>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<!--                <div class="brand_block">-->
-									<!--                    --><!--                    -->
-									<!--                    <p class="h2">Бренды</p>-->
-									<!--                    <ul class="brand_menu">-->
-									<!--                        --><!--                        <li>-->
-									<!--                            --><!--                            <a href="-->
-									<!--">-->
-									<!--                                --><!-- -->
-									<!--                            </a>-->
-									<!--                        </li>-->
-									<!--                        --><!--                    </ul>-->
-									<!--<!--                    <a href="-->
-									<!--<!--?display_mode=products" class="all_brand">Товары всех производителей</a>-->
-									<!--                    --><!--                </div>-->
-									<div class="action">
-										<div class="no_act_img">
-											<div>
-												<img alt="Сладкое" src="">
-											</div>
-										</div>
-									</div>
-									<div class="clear"></div>
-								</div>
-							</li>
-							<li class=" ">
-								<a style="cursor: default;">
-									Кофеварки и кофемашины </a>
-								<div class="sub_menu_block">
-									<div class="cat_block">
-										<p class="h2">Категории</p>
-										<ul class="cat_menu">
-											<li>
-												<a href="#kofevarki-i-kofemashiny/kofemashiny">
-													Автоматические кофемашины </a>
-											</li>
-											<li>
-												<a href="#kofevarki-i-kofemashiny/rojkovye-kofevarki">
-													Рожковые кофеварки </a>
-											</li>
-											<li>
-												<a href="#kofevarki-i-kofemashiny/kapsulnye-kofemashiny">
-													Капсульные кофемашины </a>
-											</li>
-											<li>
-												<a href="#kofevarki-i-kofemashiny/kapelnye-kofevarki">
-													Капельные кофеварки </a>
-											</li>
-										</ul>
-										<ul class="cat_menu_img">
-											<div>
-												<div>
-												</div>
-											</div>
-											<div>
-												<div>
-												</div>
-											</div>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-											<li>
-												<div>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<!--                <div class="brand_block">-->
-									<!--                    --><!--                    -->
-									<!--                    <p class="h2">Бренды</p>-->
-									<!--                    <ul class="brand_menu">-->
-									<!--                        --><!--                        <li>-->
-									<!--                            --><!--                            <a href="-->
-									<!--">-->
-									<!--                                --><!-- -->
-									<!--                            </a>-->
-									<!--                        </li>-->
-									<!--                        --><!--                    </ul>-->
-									<!--<!--                    <a href="-->
-									<!--<!--?display_mode=products" class="all_brand">Товары всех производителей</a>-->
-									<!--                    --><!--                </div>-->
-									<div class="action">
-										<div class="no_act_img">
-											<div>
-												<img alt="Кофеварки и кофемашины" src="">
-											</div>
-										</div>
-									</div>
-									<div class="clear"></div>
-								</div>
-							</li>
-							<li class=" no-hover">
-								<a href="#akcionnye-tovary">
-									Новогодняя акция </a>
-								<div class="sub_menu_block">
-									<div class="cat_block">
-									</div>
-									<!--                <div class="brand_block">-->
-									<!--                    --><!--                    -->
-									<!--                    <p class="h2">Бренды</p>-->
-									<!--                    <ul class="brand_menu">-->
-									<!--                        --><!--                        <li>-->
-									<!--                            --><!--                            <a href="-->
-									<!--">-->
-									<!--                                --><!-- -->
-									<!--                            </a>-->
-									<!--                        </li>-->
-									<!--                        --><!--                    </ul>-->
-									<!--<!--                    <a href="-->
-									<!--<!--?display_mode=products" class="all_brand">Товары всех производителей</a>-->
-									<!--                    --><!--                </div>-->
-									<div class="action">
-										<p class="h2">Акции</p>
-										<div class="menu_act_block">
-											<div class="img">
-												<a href="#kofe/kofe-molotyy/kofe-jurado-braziliya-santos-molotyy-250g">
-													<img id="product-collection-image-828"
-													     src="https://coffeeok.com.ua/media/catalog/product/cache/1/thumbnail/x150/17f82f742ffe127f42dca9de82fb58b1/l/_/l_164.png"
-													     alt="">
-												</a>
-											</div>
-											<div class="rating">
-												<div class="stars">
-													<div class="inner" style="width:0%;"></div>
-												</div>
-												<div class="comm">
-													<a href="javascript:">
-														0 отзывов </a>
-												</div>
-											</div>
-											<div class="name">
-												<a href="#kofe/kofe-molotyy/kofe-jurado-braziliya-santos-molotyy-250g">
-													Кофе Jurado Бразилия молотый 250 г </a>
-											</div>
-											<div class="sort">
-                            <span>
-                                                            </span>
-											</div>
-											<div class="price">
-                                                            <span class="old">
-                                    94&nbsp;грн                                </span>
-												<span class="new">
-                                    79&nbsp;грн                                </span>
-											</div>
-										</div>
-									</div>
-									<div class="clear"></div>
-								</div>
-							</li>
-						</ul>
-
-
+				<div class="col-lg-2 col-xs-3">
+					<div class="block bl3">
+						<a href="#">
+						<img src="../index_app/images/preimeshestva-3.png" alt="">
+						<div class="text">Гарантия и сервис</div>
+						</a>
 					</div>
 				</div>
-				<div class="head_bottom_mob_text">
-					<span>БЕСПЛАТНАЯ ДОСТАВКА</span> для заказов от 1200 грн
+				<div class="col-lg-2 col-xs-3">
+					<div class="block bl4">
+						<a href="#">
+						<img src="../index_app/images/preimeshestva-4.png" alt="">
+						<div class="text">Отправка наложенным
+						                  платежом, без аванса
+						                  и предоплат
+						</div>
+						</a>
+					</div>
 				</div>
-				<div class="search_block">
-					<form id="search_mini_form" action="#catalogsearch/result/" method="get">
-						<input id="search" type="search" name="q" value="" class="s required-entry" maxlength="128"
-						       placeholder="Введите запрос...">
-						<input type="submit" class="sub" title="Поиск" value="">
-						<script type="text/javascript">
-							//<![CDATA[
-							var searchMiniForm = new Varien.searchForm('search_mini_form', 'search', '');
-							//]]>
-						</script>
-					</form>
-				</div>
-
-				<div class="mob_main_menu_wrapper">
-					<a class="mob_link"><span class="fa fa-bars"></span><span class="t">Главное меню</span></a>
-					<ul class="menu">
-						<li class="current-menu-item">
-							<a href="#">Кофе</a>
-							<ul>
-								<li><a href="#kofe/kofe-v-zernah">Кофе в зернах</a></li>
-								<li><a href="#kofe/kofe-molotyy">Кофе молотый</a></li>
-								<li><a href="#kofe/kofe-v-monodozah">Кофе в монодозах</a></li>
-								<li><a href="#kofe/kofe-v-kapsulah">Кофе в капсулах</a></li>
-								<li><a href="#kofe/monosorta-kofe">Моносорта</a></li>
-								<li><a href="#kofe/svejaya-objarka">Свежая обжарка</a></li>
-								<li><a href="#kofe/aromatizirovannyy">Ароматизированный</a></li>
-								<li><a href="#kofe/kofe-bez-kofeina">Кофе без кофеина</a></li>
-								<li><a href="#kofe/organicheskiy-kofe">Органический кофе</a></li>
-							</ul>
-						</li>
-						<li class="current-menu-item">
-							<a href="#">Чай</a>
-							<ul>
-								<li><a href="#chay/chernyy-chay">Черный чай</a></li>
-								<li><a href="#chay/fruktovyy-chay">Фруктовый чай</a></li>
-								<li><a href="#chay/zelenyy-chay">Зеленый чай</a></li>
-								<li><a href="#chay/belyy-chay">Белый чай</a></li>
-								<li><a href="#chay/krasnyy-chay">Красный чай</a></li>
-								<li><a href="#chay/jeltyy-chay">Желтый чай</a></li>
-								<li><a href="#chay/cvetochnyy-chay">Цветочный чай</a></li>
-								<li><a href="#chay/travyanoy-chay">Травяной чай</a></li>
-								<li><a href="#chay/ulun-oolong">Улун (Оолонг)</a></li>
-								<li><a href="#chay/puer">Пуэр</a></li>
-								<li><a href="#chay/kudin">КуДин</a></li>
-							</ul>
-						</li>
-						<li class="current-menu-item">
-							<a href="#">Аксессуары</a>
-							<ul>
-								<li><a href="#aksessuary/termosy-i-termokrujki">Термосы и
-								                                                                       термокружки</a>
-								</li>
-								<li><a href="#aksessuary/soputstvuyushchie">Сопутствующие
-								                                                                   товары</a></li>
-								<li><a href="#aksessuary/sredstva">Средства по уходу</a></li>
-								<li><a href="#aksessuary/chashki-i-stakany">Чашки и стаканы</a>
-								</li>
-								<li><a href="#aksessuary/posuda">Посуда</a></li>
-								<li><a href="#aksessuary/tipody-chayniki">Типоды (для чая)</a>
-								</li>
-							</ul>
-						</li>
-						<li class="current-menu-item">
-							<a href="#">Сладкое</a>
-							<ul>
-								<li><a href="#sladkoe/shokolad">Шоколад</a></li>
-								<li><a href="#sladkoe/siropy">Сиропы</a></li>
-								<li><a href="#sladkoe/goryachiy-shokolad-i-kakao">Какао и горячий
-								                                                                         шоколад</a>
-								</li>
-								<li><a href="#sladkoe/sahar">Сахар</a></li>
-								<li><a href="#sladkoe/slivki">Сливки</a></li>
-								<li><a href="#sladkoe/marshmellou">Маршмеллоу</a></li>
-								<li><a href="#sladkoe/shokoladnaya-pasta">Шоколадная паста</a>
-								</li>
-								<li><a href="#sladkoe/med">Мёд</a></li>
-								<li><a href="#sladkoe/toppingi">Топпинги</a></li>
-								<li><a href="#sladkoe/fruktovoe-pjure">Фруктовое пюре</a></li>
-								<li><a href="#sladkoe/pechene">Печенье</a></li>
-							</ul>
-						</li>
-						<li class="current-menu-item">
-							<a href="#">Кофеварки и кофемашины</a>
-							<ul>
-								<li><a href="#kofevarki-i-kofemashiny/kofemashiny">Автоматические
-								                                                                          кофемашины</a>
-								</li>
-								<li><a href="#kofevarki-i-kofemashiny/rojkovye-kofevarki">Рожковые
-								                                                                                 кофеварки</a>
-								</li>
-								<li><a href="#kofevarki-i-kofemashiny/kapsulnye-kofemashiny">Капсульные
-								                                                                                    кофемашины</a>
-								</li>
-								<li><a href="#kofevarki-i-kofemashiny/kapelnye-kofevarki">Капельные
-								                                                                                 кофеварки</a>
-								</li>
-							</ul>
-						</li>
-						<li class="current-menu-item">
-							<a href="#">Новогодняя акция</a>
-							<ul>
-							</ul>
-						</li>
-					</ul>
-					<ul class="menu">
-						<li><a href="/about-us">О нас</a></li>
-						<li><a href="/payment-and-shipment">Доставка и оплата</a></li>
-						<li><a href="/corporate-clients">Оптовым клиентам</a></li>
-						<li><a href="/contact-us">Контакты</a></li>
-						<li><a href="/faq">FAQ</a></li>
-					</ul>
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div>
-
-
-	</div>
-	<div id="body">
-
-		<div class="mb-breadcrumbs">
-			<div class="breadcrump_wrapper">
-				<div class="content">
-					<div class="breadcrump" itemscope="" itemtype="https://schema.org/BreadcrumbList">
-                                                                <span itemprop="itemListElement" itemscope=""
-                                                                      itemtype="https://schema.org/ListItem">
-                        <a itemprop="item" href="#" title="Перейти на главную страницу">
-                            <span itemprop="name">Главная</span>
-                        </a>
-                        <meta itemprop="position" content="1">
-                    </span>
-						<span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-                        <a itemprop="item" href="#kofe" title="">
-                            <span itemprop="name">Кофе</span>
-                        </a>
-                        <meta itemprop="position" content="2">
-                    </span>
-						<span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-                        <link itemprop="item" href="#kofe/kofe-v-zernah">
-                        <span itemprop="name">Кофе в зернах</span>
-                        <meta itemprop="position" content="3">
-                    </span>
+				<div class="col-lg-2 col-xs-3">
+					<div class="block bl5">
+						<a href="#">
+						<img src="../index_app/images/preimeshestva-5.png" alt="">
+						<div class="text"> Сеть магазинов по
+						                   Украине
+						</div>
+						</a>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="mb-content">
-			<div class="mb-category-products">
-				<div class="catalog_wrapper">
-					<div id="category_content" class="content" category_id="8">
-						<script>
-							jQuery.ajax({
-								type: "POST",
-								url: "#getup/catalog_action/",
-								data: "categoryId=8",
-								success: function (html) {
-									jQuery('#category_content').prepend(html)
-								}
-							});
-						</script>
-						<h1>Кофе в зернах</h1>
-						<div class="category-description category-level-gteq-3">
-							<div class="art">
-								<div class="art_inner open">
-									<p itemprop="description">Кофе в зернах -&nbsp;это сердцевина красной кофейной
-									                          ягоды. Для того, чтобы её собрать фермеры выходят на
-									                          плантации с рассветом и уходят только когда все
-									                          погружается в густые сумерки. Тщательная чистка, сушка,
-									                          аккуратная фасовка и бережное хранение - все ради того,
-									                          чтобы Вы могли наслаждаться любимым напитком каждое утро.
-									                          Именно зерновой кофе максимально сохраняет все ароматы и
-									                          вкусовые нотки. Лучше всего молоть его перед самым
-									                          приготовлением.
-									</p>
-								</div>
-								<div class="more_link" style="display: none;">
-									<a>Читать все</a>
-								</div>
-							</div>
-							<div class="clear"></div>
-							<script>
-								if (jQuery(".category-description .art_inner").length > 0) {
-									if (jQuery(".category-description .art_inner").height() > 105) {
-										jQuery(".category-description .art_inner").height(105);
-									} else {
-										jQuery(".category-description .art .more_link").css("display", "none");
-										jQuery(".category-description .art_inner").addClass("open");
-									}
-								}
-								jQuery(document).on('click', '.art .more_link a', function () {
-									jQuery(this).parents(".art").children(".art_inner").height("auto").addClass("open");
-									jQuery(this).parent().css("display", "none");
-									return false;
-								});
-							</script>
-						</div>
-						<div class="category_content_wrapper" style="position:relative;">
-
-							<div class="catalog_content" id="catalog_content">
-								<script type="text/javascript">new WOW().init();</script>
-								<div class="view_block">
-									<div class="toolbar">
-										<div class="sorter">
-											<div class="new_sort sort-by">
-												<span class="n">Сортировать</span>
-												<div class="jq-selectbox jqselect"
-												     style="display: inline-block; position: relative; z-index:100">
-													<select onchange="setLocation(this.value)"
-													        style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
-														<option value="#kofe/kofe-v-zernah/sort-by/position/sort-direction/asc"
-														        selected="selected">
-															Позиция
-														</option>
-														<option value="#kofe/kofe-v-zernah/sort-by/name/sort-direction/asc">
-															Название
-														</option>
-														<option value="#kofe/kofe-v-zernah/sort-by/price/sort-direction/asc">
-															Цена
-														</option>
-													</select>
-													<!--<div class="jq-selectbox__select" style="position: relative">-->
-													<!--<div class="jq-selectbox__select-text" style="width: 62px;">-->
-													<!--Позиция-->
-													<!--</div>-->
-													<!--<div class="jq-selectbox__trigger">-->
-													<!--<div class="jq-selectbox__trigger-arrow"></div>-->
-													<!--</div>-->
-													<!--</div>-->
-													<div class="jq-selectbox__dropdown"
-													     style="position: absolute; display: none;">
-														<ul style="position: relative; list-style: none; overflow: auto; overflow-x: hidden">
-															<li class="selected sel">
-																Позиция
-															</li>
-															<li>
-																Название
-															</li>
-															<li>
-																Цена
-															</li>
-														</ul>
-													</div>
-												</div>
-												<!--            <a href="--><!--" class="--><!--sel-->
-												<!--" onclick="sortProducts(this.href);return false;">по популярности</a>-->
-												<!--            <a href="--><!--" class="--><!--sel-->
-												<!--" onclick="sortProducts(this.href);return false;">по цене</a>-->
-												<!--            <a href="--><!--" class="--><!--sel-->
-												<!--" onclick="sortProducts(this.href);return false;">по новизне</a>-->
-											</div>
-											<div class="view-mode view">
-												<a href="#kofe/kofe-v-zernah/mode/grid"
-												   class="grid block act" title="Сетка" onclick="return false;"></a>
-												<a href="#kofe/kofe-v-zernah/mode/list"
-												   class="list list" title="Список"></a>
-											</div>
-										</div>
-									</div>
-									<div class="clear"></div>
-
-								</div>
-								<div class="catalog_art_block">
-									<ul class="catalog_art_block_list">
-                                 @foreach($products as $product)
-										<li>
-											<form method="post" action="{{ route('add_to_cart') }}" enctype="multipart/form-data">
-												<input name="_token" type="hidden" value="{{ csrf_token() }}">
-											<div class="product_block">
-												<div class="img_block">
-													<div class="img">
-                                <span>
-                                    <a class="popup-with-zoom-anim product-image" href="#small-dialog"
-                                       title="{{$product->name}}">
-{!!  Html::image('product_images/'.$product->image,$product->name,array('height'=>'400px', 'width'=>'400px'))  !!}
-                                    </a>
-                                </span>
-													</div>
-													<div class="prod_menu">
-													</div>
-													<div class="action">
-														<img alt="Топ продаж"
-														     src="https://coffeeok.com.ua/skin/frontend/getup/default/img/menu_act_top.png">
-													</div>
-												</div>
-												<div class="desc_block">
-													<div class="rating">
-														<div class="stars star">
-															<div class="inner in" style="width:100%"></div>
-														</div>
-														<div class="comm com">
-															<a href="#small-dialog" class="popup-with-zoom-anim">
-																1 отзыв </a>
-														</div>
-													</div>
-													<div class="name">
-														<a href="#small-dialog" class="popup-with-zoom-anim"
-														   title="Кофе ILLY Espresso в зернах 250 г">
-															{{$product->name}}</a>
-													</div>
-
-													<div class="price">
-														<div class="n">Цена:</div>
-
-
-														<span class="new">
-            {{$product->price}}&nbsp;грн        </span>
-
-
-													</div>
-													Количество
-													<input name="product_id" type="hidden" value="{{$product->product_id}}">
-													<p><input name="quantity" type="number" size="3" name="num" min="1" max="3000" value="1"></p>
-													<div class="buy_link">
-														<button type="submit" class="btn bg-teal-400" style="margin-top: 20px;">Купить</button>
-													</div>
-												</div>
-											</div>
-											</form>
-										</li>
-                                 @endforeach
-
-									</ul>
-									<div id="small-dialog" class="zoom-anim-dialog mfp-hide">
-										<div class="product_block">
-											<div class="img_block">
-												<div class="img">
-                                <span>
-                                    <a class="popup-with-zoom-anim product-image" href="#small-dialog"
-                                       title="Кофе ILLY Espresso в зернах 250 г">
-                                        <img
-		                                        data-src="https://coffeeok.com.ua/media/catalog/product/cache/1/small_image/x200/17f82f742ffe127f42dca9de82fb58b1/l/_/l_123.jpg"
-		                                        data-alt="Кофе ILLY Espresso в зернах 250 г" class="wow fadeIn lazyload"
-		                                        data-wow-delay="0.1s"
-		                                        style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
-                                    </a>
-                                </span>
-												</div>
-												<div class="prod_menu">
-												</div>
-												<div class="action">
-													<img alt="Топ продаж"
-													     src="https://coffeeok.com.ua/skin/frontend/getup/default/img/menu_act_top.png">
-												</div>
-											</div>
-											<div class="desc_block">
-												<div class="rating">
-													<div class="stars star">
-														<div class="inner in" style="width:100%"></div>
-													</div>
-													<div class="comm com">
-														<a href="#small-dialog" class="popup-with-zoom-anim">
-															1 отзыв </a>
-													</div>
-												</div>
-												<div class="name">
-													<a href="#small-dialog" class="popup-with-zoom-anim"
-													   title="Кофе ILLY Espresso в зернах 250 г">
-														Кофе ILLY Espresso в зернах 258 г </a>
-												</div>
-												<div class="sort">
-                                                                                                                                                                                                            <span>
-                                                                                                    100% Арабика
-                                                                                            </span>
-												</div>
-												<div class="price">
-													<div class="n">Цена:</div>
-
-
-													<span class="new">
-            236&nbsp;грн        </span>
-
-
-												</div>
-
-												<div class="buy_link">
-													<a href="#" title="Добавить в корзину">КУПИТЬ</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="clear"></div>
-								</div>
-
-
-								<div class="more_art_link">
-									<a href="#">
-										Больше товаров
-									</a>
-								</div>
-
-								<script type="text/javascript">
-									//<![CDATA[
-									$j('.pagination_number').click(function () {
-										setPage(this.href);
-										return false;
-									});
-									//]]>
-								</script>
-								<script type="text/javascript">
-									//<![CDATA[
-									window.history.replaceState('', '', '');
-									//    window.history.replaceState('', document.getElementsByTagName('title')[0].innerHTML, '//');
-									//]]>
-								</script>
-							</div>
-							<form id="foo" role="form" method="get" action="{{ route('refresh_page') }}" enctype="multipart/form-data">
-							<div class="catalog_sidebar" id="catalog_sidebar">
-
-								<div class="mb-left-first">
-									<div class="mb-mana-catalog-leftnav">
-										<div class="block block-layered-nav block-layered-nav--no-filters">
-											<div class="block-content toggle-content">
-												<div class="narrow-by-list filter_wrapper" id="narrow-by-list-0">
-													<div class="filter_block open_filter">
-														<div class="title " data-id="m_left_price_filter">
-															Цена
-														</div>
-														<div class="desc " style="display: block">
-
-															<input name="price" type="range" min="1" max="1000" step="1" @if(isset($price)) value="{{$price}}" @else value="1000" @endif onchange="Refresh()">
-														</div>
-														%Арабики
-														<div class="desc " style="display: block">
-
-															<input name="arabica" type="range" min="0" max="100" step="1" @if(isset($arabica)) value="{{$arabica}}" @else value="100" @endif onchange="Refresh()">
-														</div>
-													</div>
-													@foreach($filters as $filter)
-													<div class="filter_block open_filter">
-														<div class="title " data-id="m_left_brand_name_filter">
-															{{$filter->name}}
-														</div>
-														<div class="desc " style="display: block">
-
-															<ol class="m-filter-css-checkboxes  m-expandable-filter"
-															    style="height: 152px;">
-																@foreach($attributes as $attribute)
-																	@if(isset($attributes_count[$attribute->attributes_id]))
-																	@if($attribute->attributes_parent_filter == $filter->filter_id)
-																<li>
-																	<p class="ch_p filter">
-
-																		<input name="attributes_id[{{$attribute->attributes_id}}]" @foreach($url_attributes as $url_attribute) @if($url_attribute == $attribute->attributes_id) checked @endif @endforeach type="checkbox" onchange="Refresh()">
-																		<a class="m-checkbox-unchecked"
-																		   href="#"
-																		   title="Cleary's">{{$attribute->attributes_name}}<span
-																				class="col">{{$attributes_count[$attribute->attributes_id]}}</span>
-																		</a>
-																	</p>
-																</li>
-																	@endif
-																	@endif
-																@endforeach
-															</ol>
-														</div>
-													</div>
-													@endforeach
-												</div>
-												<script type="text/javascript">decorateDataList('narrow-by-list-0')</script>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-
-							</form>
-							<div class="mobile-filter">
-								<button class="btn">
-									<span><i class="fa fa-filter"></i></span>
-									<span><i class="fa fa-times"></i></span>
-								</button>
-							</div>
-
-							<div class="clear"></div>
-						</div>
-					</div>
-				</div>
-
-
-			</div>
-		</div>
-
-
-		<div class="body_bottom_menu_wrapper">
-			<div class="content">
-				<div class="body_bottom_menu">
-					<p class="h2">КАТАЛОГ</p>
-					<ul>
-						<li>
-							<a href="#kofe">
-								Кофе </a>
-						</li>
-						<li>
-							<a href="#chay">
-								Чай </a>
-						</li>
-						<li>
-							<a href="#kofevarki-i-kofemashiny">
-								Кофеварки и кофемашины </a>
-						</li>
-						<li>
-							<a href="#sladkoe">
-								Сладкое </a>
-						</li>
-						<li>
-							<a href="#aksessuary">
-								Аксессуары </a>
-						</li>
-						<li>
-							<a href="#akcionnye-tovary">
-								Новогодняя акция </a>
-						</li>
-					</ul>
-				</div>
-				<div class="body_bottom_menu">
-					<p class="h2">Информация</p>
-					<ul>
-						<li>
-							<a href="/about-us">О нас</a>
-						</li>
-						<li>
-							<a href="/payment-and-shipment">Доставка и оплата</a>
-						</li>
-						<li>
-							<a class="popup_open" href="#" data-href="popup_utp_loyal">Программа лояльности</a>
-						</li>
-						<li>
-							<a href="/reviews">Отзывы о магазине</a>
-						</li>
-						<li>
-							<a href="/corporate-clients">Оптовым клиентам</a>
-						</li>
-						<li>
-							<a href="/contact-us">Контакты</a>
-						</li>
-					</ul>
-				</div>
-				<div class="video_block">
-					<a href="https://youtu.be/Lytfm_MorB4" class="video_link" target="_blank" savefrom_lm_index="1"
-					   savefrom_lm="1"></a><span style="padding: 0; margin: 0; margin-left: 5px;"><a
-						href="http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FLytfm_MorB4&amp;utm_source=chameleon&amp;utm_medium=extensions&amp;utm_campaign=link_modifier"
-						target="_blank" title="Отримай пряме посилання" savefrom_lm="1" savefrom_lm_is_link="1"
-						style="background-image: url(&quot;data:image/gif;base64,R0lGODlhEAAQAOZ3APf39+Xl5fT09OPj4/Hx8evr6/3+/u7u7uDh4OPi497e3t7e3/z8/P79/X3GbuXl5ubl5eHg4WzFUfb39+Pj4lzGOV7LOPz7+/n6+vn5+ZTLj9/e387Ozt7f3/7+/vv7/ISbePn5+m/JV1nRKXmVbkCnKVrSLDqsCuDh4d/e3uDn3/z7/H6TdVeaV1uSW+bn5v39/eXm5eXm5kyHP/f39pzGmVy7J3yRd9/f3mLEKkXCHJbka2TVM5vaZn6Wdfn6+YG/c/r5+ZO/jeLi41aHTIeageLn4f39/vr6+kzNG2PVM5i+lomdf2CXYKHVmtzo2YXNeDqsBebl5uHh4HDKWN3g3kKqEH6WeZHTXIPKdnSPbv79/pfmbE7PHpe1l4O8dTO5DODg4VDLIlKUUtzo2J7SmEWsLlG4NJbFjkrJHP7+/VK5Nfz8+zmnC3KKa+Hg4OHh4Y63j/3+/eDg4Ojo6P///8DAwP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAHcALAAAAAAQABAAAAfWgHd2g4SFhYJzdYqLjIpzgx5bBgYwHg1Hk2oNDXKDFwwfDF5NLmMtcStsn4MhGT8YS04aGmU1QRhIGYMTADQAQlAODlloAMYTgwICRmRfVBISIkBPKsqDBAREZmcVFhYVayUz2IMHB1dWOmImI2lgUVrmgwUFLzdtXTxKSSduMfSD6Aik48MGlx05SAykM0gKhAAPAhTB0oNFABkPHg5KMIBCxzlMQFQZMGBIggSDpsCJgGDOmzkIUCAIM2dOhEEcNijQuQDHgg4KOqRYwMGOIENIB90JBAA7&quot;); background-repeat: no-repeat; width: 16px; height: 16px; display: inline-block; border: none; text-decoration: none; padding: 0px; position: relative;"></a></span>
-				</div>
-				<div class="clear">
-				</div>
-			</div>
-		</div>
-		<div class="map_wrapper">
-			<div class="content">
-				<div class="bottom_contact_block">
-					<div class="ph">
-						<p class="h2">Телефон</p>
-						<div class="line"></div>
-						<div class="text1">+38 (044)<span> 223-90-95</span></div>
-						<div class="text2">+38 (095) 381-95-95<br> +38 (096) 764-95-95</div>
-					</div>
-					<div class="adr">
-						<p class="h2">Адрес</p>
-						<div class="line"></div>
-						<div class="text1">
-							<h2 style="margin: 0;float: left;font: 16px 'OpenSans';line-height: 20px;color: #645B54;font-weight: 600;">
-								Киев</h2>, ул. Старокиевская 10г, офис 555
-						</div>
-						<div class="timetable_block">
-							<div class="work schedule">
-								<ul>
-									<li class="act">
-										<div class="dot"></div>
-										<div class="name">ПН</div>
-										<div class="time">9:00 - 19:00</div>
-									</li>
-									<li>
-										<div class="dot"></div>
-										<div class="name">ВТ</div>
-										<div class="time">9:00 - 19:00</div>
-									</li>
-									<li>
-										<div class="dot"></div>
-										<div class="name">СР</div>
-										<div class="time">9:00 - 19:00</div>
-									</li>
-									<li>
-										<div class="dot"></div>
-										<div class="name">ЧТ</div>
-										<div class="time">9:00 - 19:00</div>
-									</li>
-									<li>
-										<div class="dot"></div>
-										<div class="name">ПТ</div>
-										<div class="time">9:00 - 19:00</div>
-									</li>
-									<li>
-										<div class="dot"></div>
-										<div class="name">СБ</div>
-										<div class="time">10:00 - 16:00</div>
-									</li>
-									<li class="sun">
-										<div class="dot"></div>
-										<div class="name">ВС</div>
-										<div class="on">online</div>
-									</li>
-								</ul>
-								<div class="clear">
-								</div>
+			<div class="hidden-lg-up">
+				<div class="owl-carousel owl-carousel2 owl-theme">
+					<div class="item">
+						<div class="block bl1">
+							<img src="../index_app/images/preimushestva-1.png" alt="">
+							<div class="text">Постлизинговая техника.
+							                  (использовалась только
+							                  крупными компаниями
+							                  в служебных целях)
 							</div>
 						</div>
 					</div>
-					<div class="write">
-						<p class="h2">Написать нам</p>
-						<div class="line"></div>
-						<p>
-							<a href="mailto:">
-								icoffeeok@gmail.com </a>
-						</p>
-						<p>
-							Почта директора, для особых просьб<br>
-							<a href="mailto:">
-								coffeeok.com.ua@gmail.com </a>
-						</p>
+					<div class="item">
+						<div class="item block bl2">
+							<img src="../index_app/images/preimeshestva-2.png" alt="">
+							<div class="text"> Проходит три
+							                   предпродажных теста
+							</div>
+						</div>
 					</div>
-					<div class="clear"></div>
+					<div class="item">
+						<div class="item block bl3">
+							<img src="../index_app/images/preimeshestva-3.png" alt="">
+							<div class="text">Гарантия и сервис</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="item block bl4">
+							<img src="../index_app/images/preimeshestva-4.png" alt="">
+							<div class="text">Отправка наложенным
+							                  платежом, без аванса
+							                  и предоплат
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="item block bl5">
+							<img src="../index_app/images/preimeshestva-5.png" alt="">
+							<div class="text"> Сеть магазинов по
+							                   Украине
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>$(function () {
+	$(".owl-carousel2").owlCarousel({
+		loop: true,
+		margin: 55,
+		nav: false,
+		autoplay: true,
+		dots: false,
+		responsive: {0: {items: 1}, 320: {items: 2}, 600: {items: 3}, 770: {items: 4}}
+	});
+	$(".lazy-load").each(function () {
+		var a = $(this);
+		var c = $(this).attr("data-src");
+		var b = new Image();
+		b.onload = function () {
+			a.attr("src", c)
+		};
+		b.src = c
+	})
+});</script>
+<div class="clear"></div>
+<div class="footer container-fluid">
+	<div class="container">
+		<div class="tags">
+			<h2>Мировые бренды компьютерной бу техники в Украине от &laquo;Евронот&raquo;</h2>
+			<p><br/> Рынок Украины, на сегодняшний день, предлагает потребителю много разных моделей компьютерной
+			         техники от разных производителей, но далеко не все могут гарантировать высокое качество, надежность
+			         и производительность, которые можно встретить только на Европейском рынке и США. Интернет-магазин
+			         компьютерной бу техники &laquo;Евронот&raquo;, является ведущим импортером ноутбуков, планшетов,
+			         мониторов, системных блоков из Германии, качество и надежность которых завоевали мир. <br/> <br/>
+			         Что может предложить интернет-магазин &laquo;Евронот&raquo; украинскому покупателю, и какие вопросы
+			         решить?</p>
+			<p><strong>1. Надежность, качество, долгий срок службы.</strong></p>
+			<p>Частой проблемой при покупке ноутбуков, планшетов, мониторов в Украине, человек сталкивается с
+			   ненадежностью техники, которая была собрана в азиатских странах с дешевыми комплектующими под именитым
+			   брендом. С чего следуют частые поломки и дополнительные денежные, физические и моральные затраты. <br/>
+			   Магазин компьютерной бу техники Евронот, предлагает своим покупателям надежную пост лизинговую технику,
+			   которая производилась исключительно для европейских пользователей, качество и надежность для которых,
+			   является главным атрибутом. Компьютерная техника использовалась в офисах больших европейских корпорациях,
+			   в течении всего срока техника обслуживалась на официальных сервисах производителя. По окончанию
+			   лизингового договора, каждый ноутбук прошел три теста в Европе и только после этого был привезен в
+			   Украину.&nbsp;<br/> <br/><strong>2. Возможность выбрать эксклюзивные модели, также получить гарантию на
+			                                    всю технику.</strong> <br/> <br/> Покупая в нашем магазине компьютерной
+			   бу техники, <a title="Ноутбуки" href="products_cat-b_u_noutbuki.html">ноутбуки бизнес
+			                                                                          класса</a>:&nbsp;<strong>Dell,&nbsp;</strong><strong>Lenovo</strong>,
+				<strong>HP,&nbsp;</strong><strong>IBM</strong>, <strong>Fujitsu</strong>,<strong> Siemens</strong>,
+				<strong>Samsung,&nbsp;</strong><strong>Toshiba</strong>, <strong>Panasonic</strong>, вы получаете
+			   гарантию производительности, качества, надежности для ваших компьютеров. Также у нас вы найдете
+			   эксклюзивные модели, такие как <strong>Panasonic Toughbook</strong>, которые предназначены для
+			   использования в экстремальных условиях. Данные модели широко используются в военно-полевых условиях, а
+			   также в разного рода экспедициях, потому что имеют, высокий степень защиты от ударов, грязи, влаги, пыли.
+			   В подтверждение этому предоставляетcя гарантия на все модели до 2 лет. <br/> <br/><strong>3. Сервисное
+			                                                                                             обслуживание.</strong>
+			</p>
+			<p>Сотрудничаем с сервисным центром <strong>ЕвронотСервис</strong> с высококвалифицированными инженерами,
+			   которые еще раз тестируют всю технику при получении на исправность. Также предоставляют услуги по ремонту
+			   и на другие компьютеры.<br/> <br/><strong>4. Выставочные залы по всей Украине.</strong></p>
+			<p>Несмотря на то, что &laquo;Евронот&raquo; является интернет - магазином, у нас есть свой выставочный зал
+			   в Киеве по адресу<strong> Проспект Степана Бандеры 16Д</strong>, а также филиалы по Украине, куда можно
+			   прийти посмотреть, проверить и купить интересующие вас модели. Помогут вам в этом высококвалифицированные
+			   продавцы с их помощью вы несомненно сделаете правильный выбор. <br/> <br/><strong>5. Быстрая доставка по
+			                                                                                     всей Украине.</strong>
+			</p>
+			<p>Мы работаем для комфорта своих покупателей, поэтому предоставляем возможность сделать заказ на сайте и
+			   получить детальную и качественную консультацию наших менеджеров. После чего, вы можете получить выбранный
+			   вами ноутбук в кратчайшие сроки без предоплаты, Новой почтой. И оплатить при получении удобным для вас
+			   способом. <br/> Детальную информацию о доставке и оплате вы можете получить зайдя в раздел <strong>&laquo;Доставка
+			                                                                                                      и
+			                                                                                                      оплата&raquo;</strong>,
+			   а также позвонив нам по указанным в контактах номерам.</p>
+			<p>Ждем вас в своем магазине по адресу Проспект Степана Бандеры 16Д.&nbsp;</p></div>
+		<hr>
+		<br>
+		<a href="contact.html" alt="Адреса магазинов Евронот" title="Адреса магазинов Евронот">Адреса магазинов
+		                                                                                       Евронот</a> | <a
+			href="delivery.html" alt="Доставка и оплата" title="Доставка и оплата">Доставка и оплата</a> | <a
+			href="warranty.html" alt="Гарантия и сервис" title="Гарантия и сервис">Гарантия и сервис</a> | <a
+			href="about.html" alt="О компании Евронот" title="О компании Евронот">О компании Евронот</a> | <a
+			href="news.html" alt="Новости компании" title="Новости компании">Новости компании</a>
+		<div class="copyrights">
+			© 2012 - 2018 Евронот. Большие бренды, маленькие цены. Все права защищены. При использовании материалов
+			ссылка на сайт обязательна.
+		</div>
+		<div class="developer">
+			<a onclick='location.href="http://www.s-tet.com.ua/"' style="cursor: pointer">Разработка сайта</a>: Estet
+			                                                                                                  Design
+			                                                                                                  Group
+			<span class="sprite sprite-stet"></span>
+		</div>
 
-<div id="footer">
-	<div class="content">
-		<div class="copy">© 2012-2017 Кофе: купить в Киеве, кофе оптом для кофемашин | Копирование материалов с сайта
-		                  без ссылки на этот ресурс запрещено
-		</div>
-		<div class="work">
-			<img alt="" src="https://coffeeok.com.ua/skin/frontend/getup/default/img/work_bg.png" class="lg">
-			проектирование и дизайн от Sense Production
-		</div>
-		<div class="clear"></div>
+
 	</div>
-	<div id="home_page_h1" style="display: none;"></div>
 </div>
-
 <script type="text/javascript">
-    function Refresh () {
-        $('foo').submit();
-    }
-</script>
+	$(document).ready(function(){ $('.checkbox').each(function() { if($(this).parent().find('input[type=checkbox]:checked').length==1){$(this).addClass('checked');} });
+		$('.checkbox_label').click(function(){
+			if($(this).find('.checkbox').hasClass('checked')){
+				$(this).find('input[type=checkbox]').attr('checked',false);
+				$(this).find('.checkbox').removeClass('checked');
+			}else{
+				$(this).find('input[type=checkbox]').attr('checked',true);
+				$(this).find('.checkbox').addClass('checked');
+			} })
+		var path = $("#quick_search :input,#quick_search2 :input,#contact_form :input,#cont_data :input,#faq_form :input,#forms input[type=text],.open_blocks input[type=text],.open_blocks input[type=password],.open_blocks textarea, #comments :input");
+		path.focusin(function() {
+			if($(this).val()==''){
+				$(this).parent().find('.help_text').addClass('focus');
+			}else{
+				$(this).parent().find('.help_text').html('');
+			} });
+		path.keypress(function() {
+			$(this).parent().find('.help_text').html('');
+		});
+		path.bind('paste', function () {
+			setTimeout(function () {
+				$(this).parent().find('.help_text').html('');
+			}, 250);
+		});
+		path.keyup(function() {
+			if($(this).val()==""){
+				$(this).parent().find('.help_text').html($(this).parent().find('.help_text').attr('title'));
+				$(this).parent().find('.help_text').addClass('focus');
+			}
+		});
+		path.click(function() {
+			if($(this).val()==""){
+				$(this).parent().find('.help_text').html($(this).parent().find('.help_text').attr('title'));
+			}else{
+				$(this).parent().find('.help_text').html('');
+			}
+		})
+		path.focusout(function() {
+			if($(this).val()==""){
+				$(this).parent().find('.help_text').html($(this).parent().find('.help_text').attr('title'));
+				$(this).parent().find('.help_text').removeClass('focus');
+			}else{
+				$(this).parent().find('.help_text').html('');
+			}
+		});
+		$('#go_top').click(function(e){
+			go_top();
+		})})
+	function help_input_add(path){
+		$.each(path, function(index){
+			var inp = $(this);
+			var help_text = inp.attr("title");
+			inp.attr("title",'');
+			if(help_text!=''&&help_text!=null){
+				inp.wrap('<span class="help_out"></span>');
+				var parent = inp.parent();
+				if(inp.attr('type')==null){
+					parent.addClass('textarea_out'); }
+				parent.width(inp.width());
+				parent.height(inp.height());
+				parent.prepend('<span class="help_in"><span class="help_text" title="'+help_text+'"></span></span>');
+				var span = parent.find('.help_text');
+				span.width(inp.width());
+				span.height(inp.height());
+				if($(this).val()==""){span.html(help_text);}
+				var styles = ['margin-top','margin-bottom','margin-left','margin-right','padding-top','padding-bottom','padding-left','padding-right','font-size',
+					'border-left-width','border-left-style','border-left-style','border-left-color','border-right-width','border-right-style','border-right-style','border-right-color',
+					'border-top-width','border-top-style','border-top-style','border-top-color','border-bottom-width','border-bottom-style','border-bottom-style','border-bottom-color',];
+				$.each(styles,function(key,value){
+					if(inp.css(value)!=''){
+						var value2 = value.split('-',2);
+						var value1 = value2[0];
+						if(value1=='padding'){
+							if(inp.css(value)!=''){
+								value2[0]='margin';
+								value2 = value2.join('-');
+								inp.css(value2, '-'+inp.css(value));
+							}
+						}
+						if(value1!='border'){
+							span.css(value,inp.css(value));
+						}
+						parent.css(value,inp.css(value));
+					}
+				});
+				parent.css({'background-color':inp.css("background-color"),'background-image':inp.css("background-image"),'background-repeat':inp.css("background-repeat"),'background-position':inp.css("background-position")});
+				inp.css({'background':'none','border':0});
+			}
+		});
+	}
+	function check_fill(obj){
+		$(obj+" :input").each(function(index){
+			if($(this).val()!=""&&$(this).val()!=$(this).attr("title")){
+				if(!$(this).parent().hasClass('help_out')){
+					$(this).removeClass("not_fill");
+				}else{
+					$(this).parent().removeClass("not_fill");
+				}
+			}
+		});
+	}
+	function check_empty(obj){
+		return_value = true;
+		$(obj+" .req").each(function(index){
+			if($(this).hasClass('cusel')){
+				if($(this).find('input').val()==''){$(this).addClass("not_fill");return_value = false;$(this).focus();}
+			}else if(($(this).val()==""||$(this).val()==$(this).attr("title"))&&$(this).hasClass("req")){
+				if(!$(this).parent().hasClass('help_out')){
+					$(this).addClass("not_fill");
+				}else{
+					$(this).parent().addClass("not_fill");
+				}
+				return_value = false;
+				if($(obj+" .not_fill:first input").length!=0){
+					$(obj+" .not_fill:first input").focus();
+				}else{
+					$(obj+" .not_fill:first").focus();
+				}
+			}
+		});
+		if($(obj+" input[name=email]").length!=0&&!/^([a-zA-Z--0-9_\.\-])+\@(([a-zA-Z--0-9\-])+\.)+([a-zA-Z--0-9]{2,4})+$/.test($(obj+" input[name=email]").val())){
+			if(!$(obj+" input[name=email]").parent().hasClass('help_out')){
+				$(obj+" input[name=email]").addClass("not_fill");
+			}else{
+				$(obj+" input[name=email]").parent().addClass("not_fill");
+			}
+			return_value = false;
+		}
+		return return_value;
+	}
+	function strip_tags(input, allowed) {
+		allowed = (((allowed || "") + "").toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join('');
+		var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
+			commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+		input=input.replace(/&nbsp;/gi, '');
+		return input.replace(commentsAndPhpTags, '').replace(tags, function ($0, $1) {        return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';});
+	}
+	function get_cookie(name){
+		cookie_name = name + "=";
+		cookie_length = document.cookie.length;
+		cookie_begin = 0;
+		while (cookie_begin < cookie_length){
+			value_begin = cookie_begin + cookie_name.length;
+			if (document.cookie.substring(cookie_begin, value_begin) == cookie_name){
+				var value_end = document.cookie.indexOf (";", value_begin);
+				if (value_end == -1){value_end = cookie_length;}
+				return unescape(document.cookie.substring(value_begin, value_end));
+			}
+			cookie_begin = document.cookie.indexOf(" ", cookie_begin) + 1;
+			if (cookie_begin == 0){break;}
+		}
+		return null;
+	}
+	function setCookie(name, value){
+		var expiresDate = new Date();
+		expiresDate.setTime(expiresDate.getTime() + 30 * 24 * 60 * 60 * 1000);
+		var expires = expiresDate.toGMTString();
+		var newCookie = name + "=" + value + "; path=/; expires=" + expires;
+		document.cookie = newCookie + ";";
+	}
+	function card_add(obj,price,type){
+		if($("#add_quant_inp").length==0){var quant = 1;}
+		else{var quant = parseInt($("#add_quant_inp").val());}
+		if($('#products_sub input:checked').length==0){
+			var sub = 0;
+			price = parseInt(price);
+		}else{
+			var sub = $('#products_sub input:checked').val();
+			price = parseInt($('.text_td .price span').text());
+		}
+		if(quant!=0&&quant!=null){
+			var cooker;
+			if(sub==0){var obj_val = obj;}
+			else{var obj_val = obj+'-'+sub;}
+			for(var i=1; i<=quant; i++) {
+				var cook = get_cookie("basket");
+				if(cook!=null&&cook!=""){cooker=cook+","+obj_val;}
+				else{cooker=obj_val;}
+				setCookie("basket",cooker);
+			}
+			var cook = get_cookie("basket_price");
+			if(cook!=null&&cook!=""){cook=parseInt(cook);var pricer=(price*quant)+cook;}
+			else{var pricer=price*quant;}
+			var total_count = get_cookie("basket").split(',').length;
+			$("#quick_basket .count").text(total_count);
+			if( $("#quick_basket").find('.empty').length != 0)
+			{
+				$("#quick_basket .empty").hide();
+				$("#quick_basket .card11").show();
+				$("#quick_basket .quant").text(total_count);
+				$("#quick_basket .price .price").text(pricer);
+				setCookie("basket_price",pricer);
+			}
+			else
+			{
+				$("#quick_basket .quant").text(total_count);
+				$("#quick_basket .price .price").text(pricer);
+				setCookie("basket_price",pricer);
+			}
+			var count_all = $("#quick_basket .text .quant").text();
+			$("#quick_basket .text .word").text(word_end(count_all));
+			$("#quick_basket .bask_img").attr('href','basket.html');
+			var final_t = Math.ceil($('#quick_basket').offset().top);
+			var final_l = Math.ceil($('#quick_basket').offset().left);
+			$("#prod_"+obj).stop(true,true).fadeOut(0).fadeIn();
+			$("#prod_"+obj+" .go_basket").stop(true,true).fadeIn();
+			if(type==1){
+				var anim_obj = $("#prod_"+obj+" .pict");
+			}
+			else if(type==2){
+				var anim_obj = $("#pict_box img");
+			}
+			else if(type==3){
+				var anim_obj = $("#special_"+obj);
+			}
+			if(anim_obj.length!=0 /*&& type!=3*/){
+				anim_obj.clone()
+					.appendTo("body")
+					.addClass('anim_pict')
+					.css({position:'absolute','z-index':50,opacity:0.6,top:Math.ceil($(anim_obj).offset().top),left:Math.ceil($(anim_obj).offset().left)})
+					.animate({top:final_t,left:final_l,width:0,height:0},500,function(){$(this).remove();});
+			}
+		}
+	}
+	function word_end(counted_word){
+		var word_lenght=counted_word.length;
+		var last1 = counted_word.substring(word_lenght-1, word_lenght);
+		var last2 = counted_word.substring(word_lenght-2, word_lenght);
+		var last3 = counted_word.substring(word_lenght-3, word_lenght);
+		var word = '';
+		if((word_lenght !=1 && counted_word.substring(0, 1) == '1') || last1 >= '5' || last3 == '000' || last1 == '0') {word = '';}
+		else if(last1 == 1){word = '';}
+		else{word = '';}
+		return word;
+	}
+	function city_change(){
+		var city = parseInt($('.cities1#cities').val());
+		setCookie("city", city);
+		$('.phones#phones1 .active, .grafik#grafik1 .active').removeClass('active');
+		$('.phones#phones1 .phone_'+city+', .grafik#grafik1 .grafik_'+city).addClass('active');
+	}
+	function city_change2(){
+		var city = parseInt($('#cities.cities2').val());
+		setCookie("city", city);
+		$('.phones#phones2 .active, .grafik#grafik2 .active').removeClass('active');
+		$('.phones#phones2 .phone_'+city+', .grafik#grafik2 .grafik_'+city).addClass('active');
 
+	}
+	$(document).ready(function(){$('#go_top').click(function(){$(window).scrollTop(0);})});
+	$(window).scroll(function(){go_top();});
+	$(window).resize(function(){go_top();});
+	function go_top(){
+		var top_pos = $(this).scrollTop();
+		var bot_pos = $(document).height()-$(window).height()-top_pos;
+		var bot_val;
+		if(top_pos>100){$('#go_top').stop(true,true).fadeIn();}else{$('#go_top').stop(true,true).fadeOut();}
+		if(bot_pos<=130){bot_val=130-bot_pos;if(bot_val<10){bot_val=10;}$('#go_top').css('bottom',bot_val+'px');}
+		else{$('#go_top').css('bottom','10px');}
+	}
+</script>
+<link href="{{ asset('index_app/css/main2.css') }} " rel="stylesheet"/>
+<script src="{{ asset('index_app/plugins/cusel.js') }}"></script>
+<script src="{{ asset('index_app/plugins/jScrollPane.js') }}"></script>
+<script src="{{ asset('index_app/plugins/jquery.mousewheel.js') }}"></script>
+<script src="{{ asset('index_app/js/jquery.formstyler.min.js') }}"></script>
+<script src="{{ asset('index_app/js/owl.carousel.min.js') }}"></script>
+
+
+
+
+<script async src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
+        integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#prod_tabs .block_title').click(function () {
+			var bl_id = $(this).attr('id');
+			$('#prod_tabs .block_title').removeClass('active');
+			$(this).addClass('active');
+			$('#prod_tabs .blocks').stop(true, true).hide();
+			//var path = $("#comments input");
+			$('#prod_tabs #' + bl_id + '_block').stop(true, true).show(/*10, help_input_add(path)*/);
+			//help_input_add(path);
+		});
+	});
+	$('select#type_ch').styler();
+	$('select').styler();
+</script>
+<script>
+	$('.owl-carousel1').owlCarousel({
+		items: 1,
+		autoplay: true,
+		loop: true
+	});
+</script>
 </body>
 </html>

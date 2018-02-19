@@ -20,7 +20,7 @@ class CheckUrl
         if(count($url) != 0){
             return redirect($url[0]->new_url);
         }
-
+        
         return $next($request);
     }
 }

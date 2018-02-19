@@ -64,10 +64,19 @@ class AppliedMethods
             return null;
         }
         $keys = array();
+        foreach ($array as $k=>$arr){
+            if(is_null($arr)){
+                $array[$k] = 0;
+            }
+            $keys[] = $k;
+        }
+        /*
+        $keys = array();
         while ($value = current($array)) {
                 $keys[] = key($array);
             next($array);
         }
+        */
         return $keys;
     }
 }

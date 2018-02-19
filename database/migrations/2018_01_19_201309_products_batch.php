@@ -16,6 +16,7 @@ class ProductsBatch extends Migration
         Schema::create('products_batch', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('batch_products_id')->nullable();
+            $table->text('batch_trader')->nullable();
             $table->integer('batch_number')->nullable();
             $table->double('batch_price')->nullable();
             $table->integer('batch_quantity')->nullable();

@@ -14,12 +14,15 @@
             <div class="page-title">
                 <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Отзывы</span></h4>
             </div>
-            <form role="form" method="get" action="{{ route('logout_out') }}" enctype="multipart/form-data">
-                {{ csrf_field() }}
-                <div class="page-header-btn-right">
-                    <button type="" class="btn bg-teal-400 ">Выход</button>
-                </div>
+
+            <div class="page-header-btn-right">
+            <form method="get" action="{{route('make_new')}}" enctype="multipart/form-data" style="height: 40px;">
+
+                <button type="submit" class="btn bg-teal-400 upload page-header-btn-right" style="">Добавить отзыв</button>
+
             </form>
+            </div>
+
         </div>
 
     </div>
@@ -38,10 +41,7 @@
         <div class="container-detached">
             <div class="content-detached">
 
-                <form method="get" action="{{route('make_new')}}" enctype="multipart/form-data" style="height: 40px;">
-                    <button type="submit" class="btn bg-teal-400 upload" style="right: 25px;
-    position: absolute;">Добавить отзыв</button>
-                </form>
+
 
                 @foreach($blocks as $k=>$block)
 

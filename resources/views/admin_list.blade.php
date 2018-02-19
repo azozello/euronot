@@ -14,13 +14,13 @@
 			<div class="page-title">
 				<h4><span class="text-semibold">Пользователи</span></h4>
 			</div>
-			<form role="form" method="get" action="{{ route('logout_out') }}" enctype="multipart/form-data">
+
+			<form role="form" method="get" action="{{ route('register_show') }}" enctype="multipart/form-data">
 				{{ csrf_field() }}
 				<div class="page-header-btn-right">
-					<button type="" class="btn bg-teal-400 ">Выход</button>
+					<button type="" class="btn bg-teal-400">Новый пользователь</button>
 				</div>
 			</form>
-
 
 		</div>
 
@@ -65,12 +65,7 @@
 
 					<!-- Footer -->
 					<div class="footer text-muted">
-						<form role="form" method="get" action="{{ route('register_show') }}" enctype="multipart/form-data">
-							{{ csrf_field() }}
-							<div class="page-header-btn-left">
-								<button type="" class="btn bg-teal-400">Новый пользователь</button>
-							</div>
-						</form>
+
 					</div>
 					<!-- /footer -->
 

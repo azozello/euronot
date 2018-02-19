@@ -12,7 +12,9 @@ namespace App\Helpers\Facades;
 class SessionVariables
 {
     public static function set_session_variable($var_name,$var_value){
-        session_start();
+        if(!isset($_SESSION)) {
+            session_start();
+        }
         unset($_SESSION[$var_name]);
         $_SESSION[$var_name] = $var_value;
     }

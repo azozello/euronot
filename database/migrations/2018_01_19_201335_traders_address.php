@@ -13,13 +13,17 @@ class TradersAddress extends Migration
      */
     public function up()
     {
-        Schema::create('traders_address', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('traders_address',function (Blueprint $table){
+            $table->increments('traders_address_number');
             $table->integer('traders_address_id')->nullable();
-            $table->integer('traders_address_number')->nullable();
             $table->text('traders_address_city')->nullable();
-            $table->text('traders_address_address')->nullable();
-            $table->text('traders_address_flat')->nullable();
+            $table->text('traders_address_street')->nullable();
+            $table->text('traders_address_house')->nullable();
+            $table->text('traders_address_flor')->nullable();
+            $table->text('traders_address_type')->nullable();
+            $table->text('traders_address_room_number')->nullable();
+            $table->text('traders_address_way')->nullable();
+            $table->text('traders_address_comment')->nullable();
             $table->boolean('traders_address_is_main')->nullable();
             $table->string('updated_at')->nullable();
             $table->string('created_at')->nullable();

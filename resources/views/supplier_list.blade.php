@@ -27,36 +27,44 @@
         <form method="get" action="{{ route('add_supplier') }}" enctype="multipart/form-data">
             <button type="" class="btn bg-teal-400">Добавить</button>
         </form>
-        <!-- CKEditor default -->
-            <div class="panel panel-white">
-                <table class="table tasks-list table-lg">
-                    <thead>
-                    <tr>
-                        <th>Код поставщика</th>
-                        <th>Наименование поставщика</th>
-                        <th>Телефон основной</th>
-                        <th>Телефон дополнительный</th>
-                        <th>E-mail</th>
-                        <th>Задержка поставки</th>
-                        <th>Крайнее время заказа товара</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @if(isset($suppliers))@foreach($suppliers as $k => $supplier)
-                        <tr>
-                            <td><a href="{{ route('edit_old_supplier',['id' => $supplier->id]) }}">{{$supplier->traders_id}}</a></td>
-                            <td>{{$supplier->traders_name}}</td>
-                            <td>{{$supplier->traders_main_phone_number}}</td>
-                            <td>{{$supplier->traders_second_phone_number}}</td>
-                            <td>{{$supplier->traders_email }}</td>
-                            <td>{{$supplier->traders_delay }}</td>
-                            <td>{{$supplier->traders_deadline_to_order}}</td>
-                        </tr>
-                    @endforeach()
-                    @endif
-                    </tbody>
-                </table>
+        <form method="post" action="{{ route('edit_supplier') }}" enctype="multipart/form-data">
+            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+            <div class="form-button">
+                <button type="" class="btn bg-teal-400">Сохранить</button>
+
             </div>
+
+        <!-- CKEditor default -->
+        <div class="panel panel-padding panel-flat">
+            <table class=" products-table-list table-lang table-lg">
+                <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Название</th>
+                    <th>Описание</th>
+                </tr>
+                </thead>
+                <tbody>
+                @if(isset($suppliers))@foreach($suppliers as $k => $supplier)
+                    <tr>
+                        <th>
+                            {{$k+1}}
+                        </th>
+                        <th>
+                            <input type="text" name="supplier_name[{{$supplier->id}}]" value="{{$supplier->suppliers_name}}" class="form-control" id="old_url" placeholder="Введите название" >
+                        </th>
+                        <th>
+                            <textarea name="suppliers_description[{{$supplier->id}}]" id="editor1">{{$supplier->suppliers_description}}</textarea>
+                        </th>
+                    </tr>
+                @endforeach
+                    @endif
+                </tbody>
+            </table>
+
+
+        </div>
+        </form>
 
         <!-- /CKEditor default -->
 

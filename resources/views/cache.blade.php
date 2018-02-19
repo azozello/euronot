@@ -12,12 +12,7 @@
 		<div class="page-title">
 			<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Кеширование</span></h4>
 		</div>
-		<form role="form" method="get" action="{{ route('logout_out') }}" enctype="multipart/form-data">
-			{{ csrf_field() }}
-			<div class="page-header-btn-right">
-				<button type="" class="btn bg-teal-400 ">Выход</button>
-			</div>
-		</form>
+		
 		<!--<div class="view_page"><button class="btn btn-primary" onclick="window.open('http://restoran-elit.com.ua/galereya')">Подивитись сторінку</button></div>
 -->
 	</div>

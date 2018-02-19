@@ -9,24 +9,22 @@
 @include('layouts.styles')
 <!-- Main navbar -->
     <!-- /page header -->
+    <form role="form" method="post" action="{{ route('analytics_change') }}" enctype="multipart/form-data">
     <div class="page-header page-header-default">
         <div class="page-header-content">
             <div class="page-title">
-                <h4><span class="text-semibold">Аналитика</span></h4>
+                <h4><i class="icon-arrow-left52 position-left"></i><span class="text-semibold">Аналитика</span></h4>
             </div>
-            <form role="form" method="get" action="{{ route('logout_out') }}" enctype="multipart/form-data">
-                {{ csrf_field() }}
-                <div class="page-header-btn-right">
-                    <button type="" class="btn bg-teal-400 ">Выход</button>
-                </div>
-            </form>
+
+            {{ csrf_field() }}
+            <button type="submit" class="btn btn-success page-header-btn-right" style="float: right;margin-right: 20px;">Обновить</button>
+
+
             <!--<div class="view_page"><button class="btn btn-primary" onclick="window.open('http://restoran-elit.com.ua/galereya')">Подивитись сторінку</button></div>
 -->
         </div>
     </div>
-    <form role="form" method="post" action="{{ route('analytics_change') }}" enctype="multipart/form-data">
-        {{ csrf_field() }}
-    <button type="submit" class="btn btn-success" style="float: right;margin-right: 20px;">Обновить</button>
+
     <div class="clearfix"></div>
     <div class="content meta-tags">
         <div class="analytics__item">
@@ -106,9 +104,7 @@
     </div>
     </form>
     </div>
-    <script>
-		var editor = CKEDITOR.replace('editor1');
-    </script>
+
 
     <!-- Footer -->
 

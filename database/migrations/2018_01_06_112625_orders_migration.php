@@ -19,6 +19,7 @@ class OrdersMigration extends Migration
             $table->integer('user_id');
             $table->text('user_name')->nullable();
             $table->text('user_phone_number')->nullable();
+            $table->text('user_order_email')->nullable();
             $table->text('payment_type')->nullable();
             $table->text('transportation_type')->nullable();
             $table->text('transportation_address')->nullable();

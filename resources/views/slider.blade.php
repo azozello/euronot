@@ -42,9 +42,9 @@
 			@foreach($blocks as $k=>$block)
 				<div class="panel-body">
 
-					<form method="post" action="{{ route('slider_update') }}" enctype="multipart/form-data">
+
 						<input name="id" type="hidden" value="{{$block->id}}">
-						<div class="panel panel-reviews panel-flat">
+						<div class="panel panel-reviews panel-flat" style="position: relative;">
 							<div class="main-text-block">
 								<input name="_token" type="hidden" value="{{ csrf_token() }}">
 								<div class="btn bg-teal-400 file_upload">Выбрать фото<input type="file" multiple
@@ -72,19 +72,19 @@
 
 							</div>
 							<button type="submit" class="btn bg-teal-400 upload">Обновить</button>
-						</div>
-					</form>
-					<div class="panel-reviews-trash">
-						<form method="post" action="{{ route('delete_slider') }}" enctype="multipart/form-data">
-							<input name="_token" type="hidden" value="{{ csrf_token() }}">
-							<div class="panel-footer panel-footer-condensed">
+							<div class="panel-reviews-trash" style="right: 5px;">
+								<form method="post" action="{{ route('delete_slider') }}" enctype="multipart/form-data">
+									<input name="_token" type="hidden" value="{{ csrf_token() }}">
+									<div class="panel-footer panel-footer-condensed">
 
-								<input name="id" type="hidden" value="{{$block->id}}">
-								<button type="submit" class="btn btn-danger upload"><span class="glyphicon glyphicon-trash"></span></button>
+										<input name="id" type="hidden" value="{{$block->id}}">
+										<button type="submit" class="btn btn-danger upload"><span class="glyphicon glyphicon-trash"></span></button>
 
+									</div>
+								</form>
 							</div>
-						</form>
-					</div>
+						</div>
+
 
 				</div>
 
@@ -100,9 +100,9 @@
 
 			{{$blocks->links()}}
 			<script>
-						@foreach($blocks as $k=>$block)
-                var editor = CKEDITOR.replace('editor{{$k}}');
-				@endforeach
+						{{--@foreach($blocks as $k=>$block)--}}
+                {{--var editor = CKEDITOR.replace('editor{{$k}}');--}}
+				{{--@endforeach--}}
 
 
 			</script>

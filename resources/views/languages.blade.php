@@ -27,10 +27,10 @@
     </div>
     <div class="content">
         <h6 class="panel-title">Языки</h6>
-        <form action="languages_set_condition" id="form1">
+        <form action="{{route('languages_set_condition')}}" id="form1">
             <div class="form-button">
                 @foreach($languages as $k => $language)
-                    <input type="checkbox" name="checkbox{{$k}}" data-name='{{$k}}' hidden>
+                    <input type="checkbox" name="checkbox{{$k}}" data-name='{{$k}}' >
                 @endforeach
                 <button type="" class="btn bg-teal-400">Сохранить</button>
             </div>

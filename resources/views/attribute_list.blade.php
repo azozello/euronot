@@ -15,24 +15,22 @@
             <div class="page-title">
                 <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Список атрибутов</span>
                 </h4>
-
+                <button type="" class="btn bg-teal-400" style="margin-left: 30px">Создать атрибут</button>
 
             </div>
-            <button type="" class="btn bg-teal-400" style="margin-left: 30px">Посмотреть страницу</button>
-            <button type="" class="btn bg-teal-600 page-header-btn-right">Создать</button>
+
+            <form class="page-header-btn-right" action="" id="form1">
+                    <input type="checkbox" data-name='1' hidden>
+                    <input type="checkbox" data-name='2' hidden>
+                    <button type="" class="btn bg-teal-400">Сохранить</button>
+            </form>
+            {{--<button type="" class="btn bg-teal-600 page-header-btn-right">Создать</button>--}}
         </div>
 
     </div>
     <div class="content">
         <h6 class="panel-title">Список атрибутов</h6>
-        <form action="" id="form1">
-            <div class="form-button">
-                <input type="checkbox" data-name='1' hidden>
-                <input type="checkbox" data-name='2' hidden>
-                <button type="" class="btn bg-teal-400">Сохранить</button>
 
-            </div>
-        </form>
 
         <!-- CKEditor default -->
         <div class="panel panel-padding panel-flat">

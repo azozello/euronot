@@ -10,29 +10,32 @@
     <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
 
     @include('layouts.styles')
+    <form role="form" method="post" action="{{ route('add_filter') }}" enctype="multipart/form-data">
     <div class="page-header page-header-default">
         <div class="page-header-content">
             <div class="page-title">
                 <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Редактор фильтров</span>
                 </h4>
+
             </div>
-            <button type="" class="btn bg-teal-400" style="margin-left: 30px">Посмотреть страницу</button>
-        </div>
-
-    </div>
-    <div class="content">
-        <h5 class="panel-title">Редактор фильтров</h5>
-        <form role="form" method="post" action="{{ route('add_filter') }}" enctype="multipart/form-data">
-            <input name="_token" type="hidden" value="{{ csrf_token() }}">
-
-            <div class="form-button">
-                <label for="" style="font-weight: bold;">Показать в фильтре</label>
+            <div class="form-button page-header-btn-right">
+                <label class="labelIgnore" for="" style="font-weight: bold;">Показать в фильтре</label>
                 <label class="switch">
                     <input type="checkbox" name="is_view">
                     <span class="slider"></span>
                 </label>
                 <button type="submit" class="btn bg-teal-400">Обновить</button>
             </div>
+
+        </div>
+
+    </div>
+    <div class="content">
+        <h5 class="panel-title">Редактор фильтров</h5>
+
+            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+
+
 
         <!-- CKEditor default -->
             <div class="panel panel-flat">
@@ -153,7 +156,7 @@
 
             </div>
 
-        </form>
+
 
         <!-- /CKEditor default -->
 
@@ -187,6 +190,7 @@
 
     </div>
     <!-- /content area -->
+    </form>
 
     </div>
     <!-- /main content -->

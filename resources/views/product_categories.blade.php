@@ -15,28 +15,26 @@
             <div class="page-title">
                 <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Категории товаров</span>
                 </h4>
-
-
+                <button type="" class="btn bg-teal-400" style="margin-left: 30px">Создать товар</button>
             </div>
-            <button type="" class="btn bg-teal-400" style="margin-left: 30px">Посмотреть страницу</button>
-        </div>
+            <form method="post" action="{{ route('categories_active') }}" enctype="multipart/form-data">
+                <input name="_token" type="hidden" value="{{ csrf_token() }}">
 
-    </div>
-    <div class="content">
-        <h6 class="panel-title">Категории товаров</h6>
-        <form method="post" action="{{ route('categories_active') }}" enctype="multipart/form-data">
-            <input name="_token" type="hidden" value="{{ csrf_token() }}">
-            <div class="form-button">
-                @foreach($categories_1 as $k=>$category)
-                    <input type="checkbox" name="ru[{{$category->category_id}}]" data-name='ru_{{$category->category_id}}'hidden>
-                @endforeach
+                    @foreach($categories_1 as $k=>$category)
+                        <input type="checkbox" name="ru[{{$category->category_id}}]" data-name='ru_{{$category->category_id}}'hidden>
+                    @endforeach
                     @foreach($categories_2 as $k=>$category)
                         <input type="checkbox" name="ua[{{$category->category_id}}]" data-name='ua_{{$category->category_id}}'hidden>
                     @endforeach
-                <button type="" class="btn bg-teal-400">Сохранить</button>
+                    <button type="" class="btn bg-teal-400 page-header-btn-right">Сохранить</button>
 
-            </div>
-        </form>
+
+            </form>
+        </div>
+    </div>
+    <div class="content">
+
+
 
         <!-- CKEditor default -->
         <div class="panel panel-flat">
@@ -52,7 +50,7 @@
             </ul>
             <div class="tab-content" style="padding:0 50px;">
                 <div role="tabpanel" class="tab-pane fade in active" id="{{$languages[0]->language_url}}">
-                    <table class=" table-category table-lang table-lg table-striped" id="table-collapsed_1">
+                    <table class="table-full-width table-category table-lang table-lg table-striped" id="table-collapsed_1">
                         <thead>
                         <tr >
                             <th>Название</th>
@@ -83,6 +81,7 @@
                                     <span class="slider"></span>
                                 </label></td>
                             <td>
+                                <div class="btn-table-wrap">
                                 <form method="get" action="{{ route('categories_delete') }}" enctype="multipart/form-data">
                                     <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                     <input name="category_id" type="hidden" value='{{$categories->category_id}}'>
@@ -95,6 +94,7 @@
                                     <button type="" class="btn bg-teal-400"><span class="glyphicon glyphicon-pencil"></span>
                                     </button>
                                 </form>
+                                </div>
                             </td>
                         </tr>
                         @endforeach
@@ -135,6 +135,7 @@
                                             <span class="slider"></span>
                                         </label></td>
                                     <td>
+                                        <div class="btn-table-wrap">
                                         <form method="get" action="{{ route('categories_delete') }}" enctype="multipart/form-data">
                                             <input name="category_id" type="hidden" value='{{$categories->category_id}}'>
                                             <button type="" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>
@@ -145,6 +146,7 @@
                                             <button type="" class="btn bg-teal-400"><span class="glyphicon glyphicon-pencil"></span>
                                             </button>
                                         </form>
+                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -162,8 +164,7 @@
 
         <!-- Footer -->
         <div class="footer text-muted">
-            &copy; 2015. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov"
-                                                                     target="_blank">Eugene Kopyov</a>
+
         </div>
         <!-- /footer -->
         <script type="text/javascript">

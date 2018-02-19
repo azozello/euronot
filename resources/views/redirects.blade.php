@@ -13,11 +13,9 @@
 			<div class="page-title">
 				<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Перенаправление</span></h4>
 			</div>
-			<form role="form" method="get" action="{{ route('logout_out') }}" enctype="multipart/form-data">
-				{{ csrf_field() }}
-				<div class="page-header-btn-right">
-					<button type="" class="btn bg-teal-400 ">Выход</button>
-				</div>
+
+			<form method="get" action="{{route('new_redirect')}}" enctype="multipart/form-data" style="text-align: right;">
+				<button type="submit" class="btn bg-teal-400 page-header-btn-right" >Добавить перенаправление</button>
 			</form>
 		</div>
 
@@ -33,9 +31,7 @@
 		<div class="container-detached">
 			<div class="content-detached">
 
-				<form method="get" action="{{route('new_redirect')}}" enctype="multipart/form-data" style="text-align: right;">
-					<button type="submit" class="btn bg-teal-400" >Добавить перенаправление</button>
-				</form>
+
 				<div class="row">
 					@foreach($blocks as $k=>$block)
 
@@ -70,13 +66,7 @@
 				@endforeach
 			</div>
 			{{$blocks->links()}}
-			<script>
-						@foreach($blocks as $k=>$block)
-                var editor = CKEDITOR.replace( 'editor{{$k}}' );
-				@endforeach
-
-
-			</script>
+			
 			<!-- Footer -->
 			<div class="footer text-muted">
 				&copy; 2017.  by <a href="https://github.com/sayron97" target="_blank">Oleksandr Yefremov</a>

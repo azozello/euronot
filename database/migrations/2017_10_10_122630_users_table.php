@@ -13,15 +13,19 @@ class UsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 255)->default('Не указано');
-            $table->string('second_name', 255)->default('Не указано');
-            $table->string('patronymic', 255)->default('Не указано');
-            $table->string('email', 190)->unique()->nullable();
-            $table->string('password', 255)->nullable();;
-            $table->string('main_phone_number',255)->default('Не указано');
-            $table->string('second_phone_number',255)->default('Не указано');
-            $table->string('comment',255)->nullable();
+            $table->text('user_type')->nullable();
+            $table->text('name')->nullable();
+            $table->text('second_name')->nullable();
+            $table->text('patronymic')->nullable();
+            $table->string('email',190)->unique();
+            $table->text('password')->nullable();
+            $table->text('comment')->nullable();
             $table->smallInteger('discount')->default(0);
+            $table->boolean('is_firm')->nullable();
+            $table->text('firm_name')->nullable();
+            $table->text('edrpou_code')->nullable();
+            $table->boolean('is_nds')->nullable();
+            $table->text('nds_code')->nullable();
             $table->boolean('is_safety')->default(false);
             $table->boolean('verified')->default(false);
             $table->boolean('is_admin')->default(false);

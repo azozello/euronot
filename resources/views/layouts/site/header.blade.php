@@ -1,0 +1,709 @@
+<body id="_body">
+<div class="header container-fluid ">
+    <div class="container">
+        <div class="top-row mob hidden-lg-up row">
+
+            <nav class="navbar menu-mob-1 navbar-light bg-faded">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar"
+                        aria-controls="exCollapsingNavbar" aria-expanded="false"
+                        aria-label="Toggle navigation"></button>
+                <div class="collapse" id="exCollapsingNavbar">
+                    <div class="text-muted p-1">
+                        <ul class="top-menu mob">
+                            <li><a class="" href="">О компании</a></li>
+                            <li><a class="" href="">Гарантия</a></li>
+                            <li><a class="" href="">Доставка и оплата</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <nav class="navbar menu-mob-2 navbar-light bg-faded">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2"
+                        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">Каталог
+                </button>
+                <div class="collapse" id="exCollapsingNavbar2">
+                    <div class="text-muted p-1">
+                        <ul class="nav nav-bar main-menu mob">
+                            <li><a href="products_cat-b_u_noutbuki.html">Ноутбуки б/у</a></li>
+                            <li><a href="products_cat-sistemnie_bloki.html">Системные блоки б/у</a></li>
+                            <li><a href="products_cat-monitori.html">Мониторы б/у</a></li>
+                            <li><a href="products_cat-doc_stancii.html">Принтеры (NEW)</a></li>
+                            <li><a href="products_cat-remont noutbukov.html">Док Станции б/у</a></li>
+                            <li><a href="#">Игровые системники</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+            <div class="basket-mob">
+                <a>
+                    <div class="button">
+                        <div class="count">1</div>
+                    </div>
+                </a>
+            </div>
+            <a href="/">
+                <div class="logo mob">
+                    <img src="../index_app/images/logo-min.png" alt="Евронот" title="Евронот">
+                </div>
+            </a>
+            <div class="clear"></div>
+        </div>
+        <div class="second-row mob hidden-lg-up row">
+            <div class="metka">
+                <a href="contact.html"><img src="../index_app/images/metka-mob.png" alt="Евронот" title="Евронот"></a>
+            </div>
+            <div class="search">
+                <img src="../index_app/images/search-mob.png" alt="Евронот" title="Евронот">
+            </div>
+            <div class="phone-block mob phones" id="phones2">
+                <style>
+
+                    .ks, .vf, .life, .city {
+                        min-height: 20px;
+                    }
+
+                    .ks img, .vf img, .life img, .city img {
+                        position: relative;
+                        right: 2px;
+                        bottom: 3px;
+                        float: left;
+                    }
+
+
+                </style>
+                <div class="item phone_0 active">
+                    <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
+                                href="tel:(096) 508-85-85">(096) 508-85-85</a></div>
+                    <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
+                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                    <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
+                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                    <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
+                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                </div>
+                <div class="item phone_1">
+                    <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
+                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                    <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
+                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                    <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
+                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                    <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
+                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                </div>
+                <div class="item phone_2">
+                    <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
+                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                    <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
+                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                    <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
+                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                    <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
+                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                </div>
+                <div class="item phone_3">
+                    <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
+                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                    <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
+                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                    <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
+                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                    <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
+                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                </div>
+                <div class="item phone_4">
+                    <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
+                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                    <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
+                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                    <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
+                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                    <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
+                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                </div>
+                <div class="item phone_5">
+                    <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
+                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                    <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
+                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                    <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
+                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                    <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
+                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                </div>
+                <div class="item phone_6">
+                    <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
+                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                    <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
+                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                    <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
+                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                    <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
+                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                </div>
+                <div class="item phone_7">
+                    <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
+                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                    <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
+                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                    <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
+                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                    <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
+                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                </div>
+                <div class="item phone_8">
+                    <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
+                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                    <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
+                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                    <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
+                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                    <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
+                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                </div>
+                <div class="item phone_9">
+                    <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
+                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                    <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
+                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                    <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
+                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                    <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
+                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                </div>
+                <div class="item phone_10">
+                    <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
+                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                    <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
+                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                    <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
+                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                    <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
+                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                </div>
+                <div class="item phone_11">
+                    <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
+                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                    <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
+                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                    <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
+                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                    <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
+                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                </div>
+                <div class="item phone_12">
+                    <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a href="tel:"></a></div>
+                </div>
+            </div>
+            <div class="city-select mob">
+                <select name="cities" class="cities2" id="cities" onchange="city_change2();">
+
+                    <option value="0" selected="selected">Киев</option>
+                    <option value="1">Одесса</option>
+                    <option value="2">Одесса</option>
+                    <option value="3">Харьков</option>
+                    <option value="4">Кропивницкий</option>
+                    <option value="5">Каменское</option>
+                    <option value="6">Запорожье</option>
+                    <option value="7">Ивано-Франковск</option>
+                    <option value="8">Сарны</option>
+                    <option value="9">Бровары</option>
+                    <option value="10">Днепр</option>
+                </select>
+
+
+            </div>
+        </div>
+        <div class="top-row row hidden-md-down">
+            <ul class="top-menu col-lg-6 col-md-5">
+
+                <li><a class="" onclick='location.href="{{route('show_about')}}"' style="cursor: pointer">О компании</a></li>
+                <li><a class="" onclick='location.href="{{route('show_warranty')}}"' style="cursor: pointer">Гарантия</a></li>
+                <li><a class="" onclick='location.href="{{route('show_delivery')}}"' style="cursor: pointer">Доставка и оплата</a>
+                </li>
+                <li><a class="" onclick='location.href="#"' style="cursor: pointer">Євронот cервіс</a>
+                </li>
+            </ul>
+            <div class="button col-lg-2 col-md-2">
+                <a href="robots.txt" style="cursor: pointer">Партнерские цены</a>
+            </div>
+            <div class="address col-lg-1 col-md-1">
+                <a class="adres" onclick='location.href="contact.html"' style="cursor: pointer">Адреса магазинов в Украине</a>
+            </div>
+
+
+            <div class="social-block col-lg-1 col-md-1">
+                <a onclick='location.href="https://www.facebook.com/evronotshop/"' target="_blank"
+                   style="cursor: pointer">
+                    <div class="social sprite sprite-fb-icon"></div>
+                </a><a onclick='location.href="https://www.youtube.com/channel/UCpeU5nDuzTZgYu0nk0CCglg"'
+                       target="_blank" style="cursor: pointer">
+                    <div class="social sprite sprite-youtube-icon"></div>
+                </a></div>
+        </div>
+        <div class="second-row row hidden-md-down">
+            <div class="logo col-lg-3 col-md-3"><a onclick='location.href="/"' style="cursor: pointer">
+                    <img src="../index_app/images/logo.png" alt="Евронот" title="Евронот">
+                </a>
+                <div class="search">
+                    <form id="quick_search" action="search.html" method="post">
+
+                        <input type="text" class="search-input" name="search" size="5" title="Поиск"
+                               placeholder="Поиск">
+                        <input type="submit" name="sub" class="search-button" value="Поиск"/>
+
+                    </form>
+                </div>
+            </div>
+            <div class="city-select col-lg-2 col-md-2">
+
+                <select name="cities" class="cities1" id="cities" onchange="city_change();">
+                    <option value="0" selected="selected">Киев</option>
+                    <option value="1">Одесса</option>
+                    <option value="2">Одесса</option>
+                    <option value="3">Харьков</option>
+                    <option value="4">Кропивницкий</option>
+                    <option value="5">Каменское</option>
+                    <option value="6">Запорожье</option>
+                    <option value="7">Ивано-Франковск</option>
+                    <option value="8">Сарны</option>
+                    <option value="9">Бровары</option>
+                    <option value="10">Днепр</option>
+                </select>
+
+
+            </div>
+            <div class="col-lg-2 col-md-2 phone-block phones" id="phones1">
+
+                <style>
+
+                    .ks-a, .vf-a, .life-a, .city-a {
+                        min-height: 35px;
+                    }
+
+                    .ks-a img, .vf-a img, .life-a img, .city-a img {
+                        position: relative;
+                        right: 2px;
+                        bottom: 6px;
+                        float: left;
+                        width: 35px;
+                        height: 35px;
+                    }
+
+                    .city-a {
+                        position: absolute;
+                        bottom: 29px;
+                        right: 225px;
+                        width: 151px;
+                    }
+
+
+                </style>
+
+                <div class="item phone_0 active">
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:(096) 508-85-85">(096) 508-85-85</a>
+                    </div>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    </div>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    </div>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    </div>
+                </div>
+                <div class="item phone_1">
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    </div>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    </div>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    </div>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    </div>
+                </div>
+                <div class="item phone_2">
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    </div>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    </div>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    </div>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    </div>
+                </div>
+                <div class="item phone_3">
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    </div>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    </div>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    </div>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    </div>
+                </div>
+                <div class="item phone_4">
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    </div>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    </div>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    </div>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    </div>
+                </div>
+                <div class="item phone_5">
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    </div>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    </div>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    </div>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    </div>
+                </div>
+                <div class="item phone_6">
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    </div>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    </div>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    </div>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    </div>
+                </div>
+                <div class="item phone_7">
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    </div>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    </div>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    </div>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    </div>
+                </div>
+                <div class="item phone_8">
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    </div>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    </div>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    </div>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    </div>
+                </div>
+                <div class="item phone_9">
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    </div>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    </div>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    </div>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    </div>
+                </div>
+                <div class="item phone_10">
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    </div>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    </div>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    </div>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    </div>
+                </div>
+                <div class="item phone_11">
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    </div>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    </div>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    </div>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    </div>
+                </div>
+                <div class="item phone_12">
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:"></a></div>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-2 grafik" id="grafik1">
+
+                <div>
+                    <div class="title">График работы:</div>
+                    <div class="text">
+                        <div class="item grafik_0 active">
+                            пн.-пт. 10:00-19:00<br/>сб.-вс. 10:30-17:00
+                        </div>
+                        <div class="item grafik_1 line_3">
+                            ул.Преображенская<br/>пн.-пт. 09:00-19:00<br/>сб. 10:00-17:00<br/>вс. выходной
+                        </div>
+                        <div class="item grafik_2 line_3">
+                            ул.Ришельевская<br/>пн.-сб. 09:00-19:00<br/>вс. 10:00- 17:00
+                        </div>
+                        <div class="item grafik_3 line_3">
+                            пн.-пт. 09:00-18:00<br/>сб. 09:00-16:00<br/>вс. выходной
+                        </div>
+                        <div class="item grafik_4">
+                            пн.-пт. 09:00-18:00<br/>сб.-вс. 10:00-17:00
+                        </div>
+                        <div class="item grafik_5">
+                            пн.-пт. 08:00-15:00<br/>сб.-вс. 09:00-16:00
+                        </div>
+                        <div class="item grafik_6">
+                            пн.-пт. 08:00-15:00<br/>сб.-вс. 09:00-16:00
+                        </div>
+                        <div class="item grafik_7">
+                            пн.-пт. 09:00-18:00<br/>сб.-вс. 09:00-18:00
+                        </div>
+                        <div class="item grafik_8">
+                            пн.-пт. 09:00-19:00<br/>сб.-вс. 09:00-17:00
+                        </div>
+                        <div class="item grafik_9">
+                            пн.-пт. 09:00-19:00<br/>сб.-вс. 10:00-17:00
+                        </div>
+                        <div class="item grafik_10">
+                            пн.-пт. 10:00-20:00<br/>сб.-вс. 10:00-20:00
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 basket" id="quick_basket">
+                <a>
+                    <div class="button">
+                        <div class="count">0</div>
+                    </div>
+                </a>
+                <div class="right">
+                    <label class='empty'><a>Корзина пуста</a>
+                        <div class="clear"></div>
+                        начните ваши покупки</label>
+                    <label class='card11' style='display: none;'><a href="basket.html">
+                            <div class='text'>Ваши покупки:</div>
+                        </a>
+                        <div class='price'><span class="quant">0</span> <span class="word">товаров</span>, <span
+                                    class="price">0</span> грн
+                        </div>
+                    </label>
+
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript"
+                src="https://maps.google.com/maps/api/js?key=AIzaSyDFZheD4LS-qwom8GeDyp_RMEZvDKcF-ec" async></script>
+        <script type="text/javascript">
+            var map;
+
+            function initialize() {
+                var bounds = new google.maps.LatLngBounds();
+                var loc;
+                var myOptions = {
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    center: {lat: -34.397, lng: 150.644},
+                    zoom: 8
+                };
+                map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+                loc = new google.maps.LatLng(50.48667499, 30.49943626);
+                bounds.extend(loc);
+                var marker0 = new google.maps.Marker({
+                    position: new google.maps.LatLng(50.48667499, 30.49943626),
+                    //icon:"/images/metka.png",
+                    content: 'г. Киев, проспект Степана Бандеры, 16 Б, магазин Евронот, (044)383-16-83, (067)239-39-21',
+                    map: map
+                });
+                var infowindow0 = new google.maps.InfoWindow({
+                    content: 'г. Киев, проспект Степана Бандеры, 16 Б, магазин Евронот, (044)383-16-83, (067)239-39-21',
+                    maxWidth: 200
+                });
+                google.maps.event.addListener(marker0, 'click', function () {
+                    //infowindow0.setContent(this.content);
+                    infowindow0.open(map, marker0);
+                });
+                loc = new google.maps.LatLng(46.4700061, 30.7362838);
+                bounds.extend(loc);
+                var marker1 = new google.maps.Marker({
+                    position: new google.maps.LatLng(46.4700061, 30.7362838),
+                    //icon:"/images/metka.png",
+                    content: 'г.Одесса, ул. Ришельевская 78, магазин EL_MAG тел. (067)136-78-78, (063)623-78-78',
+                    map: map
+                });
+                var infowindow1 = new google.maps.InfoWindow({
+                    content: 'г.Одесса, ул. Ришельевская 78, магазин EL_MAG тел. (067)136-78-78, (063)623-78-78',
+                    maxWidth: 200
+                });
+                google.maps.event.addListener(marker1, 'click', function () {
+                    //infowindow1.setContent(this.content);
+                    infowindow1.open(map, marker1);
+                });
+                loc = new google.maps.LatLng(46.4793577, 30.7296966);
+                bounds.extend(loc);
+                var marker2 = new google.maps.Marker({
+                    position: new google.maps.LatLng(46.4793577, 30.7296966),
+                    //icon:"/images/metka.png",
+                    content: 'г.Одесса, ул.Преображенская,48(Тираспольская пл.)тел.(067) 324-00-86, (073) 155-75-70',
+                    map: map
+                });
+                var infowindow2 = new google.maps.InfoWindow({
+                    content: 'г.Одесса, ул.Преображенская,48(Тираспольская пл.)тел.(067) 324-00-86, (073) 155-75-70',
+                    maxWidth: 200
+                });
+                google.maps.event.addListener(marker2, 'click', function () {
+                    //infowindow2.setContent(this.content);
+                    infowindow2.open(map, marker2);
+                });
+                loc = new google.maps.LatLng(50.0275774, 36.2184128);
+                bounds.extend(loc);
+                var marker3 = new google.maps.Marker({
+                    position: new google.maps.LatLng(50.0275774, 36.2184128),
+                    //icon:"/images/metka.png",
+                    content: 'г. Харьков, ул. Отакара Яроша 21, магазин Nokia',
+                    map: map
+                });
+                var infowindow3 = new google.maps.InfoWindow({
+                    content: 'г. Харьков, ул. Отакара Яроша 21, магазин Nokia',
+                    maxWidth: 200
+                });
+                google.maps.event.addListener(marker3, 'click', function () {
+                    //infowindow3.setContent(this.content);
+                    infowindow3.open(map, marker3);
+                });
+                loc = new google.maps.LatLng(48.5011765, 32.2394543);
+                bounds.extend(loc);
+                var marker4 = new google.maps.Marker({
+                    position: new google.maps.LatLng(48.5011765, 32.2394543),
+                    //icon:"/images/metka.png",
+                    content: 'г. Кропивницкий, ул.50 лет Октября,27, магазин Евронот',
+                    map: map
+                });
+                var infowindow4 = new google.maps.InfoWindow({
+                    content: 'г. Кропивницкий, ул.50 лет Октября,27, магазин Евронот',
+                    maxWidth: 200
+                });
+                google.maps.event.addListener(marker4, 'click', function () {
+                    //infowindow4.setContent(this.content);
+                    infowindow4.open(map, marker4);
+                });
+                loc = new google.maps.LatLng(48.5158975, 34.612091);
+                bounds.extend(loc);
+                var marker5 = new google.maps.Marker({
+                    position: new google.maps.LatLng(48.5158975, 34.612091),
+                    //icon:"/images/metka.png",
+                    content: 'г. Каменское, ул. Ленина 30/1, магазин Кнопка',
+                    map: map
+                });
+                var infowindow5 = new google.maps.InfoWindow({
+                    content: 'г. Каменское, ул. Ленина 30/1, магазин Кнопка',
+                    maxWidth: 200
+                });
+                google.maps.event.addListener(marker5, 'click', function () {
+                    //infowindow5.setContent(this.content);
+                    infowindow5.open(map, marker5);
+                });
+                loc = new google.maps.LatLng(47.8121539, 35.1903591);
+                bounds.extend(loc);
+                var marker6 = new google.maps.Marker({
+                    position: new google.maps.LatLng(47.8121539, 35.1903591),
+                    //icon:"/images/metka.png",
+                    content: 'г. Запорожье, ул.Жуковского, 32, магазин Мобільна Країна',
+                    map: map
+                });
+                var infowindow6 = new google.maps.InfoWindow({
+                    content: 'г. Запорожье, ул.Жуковского, 32, магазин Мобільна Країна',
+                    maxWidth: 200
+                });
+                google.maps.event.addListener(marker6, 'click', function () {
+                    //infowindow6.setContent(this.content);
+                    infowindow6.open(map, marker6);
+                });
+                loc = new google.maps.LatLng(48.9227246, 24.6410768);
+                bounds.extend(loc);
+                var marker7 = new google.maps.Marker({
+                    position: new google.maps.LatLng(48.9227246, 24.6410768),
+                    //icon:"/images/metka.png",
+                    content: 'г. Ивано-Франковск, ул.Независимости, 83, магазин Медиасофт',
+                    map: map
+                });
+                var infowindow7 = new google.maps.InfoWindow({
+                    content: 'г. Ивано-Франковск, ул.Независимости, 83, магазин Медиасофт',
+                    maxWidth: 200
+                });
+                google.maps.event.addListener(marker7, 'click', function () {
+                    //infowindow7.setContent(this.content);
+                    infowindow7.open(map, marker7);
+                });
+                loc = new google.maps.LatLng(51.3270349, 26.5979562);
+                bounds.extend(loc);
+                var marker8 = new google.maps.Marker({
+                    position: new google.maps.LatLng(51.3270349, 26.5979562),
+                    //icon:"/images/metka.png",
+                    content: 'г. Мариуполь',
+                    map: map
+                });
+                var infowindow8 = new google.maps.InfoWindow({
+                    content: 'г. Мариуполь',
+                    maxWidth: 200
+                });
+                google.maps.event.addListener(marker8, 'click', function () {
+                    //infowindow8.setContent(this.content);
+                    infowindow8.open(map, marker8);
+                });
+                loc = new google.maps.LatLng(50.5098041, 30.7659026);
+                bounds.extend(loc);
+                var marker9 = new google.maps.Marker({
+                    position: new google.maps.LatLng(50.5098041, 30.7659026),
+                    //icon:"/images/metka.png",
+                    content: 'г. Бровары, ул.Владимира Савченко 1, магазин RC',
+                    map: map
+                });
+                var infowindow9 = new google.maps.InfoWindow({
+                    content: 'г. Бровары, ул.Владимира Савченко 1, магазин RC',
+                    maxWidth: 200
+                });
+                google.maps.event.addListener(marker9, 'click', function () {
+                    //infowindow9.setContent(this.content);
+                    infowindow9.open(map, marker9);
+                });
+                loc = new google.maps.LatLng(48.4759346, 35.0186108);
+                bounds.extend(loc);
+                var marker10 = new google.maps.Marker({
+                    position: new google.maps.LatLng(48.4759346, 35.0186108),
+                    //icon:"/images/metka.png",
+                    content: 'г. Сарны, ул.Широкая 14, магазин Смарт',
+                    map: map
+                });
+                var infowindow10 = new google.maps.InfoWindow({
+                    content: 'г. Сарны, ул.Широкая 14, магазин Смарт',
+                    maxWidth: 200
+                });
+                google.maps.event.addListener(marker10, 'click', function () {
+                    //infowindow10.setContent(this.content);
+                    infowindow10.open(map, marker10);
+                });
+                map.fitBounds(bounds);
+                map.panToBounds(bounds);
+
+            }
+
+
+            $(document).ready(function () {
+
+                $('.map_btn').click(function () {
+                    if ($('#map_block').css('display') == 'none') {
+                        $('#map_block').stop(true, true).show();
+                        initialize();
+                    } else {
+                        $('#map_block').stop(true, true).hide();
+                    }
+                });
+                $('#map_info .exit').click(function () {
+                    $('#map_block').stop(true, true).hide();
+                });
+            })
+        </script>
+        <div id="map_block" class="row">
+            <div id="map_canvas" style="height: 370px;"></div>
+        </div>
+@yield('main_pages')
+</body>
+</html>

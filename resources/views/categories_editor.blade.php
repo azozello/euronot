@@ -10,23 +10,24 @@
     <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
 
     @include('layouts.styles')
+    <form method="post" action="{{route('categories_make')}}" enctype="multipart/form-data">
     <div class="page-header page-header-default">
         <div class="page-header-content">
             <div class="page-title">
-                <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Категории</span></h4>
+                <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Редактирование категории</span></h4>
+
             </div>
+                <button type="submit" class="btn bg-teal-400 page-header-btn-right">{{$languages[0]->upload_button_name}}</button>
         </div>
 
     </div>
     <div class="content">
         <h5 class="panel-title">Редактор</h5>
-        <form method="post" action="{{route('categories_make')}}" enctype="multipart/form-data">
+
             <input name="_token" type="hidden" value="{{ csrf_token() }}">
         <!-- CKEditor default -->
         <div class="panel panel-flat">
-            <div class="form-button">
-                <button type="submit" class="btn bg-teal-400">{{$languages[0]->upload_button_name}}</button>
-            </div>
+
             <div class="select-category">
             <span>Выберите категорию:</span>
             <select class="selectpicker" name="parent_category">
@@ -124,7 +125,7 @@
             </div>
 
         </div>
-        </form>
+
 
         <!-- /CKEditor default -->
 
@@ -151,6 +152,7 @@
 
     </div>
     <!-- /content area -->
+    </form>
 
     </div>
     <!-- /main content -->

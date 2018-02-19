@@ -16,18 +16,11 @@
 			</div>
 			<!--<div class="view_page"><button class="btn btn-primary" onclick="window.open('http://restoran-elit.com.ua/galereya')">Подивитись сторінку</button></div>
 -->
-			<form role="form" method="get" action="{{ route('logout_out') }}" enctype="multipart/form-data">
-				{{ csrf_field() }}
-				<div class="page-header-btn-right">
-					<button type="" class="btn bg-teal-400 ">Выход</button>
-				</div>
-			</form>
+
 		</div>
 	</div>
 	<div class="content meta-tags">
-		<h6 class="content-group text-semibold">
-			Мета-теги
-		</h6>
+		
 		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
 			<input name="_token" type="hidden" value="{{ csrf_token() }}">
 			<input name="type" type="hidden" value="ur">

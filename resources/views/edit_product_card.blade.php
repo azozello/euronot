@@ -163,7 +163,7 @@
                                         <select class="selectpicker" name="product_provider">
                                             @if(isset($product[0]->product_provider))<option>{{$product[0]->product_provider}}</option>@endif
                                             @foreach($suppliers as $supplier)
-                                                <option>{{$supplier->traders_name}}</option>
+                                                <option>{{$supplier->suppliers_name}}</option>
                                             @endforeach
                                         </select>
                                         <h5>Задержка поставки</h5>

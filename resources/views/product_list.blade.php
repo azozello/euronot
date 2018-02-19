@@ -15,29 +15,28 @@
             <div class="page-title">
                 <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Список товаров</span>
                 </h4>
-
+                <button type="" class="btn bg-teal-400" style="margin-left: 30px">Создать товар</button>
 
             </div>
-            <button type="" class="btn bg-teal-400" style="margin-left: 30px">Посмотреть страницу</button>
+            <form method="get" action="{{route('change_product_active')}}" enctype="multipart/form-data">
+
+                    @foreach($products as $product)
+                        <input data-name='{{$product->product_id}}' name="product_id[{{$product->product_id}}]" @if($product->is_active == 1) checked @endif type="checkbox" hidden>
+                        <input name="all_product_id[]" type="hidden" value="{{$product->product_id}}">
+                    @endforeach
+                    <button type="" class="btn bg-teal-400 page-header-btn-right">Сохранить</button>
+
+
+            </form>
+
         </div>
 
     </div>
     <div class="content">
-        <h6 class="panel-title">Список товаров</h6>
-        <form method="get" action="{{route('change_product_active')}}" enctype="multipart/form-data">
-            <div class="form-button">
-                @foreach($products as $product)
-                                <input data-name='{{$product->product_id}}' name="product_id[{{$product->product_id}}]" @if($product->is_active == 1) checked @endif type="checkbox" hidden>
-                    <input name="all_product_id[]" type="hidden" value="{{$product->product_id}}">
-        @endforeach
-                <button type="" class="btn bg-teal-400">Сохранить</button>
-
-            </div>
-        </form>
 
         <!-- CKEditor default -->
         <div class="panel panel-padding panel-flat">
-            <table class="table products-table-list table-lang table-lg">
+            <table class="table products-table-list table-lang table-lg table-full-width">
                 <thead>
                 <tr>
                     <th>Артикул</th>
@@ -52,7 +51,7 @@
                 <tbody>
                 <tr>
                     <th>
-                        <form method="get" action="{{route('search_by_article')}}" enctype="multipart/form-data">
+                        <form class="products-search-form" method="get" action="{{route('search_by_article')}}" enctype="multipart/form-data">
                             <div class="input-group">
                                 <input type="text" name="article" class="form-control" placeholder=".....">
                                 <span class="input-group-btn">
@@ -64,7 +63,7 @@
                         </form>
                     </th>
                     <th>
-                        <form method="get" action="{{route('search_by_name')}}" enctype="multipart/form-data">
+                        <form class="products-search-form" method="get" action="{{route('search_by_name')}}" enctype="multipart/form-data">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Впишите название*">
                                 <span class="input-group-btn">
@@ -117,7 +116,7 @@
                         <div class="flex-inline">
                             <form method="get" action="{{route('change_price')}}" enctype="multipart/form-data">
                             <div class="input-group">
-                                <input class="input-price" name="price" title="price" type="text" value="{{$product->price}}">
+                                <input style="padding: 12px;" class="input-price" name="price" title="price" type="text" value="{{$product->price}}">
                                 <input name="product_id" type="hidden" value="{{$product->product_id}}">
                                 <div class="input-group-addon">грн
 
@@ -130,6 +129,7 @@
                         </div>
                     </th>
                     <th>
+                        <div class="btn-table-wrap">
                         <form method="get" action="{{route('delete_product')}}" enctype="multipart/form-data">
                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                             <input name="product_id" type="hidden" value='{{$product->product_id}}'>
@@ -142,6 +142,7 @@
                             <button type="" class="btn bg-teal-400"><span class="glyphicon glyphicon-pencil"></span>
                             </button>
                         </form>
+                        </div>
                     </th>
                 </tr>
                     </form>

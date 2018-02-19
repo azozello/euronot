@@ -15,28 +15,28 @@
             <div class="page-title">
                 <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Список фильтров</span>
                 </h4>
+                <button type="" class="btn bg-teal-400" style="margin-left: 30px">Создать фильтр</button>
 
 
             </div>
-            <button type="" class="btn bg-teal-400" style="margin-left: 30px">Посмотреть страницу</button>
+            <form class="page-header-btn-right" action="" id="form1">
+
+                <input type="checkbox" data-name='1' hidden>
+                <input type="checkbox" data-name='2' hidden>
+                <button type="" class="btn bg-teal-400">Сохранить</button>
+
+            </form>
+
             {{--<button type="" class="btn bg-teal-600 page-header-btn-right">Создать</button>--}}
         </div>
 
     </div>
     <div class="content">
-        <h6 class="panel-title">Список фильтров</h6>
-        <form action="" id="form1">
-            <div class="form-button">
-                <input type="checkbox" data-name='1' hidden>
-                <input type="checkbox" data-name='2' hidden>
-                <button type="" class="btn bg-teal-400">Сохранить</button>
 
-            </div>
-        </form>
 
         <!-- CKEditor default -->
         <div class="panel panel-padding panel-flat">
-            <table class=" products-table-list table-lang table-lg">
+            <table class="table products-table-list table-lang table-lg">
                 <thead>
                 <tr>
                     <th>Наименование</th>
@@ -47,17 +47,20 @@
                 <tbody>
                 <tr>
                     <th>
-                        <form method="get" action="{{ route('search_filter') }}" enctype="multipart/form-data">
-                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                            <div class="input-group" style="margin: 0 auto; width: 100%;">
-                                <input type="text" name="filter_name" class="form-control" placeholder="Впишите название*" >
-                                <span class="input-group-btn">
+                        <div class="products-search-form">
+                            <form method="get" action="{{ route('search_filter') }}" enctype="multipart/form-data">
+                                <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                <div class="input-group" style="margin: 0 auto; width: 100%;">
+                                    <input type="text" name="filter_name" class="form-control"
+                                           placeholder="Впишите название*">
+                                    <span class="input-group-btn">
                                         <button class="btn btn-default" type="button"><span
                                                     class="glyphicon glyphicon-search"
                                                     aria-hidden="true"></span></button>
                                     </span>
-                            </div>
-                        </form>
+                                </div>
+                            </form>
+                        </div>
                     </th>
                     <th>
                     <th>
@@ -68,17 +71,19 @@
                 </tr>
                 @foreach($filters as $filter)
                     <tr>
-                        <th><div class="product-text">{{$filter->name}}</div>
+                        <th>
+                            <div class="product-text">{{$filter->name}}</div>
                         </th>
                         <th><label class="switch">
                                 @if($filter->is_view == 1)
-                                <input type="checkbox" checked>
+                                    <input type="checkbox" checked>
                                 @else
                                     <input type="checkbox">
                                 @endif
                                 <span class="slider"></span>
                             </label></th>
                         <th>
+                            <div class="btn-table-wrap">
                             <form method="get" action="{{ route('delete_filter') }}" enctype="multipart/form-data">
                                 <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                 <input name="filter_id" type="hidden" value="{{$filter->filter_id}}">
@@ -91,6 +96,7 @@
                                 <button type="" class="btn bg-teal-400"><span class="glyphicon glyphicon-pencil"></span>
                                 </button>
                             </form>
+                            </div>
                         </th>
                     </tr>
                 @endforeach

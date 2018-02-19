@@ -14,11 +14,16 @@ class Traders extends Migration
     public function up()
     {
         Schema::create('traders', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('traders_id')->nullable();
-            $table->text('traders_name')->nullable();
-            $table->text('traders_main_phone_number')->nullable();
-            $table->text('traders_second_phone_number')->nullable();
+            $table->increments('traders_id')->nullable();
+            $table->text('traders_first_name')->nullable();
+            $table->text('traders_second_name')->nullable();
+            $table->text('traders_patronymic')->nullable();
+            $table->text('traders_type')->nullable();
+            $table->text('traders_is_firm')->nullable();
+            $table->text('traders_firm_name')->nullable();
+            $table->text('traders_edrpou_code')->nullable();
+            $table->text('traders_is_nds')->nullable();
+            $table->text('traders_nds_code')->nullable();
             $table->text('traders_email')->nullable();
             $table->integer('traders_delay')->nullable();
             $table->time('traders_deadline_to_order')->nullable();

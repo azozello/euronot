@@ -191,6 +191,7 @@ return [
         App\Providers\SitemapProvider::class,
         App\Providers\FileActionProvider::class,
         App\Providers\StringActionProvider::class,
+        App\Providers\GraphGenerateProvider::class,
 
     ],
 
@@ -249,6 +250,7 @@ return [
         'Translit' => App\Helpers\Facades\ConnectionFacades\Translit::class,
         'SessionVariables' => App\Helpers\Facades\ConnectionFacades\SessionVariables::class,
         'AppliedMethods' => App\Helpers\Facades\ConnectionFacades\AppliedMethods::class,
+        'GraphGenerate' => App\Helpers\Facades\ConnectionFacades\GraphGenerate::class,
         'SiteMap' => App\Helpers\Facades\ConnectionFacades\SiteMap::class,
         'FileAction' => App\Helpers\Facades\ConnectionFacades\FileAction::class,
         'StringAction' => App\Helpers\Facades\ConnectionFacades\StringAction::class,

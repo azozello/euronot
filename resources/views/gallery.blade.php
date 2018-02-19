@@ -44,20 +44,20 @@
 			</form>
 			<br>
 			<div class="row">
-				<div class="col-md-4">
-					<div class="panel panel-flat">
+				<div class="col-md-12">
+					<div class="">
 						<div style="display: inline-block;" class="panel-heading">
-							<form method="post" action="{{ route('add_new_photos') }}" enctype="multipart/form-data">
+							
 
 								<input name="_token" type="hidden" value="{{ csrf_token() }}">
-								<div class="btn btn-primary file_upload">Фото<input type="file" multiple name="file[]"></div>
+								<div class="btn bg-teal-400 file_upload">Фото<input type="file" multiple name="file[]"></div>
 								<!--
                                 <div>
                                     <button type="submit" class="btn btn-primary">Завантажити</button>
                                 </div>
                                 -->
-								<button type="submit">Загрузить</button>
-							</form>
+								<button class="btn bg-teal-400" type="submit">Загрузить</button>
+
 						</div>
 					</div>
 				</div>

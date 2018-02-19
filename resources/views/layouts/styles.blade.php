@@ -1,11 +1,8 @@
+<link rel="shortcut icon" href="../public/images/favicon.png" type="image/x-icon">
 <!-- Global stylesheets -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
 <link href="{{ asset('css/icons/icomoon/styles.css') }} " rel="stylesheet"/>
 
-<link href="{{ asset('css/roboto.css')}}" rel="stylesheet"/>
-<link href="{{ asset('css/buts_trap.css')}}" rel="stylesheet"/>
-<link href="{{ asset('css/main.css')}}" rel="stylesheet"/>
-<link href="{{ asset('css/main2.css')}}" rel="stylesheet"/>
 <link href="{{ asset('css/bootstrap.css') }} " rel="stylesheet"/>
 <link href="{{ asset('css/bootstrap-select.css') }} " rel="stylesheet"/>
 <link href="{{ asset('css/font-awesome.css') }} " rel="stylesheet"/>
@@ -99,62 +96,100 @@
                 <!-- Main navigation -->
                 <div class="sidebar-category sidebar-category-visible">
                     <div class="category-content no-padding">
-                        <div class="navigation-logo"><img src="../../public/images/logo.png" alt="logo"></div>
+                        <div class="navigation-logo"><a href="{{route('page_main')}}" title="На главную"><img src="../../public/images/logo.png" alt="logo"></a></div>
                         <ul class="navigation navigation-main navigation-accordion">
 
                             <!-- Main -->
-                            <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i>
+                            <li class="navigation-header"><div class="hamburger hamburger--arrow is-active">
+                                    <div class="hamburger-box">
+                                        <div class="hamburger-inner"></div>
+                                    </div>
+                                </div><a class="exit" href="" title="Выход"><i class="icon-exit"></i></a>
+
                             </li>
                             <li>
-                                <a href="#"><i class="icon-stack2"></i> <span>Страницы</span></a>
+                                <a href="{{route('non_standart_pages_show')}}"><i class="icon-bubbles4"></i> <span>Осн.Страницы</span></a>
+                            <li>
+                            <li>
+                                <a href="#"><i class="icon-home2"></i> <span>Магазин</span></a>
                                 <ul>
-                                    <li><a href="{{route('show_editor')}}">Создать новую страницу</a></li>
+                                    <li>
+                                        <a href="{{route('categories_editor')}}">Создание категории</a>
+                                    <li>
+                                    <li>
+                                        <a href="{{route('product_categories')}}">Категории товаров</a>
+                                    <li>
+                                    <li>
+                                        <a href="{{route('product_list')}}">Список товаров</a>
+                                    <li>
+                                    <li>
+                                        <a href="{{route('product_card')}}">Карта товара</a>
+                                    <li>
+                                    <li>
+                                        <a href="{{route('filter_list')}}">Список фильтров</a>
+                                    <li>
+                                    <li>
+                                        <a href="{{route('filter_editor')}}">Редактор фильтров</a>
+                                    <li>
+                                    <li>
+                                        <a href="{{route('attribute_list')}}">Список атрибутов</a>
+                                    <li>
+                                    <li>
+                                        <a href="{{route('attribute_editor')}}">Редактор атрибутов</a>
+                                    <li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-files-empty"></i> <span>Страницы</span></a>
+                                <ul>
+                                    <li><a href="{{route('show_editor')}}">Создать страницу</a></li>
                                     <li><a href="{{route('pages_list')}}">Список страниц</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#"><i class="icon-stack2"></i> <span>Новости</span></a>
+                                <a href="#"><i class="icon-newspaper"></i><span>Новости</span></a>
                                 <ul>
                                     <li><a href="{{route('news_editor')}}">Создать новость</a></li>
                                     <li><a href="{{route('show_news')}}">Список новостей</a></li>
                                 </ul>
                             </li>
-                            <li>
+                           <!-- <li>
                                 <a href="#"><i class="icon-stack2"></i> <span>Журналы</span></a>
                                 <ul>
-                                    <li><a href="{{route('show_client_book')}}">Журнал заказов клиентов</a></li>
-                                    <li><a href="{{route('show_supplier_book')}}">Журнал заказов поставщикам</a></li>
-                                    <li><a href="{{route('show_shipment_book')}}">Журнал отгрузок товара</a></li>
-                                    <li><a href="{{route('show_remainder_book')}}">Журнал остатков товара</a></li>
+                                    <li><a href="{{/*route('show_client_book')*/route('photos')}}">Журнал заказов клиентов</a></li>
+                                    <li><a href="{{/*route('show_supplier_book')*/route('photos')}}">Журнал заказов поставщикам</a></li>
+                                    <li><a href="{{/*route('show_shipment_book')*/route('photos')}}">Журнал отгрузок товара</a></li>
+                                    <li><a href="{{/*route('show_remainder_book')*/route('photos')}}">Журнал остатков товара</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
+                            <li>
+                                <a href="{{route('photos')}}"><i class="icon-images2"></i> <span>Галерея</span></a>
+                            <li>
+                            <li>
+                                <a href="{{route('reviews')}}"><i class="icon-bubbles4"></i> <span>Отзывы</span></a>
+                            <li>
 
                             <li>
-                                <a href="{{route('photos')}}"><i class="icon-pencil3"></i> <span>Галерея</span></a>
-                            <li>
-                            <li>
-                                <a href="{{route('reviews')}}"><i class="icon-pencil3"></i> <span>Отзывы</span></a>
-                            <li>
-
-                            <li>
-                                <a href="#"><i class="icon-stack2"></i> <span>Клиенты</span></a>
+                                <a href="#"><i class="icon-cart"></i> <span>Заказы</span></a>
                                 <ul>
-                                    <li><a href="{{route('post')}}"></i>Почта</a></li>
+                                    <li><a href="{{route('post')}}">Список заказов</a></li>
                                     <li><a href="{{route('subscription')}}">Подписки</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#"><i class="icon-stack2"></i> <span>Глобальные настройки</span></a>
+                                <a href="#"><i class="icon-cog"></i> <span>Глобальные настройки</span></a>
                                 <ul>
                                     <li><a href="{{route('organization')}}">Про организацию</a></li>
                                     <li><a href="{{route('sliders')}}">Слайдер </a></li>
-                                    <li><a href="{{route('text_blocks')}}">Текстовые блоки</a></li>
+                                    <!--<li><a href="{{/*route('text_blocks')*/route('feedback')}}">Текстовые блоки</a></li>-->
                                     <li><a href="{{route('feedback')}}">Форма обратной связи</a></li>
                                     <li><a href="{{route('languages')}}">Языки</a></li>
+                                    <li><a href="{{route('menu_list')}}">Меню</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#"><i class="icon-stack2"></i> <span>СЕО</span></a>
+                                <a href="#"><i class="icon-sphere"></i> <span>СЕО</span></a>
                                 <ul>
                                     <li><a href="{{route('site_map')}}">Карта сайта</a></li>
                                     <li><a href="{{route('robots')}}">robots.txt</a></li>
@@ -162,58 +197,23 @@
                                     <li><a href="{{route('images_zip')}}">Сжатие изображений</a></li>
                                     <li><a href="{{route('redirect')}}">Перенаправление</a></li>
                                     <li><a href="{{route('cache')}}">Кеширование</a></li>
-                                    <li><a href="{{route('meta_tags')}}">Настройки мета-тегов</a></li>
+                                    <li><a href="{{route('meta_tags')}}">Шаблон мета-тегов</a></li>
                                 </ul>
                             </li>
 
                             <li>
                                 <a href="{{route('admin_list')}}">
-                                    <span>Пользователи</span></a>
+                                    <i class="icon-users"></i><span>Пользователи</span></a>
                             </li>
-                            <li>
-                                <a href="{{route('menu_list')}}"><i class="icon-pencil3"></i>
+                        <!-- <li>
+                                <a href="{{/*route('menu_list')*/route('feedback')}}"><i class="icon-pencil3"></i>
                                     <span>Список меню</span></a>
                             <li>
                             <li>
-                                <a href="{{route('menu')}}"><i class="icon-pencil3"></i>
+                                <a href="{{/*route('menu')*/route('feedback')}}"><i class="icon-pencil3"></i>
                                     <span>Меню</span></a>
-                            <li>
-                            <li>
-                                <a href="{{route('supplier_list')}}"><i class="icon-pencil3"></i>
-                                    <span>Список поставщиков</span></a>
-                            <li>
-                            <li>
-                                <a href="{{route('product_list')}}"><i class="icon-pencil3"></i>
-                                    <span>Список товаров</span></a>
-                            <li>
-                            <li>
-                                <a href="{{route('attribute_list')}}"><i class="icon-pencil3"></i>
-                                    <span>Список атрибутов</span></a>
-                            <li>
-                            <li>
-                                <a href="{{route('filter_list')}}"><i class="icon-pencil3"></i>
-                                    <span>Список фильтров</span></a>
-                            <li>
-                            <li>
-                                <a href="{{route('categories_editor')}}"><i class="icon-pencil3"></i>
-                                    <span>Создание категории</span></a>
-                            <li>
-                            <li>
-                                <a href="{{route('product_categories')}}"><i class="icon-pencil3"></i>
-                                    <span>Категории товаров</span></a>
-                            <li>
-                            <li>
-                                <a href="{{route('filter_editor')}}"><i class="icon-pencil3"></i>
-                                    <span>Редактор фильтров</span></a>
-                            <li>
-                            <li>
-                                <a href="{{route('attribute_editor')}}"><i class="icon-pencil3"></i>
-                                    <span>Редактор атрибутов</span></a>
-                            <li>
-                            <li>
-                                <a href="{{route('product_card')}}"><i class="icon-pencil3"></i>
-                                    <span>Карта товара</span></a>
-                            <li>
+                            <li> -->
+
 
 
 

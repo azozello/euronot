@@ -27,7 +27,7 @@
 	<div class="content">
 		<h6 class="content-group text-semibold">
 			Параметры организации
-		</h6>{!!  Html::image(public_path().'/product_images/coffee1.jpg','pic')  !!}
+		</h6>
 		<div class="form-content">
 			<form method="post" action="{{ route('upload_organization') }}" enctype="multipart/form-data">
 				<input name="_token" type="hidden" value="{{ csrf_token() }}">
