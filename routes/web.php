@@ -305,5 +305,8 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('setlocale/{lang}','LanguagesController@setlocale')->name('setlocale');
 Route::get('/error',['uses'=>'PagesController@error_show','as'=>'error_show']);
 
+Route::get('/jopa', function () {
+    return view('jopa');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');

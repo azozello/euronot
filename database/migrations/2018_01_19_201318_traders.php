@@ -14,7 +14,7 @@ class Traders extends Migration
     public function up()
     {
         Schema::create('traders', function (Blueprint $table) {
-            $table->increments('traders_id')->nullable();
+            $table->increments('traders_id');
             $table->text('traders_first_name')->nullable();
             $table->text('traders_second_name')->nullable();
             $table->text('traders_patronymic')->nullable();
