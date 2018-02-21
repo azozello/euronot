@@ -149,7 +149,7 @@ Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
     Route::get('/object_image_delete',['uses'=>'EditorController@object_image_delete','as'=>'object_image_delete']);
     Route::get('/search_objects',['uses'=>'PagesController@search_objects','as'=>'search_objects']);
 
-
+//    Route::get('/news_show/{url?}',['uses' => 'PageController@siteNewsShow','as' => 'news_show']);
     Route::get('/news_editor',['uses'=>'PagesController@news_editor','as'=>'news_editor']);//новости
     Route::get('/news',['uses'=>'PagesController@show_news','as'=>'show_news']);
     Route::get('/edit_news_show',['uses'=>'EditorController@edit_news_show','as'=>'edit_news_show']);

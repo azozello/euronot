@@ -43,6 +43,8 @@
 		</div>
 	</div>
 </div>
+
+
 <div class="content container-fluid other">
 	<div class="container">
 		<div id="news" class="tahoma content">
@@ -50,21 +52,21 @@
 				<a href="/">Компьютерная техника бу</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<span>Новости</span></div>
 			<h1 class="page_title">Новости</h1>
 			<div class="list page_block news">
+				@foreach($all_news as $news)
 				<div class="block" id="kak_vybrat_noutbuk">
-					<a href="news-kak_vybrat_noutbuk.html">
-						<div class="image" style="background-image: url('../index_app/images/news/20170816184257126.jpg');">
+					<a onclick='location.href="{{route('show_site_news')}}"'>
+						<div class="image" style="background-image: url('{{$news->image}}');">
 						</div>
 					</a>
-					<div class="date">8.06.2017</div>
+					<div class="date">{{$news->date}}</div>
 					<div class="title">
-						<a class="title" href="news-kak_vybrat_noutbuk.html">Как выбрать ноутбук?</a>
+						<a class="title" onclick='location.href="{{route('show_site_news')}}"'>{{$news->name}}</a>
 					</div>
-
 				</div>
+				@endforeach
 
 			</div>
 		</div>
-
 
 		<div class="clear"></div>
 		<div id="wrap_out" class="row">
@@ -79,6 +81,8 @@
 		</div>
 	</div>
 </div>
+
+
 <div class="footer container-fluid">
 	<div class="container">
 		<div class="tags">
@@ -105,6 +109,7 @@
 
 	</div>
 </div>
+
 <script type="text/javascript">
 	$(document).ready(function () {
 		$('.checkbox').each(function () {
@@ -459,7 +464,6 @@
 <script src="{{ asset('index_app/plugins/jquery.mousewheel.js') }}"></script>
 <script src="{{ asset('index_app/js/jquery.formstyler.min.js') }}"></script>
 <script src="{{ asset('index_app/js/owl.carousel.min.js') }}"></script>
-
 <script async src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
         integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"

@@ -75,9 +75,12 @@ class PagesController extends Controller
     public function show_delivery(){
         return view('site.delivery');
     }
-    public function show_site_news(){
-        return view('site.news');
+    public function show_site_news(Request $request){
+        return view('site.news',[
+            'all_news' => News::where('name','!=',NULL)->where('page_lang','=',1)->paginate(30)->appends($request->all())
+        ]);
     }
+
     public function show_warranty(){
         return view('site.warranty');
     }
