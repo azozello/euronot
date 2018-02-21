@@ -33,6 +33,7 @@ Route::get('/delivery',['uses'=>'PagesController@show_delivery','as'=>'show_deli
 Route::get('/news',['uses'=>'PagesController@show_site_news','as'=>'show_site_news']);
 Route::get('/warranty',['uses'=>'PagesController@show_warranty','as'=>'show_warranty']);
 Route::get('/products',['uses'=>'PagesController@show_products','as'=>'show_products']);
+Route::get('/product_list',['uses'=>'PagesController@show_product_list','as'=>'show_product_list']);
 
 
 Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){

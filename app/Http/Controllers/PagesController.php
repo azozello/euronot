@@ -90,6 +90,9 @@ class PagesController extends Controller
     public function show_about(){
         return view('site.about');
     }
+    public function show_product_list(){
+        return view('site.products_cat-b_u_noutbuki');
+    }
     ////////////////////////////////////////////////////////////////////////////
     public function page_main(){
         $connection_count = GraphGenerate::generate_connection_count_graph('month');
@@ -447,8 +450,7 @@ class PagesController extends Controller
     public function product_categories(){
         return view('product_categories',[
             'languages' => Languages::where('active','=',1)->get(),
-            'categories_1' => Category::where('lang_id','=',1)->get(),
-            'categories_2' => Category::where('lang_id','=',2)->get()
+            'categories_1' => Category::where('lang_id','=',1)->get()
         ]);
     }
     public function filter_editor(){

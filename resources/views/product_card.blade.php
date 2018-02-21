@@ -22,8 +22,6 @@
 
     </div>
     <div class="content">
-
-
         <form role="form" method="post" action="{{route('product_card_add')}}" enctype="multipart/form-data">
             <input name="_token" type="hidden" value="{{ csrf_token() }}">
             <div class="form-button">
@@ -156,64 +154,48 @@
                                         </div>
                                     </div>
                                 @endif
+
                                 <div class="common-right">
+                                    <h5 class="content-group text-semibold">
+                                        <label>Таймер Акции</label>
+                                        <input min="1" max="1000" id="number" style="width: 2em;" name="timer_days" type="number">
+                                        <input min="1" max="24" id="number" style="width: 2em;" name="timer_hours" type="number">
+                                        <input min="1" max="60" id="number" style="width: 2em;" name="timer_minutes" type="number">
+                                        <input min="1" max="60" id="number" style="width: 2em;" name="timer_seconds" type="number">
+                                    </h5>
                                     <div class="form-content" style="padding-left: 50px;">
-                                        <h5>Поставщик</h5>
-                                        <select class="selectpicker" name="product_provider">
-                                            @foreach($suppliers as $supplier)
-                                                <option>{{$supplier->traders_name}}</option>
+                                        <h5>Статус товара</h5>
+                                        <select class="selectpicker" name="product_delay_in_delivery">
+                                            <option>
+                                            </option>
+                                            <option>Супер цена
+                                            </option>
+                                            <option>Акция
+                                            </option>
+                                            <option>Хит продаж
+                                            </option>
+                                            <option>Продано
+                                            </option>
+                                        </select>
+                                        @if(isset($products))
+                                        <h5>Подарочный товар</h5>
+                                        <select class="selectpicker" name="product_delay_in_delivery">
+                                            <option>
+                                            </option>
+                                            @foreach($products as $product)
+                                            <option>{{$product->name}}
+                                            </option>
                                             @endforeach
                                         </select>
-                                        <h5>Задержка поставки</h5>
-                                        <select class="selectpicker" name="product_delay_in_delivery">
-                                            <option selected>0 дней 	получение сегодня на сегодня
-                                            </option>
-                                            <option>1 день		получение сегодня на завтра
-                                            </option>
-                                            <option>2 дня		получение сегодня на послезавтра
-                                            </option>
-                                        </select>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Крайнее время заказа товара поставщику</label>
-                                            <input type="text" name="product_deadline_to_arrive"
-                                                   value=""
-                                                   placeholder="Введите крайнее время*">
-                                        </h5>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Оптимальный остаток товара на складе</label>
-                                            <input type="text" name="product_optimal_quantity"
-                                                   value=""
-                                                   placeholder="Введите оптимальный остаток*">
-                                        </h5>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Признак наличия товара у поставщика
-                                            </label>
-                                            <input type="text" name="product_availability"
-                                                   value=""
-                                                   placeholder="Введите признак наличия*">
-                                        </h5>
+                                        @endif
                                         <h5 class="content-group text-semibold">
                                             <label>Цена*</label>
                                             <input type="text" name="price"
                                                    value=""
                                                    placeholder="Введите цену*">
                                         </h5>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Цена закупки*</label>
-                                            <input type="text" name="supplier_price"
-                                                   value=""
-                                                   placeholder="Введите цену*">
-                                        </h5>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Количество*</label>
-                                            <input type="text" name="quantity"
-                                                   value=""
-                                                   placeholder="Введите количество*">
-                                        </h5>
-                                        <h5 class="content-group text-semibold">
-                                            <label>% Арабики в кофе</label>
-                                            <p><input type="number" size="3" name="coffee_type" min="0" max="100"></p>
-                                        </h5>
+
+
                                         <div class="upload-photos">
                                             <div class="input-file-row-1">
 
