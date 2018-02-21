@@ -220,10 +220,9 @@
 
                 <li><a class="" onclick='location.href="{{route('show_about')}}"' style="cursor: pointer">О компании</a></li>
                 <li><a class="" onclick='location.href="{{route('show_warranty')}}"' style="cursor: pointer">Гарантия</a></li>
-                <li><a class="" onclick='location.href="{{route('show_delivery')}}"' style="cursor: pointer">Доставка и оплата</a>
-                </li>
-                <li><a class="" onclick='location.href="#"' style="cursor: pointer">Євронот cервіс</a>
-                </li>
+                <li><a class="" onclick='location.href="{{route('show_delivery')}}"' style="cursor: pointer">Доставка и оплата</a></li>
+                <li><a class="" onclick='location.href="{{route('show_contact')}}"' style="cursor: pointer">Євронот cервіс</a></li>
+                <li><a class="" onclick='location.href="{{route('show_site_news')}}"' style="cursor: pointer">Новости</a></li>
             </ul>
             <div class="button col-lg-2 col-md-2">
                 <a href="robots.txt" style="cursor: pointer">Партнерские цены</a>
