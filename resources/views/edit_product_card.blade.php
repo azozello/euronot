@@ -106,11 +106,129 @@
                                             <div class="col-md-6">
                                             </div>
                                             <div class="col-md-12">
-                                                <textarea name="editor[0]" id="editor1">@if(isset($product[0]->text)){!! $product[0]->text !!}@endif</textarea>
-                                            </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[0]" id="editor3">@if(isset($product_text[0]->first_text)){!! $product_text[0]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[0]" id="editor4">@if(isset($product_text[0]->second_text)){!! $product_text[0]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
 
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[1]" id="editor5">@if(isset($product_text[1]->first_text)){!! $product_text[1]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[1]" id="editor6">@if(isset($product_text[1]->second_text)){!! $product_text[1]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[2]" id="editor7">@if(isset($product_text[2]->first_text)){!! $product_text[2]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[2]" id="editor8">@if(isset($product_text[2]->second_text)){!! $product_text[2]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[3]" id="editor9">@if(isset($product_text[3]->first_text)){!! $product_text[3]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[3]" id="editor10">@if(isset($product_text[3]->second_text)){!! $product_text[3]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[4]" id="editor11">@if(isset($product_text[4]->first_text)){!! $product_text[4]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[4]" id="editor12">@if(isset($product_text[4]->second_text)){!! $product_text[4]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[5]" id="editor13">@if(isset($product_text[5]->first_text)){!! $product_text[5]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[5]" id="editor14">@if(isset($product_text[5]->second_text)){!! $product_text[5]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[6]" id="editor15">@if(isset($product_text[6]->first_text)){!! $product_text[6]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[6]" id="editor16">@if(isset($product_text[6]->second_text)){!! $product_text[6]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[7]" id="editor17">@if(isset($product_text[7]->first_text)){!! $product_text[7]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[7]" id="editor18">@if(isset($product_text[7]->second_text)){!! $product_text[7]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[8]" id="editor19">@if(isset($product_text[8]->first_text)){!! $product_text[8]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[8]" id="editor20">@if(isset($product_text[8]->second_text)){!! $product_text[8]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[9]" id="editor21">@if(isset($product_text[9]->first_text)){!! $product_text[9]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[9]" id="editor22">@if(isset($product_text[9]->second_text)){!! $product_text[9]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[10]" id="editor23">@if(isset($product_text[10]->first_text)){!! $product_text[10]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[10]" id="editor24">@if(isset($product_text[10]->second_text)){!! $product_text[10]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[11]" id="editor25">@if(isset($product_text[11]->first_text)){!! $product_text[11]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[11]" id="editor26">@if(isset($product_text[11]->second_text)){!! $product_text[11]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[12]" id="editor27">@if(isset($product_text[12]->first_text)){!! $product_text[12]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[12]" id="editor28">@if(isset($product_text[12]->second_text)){!! $product_text[12]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[13]" id="editor29">@if(isset($product_text[13]->first_text)){!! $product_text[13]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[13]" id="editor30">@if(isset($product_text[13]->second_text)){!! $product_text[13]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[14]" id="editor1">@if(isset($product_text[14]->first_text)){!! $product_text[14]->first_text !!}@endif</textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[14]" id="editor2">@if(isset($product_text[14]->second_text)){!! $product_text[14]->second_text !!}@endif</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
                                 @endif
                                 @if(isset($languages[1]))
                                     <div role="tabpanel" class="tab-pane fade" id="{{$languages[1]->language_url}}">
@@ -157,93 +275,111 @@
                                         </div>
                                     </div>
                                 @endif
-                                <div class="common-right">
-                                    <div class="form-content" style="padding-left: 50px;">
-                                        <h5>Поставщик</h5>
-                                        <select class="selectpicker" name="product_provider">
-                                            @if(isset($product[0]->product_provider))<option>{{$product[0]->product_provider}}</option>@endif
-                                            @foreach($suppliers as $supplier)
-                                                <option>{{$supplier->suppliers_name}}</option>
-                                            @endforeach
-                                        </select>
-                                        <h5>Задержка поставки</h5>
-                                        <select class="selectpicker" name="product_delay_in_delivery">
-                                            @if(isset($product[0]->product_delay_in_delivery))<option selected>{{$product[0]->product_delay_in_delivery}}</option>@endif
-                                            <option>0 дней 	получение сегодня на сегодня
-                                            </option>
-                                            <option>1 день		получение сегодня на завтра
-                                            </option>
-                                            <option>2 дня		получение сегодня на послезавтра
-                                            </option>
-                                        </select>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Крайнее время заказа товара поставщику</label>
-                                            <input type="text" name="product_deadline_to_arrive"
-                                                   value="@if(isset($product[0]->product_deadline_to_arrive)){{ $product[0]->product_deadline_to_arrive }}@endif"
-                                                   placeholder="Введите крайнее время*">
-                                        </h5>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Оптимальный остаток товара на складе</label>
-                                            <input type="text" name="product_optimal_quantity"
-                                                   value="@if(isset($product[0]->product_optimal_quantity)){{ $product[0]->product_optimal_quantity }}@endif"
-                                                   placeholder="Введите оптимальный остаток*">
-                                        </h5>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Признак наличия товара у поставщика
-                                            </label>
-                                            <input type="text" name="product_availability"
-                                                   value="@if(isset($product[0]->product_availability)){{ $product[0]->product_availability }}@endif"
-                                                   placeholder="Введите признак наличия*">
-                                        </h5>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Цена*</label>
-                                            <input type="text" name="price"
-                                                   value="@if(isset($product[0]->price)){{ $product[0]->price }}@endif"
-                                                   placeholder="Введите цену*">
-                                        </h5>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Цена закупки*</label>
-                                            <input type="text" name="supplier_price"
-                                                   value="@if(isset($product[0]->supplier_price)){{ $product[0]->supplier_price }}@endif"
-                                                   placeholder="Введите цену*">
-                                        </h5>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Количество*</label>
-                                            <input type="text" name="quantity"
-                                                   value="@if(isset($product[0]->quantity)){{ $product[0]->quantity }}@endif"
-                                                   placeholder="Введите количество*">
-                                        </h5>
-                                        <h5 class="content-group text-semibold">
-                                            <label>% Арабики в кофе</label>
-                                            <p><input type="number" size="3" name="coffee_type" min="0" max="100" @if(isset($product[0]->product_type))value="{{$product[0]->product_type}}"@endif></p>
-                                        </h5>
-                                        <div class="upload-photos">
-                                            <div class="input-file-row-1">
+                                        <div class="common-right">
+                                            <h5 class="content-group text-semibold">
+                                                <label>Таймер Акции</label>
+                                                <input min="0" value="@if(isset($timer_days)){{$timer_days}}@endif" max="1000" id="number" style="width: 2em;" name="timer_days" type="number">
+                                                <input min="0" value="@if(isset($timer_hours)){{$timer_hours}}@endif" max="24" id="number" style="width: 2em;" name="timer_hours" type="number">
+                                                <input min="0" value="@if(isset($timer_minutes)){{$timer_minutes}}@endif" max="60" id="number" style="width: 2em;" name="timer_minutes" type="number">
+                                                <input min="0" value="@if(isset($timer_seconds)){{$timer_seconds}}@endif" max="60" id="number" style="width: 2em;" name="timer_seconds" type="number">
+                                            </h5>
+                                            <div class="form-content" style="padding-left: 50px;">
+                                                <h5>Статус товара</h5>
+                                                <select class="selectpicker" name="product_status">
+                                                    <option>@if(isset($product[0]->product_status)){{$product[0]->product_status}}@endif
+                                                    </option>
+                                                    <option>Супер цена
+                                                    </option>
+                                                    <option>Акция
+                                                    </option>
+                                                    <option>Хит продаж
+                                                    </option>
+                                                    <option>Продано
+                                                    </option>
+                                                </select>
+                                                <h5>Наличие</h5>
+                                                <select class="selectpicker" name="product_isset">
+                                                    <option>@if(isset($product[0]->product_isset)){{$product[0]->product_isset}}@endif
+                                                    </option>
+                                                    <option>В наличии
+                                                    </option>
+                                                    <option>Нет в наличии
+                                                    </option>
+                                                </select>
+                                                <h5>Гарантия</h5>
+                                                <select class="selectpicker" name="product_garanty">
+                                                    <option>@if(isset($product[0]->product_garanty)){{$product[0]->product_garanty}}@endif
+                                                    </option>
+                                                    <option>3 месяца
+                                                    </option>
+                                                    <option>6 месяцев
+                                                    </option>
+                                                    <option>12 месяцев
+                                                    </option>
+                                                    <option>24 месяца
+                                                    </option>
+                                                </select>
+                                                <h5>Оценка пользователя</h5>
+                                                <select class="selectpicker" name="product_stars">
+                                                    <option>@if(isset($product[0]->product_stars)){{$product[0]->product_stars}}@endif
+                                                    </option>
+                                                    <option>5 звезд
+                                                    </option>
+                                                    <option>4 звезды
+                                                    </option>
+                                                    <option>3 звезды
+                                                    </option>
+                                                    <option>2 звезды
+                                                    </option>
+                                                    <option>1 звезда
+                                                    </option>
+                                                </select>
+                                                @if(isset($products))
+                                                    <h5>Подарочный товар</h5>
+                                                    <select class="selectpicker" name="product_gift">
+                                                        <option>@if(isset($product[0]->product_gift)){{$product[0]->product_gift}}@endif
+                                                        </option>
+                                                        @foreach($products as $product)
+                                                            <option>{{$product->name}}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                @endif
+                                                <h5 class="content-group text-semibold">
+                                                    <label>Цена*</label>
+                                                    <input type="text" name="price"
+                                                           value="@if(isset($product[0]->price)){{$product[0]->price}}@endif"
+                                                           placeholder="Введите цену*">
+                                                </h5>
 
-                                                <div class="upload-file-container">
 
-                                                    <div class="upload-file-container-text">
-                                                        <button type="" class="upload-single-photo btn bg-teal-400">
-                                                            Обновить
-                                                        </button>
-                                                        <input type="file" name="pic[]" class="photo"
-                                                               id="imgInput"/>
+                                                <div class="upload-photos">
+                                                    <div class="input-file-row-1">
 
+                                                        <div class="upload-file-container">
+                                                            <img id="image" src="#" alt=""/>
+                                                            <div class="upload-file-container-text">
+                                                                <button type="" class="upload-single-photo btn bg-teal-400">
+                                                                    Обновить
+                                                                </button>
+                                                                <input type="file" name="pic[]" class="photo"
+                                                                       id="imgInput"/>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="demo-section k-content">
+                                                        <input name="files[]" id="files" type="file"/>
                                                     </div>
                                                 </div>
 
                                             </div>
-                                            <div class="demo-section k-content">
-                                                <input name="files[]" id="files" type="file"/>
-                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <!-- Связи  -->
                 <div role="tabpanel" class="communications tab-pane fade  " id="communications">
                     <div class="panel panel-flat">
@@ -346,18 +482,213 @@
         </div>
         <!-- /footer -->
         <script type="text/javascript">
-			var ckeditor1 = CKEDITOR.replace('editor1');
-			AjexFileManager.init({
-				returnTo: 'ckeditor',
-				editor: ckeditor1
-			});
+            var ckeditor1 = CKEDITOR.replace('editor1');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor1
+            });
         </script>
         <script type="text/javascript">
-			var ckeditor2 = CKEDITOR.replace('editor2');
-			AjexFileManager.init({
-				returnTo: 'ckeditor',
-				editor: ckeditor2
-			});
+            var ckeditor2 = CKEDITOR.replace('editor2');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor3');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor4');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor5');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor6');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor7');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor8');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor9');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor10');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor11');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor12');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor13');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor14');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script><script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor15');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor16');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor17');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor18');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor19');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor20');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor21');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor22');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor23');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor24');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor25');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor26');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor27');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor28');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor29');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor30');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
         </script>
 
         <script>

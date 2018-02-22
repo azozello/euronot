@@ -41,6 +41,20 @@
 								class="sprite sprite-menu-icon-5"></span>Док Станции б/у</a></li>
 						<li><a href="#"><span class="sprite sprite-menu-icon-2"></span>Игровые системники</a></li>
 					</ul>
+					<ul class="nav nav-bar main-menu main-menu2">
+						<li><a href="#">
+								<span class="sprite sprite-menu-icon-1"></span>Для навчання</a>
+						</li>
+						<li><a href="#">
+								<span class="sprite sprite-menu-icon-2"></span>Для роботи</a>
+						</li>
+						<li><a href="#"><span class="sprite sprite-menu-icon-3"></span>Для
+								ігор</a>
+						</li>
+						<li><a href="#"><span class="sprite sprite-menu-icon-4"></span>Для домашнього використання</a>
+						</li>
+
+					</ul>
 
 				</div>
 			</nav>
