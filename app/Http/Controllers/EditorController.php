@@ -25,8 +25,6 @@ use SessionVariables;
 
 class EditorController extends Controller
 {
-
-
     public function show_editor()
     {
         SessionVariables::set_session_variable('floder','pages_images');
@@ -603,9 +601,9 @@ class EditorController extends Controller
 
     public function about_company_edit_show(Request $request)
     {
-        $about = AboutCompany::where('id', '=', $request->id)->get();
-        return view('object_editor_edit_vent', [
-            'about' => $about,
+        $about = AboutCompany::get();
+        return view('about_company', [
+            'about_company' => $about,
         ]);
     }
 

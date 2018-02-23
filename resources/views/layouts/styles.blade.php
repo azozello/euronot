@@ -157,7 +157,7 @@
                             <li>
                                 <a href="#"><i class="icon-newspaper"></i><span>О компании</span></a>
                                 <ul>
-                                    <li><a href="{{route('news_editor')}}">Редактировать</a></li>
+                                    <li><a href="{{route('edit_about')}}">Редактировать</a></li>
                                 </ul>
                             </li>
                             <li>

@@ -159,9 +159,10 @@ Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
     Route::post('/delete_news',['uses'=>'EditorController@delete_news','as'=>'delete_news']);
     Route::get('/search_news',['uses'=>'PagesController@search_news','as'=>'search_news']);
 
-    Route::get('/edit_about', function () {
-        return view('about_company');
-    });
+    Route::get('/edit_about',[
+        'uses' => 'EditorController@about_company_edit_show',
+        'as' => 'edit_about'
+    ]);
 
     Route::post('/about_company_edit',['uses' => 'EditorController@about_company_edit', 'as' => 'about_company_edit']);
 
