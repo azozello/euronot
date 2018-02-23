@@ -93,7 +93,10 @@ class PagesController extends Controller
         return view('site.products-263');
     }
     public function show_about(){
-        return view('site.about');
+        $about_text = AboutCompany::get()[0]->attributesToArray()['about_company_text'];
+        return view('site.about', [
+            'text' => $about_text
+        ]);
     }
     ////////////////////////////////////////////////////////////////////////////
     public function page_main(){

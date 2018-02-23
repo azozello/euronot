@@ -44,6 +44,7 @@
                             <strong>{{$errors->first()}}</strong>
                         </div>
                     @endif
+
                     @if(isset($languages[0]))
                             <form method="post" action="{{ route('add_news') }}" enctype="multipart/form-data">
                         <div role="tabpanel" class="tab-pane fade in active" id="{{$languages[0]->language_url}}">

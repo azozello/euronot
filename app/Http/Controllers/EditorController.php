@@ -38,7 +38,6 @@ class EditorController extends Controller
         ]);
     }
 
-
     public function add_text(Request $request)
     {
         //  dd(URL::base());
@@ -139,7 +138,6 @@ class EditorController extends Controller
         return \redirect()->route('pages_list');
     }
 
-
     public function edit_page_show(Request $request)
     {
         SessionVariables::set_session_variable('floder','pages_images');
@@ -155,7 +153,6 @@ class EditorController extends Controller
             'pages' => $pages,
         ]);
     }
-
 
     public function edit_page(Request $request)
     {
@@ -602,6 +599,14 @@ class EditorController extends Controller
             }
         }
         return redirect()->route('object_list');
+    }
+
+    public function about_company_edit_show(Request $request)
+    {
+        $about = AboutCompany::where('id', '=', $request->id)->get();
+        return view('object_editor_edit_vent', [
+            'about' => $about,
+        ]);
     }
 
     public function about_company_edit(Request $request)

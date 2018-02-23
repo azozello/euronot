@@ -154,6 +154,18 @@
                                     <li><a href="{{route('show_news')}}">Список новостей</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="#"><i class="icon-newspaper"></i><span>О компании</span></a>
+                                <ul>
+                                    <li><a href="{{route('news_editor')}}">Редактировать</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-newspaper"></i><span>Гарантии</span></a>
+                                <ul>
+                                    <li><a href="{{route('news_editor')}}">Редактировать</a></li>
+                                </ul>
+                            </li>
                            <!-- <li>
                                 <a href="#"><i class="icon-stack2"></i> <span>Журналы</span></a>
                                 <ul>

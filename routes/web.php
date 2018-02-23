@@ -159,6 +159,11 @@ Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
     Route::post('/delete_news',['uses'=>'EditorController@delete_news','as'=>'delete_news']);
     Route::get('/search_news',['uses'=>'PagesController@search_news','as'=>'search_news']);
 
+    Route::get('/edit_about', function () {
+        return view('about_company');
+    });
+
+    Route::post('/about_company_edit',['uses' => 'EditorController@about_company_edit', 'as' => 'about_company_edit']);
 
     Route::get('/photos',['uses'=>'PagesController@photos','as'=>'photos']); //галерея
     Route::post('/add_new_photos',['uses'=>'PhotosController@add_new_photos','as'=>'add_new_photos']);
