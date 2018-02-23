@@ -60,7 +60,7 @@
 					</a>
 					<div class="date">{{$news->date}}</div>
 					<div class="title">
-						<a class="title" onclick='location.href="{{route('show_site_news')}}"'>{{$news->name}}</a>
+						<a class="title" onclick='location.href="{{route('news_show')}}"+"/"+"{{$news->url}}"'>{{$news->name}}</a>
 					</div>
 				</div>
 				@endforeach

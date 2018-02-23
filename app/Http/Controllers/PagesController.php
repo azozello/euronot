@@ -81,6 +81,11 @@ class PagesController extends Controller
         ]);
     }
 
+    public function show_one_news($url) {
+        return view('site.news-inner',[
+            'page_array' => News::where('url',$url)->get()[0]->attributesToArray()
+        ]);
+    }
     public function show_warranty(){
         return view('site.warranty');
     }
