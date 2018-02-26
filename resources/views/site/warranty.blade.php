@@ -54,8 +54,10 @@
 					itemprop="title">Компьютерная техника бу</span></a>&nbsp;&nbsp;>&nbsp;&nbsp;<span>Гарантия</span></span>
 		</div>
 		<h1 class="page_title ">Гарантия</h1>
-		<div class="page_text"><p>Гарантию сроком до 2 лет в зависимоcти от модели, предоставляет сервисный центр
-		                          EvronotService.</p>
+		<div class="page_text">
+			@if(isset($text))
+				{!! $text !!}
+			@endif
 			<div class="clear"></div>
 		</div>
 		<div class="clear"></div>

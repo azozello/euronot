@@ -163,7 +163,7 @@
                             <li>
                                 <a href="#"><i class="icon-newspaper"></i><span>Гарантии</span></a>
                                 <ul>
-                                    <li><a href="{{route('news_editor')}}">Редактировать</a></li>
+                                    <li><a href="{{route('edit_warranty')}}">Редактировать</a></li>
                                 </ul>
                             </li>
                            <!-- <li>

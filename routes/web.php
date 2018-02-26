@@ -163,8 +163,19 @@ Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
         'uses' => 'EditorController@about_company_edit_show',
         'as' => 'edit_about'
     ]);
+    Route::get('/edit_warranty',[
+        'uses' => 'EditorController@warranty_edit_show',
+        'as' => 'edit_warranty'
+    ]);
 
-    Route::post('/about_company_edit',['uses' => 'EditorController@about_company_edit', 'as' => 'about_company_edit']);
+    Route::post('/warranty_edit', [
+        'uses' => 'EditorController@warranty_edit',
+        'as' => 'warranty_edit'
+    ]);
+    Route::post('/about_company_edit', [
+        'uses' => 'EditorController@about_company_edit',
+        'as' => 'about_company_edit'
+    ]);
 
     Route::get('/photos',['uses'=>'PagesController@photos','as'=>'photos']); //галерея
     Route::post('/add_new_photos',['uses'=>'PhotosController@add_new_photos','as'=>'add_new_photos']);

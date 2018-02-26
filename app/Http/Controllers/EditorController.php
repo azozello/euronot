@@ -6,6 +6,7 @@ use App\AboutCompany;
 use App\ObjectImages;
 use App\Objects;
 use App\SiteMap;
+use App\Warranty;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Texts;
@@ -599,7 +600,7 @@ class EditorController extends Controller
         return redirect()->route('object_list');
     }
 
-    public function about_company_edit_show(Request $request)
+    public function about_company_edit_show()
     {
         $about = AboutCompany::get();
         return view('about_company', [
@@ -617,6 +618,27 @@ class EditorController extends Controller
         $data->about_company_url = $request->url;
         $data->about_company_description = $request->description;
         $data->about_company_title = $request->title;
+        $data->save();
+        return redirect()->back();
+    }
+
+    public function warranty_edit_show() {
+        $warranty = Warranty::get();
+        return view('warranty',[
+            'warranty' => $warranty
+        ]);
+    }
+
+    public function warranty_edit(Request $request)
+    {
+        Warranty::truncate();
+        $data = new Warranty();
+        $data->warranty_lang = 1;
+        $data->warranty_text = $request->editor1;
+        $data->warranty_name = $request->name;
+        $data->warranty_url = $request->url;
+        $data->warranty_description = $request->description;
+        $data->warranty_title = $request->title;
         $data->save();
         return redirect()->back();
     }

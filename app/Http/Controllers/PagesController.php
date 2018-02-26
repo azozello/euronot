@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Warranty;
 use App\ArrivingOrders;
 use App\Cart;
 use App\Cities;
@@ -87,7 +88,10 @@ class PagesController extends Controller
         ]);
     }
     public function show_warranty(){
-        return view('site.warranty');
+        $warranty = Warranty::get();
+        return view('site.warranty', [
+            'text' => $warranty[0]->attributesToArray()['warranty_text']
+        ]);
     }
     public function show_products(){
         return view('site.products-263');
@@ -200,7 +204,6 @@ class PagesController extends Controller
     }
 
     public function news_editor(){
-
         SessionVariables::set_session_variable('floder','news_images');
         $languages = Languages::where('active','=',1)->get();
 

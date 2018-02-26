@@ -52,7 +52,9 @@
 		</div>
 		<h1 class="page_title ">О компании</h1>
 		<div class="page_text">
-			<?php echo $text ?>
+			@if(isset($text))
+				{!! $text !!}
+			@endif
 			<div class="clear"></div>
 		</div>
 
