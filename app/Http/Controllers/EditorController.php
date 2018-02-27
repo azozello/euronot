@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\AboutCompany;
 use App\ObjectImages;
 use App\Objects;
+use App\OpenHours;
 use App\SiteMap;
 use App\Warranty;
 use Illuminate\Http\Request;
@@ -395,11 +396,12 @@ class EditorController extends Controller
         $data->postal_code = $request->postal_code;
         $data->address_locality = $request->address_locality;
         $data->email = $request->email;
-        $data->phone_number = $request->phone_number;
-        $data->fax_number = $request->fax_number;
+        $data->phone_number_1 = $request->phone_number_1;
+        $data->phone_number_2 = $request->phone_number_2;
+        $data->phone_number_3 = $request->phone_number_3;
+        $data->phone_number_4 = $request->phone_number_4;
         $data->url = $request->url;
         $data->save();
-
         return \redirect()->back();
     }
 
@@ -629,8 +631,7 @@ class EditorController extends Controller
         ]);
     }
 
-    public function warranty_edit(Request $request)
-    {
+    public function warranty_edit(Request $request){
         Warranty::truncate();
         $data = new Warranty();
         $data->warranty_lang = 1;
@@ -639,6 +640,33 @@ class EditorController extends Controller
         $data->warranty_url = $request->url;
         $data->warranty_description = $request->description;
         $data->warranty_title = $request->title;
+        $data->save();
+        return redirect()->back();
+    }
+
+    public function city_delete(Request $request) {
+        OpenHours::where('id', $request->city_id)->delete();
+        return redirect()->back();
+    }
+
+    public function city_edit(Request $request) {
+        $data = OpenHours::find($request->city_id);
+        $data->city_name = $request->city_name;
+        $data->street = $request->street;
+        $data->working_days = $request->working_days;
+        $data->saturday = $request->saturday;
+        $data->sunday = $request->sunday;
+        $data->save();
+        return redirect()->route('city_list');
+    }
+
+    public function city_add(Request $request) {
+        $data = new OpenHours();
+        $data->city_name = $request->city_name;
+        $data->street = $request->street;
+        $data->working_days = $request->working_days;
+        $data->saturday = $request->saturday;
+        $data->sunday = $request->sunday;
         $data->save();
         return redirect()->back();
     }

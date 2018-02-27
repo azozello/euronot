@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\OpenHours;
 use App\Warranty;
 use App\ArrivingOrders;
 use App\Cart;
@@ -65,41 +66,70 @@ use SiteMap as SiteMapFacade;
 class PagesController extends Controller
 {
     public function show_site_index(){
-            return view('site.index');
+        return view('site.index',[
+            'organization' => Organization::get()[0],
+            'cities' => OpenHours::get()
+        ]);
     }
     public function show_cart(){
-        return view('site.cart');
+        return view('site.cart', [
+            'organization' =>Organization::get()[0],
+            'cities' => OpenHours::get()
+        ]);
     }
     public function show_contact(){
-        return view('site.contact');
+        return view('site.contact', [
+            'organization' =>Organization::get()[0],
+            'cities' => OpenHours::get()
+        ]);
     }
     public function show_delivery(){
-        return view('site.delivery');
+        return view('site.delivery', [
+            'organization' =>Organization::get()[0],
+            'cities' => OpenHours::get()
+        ]);
     }
     public function show_site_news(Request $request){
         return view('site.news',[
+            'organization' =>Organization::get()[0],
+            'cities' => OpenHours::get(),
             'all_news' => News::where('name','!=',NULL)->where('page_lang','=',1)->paginate(30)->appends($request->all())
         ]);
     }
 
     public function show_one_news($url) {
         return view('site.news-inner',[
+            'organization' =>Organization::get()[0],
+            'cities' => OpenHours::get(),
             'page_array' => News::where('url',$url)->get()[0]->attributesToArray()
         ]);
     }
     public function show_warranty(){
-        $warranty = Warranty::get();
         return view('site.warranty', [
-            'text' => $warranty[0]->attributesToArray()['warranty_text']
+            'organization' =>Organization::get()[0],
+            'cities' => OpenHours::get(),
+            'url' => Warranty::get()[0]->attributesToArray()['warranty_url'],
+            'text' => Warranty::get()[0]->attributesToArray()['warranty_text'],
+            'name' => Warranty::get()[0]->attributesToArray()['warranty_name'],
+            'title' => Warranty::get()[0]->attributesToArray()['warranty_title'],
+            'description' => Warranty::get()[0]->attributesToArray()['warranty_description']
         ]);
     }
     public function show_products(){
-        return view('site.products-263');
+        return view('site.products-263',[
+            'organization' => Organization::get()[0],
+            'cities' => OpenHours::get()
+        ]);
     }
     public function show_about(){
-        $about_text = AboutCompany::get()[0]->attributesToArray()['about_company_text'];
         return view('site.about', [
-            'text' => $about_text
+            'organization' =>Organization::get()[0],
+            'cities' => OpenHours::get(),
+            'url' => AboutCompany::get()[0]->attributesToArray()['about_company_url'],
+            'text' => AboutCompany::get()[0]->attributesToArray()['about_company_text'],
+            'name' => AboutCompany::get()[0]->attributesToArray()['about_company_name'],
+            'title' => AboutCompany::get()[0]->attributesToArray()['about_company_title'],
+            'description' => AboutCompany::get()[0]->attributesToArray()['about_company_description']
         ]);
     }
     ////////////////////////////////////////////////////////////////////////////
@@ -151,6 +181,23 @@ class PagesController extends Controller
         return view('object_editor_vent',[
             'promotions' => Promotions::get()
         ]);
+    }
+
+    public function city_list() {
+        return view('city_list', [
+            'cities' => OpenHours::get()
+        ]);
+    }
+
+    public function edit_city($url) {
+        $city = OpenHours::where('city_name', $url)->get()[0];
+        return view('edit_city', [
+            'city' => $city
+        ]);
+    }
+
+    public function add_city() {
+        return view('add_city');
     }
 
     public function object_list(){
@@ -253,9 +300,12 @@ class PagesController extends Controller
             'subscription' => SubscriptionTemplate::get()
         ]);
     }
-    public function organization(){
+    public function organization() {
+        $organization = Organization::get();
+        $open_hours = OpenHours::get();
+        dd($open_hours);
         return view('organization',[
-            'org' => Organization::get()
+            'org' => $organization
         ]);
     }
     public function sliders(){

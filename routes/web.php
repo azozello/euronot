@@ -189,6 +189,33 @@ Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
     Route::post('/reviews_update',['uses'=>'ReviewController@reviews_update','as'=>'reviews_update']);
     Route::post('/reviews_delete',['uses'=>'ReviewController@reviews_delete','as'=>'reviews_delete']);
 
+    Route::get('/city_list', [
+        'uses' => 'PagesController@city_list',
+        'as' => 'city_list'
+    ]);
+    Route::get('/edit_city/{url?}', [
+        'uses' => 'PagesController@edit_city',
+        'as' => 'edit_city'
+    ]);
+    Route::get('/add_city',[
+        'uses' => 'PagesController@add_city',
+        'as' => 'add_city'
+    ]);
+
+    Route::post('/city_edit', [
+        'uses' => 'EditorController@city_edit',
+        'as' => 'city_edit'
+    ]);
+    Route::post('/city_add', [
+        'uses' => 'EditorController@city_add',
+        'as' => 'city_add'
+    ]);
+
+    Route::post('/city_delete', [
+        'uses' => 'EditorController@city_delete',
+        'as' => 'city_delete'
+    ]);
+
     Route::get('/organization',['uses'=>'PagesController@organization','as'=>'organization']);
     Route::post('/upload_organization',['uses'=>'EditorController@upload_organization','as'=>'upload_organization']);//про организацию
 

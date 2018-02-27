@@ -52,13 +52,20 @@
 					<input type="text" name="email" placeholder="Введите Email*" value="@if(isset($org[0])){{$org[0]->email}}@endif">
 				</h6>
 				<h6 class="content-group text-semibold">
-					<label>Номер телефона</label>
-					<input type="text" name="phone_number" placeholder="Введите телефон*" value="@if(isset($org[0])){{$org[0]->phone_number}}@endif">
+					<label>Номер факса</label>
+					<input type="text" name="phone_number_1" placeholder="Введите телефон*" value="@if(isset($org[0])){{$org[0]->phone_number_1}}@endif">
 				</h6>
 				<h6 class="content-group text-semibold">
-					<label>Время работы</label>
-					<input type="text" name="fax_number" placeholder="Введите факс*"
-						   value="@if(isset($org[0])){{$org[0]->fax_number}}@endif">
+					<label>Номер телефона</label>
+					<input type="text" name="phone_number_2" placeholder="Введите телефон*" value="@if(isset($org[0])){{$org[0]->phone_number_2}}@endif">
+				</h6>
+				<h6 class="content-group text-semibold">
+					<label>Номер телефона</label>
+					<input type="text" name="phone_number_3" placeholder="Введите телефон*" value="@if(isset($org[0])){{$org[0]->phone_number_3}}@endif">
+				</h6>
+				<h6 class="content-group text-semibold">
+					<label>Номер телефона</label>
+					<input type="text" name="phone_number_4" placeholder="Введите телефон*" value="@if(isset($org[0])){{$org[0]->phone_number_4}}@endif">
 				</h6>
 				<h6 class="content-group text-semibold">
 					<label>URL</label>

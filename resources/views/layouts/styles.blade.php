@@ -201,6 +201,13 @@
                                 </ul>
                             </li>
                             <li>
+                                <a href="#"><i class="icon-cog"></i> <span>Отделения</span></a>
+                                <ul>
+                                    <li><a href="{{route('city_list')}}">Список</a></li>
+                                    <li><a href="{{route('add_city')}}">Добавить</a></li>
+                                </ul>
+                            </li>
+                            <li>
                                 <a href="#"><i class="icon-sphere"></i> <span>СЕО</span></a>
                                 <ul>
                                     <li><a href="{{route('site_map')}}">Карта сайта</a></li>

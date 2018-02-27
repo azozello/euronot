@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>Гарантия на компьютерную бу технику. EvronotService</title>
+	<title>{{$title}}</title>
 	<meta name="description"
 	      content="Гарантийное обслуживание компьютерной техники бизнес класса из Германии в Киеве, Днепре, Одессе, Харькове, Запорожье."/>
 	<meta name="keywords"

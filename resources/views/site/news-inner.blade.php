@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>Как правильно выбрать ноутбук</title>
+	<title>{{$page_array['title']}}</title>
 	<meta name="description"
 	      content="При выборе ноутбука стоит учитывать множество не маловажных факторов. Детальнее в статье."/>
 	<meta name="keywords" content="Ноутбуки, ноутбуки бу, купить ноутбук, видеокарта, процессор."/>
@@ -761,8 +761,7 @@
 				<div class="date">{{$page_array['date']}}</div>
 				<h2 class="news_title">{{$page_array['name']}}</h2>
 				<div class="page_text">
-					<?php echo
-					$page_array['text']?>
+					{!! $page_array['text'] !!}
 				</div>
 
 			</div>

@@ -74,123 +74,123 @@
                 </style>
                 <div class="item phone_0 active">
                     <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
-                                href="tel:(096) 508-85-85">(096) 508-85-85</a></div>
+                                href="tel:(096) 508-85-85">{{$organization['phone_number_2']}}</a></div>
                     <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
-                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                                href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a></div>
                     <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
-                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                                href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a></div>
                     <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
-                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                                href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a></div>
                 </div>
                 <div class="item phone_1">
                     <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
-                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                                href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a></div>
                     <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
-                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                                href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a></div>
                     <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
-                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                                href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a></div>
                     <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
-                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                                href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a></div>
                 </div>
                 <div class="item phone_2">
                     <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
-                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                                href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a></div>
                     <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
-                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                                href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a></div>
                     <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
-                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                                href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a></div>
                     <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
-                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                                href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a></div>
                 </div>
                 <div class="item phone_3">
                     <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
-                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                                href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a></div>
                     <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
-                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                                href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a></div>
                     <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
-                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                                href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a></div>
                     <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
-                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                                href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a></div>
                 </div>
                 <div class="item phone_4">
                     <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
-                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                                href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a></div>
                     <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
-                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                                href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a></div>
                     <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
-                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                                href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a></div>
                     <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
-                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                                href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a></div>
                 </div>
                 <div class="item phone_5">
                     <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
-                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                                href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a></div>
                     <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
-                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                                href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a></div>
                     <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
-                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                                href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a></div>
                     <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
-                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                                href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a></div>
                 </div>
                 <div class="item phone_6">
                     <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
-                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                                href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a></div>
                     <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
-                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                                href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a></div>
                     <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
-                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                                href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a></div>
                     <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
-                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                                href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a></div>
                 </div>
                 <div class="item phone_7">
                     <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
-                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                                href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a></div>
                     <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
-                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                                href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a></div>
                     <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
-                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                                href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a></div>
                     <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
-                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                                href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a></div>
                 </div>
                 <div class="item phone_8">
                     <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
-                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                                href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a></div>
                     <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
-                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                                href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a></div>
                     <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
-                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                                href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a></div>
                     <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
-                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                                href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a></div>
                 </div>
                 <div class="item phone_9">
                     <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
-                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                                href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a></div>
                     <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
-                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                                href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a></div>
                     <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
-                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                                href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a></div>
                     <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
-                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                                href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a></div>
                 </div>
                 <div class="item phone_10">
                     <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
-                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                                href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a></div>
                     <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
-                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                                href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a></div>
                     <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
-                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                                href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a></div>
                     <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
-                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                                href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a></div>
                 </div>
                 <div class="item phone_11">
                     <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a
-                                href="tel:  (096) 508-85-85"> (096) 508-85-85</a></div>
+                                href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a></div>
                     <div class="life"><img src="../index_app/images/life.png" style="width:20px;height:20px;"/><a
-                                href="tel:(073) 508-85-85">(073) 508-85-85</a></div>
+                                href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a></div>
                     <div class="vf"><img src="../index_app/images/vf.png" style="width:20px;height:20px;"/><a
-                                href="tel:(095) 508-85-85">(095) 508-85-85</a></div>
+                                href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a></div>
                     <div class="city"><img src="../index_app/images/city.png" style="width:20px;height:20px;"/><a
-                                href="tel:(044) 383-16-83">(044) 383-16-83</a></div>
+                                href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a></div>
                 </div>
                 <div class="item phone_12">
                     <div class="ks"><img src="../index_app/images/ks.png" style="width:20px;height:20px;"/><a href="tel:"></a></div>
@@ -198,18 +198,10 @@
             </div>
             <div class="city-select mob">
                 <select name="cities" class="cities2" id="cities" onchange="city_change2();">
-
-                    <option value="0" selected="selected">Киев</option>
-                    <option value="1">Одесса</option>
-                    <option value="2">Одесса</option>
-                    <option value="3">Харьков</option>
-                    <option value="4">Кропивницкий</option>
-                    <option value="5">Каменское</option>
-                    <option value="6">Запорожье</option>
-                    <option value="7">Ивано-Франковск</option>
-                    <option value="8">Сарны</option>
-                    <option value="9">Бровары</option>
-                    <option value="10">Днепр</option>
+                    <option value="0" selected="selected">{{$cities[0]['city_name']}}</option>
+                    @foreach($cities as $city)
+                        <option value="1">{{$city['city_name']}}</option>
+                    @endforeach
                 </select>
 
 
@@ -256,21 +248,12 @@
                 </div>
             </div>
             <div class="city-select col-lg-2 col-md-2">
-
                 <select name="cities" class="cities1" id="cities" onchange="city_change();">
-                    <option value="0" selected="selected">Киев</option>
-                    <option value="1">Одесса</option>
-                    <option value="2">Одесса</option>
-                    <option value="3">Харьков</option>
-                    <option value="4">Кропивницкий</option>
-                    <option value="5">Каменское</option>
-                    <option value="6">Запорожье</option>
-                    <option value="7">Ивано-Франковск</option>
-                    <option value="8">Сарны</option>
-                    <option value="9">Бровары</option>
-                    <option value="10">Днепр</option>
+                    <option value="0" selected="selected">{{$cities[0]['city_name']}}</option>
+                    @foreach($cities as $city)
+                        <option value="1">{{$city['city_name']}}</option>
+                    @endforeach
                 </select>
-
 
             </div>
             <div class="col-lg-2 col-md-2 phone-block phones" id="phones1">
@@ -301,123 +284,123 @@
                 </style>
 
                 <div class="item phone_0 active">
-                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:(096) 508-85-85">(096) 508-85-85</a>
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:(096) 508-85-85">{{$organization['phone_number_2']}}</a>
                     </div>
-                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a>
                     </div>
-                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a>
                     </div>
-                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a>
                     </div>
                 </div>
                 <div class="item phone_1">
-                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a>
                     </div>
-                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a>
                     </div>
-                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a>
                     </div>
-                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a>
                     </div>
                 </div>
                 <div class="item phone_2">
-                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a>
                     </div>
-                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a>
                     </div>
-                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a>
                     </div>
-                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a>
                     </div>
                 </div>
                 <div class="item phone_3">
-                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a>
                     </div>
-                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a>
                     </div>
-                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a>
                     </div>
-                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a>
                     </div>
                 </div>
                 <div class="item phone_4">
-                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a>
                     </div>
-                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a>
                     </div>
-                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a>
                     </div>
-                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a>
                     </div>
                 </div>
                 <div class="item phone_5">
-                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a>
                     </div>
-                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a>
                     </div>
-                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a>
                     </div>
-                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a>
                     </div>
                 </div>
                 <div class="item phone_6">
-                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a>
                     </div>
-                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a>
                     </div>
-                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a>
                     </div>
-                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a>
                     </div>
                 </div>
                 <div class="item phone_7">
-                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a>
                     </div>
-                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a>
                     </div>
-                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a>
                     </div>
-                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a>
                     </div>
                 </div>
                 <div class="item phone_8">
-                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a>
                     </div>
-                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a>
                     </div>
-                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a>
                     </div>
-                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a>
                     </div>
                 </div>
                 <div class="item phone_9">
-                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a>
                     </div>
-                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a>
                     </div>
-                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a>
                     </div>
-                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a>
                     </div>
                 </div>
                 <div class="item phone_10">
-                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> {{$organization['phone_number_2']}}</a>
                     </div>
-                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a>
                     </div>
-                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a>
                     </div>
-                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a>
                     </div>
                 </div>
                 <div class="item phone_11">
-                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"> (096) 508-85-85</a>
+                    <div class="ks-a"><img src="../index_app/images/ks.png"/><a href="tel:  (096) 508-85-85"></a>
                     </div>
-                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">(073) 508-85-85</a>
+                    <div class="life-a"><img src="../index_app/images/life.png"/><a href="tel:(073) 508-85-85">{{$organization['phone_number_3']}}</a>
                     </div>
-                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">(095) 508-85-85</a>
+                    <div class="vf-a"><img src="../index_app/images/vf.png"/><a href="tel:(095) 508-85-85">{{$organization['phone_number_4']}}</a>
                     </div>
-                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">(044) 383-16-83</a>
+                    <div class="city-a"><img src="../index_app/images/city.png"/><a href="tel:(044) 383-16-83">{{$organization['phone_number_1']}}</a>
                     </div>
                 </div>
                 <div class="item phone_12">
@@ -431,38 +414,54 @@
                     <div class="title">График работы:</div>
                     <div class="text">
                         <div class="item grafik_0 active">
-                            пн.-пт. 10:00-19:00<br/>сб.-вс. 10:30-17:00
+                            @if(isset($cities[0]['street']))ул.{{$cities[0]['street']}}<br/>@endif
+                            пн.-пт. {{$cities[0]['working_days']}}<br/>
+                            сб. {{$cities[0]['saturday']}}<br/>
+                            вс. {{$cities[0]['sunday']}}
                         </div>
-                        <div class="item grafik_1 line_3">
-                            ул.Преображенская<br/>пн.-пт. 09:00-19:00<br/>сб. 10:00-17:00<br/>вс. выходной
-                        </div>
-                        <div class="item grafik_2 line_3">
-                            ул.Ришельевская<br/>пн.-сб. 09:00-19:00<br/>вс. 10:00- 17:00
-                        </div>
-                        <div class="item grafik_3 line_3">
-                            пн.-пт. 09:00-18:00<br/>сб. 09:00-16:00<br/>вс. выходной
-                        </div>
-                        <div class="item grafik_4">
-                            пн.-пт. 09:00-18:00<br/>сб.-вс. 10:00-17:00
-                        </div>
-                        <div class="item grafik_5">
-                            пн.-пт. 08:00-15:00<br/>сб.-вс. 09:00-16:00
-                        </div>
-                        <div class="item grafik_6">
-                            пн.-пт. 08:00-15:00<br/>сб.-вс. 09:00-16:00
-                        </div>
-                        <div class="item grafik_7">
-                            пн.-пт. 09:00-18:00<br/>сб.-вс. 09:00-18:00
-                        </div>
-                        <div class="item grafik_8">
-                            пн.-пт. 09:00-19:00<br/>сб.-вс. 09:00-17:00
-                        </div>
-                        <div class="item grafik_9">
-                            пн.-пт. 09:00-19:00<br/>сб.-вс. 10:00-17:00
-                        </div>
-                        <div class="item grafik_10">
-                            пн.-пт. 10:00-20:00<br/>сб.-вс. 10:00-20:00
-                        </div>
+                        @foreach($cities as $index=>$city)
+                            @if($index != 0)
+                                <div class="item grafik_{{$index}}">
+                                    @if(isset($city['street']))ул.{{$city['street']}}<br/>@endif
+                                    пн.-пт. {{$city['working_days']}}<br/>
+                                    сб. {{$city['saturday']}}<br/>
+                                    вс. {{$city['sunday']}}
+                                </div>
+                            @endif
+                        @endforeach
+                        {{--<div class="item grafik_0 active">--}}
+                            {{--пн.-пт. 10:00-19:00<br/>сб.-вс. 10:30-17:00--}}
+                        {{--</div>--}}
+                        {{--<div class="item grafik_1 line_3">--}}
+                            {{--ул.Преображенская<br/>пн.-пт. 09:00-19:00<br/>сб. 10:00-17:00<br/>вс. выходной--}}
+                        {{--</div>--}}
+                        {{--<div class="item grafik_2 line_3">--}}
+                            {{--ул.Ришельевская<br/>пн.-сб. 09:00-19:00<br/>вс. 10:00- 17:00--}}
+                        {{--</div>--}}
+                        {{--<div class="item grafik_3 line_3">--}}
+                            {{--пн.-пт. 09:00-18:00<br/>сб. 09:00-16:00<br/>вс. выходной--}}
+                        {{--</div>--}}
+                        {{--<div class="item grafik_4">--}}
+                            {{--пн.-пт. 09:00-18:00<br/>сб.-вс. 10:00-17:00--}}
+                        {{--</div>--}}
+                        {{--<div class="item grafik_5">--}}
+                            {{--пн.-пт. 08:00-15:00<br/>сб.-вс. 09:00-16:00--}}
+                        {{--</div>--}}
+                        {{--<div class="item grafik_6">--}}
+                            {{--пн.-пт. 08:00-15:00<br/>сб.-вс. 09:00-16:00--}}
+                        {{--</div>--}}
+                        {{--<div class="item grafik_7">--}}
+                            {{--пн.-пт. 09:00-18:00<br/>сб.-вс. 09:00-18:00--}}
+                        {{--</div>--}}
+                        {{--<div class="item grafik_8">--}}
+                            {{--пн.-пт. 09:00-19:00<br/>сб.-вс. 09:00-17:00--}}
+                        {{--</div>--}}
+                        {{--<div class="item grafik_9">--}}
+                            {{--пн.-пт. 09:00-19:00<br/>сб.-вс. 10:00-17:00--}}
+                        {{--</div>--}}
+                        {{--<div class="item grafik_10">--}}
+                            {{--пн.-пт. 10:00-20:00<br/>сб.-вс. 10:00-20:00--}}
+                        {{--</div>--}}
                     </div>
                 </div>
             </div>
