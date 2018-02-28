@@ -114,150 +114,24 @@
 							})
 						})
 					</script>
-					<div class="left_block filter">
-						<div class="filter_title">Цена:</div>
-						<div class="filter_list">
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="1:14"/>до 1000грн. <span
-									class="cnt">(1)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="1:13"/>от 1000 до 2000 <span
-									class="cnt">(1)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="1:12"/>от 2000 до 3000грн. <span
-									class="cnt">(3)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="1:11"/>от 3000 до 5000грн. <span
-									class="cnt">(28)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="1:10"/>от 5000грн. и более <span
-									class="cnt">(87)</span></div></span></div>
-						</div>
-					</div>
-					<div class="left_block filter">
-						<div class="filter_title">Производитель:</div>
-						<div class="filter_list">
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="2:50"/>Fujitsu <span
-									class="cnt">(6)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox"
-							                                            value="2:49"/>Getac <span class="cnt">(1)</span></div></span>
-							</div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox"
-							                                            value="2:24"/>Dell <span class="cnt">(26)</span></div></span>
-							</div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="2:34"/>Fujitsu-Siemens <span
-									class="cnt">(12)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="2:3"/>HP <span
-									class="cnt">(26)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="2:25"/>IBM / Lenovo <span
-									class="cnt">(27)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="2:1"/>Panasonic <span
-									class="cnt">(16)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="2:43"/>Samsung <span
-									class="cnt">(1)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="2:26"/>Toshiba <span
-									class="cnt">(4)</span></div></span></div>
-						</div>
-					</div>
-					<div class="left_block filter">
-						<div class="filter_title">Диагональ экрана:</div>
-						<div class="filter_list">
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="3:15"/>10&quot;-12,5&quot; <span
-									class="cnt">(20)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="3:16"/>12,5&quot;-13,5&quot; <span
-									class="cnt">(15)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="3:17"/>14&quot;-15,6&quot; <span
-									class="cnt">(79)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="3:27"/>16&quot;-17,5&quot; <span
-									class="cnt">(2)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="3:28"/>18&quot;-22&quot; <span
-									class="cnt">(1)</span></div></span></div>
-						</div>
-					</div>
-					<div class="left_block filter">
-						<div class="filter_title">Процессор:</div>
-						<div class="filter_list">
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="5:30"/>Intel Core i3 <span
-									class="cnt">(7)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="5:45"/>Intel Core i5 <span
-									class="cnt">(55)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="5:46"/>Intel Core i7 <span
-									class="cnt">(14)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox"
-							                                            value="5:33"/>AMD <span
-									class="cnt">(1)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="5:32"/>Intel Pentium M/Core Solo <span
-									class="cnt">(3)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="5:29"/>Intel Core Duo/Core2 Duo <span
-									class="cnt">(36)</span></div></span></div>
-						</div>
-					</div>
-					<div class="left_block filter">
-						<div class="filter_title">Количество ядер:</div>
-						<div class="filter_list">
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="4:48"/>2 ядра / 4 потока <span
-									class="cnt">(67)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="4:47"/>4 ядра 8 потоков <span
-									class="cnt">(8)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="4:18"/>1 <span
-									class="cnt">(3)</span></div></span></div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox" value="4:19"/>2 <span
-									class="cnt">(39)</span></div></span></div>
-						</div>
-					</div>
-					<div class="left_block filter">
-						<div class="filter_title">Объем памяти:</div>
-						<div class="filter_list">
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox"
-							                                            value="6:35"/>1 ГБ <span class="cnt">(5)</span></div></span>
-							</div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox"
-							                                            value="6:36"/>2 ГБ <span class="cnt">(20)</span></div></span>
-							</div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox"
-							                                            value="6:38"/>4 ГБ <span class="cnt">(67)</span></div></span>
-							</div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox"
-							                                            value="6:42"/>6 ГБ <span class="cnt">(2)</span></div></span>
-							</div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox"
-							                                            value="6:39"/>8 ГБ <span class="cnt">(18)</span></div></span>
-							</div>
-							<div class="check_block"><span class="checkbox_label filter_btn"><span
-									class="checkbox"></span><div><input name="br" type="checkbox"
-							                                            value="6:40"/>16 ГБ <span class="cnt">(4)</span></div></span>
+					@foreach($filters as $filter)
+						<div class="left_block filter">
+							<div class="filter_title">{{$filter->name}}</div>
+							<div class="filter_list">
+									@foreach($attributes as $attribute)
+										@if(isset($attributes_count[$attribute->attributes_id]))
+											@if($attribute->attributes_parent_filter == $filter->filter_id)
+											<div class="check_block"><span class="checkbox_label filter_btn"><span
+															class="checkbox"></span><div><input name="attributes_id[{{$attribute->attributes_id}}]" @foreach($url_attributes as $url_attribute) @if($url_attribute == $attribute->attributes_id) checked @endif @endforeach type="checkbox" onchange="Refresh()">{{$attribute->attributes_name}}<span
+																class="cnt">({{$attributes_count[$attribute->attributes_id]}})</span></div></span></div>
+											@endif
+										@endif
+									@endforeach
 							</div>
 						</div>
-					</div>
+					@endforeach
+					
+
 					<div class="clear"></div>
 
 				</div>
