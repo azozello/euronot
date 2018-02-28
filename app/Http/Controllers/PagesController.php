@@ -66,48 +66,126 @@ use SiteMap as SiteMapFacade;
 
 class PagesController extends Controller
 {
+
     public function show_site_index(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.index',[
             'organization' => Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get()
         ]);
     }
     public function show_cart(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.cart', [
             'organization' =>Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get()
         ]);
     }
     public function show_contact(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.contact', [
             'organization' =>Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get()
         ]);
     }
     public function show_delivery(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.delivery', [
             'organization' =>Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get()
         ]);
     }
     public function show_site_news(Request $request){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.news',[
             'organization' =>Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get(),
             'all_news' => News::where('name','!=',NULL)->where('page_lang','=',1)->paginate(30)->appends($request->all())
         ]);
     }
 
     public function show_one_news($url) {
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.news-inner',[
             'organization' =>Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get(),
             'page_array' => News::where('url',$url)->get()[0]->attributesToArray()
         ]);
     }
     public function show_warranty(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.warranty', [
             'organization' =>Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get(),
             'url' => Warranty::get()[0]->attributesToArray()['warranty_url'],
             'text' => Warranty::get()[0]->attributesToArray()['warranty_text'],
@@ -117,15 +195,37 @@ class PagesController extends Controller
         ]);
     }
     public function show_products(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.products-263',[
             'organization' => Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get()
         ]);
     }
     public function show_about(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.about', [
             'organization' =>Organization::get()[0],
             'cities' => OpenHours::get(),
+            'header' => $data,
             'url' => AboutCompany::get()[0]->attributesToArray()['about_company_url'],
             'text' => AboutCompany::get()[0]->attributesToArray()['about_company_text'],
             'name' => AboutCompany::get()[0]->attributesToArray()['about_company_name'],

@@ -15,7 +15,7 @@ class MenuList extends Migration
     {
         Schema::create('menu_list', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('position');
+            $table->integer('position')->unique();
             $table->text('name');
             $table->text('url');
             $table->text('type');

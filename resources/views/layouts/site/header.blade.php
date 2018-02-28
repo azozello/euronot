@@ -209,13 +209,10 @@
         </div>
         <div class="top-row row hidden-md-down">
             <ul class="top-menu col-lg-6 col-md-5">
-
-                <li><a class="" onclick='location.href="{{route('show_about')}}"' style="cursor: pointer">О компании</a></li>
-                <li><a class="" onclick='location.href="{{route('show_warranty')}}"' style="cursor: pointer">Гарантия</a></li>
-                <li><a class="" onclick='location.href="{{route('show_delivery')}}"' style="cursor: pointer">Доставка и оплата</a></li>
-                <li><a class="" onclick='location.href="{{route('show_contact')}}"' style="cursor: pointer">Євронот cервіс</a></li>
-                <li><a class="" onclick='location.href="{{route('show_site_news')}}"' style="cursor: pointer">Новости</a></li>
-            </ul>
+                @foreach($header as $item)
+                    <li><a class="" href="{{$item['url']}}" style="cursor: pointer">{{$item['name']}}</a></li>
+                @endforeach
+             </ul>
             <div class="button col-lg-2 col-md-2">
                 <a href="robots.txt" style="cursor: pointer">Партнерские цены</a>
             </div>
