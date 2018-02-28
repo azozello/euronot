@@ -29,9 +29,15 @@
 
     </div>
     <div class="content">
+        <form class="" role="form" method="post" action="{{route('menu_list_add')}}" enctype="multipart/form-data">
+            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+            <h6 class="panel-title">Меню</h6>
+            <div class="form-button">
+                <button type="" class="btn bg-teal-400">Сохранить</button>
 
-            {{--<input type="hidden" name="menu" class="form-control" id="id" value="{{$menu}}">--}}
-            <!-- CKEditor default -->
+            </div>
+        {{--<input type="hidden" name="menu" class="form-control" id="id" value="{{$menu}}">--}}
+        <!-- CKEditor default -->
 
             <div class="tab-content" style="padding:0 50px;">
                 <div role="tabpanel" class="tab-pane fade in active " id="ru">
@@ -42,59 +48,43 @@
                             <th style="min-width: 310px;">Наименование</th>
                             <th>URL</th>
                             <th>Тип</th>
-                            <th>Редактировать</th>
-                            <th>Удалить</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($pages as $page)
                             <tr>
                                 <td>
-                                    <p>@if(isset($page->position)){{$page->position}}@endif</p>
+                                    <div class="input-group input-number" data-trigger="spinner">
+                                        <input type="text" name="position" class="form-control text-center" value="1" data-rule="quantity">
+                                        <div class="input-group-addon">
+                                            <a href="javascript:;" class="spin-up" data-spin="up"><i
+                                                        class="fa fa-caret-up"></i></a>
+                                            <a href="javascript:;" class="spin-down" data-spin="down"><i
+                                                        class="fa fa-caret-down"></i></a>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <p>@if(isset($page->name)){{$page->name}}@endif</p>
+                                    <input type="text" name="name"/>
                                 </td>
                                 <td>
-                                    <p>@if(isset($page->url)){{$page->url}}@endif</p>
+                                    <input type="text" name="url"/>
                                 </td>
                                 <td>
-                                    <p>
-                                        @if(isset($page->type))
-                                            @if($page->type == 'top')Верхнее меню@endif
-                                            @if($page->type == 'down')Нижнее меню@endif
-                                        @endif
-                                    </p>
-                                </td>
-                                <td>
-                                    <form method="get" role="form" action="{{route('edit_menu_list')}}">
-                                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                                        <input name="menu_id" type="hidden" value="{{$page->id}}"/>
-                                        <button type="submit">Редактировать</button>
-                                    </form>
-                                </td>
-                                <td>
-                                    <form method="post" role="form" action="{{route('menu_list_delete')}}">
-                                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                                        <input name="menu_id" type="hidden" value="{{$page->id}}"/>
-                                        <button type="submit">Удалить</button>
-                                    </form>
+                                    <select name="type">
+                                        <option value="top">Верхнее меню</option>
+                                        <option value="down">Нижнее меню</option>
+                                    </select>
                                 </td>
                             </tr>
-                        @endforeach
-
                         </tbody>
                     </table>
                 </div>
-
-
+        </form>
     </div>
 
-                <h3><a href="{{route('menu_add')}}">Добавить</a></h3>
 
 
-
-                <!-- /CKEditor default -->
+    <!-- /CKEditor default -->
 
     <!-- Footer -->
     <div class="footer text-muted">

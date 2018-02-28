@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\MenuList;
 use App\OpenHours;
 use App\Warranty;
 use App\ArrivingOrders;
@@ -412,6 +413,7 @@ class PagesController extends Controller
             'language' => Languages::where('id','=',$request->id)->get()
         ]);
     }
+
     public function menu($url){
         if($url == 'about_us'){
             $pages = AboutUsMenu::get();
@@ -452,23 +454,38 @@ class PagesController extends Controller
         }
         return redirect()->back();
     }
-    public function menu_redirect(Request $request){
-        if($request->type == 'about_us'){
-            $pages = AboutUsMenu::get();
-            $menu = 1;
-        }
-        else if($request->type == 'pages'){
-            $pages = PagesNews::get();
-            $menu = 2;
-        }
-        return view('menu',[
-            'pages' => $pages,
-            'menu' => $menu
+
+    public function edit_menu_list(Request $request) {
+        return view('menu_list_edit',[
+            'page' => MenuList::find($request->menu_id)
         ]);
     }
+
+    public function menu_redirect(Request $request){
+        if($request->type == 'top'){
+            $pages = MenuList::where('type', $request->type)->get();
+            return view('menu',[
+                'pages' => $pages
+            ]);
+        }
+        else if($request->type == 'pages'){
+            $pages = MenuList::where('type', $request->type)->get();
+            return view('menu',[
+                'pages' => $pages
+            ]);
+        } else {
+            return redirect()->back();
+        }
+    }
+
+    public function menu_add() {
+        return view('menu_list_add');
+    }
+
     public function menu_list(){
         return view('menu_list');
     }
+
     public function product_list(){
         $products = DB::table('products')->
         //если ошибка с group by - в конфиге датабейс поменять на 'strict' => false,
@@ -552,7 +569,7 @@ class PagesController extends Controller
             'contacts' => Contacts::get()
         ]);
     }
-    public  function contacts_edit(Request $request){
+    public function contacts_edit(Request $request){
         Contacts::truncate();
         $data = new Contacts();
         $data->contacts_name = $request->name;
