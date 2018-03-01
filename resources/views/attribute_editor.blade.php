@@ -116,7 +116,7 @@
 
                                 </div>
                             @endif
-                            @if(isset($languages[0]))
+                            @if(isset($languages[1]))
                                 <div role="tabpanel" class="tab-pane fade" id="{{$languages[1]->language_url}}">
                                     <input name="lang_id[1]" type="hidden" value="{{$languages[1]->id}}">
                                     <div class="row">

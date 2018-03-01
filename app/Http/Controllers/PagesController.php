@@ -28,6 +28,7 @@ use App\Contacts;
 use App\ImagesProperties;
 use App\ObjectImages;
 use App\Objects;
+use App\ProductComment;
 use App\ProductAttributes;
 use App\Promotions;
 use App\SubscriptionTemplate;
@@ -48,7 +49,9 @@ use App\DefaultMetaTags;
 use App\Filters;
 use App\ProductsCategoriesConnection;
 use App\Products;
+use App\ProductsTexts;
 use App\Languages;
+use App\ProductImages;
 use App;
 use Lang;
 use DB;
@@ -115,10 +118,42 @@ class PagesController extends Controller
             'description' => Warranty::get()[0]->attributesToArray()['warranty_description']
         ]);
     }
-    public function show_products(){
+
+
+    public function show_products($url){
+        $product = Products::where('url','=',$url)->get();
+        $images = ProductImages::where('images_product_id','=',$product[0]->product_id)->get();
+        $texts = ProductsTexts::where('product_id_connection','=',$product[0]->product_id)->get();
+        $comments = ProductComment::where('product_id_connection','=',$product[0]->product_id)->
+        where('is_active','=',0)->get();
+        $all_products = Products::get();
+        $attributes = explode(" ", $product[0]->attributes_id);
+        $same_products = array();
+        foreach ($all_products as $products){
+            $all_products_attributes = explode(" ", $products->attributes_id);
+            if(count(array_uintersect($attributes, $all_products_attributes, "strcasecmp")) > 0){
+                if($products->id != $product[0]->id) {
+                    $same_products[] = DB::table('products')->
+                    where('products.id', $products->id)->
+                    leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
+                    groupBy('products.product_id')->
+                    get();
+                }
+            }
+
+            if(count($same_products) == 3){
+                break;
+            }
+        }
         return view('site.products-263',[
             'organization' => Organization::get()[0],
-            'cities' => OpenHours::get()
+            'cities' => OpenHours::get(),
+            'product' => $product,
+            'images' => $images,
+            'texts' => $texts,
+            'comments' => $comments,
+            'comment_count' => count($comments),
+            'same_products' => $same_products
         ]);
     }
     public function show_about(){
@@ -131,6 +166,226 @@ class PagesController extends Controller
             'title' => AboutCompany::get()[0]->attributesToArray()['about_company_title'],
             'description' => AboutCompany::get()[0]->attributesToArray()['about_company_description']
         ]);
+    }
+    public function show_product_list($url = NULL){
+        //dd(RequestFacade::path());
+            $lang_id = 1;
+        //dd($url);
+        $products = DB::table('products')->
+        where('lang_id', $lang_id)->
+        leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
+        groupBy('products.product_id')->
+        get();
+        //dd($url);
+        if ($url == NULL) {
+            $filters = Filters::where('lang_id', $lang_id)->get();
+            $attributes = DB::table('filters')->
+            where('lang_id', $lang_id)->
+            leftJoin('product_attributes', 'filters.filter_id', '=', 'product_attributes.attributes_parent_filter')->
+            where('product_attributes.attributes_lang_id', $lang_id)->
+            get();
+            $attributes_count = array();
+            foreach ($products as $product) {
+                $id_array = explode(' ', $product->attributes_id);
+                array_pop($id_array);
+                foreach ($id_array as $id) {
+                    if (empty($attributes_count[$id])) {
+                        $attributes_count[$id] = 1;
+                    } else {
+                        $attributes_count[$id]++;
+                    }
+                }
+            }
+            $new_products = $products;
+            $all_attributes = $attributes;
+            $attributes_id = array();
+        } else {
+            $attributes_string_array = explode('-', $url);
+            //dd($attributes_string_array);
+            $all_attributes = ProductAttributes::where('attributes_lang_id', '=', $lang_id)->get();
+            $meta_tags = ProductAttributes::where('attributes_url','=',$attributes_string_array[0])->where('attributes_lang_id', '=', $lang_id)->get();
+            //dd($meta_tags[0]);
+            $attributes_id = array();
+            $filter_attributes_id = array();
+            foreach ($attributes_string_array as $attributes_string) {      //атрибуты переданные в url
+                foreach ($all_attributes as $all_attribute) {
+                    if ($all_attribute->attributes_url == $attributes_string) {
+                        $attributes_id[] = $all_attribute->attributes_id;
+                    }
+                }
+            }
+            foreach ($all_attributes as $all_attribute) {
+                $filter_attributes_id[$all_attribute->attributes_id] = $all_attribute->attributes_parent_filter;
+            }
+
+            $new_products = array();
+            $minus_var = 0;
+            $num = 0;
+            $filter_array = array();
+            foreach($attributes_id as $a_id){                          //от сюда начинается вся грязь
+                $filter_array[] = $filter_attributes_id[$a_id];        //заполняем массив фильтрами аттрибутов, переданых через url
+            }
+            foreach (array_count_values($filter_array) as $array_count){      //считаем повторяющиеся фильтры. Каждый новый - +1 к $minus_var
+                $minus_var = $minus_var + ($array_count-1);
+            }
+            foreach ($products as $product) {
+                   //получение продуктов,в которых есть атрибуты переданные в url
+                    $id_array = explode(' ', $product->attributes_id);
+                    array_pop($id_array);
+                    foreach ($id_array as $array) {
+                        if (in_array($array, $attributes_id)) {
+                            $num++;
+                        }
+                    }
+                    if (count($attributes_id) - $minus_var == $num) {    //есть ли в продекте все аттрибуты из url, кроме повторяющихся оп фильтру (пр. Шоколадный вкус,Банановый вкус)
+                        $new_products[] = $product;
+                    }
+                    $num = 0;
+
+            }
+
+            $attributes_count = array();
+            $num = 0;
+//dd($attributes_string_array);
+
+
+            foreach ($all_attributes as $attributes) {      //лагает когда на 1 атегории больше 1 и еще 1 на другой категории
+                foreach ($products as $product) {
+                    //dd($product->product_type);
+                        //проверка на совпадение по цене и %арабики
+                        $id_all_product_array = explode(' ', $product->attributes_id);
+                        array_pop($id_all_product_array);
+
+                        $local_attributes_id = $attributes_id;
+
+
+                        while ($value = current($local_attributes_id)) {    //удаляем из локальной переменной если атрибуты с одного фильтра
+                            if ($filter_attributes_id[current($local_attributes_id)] == $filter_attributes_id[$attributes->attributes_id] && !in_array($attributes->attributes_id, $local_attributes_id)) {
+                                unset($local_attributes_id[key($local_attributes_id)]);
+                            }
+                            next($local_attributes_id);
+                        }
+
+                        foreach ($local_attributes_id as $attrib_id) {     //проверяет сколько совпадений атрибутов url и продукта
+                            foreach ($id_all_product_array as $id_all_array) {
+                                if ($attrib_id == $id_all_array) {
+                                    $num++;
+
+                                }
+                            }
+                        }
+
+                        if (in_array($attributes->attributes_id, $id_all_product_array)) {
+                            $num++;
+                        } else {
+                            $num--;
+                        }
+
+                        if (($num - 1) == (count($local_attributes_id) - $minus_var)) {
+                            if (empty($attributes_count[$attributes->attributes_id])) {
+                                $attributes_count[$attributes->attributes_id] = 1;
+                            } else {
+                                $attributes_count[$attributes->attributes_id]++;
+                            }
+                        }
+                        $num = 0;
+
+                }
+            }
+        }
+
+
+        //dd($attributes_count);
+        foreach ($new_products as $new_product) {
+            //считаем количество атрибутов у продукта
+            $new_product_attributes = explode(' ', $new_product->attributes_id);
+            array_pop($new_product_attributes);
+
+            $filters_id = array();                                             //получаем новый список id фильтров через атрибуты
+            $keys_new_attributes = AppliedMethods::get_key_array($attributes_count);
+            foreach ($all_attributes as $all_attribute) {
+                foreach ($keys_new_attributes as $keys_new_attribute) {
+                    if ($keys_new_attribute == $all_attribute->attributes_id) {
+                        $filters_id[] = $all_attribute->attributes_parent_filter;
+                    }
+                }
+            }
+
+            $all_filters = Filters::where('lang_id', '=', $lang_id)->get();
+            $filters = array();
+            foreach ($filters_id as $filter_id) {
+                foreach ($all_filters as $all_filter) {
+                    if ($filter_id == $all_filter->filter_id) {
+                        $filters[] = $all_filter;
+                    }
+                }
+            }
+            $filters = array_unique($filters);
+            //dd($filters_id);
+            $products = $new_products;
+            $attributes = $all_attributes;
+            //dd($attributes);
+        }
+        if(!isset($price)){
+            $price = 1000;
+        }
+        if(!isset($arabica)){
+            $arabica = 100;
+        }
+        if(!isset($meta_tags)){
+            $meta_tags = null;
+        }
+        //dd($products);
+        return view('site.products_cat-b_u_noutbuki', [
+            'products' => $products,
+            'filters' => $filters,
+            'price' => $price,
+            'arabica' => $arabica,
+            'attributes' => $attributes,
+            'attributes_count' => $attributes_count,
+            'url_attributes' => $attributes_id,
+            'meta_tags' => $meta_tags
+        ]);
+    }
+
+    public function refresh_page(Request $request){
+        //dd($request);
+        $uri = RequestFacade::path(); //получаем URI
+        $segmentsURI = explode('/',$uri); //делим на части по разделителю "/"
+//dd($request);
+        $attributes = ProductAttributes::where('attributes_lang_id','=',1)->get();
+        $array_key = AppliedMethods::get_key_array($request->attributes_id);
+        //$array_key = array_reverse($array_key);
+        $uri_string = '';
+        if(!is_null($array_key)) {
+            foreach ($array_key as $key) {
+                foreach ($attributes as $attribute) {
+                    if ($attribute->attributes_id == $key) {
+                        $uri_string .= $attribute->attributes_url . '-';
+                    }
+                }
+            }
+        }
+
+        $uri_string = substr($uri_string, 0, -1);
+        $referer = Redirect::back()->getTargetUrl();
+        $segments = explode('/', $referer);
+        $url = 'http://'.$segments[2].'/'.$segments[3].'/'.$uri_string;
+        //dd($url);
+        return redirect($url);
+    }
+    public function add_comment(Request $request){
+        $data = new ProductComment();
+        $data->product_id_connection = $request->product_id;
+        $data->comment = $request->comment;
+        $data->comment_name = $request->name;
+        $data->comment_email = $request->email;
+        $data->comment_time = date("H:i:s");
+        $data->comment_date = date("Y-m-d");
+        $data->is_active = 0;
+        $data->save();
+
+        return redirect()->back();
     }
     ////////////////////////////////////////////////////////////////////////////
     public function page_main(){
@@ -508,8 +763,7 @@ class PagesController extends Controller
     public function product_categories(){
         return view('product_categories',[
             'languages' => Languages::where('active','=',1)->get(),
-            'categories_1' => Category::where('lang_id','=',1)->get(),
-            'categories_2' => Category::where('lang_id','=',2)->get()
+            'categories_1' => Category::where('lang_id','=',1)->get()
         ]);
     }
     public function filter_editor(){

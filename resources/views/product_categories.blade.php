@@ -23,10 +23,7 @@
                     @foreach($categories_1 as $k=>$category)
                         <input type="checkbox" name="ru[{{$category->category_id}}]" data-name='ru_{{$category->category_id}}'hidden>
                     @endforeach
-                    @foreach($categories_2 as $k=>$category)
-                        <input type="checkbox" name="ua[{{$category->category_id}}]" data-name='ua_{{$category->category_id}}'hidden>
-                    @endforeach
-                    <button type="" class="btn bg-teal-400 page-header-btn-right">Сохранить</button>
+
 
 
             </form>
@@ -55,8 +52,10 @@
                         <tr >
                             <th>Название</th>
                             <th>URL</th>
+                            <!--
                             <th>Количество</th>
                             <th>Вкл/Выкл</th>
+                            -->
                             <th>Действие</th>
                         </tr>
                         </thead>
@@ -69,6 +68,7 @@
                             @endif
                             <td>{{$categories->name}}</td>
                             <td>{{$categories->url}}</td>
+                            <!--
                             <td>
                                 @php
                                 $categories_quantity = explode(' ',$categories->products_id);
@@ -80,7 +80,9 @@
                                     <input type="checkbox" @if($categories->is_active == 1) checked @endif data-name="ru_{{$categories->category_id}}">
                                     <span class="slider"></span>
                                 </label></td>
+                                -->
                             <td>
+
                                 <div class="btn-table-wrap">
                                 <form method="get" action="{{ route('categories_delete') }}" enctype="multipart/form-data">
                                     <input name="_token" type="hidden" value="{{ csrf_token() }}">
@@ -102,57 +104,6 @@
                     </table>
                 </div>
 
-
-                <div role="tabpanel" class="tab-pane fade" id="{{$languages[1]->language_url}}">
-                    <table class=" table-category table-lang table-lg table-striped" id="table-collapsed_2">
-                        <thead>
-                        <tr >
-                            <th>Название</th>
-                            <th>URL</th>
-                            <th>Количество</th>
-                            <th>Вкл/Выкл</th>
-                            <th>Действие</th>
-                        </tr>
-                        </thead>
-                        <tbody>     <!-- Разобраться как добыть идентификатор для определения родительской категории -->
-                        @foreach($categories_2 as $categories)
-                            @if(!is_null($categories->parent_category_id))
-                                <tr data-node="treetable-{{$categories->category_id}}" data-pnode="treetable-parent-{{$categories->parent_category_id}}">
-                            @else
-                                <tr data-node="treetable-{{$categories->category_id}}" data-pnode="">
-                                    @endif
-                                    <td>{{$categories->name}}</td>
-                                    <td>{{$categories->url}}</td>
-                                    <td>
-                                        @php
-                                            $categories_quantity = explode(' ',$categories->products_id);
-                                            array_pop($categories_quantity);
-                                            echo(count($categories_quantity))
-                                        @endphp
-                                    </td>
-                                    <td><label class="switch">
-                                            <input type="checkbox" @if($categories->is_active == 1) checked @endif data-name="ua_{{$categories->category_id}}">
-                                            <span class="slider"></span>
-                                        </label></td>
-                                    <td>
-                                        <div class="btn-table-wrap">
-                                        <form method="get" action="{{ route('categories_delete') }}" enctype="multipart/form-data">
-                                            <input name="category_id" type="hidden" value='{{$categories->category_id}}'>
-                                            <button type="" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>
-                                            </button>
-                                        </form>
-                                        <form method="post" action="{{ route('categories_edit_show') }}" enctype="multipart/form-data">
-                                            <input name="category_id" type="hidden" value='{{$categories->category_id}}'>
-                                            <button type="" class="btn bg-teal-400"><span class="glyphicon glyphicon-pencil"></span>
-                                            </button>
-                                        </form>
-                                        </div>
-                                    </td>
-                                </tr>
-                                @endforeach
-                        </tbody>
-                    </table>
-                </div>
 
             </div>
 

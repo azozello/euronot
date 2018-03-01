@@ -32,7 +32,11 @@ Route::get('/contact',['uses'=>'PagesController@show_contact','as'=>'show_contac
 Route::get('/delivery',['uses'=>'PagesController@show_delivery','as'=>'show_delivery']);
 Route::get('/news',['uses'=>'PagesController@show_site_news','as'=>'show_site_news']);
 Route::get('/warranty',['uses'=>'PagesController@show_warranty','as'=>'show_warranty']);
-Route::get('/products',['uses'=>'PagesController@show_products','as'=>'show_products']);
+Route::get('/products/{url?}',['uses'=>'PagesController@show_products','as'=>'show_products']);
+Route::get('/product_list/{url?}',['uses'=>'PagesController@show_product_list','as'=>'show_product_list']);
+
+Route::post('/add_comment',['uses'=>'PagesController@add_comment','as'=>'add_comment']);
+
 
 Route::get('/news_show/{url?}',['uses' => 'PagesController@show_one_news','as' => 'news_show']);
 

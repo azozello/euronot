@@ -22,8 +22,6 @@
 
     </div>
     <div class="content">
-
-
         <form role="form" method="post" action="{{route('product_card_add')}}" enctype="multipart/form-data">
             <input name="_token" type="hidden" value="{{ csrf_token() }}">
             <div class="form-button">
@@ -105,9 +103,133 @@
                                             <div class="col-md-6">
                                             </div>
                                             <div class="col-md-12">
-                                                <textarea name="editor[0]" id="editor1"></textarea>
+                                                <label>Краткое описание</label>
+                                                <div class="row">
+                                                        <textarea name="short_description" id="editor31"></textarea>
+                                                </div>
                                             </div>
+                                            <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <textarea name="editor1[0]" id="editor3"></textarea>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <textarea name="editor2[0]" id="editor4"></textarea>
+                                                        </div>
+                                                    </div>
 
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[1]" id="editor5"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[1]" id="editor6"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[2]" id="editor7"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[2]" id="editor8"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[3]" id="editor9"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[3]" id="editor10"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[4]" id="editor11"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[4]" id="editor12"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[5]" id="editor13"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[5]" id="editor14"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[6]" id="editor15"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[6]" id="editor16"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[7]" id="editor17"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[7]" id="editor18"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[8]" id="editor19"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[8]" id="editor20"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[9]" id="editor21"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[9]" id="editor22"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[10]" id="editor23"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[10]" id="editor24"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[11]" id="editor25"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[11]" id="editor26"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[12]" id="editor27"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[12]" id="editor28"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[13]" id="editor29"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[13]" id="editor30"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor1[14]" id="editor1"></textarea>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <textarea name="editor2[14]" id="editor2"></textarea>
+                                                    </div>
+                                                </div>
                                         </div>
                                     </div>
                                 @endif
@@ -156,42 +278,71 @@
                                         </div>
                                     </div>
                                 @endif
+
                                 <div class="common-right">
+                                    <h5 class="content-group text-semibold">
+                                        <label>Таймер Акции</label>
+                                        <input min="0" max="1000" id="number" style="width: 2em;" name="timer_days" type="number">
+                                        <input min="0" max="24" id="number" style="width: 2em;" name="timer_hours" type="number">
+                                        <input min="0" max="60" id="number" style="width: 2em;" name="timer_minutes" type="number">
+                                        <input min="0" max="60" id="number" style="width: 2em;" name="timer_seconds" type="number">
+                                    </h5>
                                     <div class="form-content" style="padding-left: 50px;">
-                                        <h5>Поставщик</h5>
-                                        <select class="selectpicker" name="product_provider">
-                                            @foreach($suppliers as $supplier)
-                                                <option>{{$supplier->traders_name}}</option>
+                                        <h5>Статус товара</h5>
+                                        <select class="selectpicker" name="product_status">
+                                            <option>
+                                            </option>
+                                            <option>Супер цена
+                                            </option>
+                                            <option>Акция
+                                            </option>
+                                            <option>Хит продаж
+                                            </option>
+                                            <option>Продано
+                                            </option>
+                                        </select>
+                                        <h5>Наличие</h5>
+                                        <select class="selectpicker" name="product_isset">
+                                            <option>В наличии
+                                            </option>
+                                            <option>Нет в наличии
+                                            </option>
+                                        </select>
+                                        <h5>Гарантия</h5>
+                                        <select class="selectpicker" name="product_garanty">
+                                            <option>3 месяца
+                                            </option>
+                                            <option>6 месяцев
+                                            </option>
+                                            <option>12 месяцев
+                                            </option>
+                                            <option>24 месяца
+                                            </option>
+                                        </select>
+                                        <h5>Оценка пользователя</h5>
+                                        <select class="selectpicker" name="product_stars">
+                                            <option>5 звезд
+                                            </option>
+                                            <option>4 звезды
+                                            </option>
+                                            <option>3 звезды
+                                            </option>
+                                            <option>2 звезды
+                                            </option>
+                                            <option>1 звезда
+                                            </option>
+                                        </select>
+                                        @if(isset($products))
+                                        <h5>Подарочный товар</h5>
+                                        <select class="selectpicker" name="product_gift">
+                                            <option>
+                                            </option>
+                                            @foreach($products as $product)
+                                            <option>{{$product->name}}
+                                            </option>
                                             @endforeach
                                         </select>
-                                        <h5>Задержка поставки</h5>
-                                        <select class="selectpicker" name="product_delay_in_delivery">
-                                            <option selected>0 дней 	получение сегодня на сегодня
-                                            </option>
-                                            <option>1 день		получение сегодня на завтра
-                                            </option>
-                                            <option>2 дня		получение сегодня на послезавтра
-                                            </option>
-                                        </select>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Крайнее время заказа товара поставщику</label>
-                                            <input type="text" name="product_deadline_to_arrive"
-                                                   value=""
-                                                   placeholder="Введите крайнее время*">
-                                        </h5>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Оптимальный остаток товара на складе</label>
-                                            <input type="text" name="product_optimal_quantity"
-                                                   value=""
-                                                   placeholder="Введите оптимальный остаток*">
-                                        </h5>
-                                        <h5 class="content-group text-semibold">
-                                            <label>Признак наличия товара у поставщика
-                                            </label>
-                                            <input type="text" name="product_availability"
-                                                   value=""
-                                                   placeholder="Введите признак наличия*">
-                                        </h5>
+                                        @endif
                                         <h5 class="content-group text-semibold">
                                             <label>Цена*</label>
                                             <input type="text" name="price"
@@ -199,21 +350,37 @@
                                                    placeholder="Введите цену*">
                                         </h5>
                                         <h5 class="content-group text-semibold">
-                                            <label>Цена закупки*</label>
-                                            <input type="text" name="supplier_price"
+                                            <label>Процессор*</label>
+                                            <input type="text" name="proc"
                                                    value=""
-                                                   placeholder="Введите цену*">
+                                                   placeholder="">
                                         </h5>
                                         <h5 class="content-group text-semibold">
-                                            <label>Количество*</label>
-                                            <input type="text" name="quantity"
+                                            <label>Оперативная память*</label>
+                                            <input type="text" name="op_memory"
                                                    value=""
-                                                   placeholder="Введите количество*">
+                                                   placeholder="">
                                         </h5>
                                         <h5 class="content-group text-semibold">
-                                            <label>% Арабики в кофе</label>
-                                            <p><input type="number" size="3" name="coffee_type" min="0" max="100"></p>
+                                            <label>Жесткий диск*</label>
+                                            <select class="selectpicker" name="type_memory">
+                                                <option>HDD
+                                                </option>
+                                                <option>SSD
+                                                </option>
+                                            </select>
+                                            <input type="text" name="hard_memory"
+                                                   value=""
+                                                   placeholder="">
                                         </h5>
+                                        <h5 class="content-group text-semibold">
+                                            <label>Операционная система*</label>
+                                            <input type="text" name="op_system"
+                                                   value=""
+                                                   placeholder="">
+                                        </h5>
+
+
                                         <div class="upload-photos">
                                             <div class="input-file-row-1">
 
@@ -346,7 +513,201 @@
                 editor: ckeditor2
             });
         </script>
-
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor3');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor4');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor5');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor6');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor7');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor8');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor9');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor10');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor11');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor12');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor13');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor14');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script><script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor15');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor16');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor17');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor18');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor19');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor20');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor21');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor22');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor23');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor24');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor25');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor26');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor27');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor28');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor29');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('editor30');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
         <script>
             jQuery(document).ready(function () {
                 jQuery("#files").kendoUpload({

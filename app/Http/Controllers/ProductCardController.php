@@ -11,6 +11,7 @@ use App\ProductsCategoriesConnection;
 use App\Languages;
 use App\Filters;
 use App\Traders;
+use App\ProductsTexts;
 use Image;
 use DB;
 use File;
@@ -25,8 +26,25 @@ class ProductCardController extends Controller
 
     public function product_card_add(Request $request){
         //подключение изображений
-        //dd($request);
-        foreach ($request->editor as $k => $editor) {
+        $timer_days = $request->timer_days;
+        $timer_hours = $request->timer_hours;
+        $timer_minutes = $request->timer_minutes;
+        $timer_seconds = $request->timer_seconds;
+        if(is_null($timer_days)){
+            $timer_days = 0;
+        }
+        if(is_null($timer_hours)){
+            $timer_hours = 0;
+        }
+        if(is_null($timer_minutes)){
+            $timer_minutes = 0;
+        }
+        if(is_null($timer_seconds)){
+            $timer_seconds = 0;
+        }
+        $next_time = time() + (($timer_days * 24 * 60 * 60) + ($timer_hours * 60 * 60) + ($timer_minutes * 60) +$timer_seconds);
+
+        foreach ($request->name as $k => $name) {
             if (is_null($request->name[$k])) {
                 return Redirect::back()->withErrors(['Введите название страницы']);
             }
@@ -50,16 +68,16 @@ class ProductCardController extends Controller
             }
         }
         if(isset($files)) {
-            foreach ($files as $f) {
-                //dd($f);
-                if (Image::make($f)
-                    ->save(public_path('product_images') . '/' . $f->getClientOriginalName())) {
-                    $data = new ProductImages();
-                    $data->image = $f->getClientOriginalName();
-                    $data->images_product_id = $product_id;
-                    $data->save();
-                } else {
-                    return 'Ошибка загрузки';
+            foreach ($request->file() as $file) {
+                foreach ($file as $f) {
+                    if ($f->move(public_path('product_images'), $f->getClientOriginalName())) {
+                        $data = new ProductImages();
+                        $data->image = $f->getClientOriginalName();
+                        $data->images_product_id = $product_id;
+                        $data->save();
+                    } else {
+                        return 'Ошибка загрузки';
+                    }
                 }
             }
         }
@@ -101,7 +119,7 @@ class ProductCardController extends Controller
             }
         }
         //запись продукта
-        foreach ($request->editor as $k => $editor) {
+        foreach ($request->name as $k => $name) {
 
             if(is_null($request->description[$k])){
                 $description = DefaultMetaTags::where('type','=','product')->value('description');
@@ -132,16 +150,31 @@ class ProductCardController extends Controller
             $data->quantity = $request->quantity;
             $data->url = $url;
             $data->is_active = 1;
-            $data->product_type = $request->coffee_type;
             $data->lang_id = $request->language_id[$k];
-            $data->product_delay_in_delivery  = $request->product_delay_in_delivery ;
-            $data->product_deadline_to_arrive = $request->product_deadline_to_arrive;
-            $data->product_optimal_quantity  = $request->product_optimal_quantity ;
-            $data->product_availability  = $request->product_availability ;
-            $data->product_provider  = $request->product_provider ;
+            $data->product_status  = $request->product_status ;
+            $data->product_isset = $request->product_isset;
+            $data->product_garanty  = $request->product_garanty ;
+            $data->product_stars  = $request->product_stars ;
+            $data->product_gift  = $request->product_gift ;
+            $data->short_description  = $request->short_description ;
+            $data->timer_current_time  = time() ;
+            $data->timer_time  = $next_time ;
+            $data->proc  = $request->proc ;
+            $data->op_memory  = $request->op_memory ;
+            $data->type_memory  = $request->type_memory ;
+            $data->hard_memory  = $request->hard_memory ;
+            $data->op_system  = $request->op_system ;
             $data->title = $title;
             $data->description = $description;
             $data->save();
+
+            for($i=0;$i<15;$i++){
+                $data = new ProductsTexts();
+                $data->product_id_connection = $product_id;
+                $data->first_text = $request->editor1[$i];
+                $data->second_text = $request->editor2[$i];
+                $data->save();
+            }
         }
         return redirect()->back();
     }
@@ -154,6 +187,7 @@ class ProductCardController extends Controller
         }
         ProductsCategoriesConnection::where('product_id_connection','=',$request->product_id)->delete();
         Products::where('product_id','=',$request->product_id)->delete();
+        ProductsTexts::where('product_id_connection','=',$request->product_id)->delete();
         return redirect()->back();
     }
     public function search_product(Request $request){
@@ -161,6 +195,7 @@ class ProductCardController extends Controller
     }
     public function edit_product_show(Request $request){
         $product = Products::where('product_id','=',$request->product_id)->get();
+        $product_text = ProductsTexts::where('product_id_connection','=',$request->product_id)->get();
         $product_pictures = ProductImages::where('images_product_id','=',$request->product_id)->get();
         $product_attributes = explode(' ',$product[0]->attributes_id);
         array_pop($product_attributes);
@@ -176,24 +211,66 @@ class ProductCardController extends Controller
         $categories = Category::where('is_active','=',1)->where('lang_id','=',1)->get();
         $filers = Filters::where('is_active','=',1)->where('lang_id','=',1)->get();
         $attributes = ProductAttributes::where('attributes_lang_id','=',1)->get();
-       // dd($categories_list);
+        //dd($product);
+        $time = $product[0]->timer_time - time();
+        if($time < 0){
+            $timer_days = 0;
+            $timer_hours = 0;
+            $timer_minutes = 0;
+            $timer_seconds = 0;
+        }
+        else{
+            $month = floor( $time / 2592000 );
+
+            $timer_days = ( $time / 86400 ) % 30;
+
+            $timer_hours = ( $time / 3600 ) % 24;
+
+            $timer_minutes = ( $time / 60 ) % 60;
+
+            $timer_seconds = $time % 60;
+        }
+        //dd($product_text);
         return view('edit_product_card',[
             'product_pictures' => $product_pictures,
             'product_attributes' => $product_attributes,
             'product' => $product,
+            'product_text' => $product_text,
             'categories_list' => $categories_list,
             'languages' => $languages,
             'categories' => $categories,
             'filters' => $filers,
             'attributes' => $attributes,
-            'suppliers' => Traders::get()
+            'suppliers' => Traders::get(),
+            'timer_days' => $timer_days,
+            'timer_hours' => $timer_hours,
+            'timer_minutes' => $timer_minutes,
+            'timer_seconds' => $timer_seconds
         ]);
     }
     public function edit_product(Request $request){
      //dd($request);
+        $timer_days = $request->timer_days;
+        $timer_hours = $request->timer_hours;
+        $timer_minutes = $request->timer_minutes;
+        $timer_seconds = $request->timer_seconds;
+        if(is_null($timer_days)){
+            $timer_days = 0;
+        }
+        if(is_null($timer_hours)){
+            $timer_hours = 0;
+        }
+        if(is_null($timer_minutes)){
+            $timer_minutes = 0;
+        }
+        if(is_null($timer_seconds)){
+            $timer_seconds = 0;
+        }
+        $next_time = time() + (($timer_days * 24 * 60 * 60) + ($timer_hours * 60 * 60) + ($timer_minutes * 60) +$timer_seconds);
+
         $product_id = $request->product_id;
         ProductsCategoriesConnection::where('product_id_connection','=',$product_id)->delete();
-        foreach ($request->editor as $k => $editor) {
+        foreach ($request->name as $k => $name) {
             if (is_null($request->name[$k])) {
                 return Redirect::back()->withErrors(['Введите название страницы']);
             }
@@ -260,7 +337,7 @@ class ProductCardController extends Controller
             }
         }
         //запись продукта
-        foreach ($request->editor as $k => $editor) {
+        foreach ($request->name as $k => $name) {
 
             if(is_null($request->description[$k])){
                 $description = DefaultMetaTags::where('type','=','product')->value('description');
@@ -280,7 +357,7 @@ class ProductCardController extends Controller
             else{
                 $title = $request->title[$k];
             }
-//dd($request);
+
             Products::where('product_id','=',$product_id)->where('lang_id','=',$request->language_id[$k])->update([
                 'name' => $request->name[$k],
                 'article' => $request->article[$k],
@@ -289,15 +366,29 @@ class ProductCardController extends Controller
                 'price' => $request->price,
                 'quantity' => $request->quantity,
                 'url' => $url,
-                'product_provider' => $request->product_provider ,
-                'product_delay_in_delivery' => $request->product_delay_in_delivery,
-                'product_deadline_to_arrive' => $request->product_deadline_to_arrive,
-                'product_optimal_quantity' => $request->product_optimal_quantity,
-                'product_availability' => $request->product_availability,
-                'product_type' => $request->coffee_type,
+                'product_status' => $request->product_status,
+                'product_isset' => $request->product_isset,
+                'product_garanty' => $request->product_garanty,
+                'product_stars' => $request->product_stars,
+                'timer_current_time' => time(),
+                'timer_time' => $next_time,
                 'title' => $title,
-                'description' => $description
+                'op_memory' => $request->op_memory,
+                'hard_memory' => $request->hard_memory,
+                'proc' => $request->proc,
+                'type_memory' => $request->type_memory,
+                'op_system' => $request->op_system,
+                'description' => $description,
+                'short_description' => $request->short_description
             ]);
+            ProductsTexts::where('product_id_connection','=',$product_id)->delete();
+            for($i=0;$i<15;$i++){
+                $data = new ProductsTexts();
+                $data->product_id_connection = $product_id;
+                $data->first_text = $request->editor1[$i];
+                $data->second_text = $request->editor2[$i];
+                $data->save();
+            }
         }
         return redirect()->back();
     }
