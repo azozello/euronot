@@ -23,6 +23,7 @@ class ProductsMigration extends Migration
             $table->text('text')->nullable();
             $table->text('attributes_id')->nullable();
             $table->text('name')->nullable();
+            $table->text('short_description')->nullable();
             $table->integer('quantity')->nullable();
             $table->integer('reserved_quantity')->nullable();
             $table->boolean('is_active')->default(1);
@@ -34,6 +35,11 @@ class ProductsMigration extends Migration
             $table->text('product_gift')->nullable();
             $table->integer('timer_current_time')->nullable();
             $table->integer('timer_time')->nullable();
+            $table->text('proc')->nullable();
+            $table->text('op_memory')->nullable();
+            $table->text('hard_memory')->nullable();
+            $table->text('op_system')->nullable();
+            $table->text('type_memory')->nullable();
             $table->text('title')->nullable();
             $table->text('description')->nullable();
             $table->string('updated_at')->nullable();

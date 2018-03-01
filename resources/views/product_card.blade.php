@@ -103,6 +103,12 @@
                                             <div class="col-md-6">
                                             </div>
                                             <div class="col-md-12">
+                                                <label>Краткое описание</label>
+                                                <div class="row">
+                                                        <textarea name="short_description" id="editor31"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
                                                     <div class="row">
                                                         <div class="col-xs-6">
                                                             <textarea name="editor1[0]" id="editor3"></textarea>
@@ -342,6 +348,36 @@
                                             <input type="text" name="price"
                                                    value=""
                                                    placeholder="Введите цену*">
+                                        </h5>
+                                        <h5 class="content-group text-semibold">
+                                            <label>Процессор*</label>
+                                            <input type="text" name="proc"
+                                                   value=""
+                                                   placeholder="">
+                                        </h5>
+                                        <h5 class="content-group text-semibold">
+                                            <label>Оперативная память*</label>
+                                            <input type="text" name="op_memory"
+                                                   value=""
+                                                   placeholder="">
+                                        </h5>
+                                        <h5 class="content-group text-semibold">
+                                            <label>Жесткий диск*</label>
+                                            <select class="selectpicker" name="type_memory">
+                                                <option>HDD
+                                                </option>
+                                                <option>SSD
+                                                </option>
+                                            </select>
+                                            <input type="text" name="hard_memory"
+                                                   value=""
+                                                   placeholder="">
+                                        </h5>
+                                        <h5 class="content-group text-semibold">
+                                            <label>Операционная система*</label>
+                                            <input type="text" name="op_system"
+                                                   value=""
+                                                   placeholder="">
                                         </h5>
 
 
@@ -672,7 +708,6 @@
                 editor: ckeditor2
             });
         </script>
-
         <script>
             jQuery(document).ready(function () {
                 jQuery("#files").kendoUpload({

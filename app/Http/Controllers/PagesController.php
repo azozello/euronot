@@ -26,6 +26,7 @@ use App\Contacts;
 use App\ImagesProperties;
 use App\ObjectImages;
 use App\Objects;
+use App\ProductComment;
 use App\ProductAttributes;
 use App\Promotions;
 use App\SubscriptionTemplate;
@@ -46,7 +47,9 @@ use App\DefaultMetaTags;
 use App\Filters;
 use App\ProductsCategoriesConnection;
 use App\Products;
+use App\ProductsTexts;
 use App\Languages;
+use App\ProductImages;
 use App;
 use Lang;
 use DB;
@@ -84,8 +87,39 @@ class PagesController extends Controller
     public function show_warranty(){
         return view('site.warranty');
     }
-    public function show_products(){
-        return view('site.products-263');
+    public function show_products($url){
+        $product = Products::where('url','=',$url)->get();
+        $images = ProductImages::where('images_product_id','=',$product[0]->product_id)->get();
+        $texts = ProductsTexts::where('product_id_connection','=',$product[0]->product_id)->get();
+        $comments = ProductComment::where('product_id_connection','=',$product[0]->product_id)->
+        where('is_active','=',0)->get();
+        $all_products = Products::get();
+        $attributes = explode(" ", $product[0]->attributes_id);
+        $same_products = array();
+        foreach ($all_products as $products){
+            $all_products_attributes = explode(" ", $products->attributes_id);
+            if(count(array_uintersect($attributes, $all_products_attributes, "strcasecmp")) > 0){
+                if($products->id != $product[0]->id) {
+                    $same_products[] = DB::table('products')->
+                    where('products.id', $products->id)->
+                    leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
+                    groupBy('products.product_id')->
+                    get();
+                }
+            }
+
+            if(count($same_products) == 3){
+                break;
+            }
+        }
+        return view('site.products-263',[
+            'product' => $product,
+            'images' => $images,
+            'texts' => $texts,
+            'comments' => $comments,
+            'comment_count' => count($comments),
+            'same_products' => $same_products
+        ]);
     }
     public function show_about(){
         return view('site.about');
@@ -93,7 +127,7 @@ class PagesController extends Controller
     public function show_product_list($url = NULL){
         //dd(RequestFacade::path());
             $lang_id = 1;
-
+        //dd($url);
         $products = DB::table('products')->
         where('lang_id', $lang_id)->
         leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
@@ -141,28 +175,6 @@ class PagesController extends Controller
                 $filter_attributes_id[$all_attribute->attributes_id] = $all_attribute->attributes_parent_filter;
             }
 
-            foreach ($attributes_string_array as $string){       //нахождение фильтра цены и арабики
-                if(substr_count($string,'price=') != 0){
-                    $price = substr($string,6);
-                }
-                if(substr_count($string,'arabica=') != 0){
-                    $arabica = substr($string,8);
-                }
-            }
-            if(!isset($price)){
-                $price = 1000;
-            }
-            if(!isset($arabica)){
-                $arabica = 100;
-            }
-            if(is_null($price)){
-                $price = 1000;
-            }
-            if(is_null($arabica)){
-                $arabica = 100;
-            }
-
-            //dd($attributes_id);
             $new_products = array();
             $minus_var = 0;
             $num = 0;
@@ -174,7 +186,7 @@ class PagesController extends Controller
                 $minus_var = $minus_var + ($array_count-1);
             }
             foreach ($products as $product) {
-                if ($product->price <= $price && $product->product_type <= $arabica) {    //получение продуктов,в которых есть атрибуты переданные в url
+                   //получение продуктов,в которых есть атрибуты переданные в url
                     $id_array = explode(' ', $product->attributes_id);
                     array_pop($id_array);
                     foreach ($id_array as $array) {
@@ -186,7 +198,7 @@ class PagesController extends Controller
                         $new_products[] = $product;
                     }
                     $num = 0;
-                }
+
             }
 
             $attributes_count = array();
@@ -197,7 +209,7 @@ class PagesController extends Controller
             foreach ($all_attributes as $attributes) {      //лагает когда на 1 атегории больше 1 и еще 1 на другой категории
                 foreach ($products as $product) {
                     //dd($product->product_type);
-                    if ($product->price <= $price && $product->product_type <= $arabica) {     //проверка на совпадение по цене и %арабики
+                        //проверка на совпадение по цене и %арабики
                         $id_all_product_array = explode(' ', $product->attributes_id);
                         array_pop($id_all_product_array);
 
@@ -234,7 +246,7 @@ class PagesController extends Controller
                             }
                         }
                         $num = 0;
-                    }
+
                 }
             }
         }
@@ -280,7 +292,7 @@ class PagesController extends Controller
         if(!isset($meta_tags)){
             $meta_tags = null;
         }
-
+        //dd($products);
         return view('site.products_cat-b_u_noutbuki', [
             'products' => $products,
             'filters' => $filters,
@@ -294,16 +306,11 @@ class PagesController extends Controller
     }
 
     public function refresh_page(Request $request){
+        //dd($request);
         $uri = RequestFacade::path(); //получаем URI
         $segmentsURI = explode('/',$uri); //делим на части по разделителю "/"
-        if($segmentsURI[0] == 'en'){
-            $lang_id = 1;
-        }
-        else{
-            $lang_id = 2;
-        }
 //dd($request);
-        $attributes = ProductAttributes::where('attributes_lang_id','=',$lang_id)->get();
+        $attributes = ProductAttributes::where('attributes_lang_id','=',1)->get();
         $array_key = AppliedMethods::get_key_array($request->attributes_id);
         //$array_key = array_reverse($array_key);
         $uri_string = '';
@@ -316,20 +323,26 @@ class PagesController extends Controller
                 }
             }
         }
-        //dd($request->price);
-        if(isset($request->price) && $request->price != 1000){
-            $uri_string .= 'price='.$request->price.'-';
-        }
-        if(isset($request->arabica) && $request->arabica != 100){
-            $uri_string .= 'arabica='.$request->arabica.'-';
-        }
-        //dd($uri_string);
+
         $uri_string = substr($uri_string, 0, -1);
         $referer = Redirect::back()->getTargetUrl();
         $segments = explode('/', $referer);
         $url = 'http://'.$segments[2].'/'.$segments[3].'/'.$uri_string;
         //dd($url);
         return redirect($url);
+    }
+    public function add_comment(Request $request){
+        $data = new ProductComment();
+        $data->product_id_connection = $request->product_id;
+        $data->comment = $request->comment;
+        $data->comment_name = $request->name;
+        $data->comment_email = $request->email;
+        $data->comment_time = date("H:i:s");
+        $data->comment_date = date("Y-m-d");
+        $data->is_active = 0;
+        $data->save();
+
+        return redirect()->back();
     }
     ////////////////////////////////////////////////////////////////////////////
     public function page_main(){

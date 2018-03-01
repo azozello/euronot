@@ -2868,6 +2868,7 @@ return array(
     'ProductReviewMigration' => $baseDir . '/database/migrations/2017_12_22_144633_product_review_migration.php',
     'ProductsBatch' => $baseDir . '/database/migrations/2018_01_19_201309_products_batch.php',
     'ProductsCategoriesConnectionMigration' => $baseDir . '/database/migrations/2017_12_11_104236_products_categories_connection_migration.php',
+    'ProductsCommentMigration' => $baseDir . '/database/migrations/2018_02_28_165222_products_comment_migration.php',
     'ProductsMigration' => $baseDir . '/database/migrations/2017_10_27_093034_products_migration.php',
     'ProductsTexts' => $baseDir . '/database/migrations/2018_02_22_105441_products_texts.php',
     'Prophecy\\Argument' => $vendorDir . '/phpspec/prophecy/src/Prophecy/Argument.php',

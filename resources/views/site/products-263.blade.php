@@ -117,29 +117,37 @@
 			<div class="clear"></div>
 			<div class="row">
 				<div class="col-lg-6 pict-block">
-					<div id="pict_box" class="pict" href="../index_app/images/pictures/products/20170524153523553.jpg"
-					     data-fancybox-group="gallery" title="">
-						<div class="varanty">
-							<img src="../index_app/images/varanty-12.png" title="гарантия" alt="гарантия"/>
-						</div>
-						<img alt="" title="" src="../index_app/images/pictures/products/20170524153523553.jpg"/>
+						@if(isset($images[0]))
+							<div id="pict_box" class="pict" href="../product_images/{{$images[0]->image}}"
+								 data-fancybox-group="gallery" title="">
+								<div class="varanty">
+									@if($product[0]->product_garanty == '3 месяца')
+									<img src="../index_app/images/varanty-3.png" title="гарантия" alt="гарантия"/>
+									@endif
+										@if($product[0]->product_garanty == '6 месяцев')
+											<img src="../index_app/images/varanty-6.png" title="гарантия" alt="гарантия"/>
+										@endif
+										@if($product[0]->product_garanty == '12 месяцев')
+											<img src="../index_app/images/varanty-12.png" title="гарантия" alt="гарантия"/>
+										@endif
+								</div>
+								<img alt="" title="" src="../product_images/{{$images[0]->image}}"/>
 
-					</div>
-					<div id="pict_line">
-						<div class="block pict" href="../index_app/images/pictures/products/20170524153518713.jpg"
-						     data-fancybox-group="gallery" title="">
-							<div class="in_block">
-								<img alt="" title="" src="../index_app/images/pictures/products/20170524153518713.jpg"/>
 							</div>
+						@endif
+						<div id="pict_line">
+							@foreach($images as $k=>$image)
+								@if($k!=0)
+									<div class="block pict" href="../product_images/{{$image->image}}"
+										 data-fancybox-group="gallery" title="">
+										<div class="in_block">
+											<img alt="" title="" src="../product_images/{{$image->image}}"/>
+										</div>
+									</div>
+								@endif
+							@endforeach
+							<div class="clear"></div>
 						</div>
-						<div class="block pict" href="../index_app/images/pictures/products/20170524153529266.jpg"
-						     data-fancybox-group="gallery" title="">
-							<div class="in_block">
-								<img alt="" title="" src="../index_app/images/pictures/products/20170524153529266.jpg"/>
-							</div>
-						</div>
-						<div class="clear"></div>
-					</div>
 
 					<!-- <div id="specblock">
 
@@ -148,13 +156,15 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="label-block">
-						<div class="label-prod top">Хит продаж</div>
+						@if(!is_null($product[0]->product_status))
+						<div class="label-prod top">{{$product[0]->product_status}}</div>
+						@endif
 						<div class="clear"></div>
 					</div>
-					<h1 class="prod_title" itemprop="name">Системный блок Dell Precision T3500</h1>
+					<h1 class="prod_title" itemprop="name">{{$product[0]->name}}</h1>
 					<div class="row prod-block-2">
 						<div class="col-lg-6 block-left">
-							<div class="avail">В наличии</div>
+							<div class="avail">{{$product[0]->product_isset}}</div>
 							<div class="rating_block">
 								<div class="rating_title"> Оценка пользователей:</div>
 								<div class="rating">
@@ -194,28 +204,45 @@
 											$("#star_box" + obj).removeClass("not_rated");
 											$("#star_box" + obj + " .rate").remove();
 											$("#star_box" + obj + " .rate_hide").show();
-											$.ajax({
-												type: "POST",
-												url: "parts/handler.php",
-												dataType: 'html',
-												cache: false,
-												async: false,
-												data: {obj: obj, ev: "rate", val: val, type: 'products'},
-												success: function (res) {
-													if (res != '') {
-														$("#star_box" + obj).parent().html(res);
-													}
-												}
-											});
 										}
 									</script>
 									<div class="star_box not_rated" id="star_box263">
 										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star active"></div>
-											<div class="star5 star active"></div>
+											@if($product[0]->product_stars == '5 звезд')
+												<div class="star1 star active"></div>
+												<div class="star2 star active"></div>
+												<div class="star3 star active"></div>
+												<div class="star4 star active"></div>
+												<div class="star5 star active"></div>
+											@endif
+											@if($product[0]->product_stars == '4 звезды')
+												<div class="star1 star active"></div>
+												<div class="star2 star active"></div>
+												<div class="star3 star active"></div>
+												<div class="star4 star active"></div>
+												<div class="star5 star"></div>
+											@endif
+											@if($product[0]->product_stars == '3 звезды')
+												<div class="star1 star active"></div>
+												<div class="star2 star active"></div>
+												<div class="star3 star active"></div>
+												<div class="star4 star"></div>
+												<div class="star5 star"></div>
+											@endif
+											@if($product[0]->product_stars == '2 звезды')
+												<div class="star1 star active"></div>
+												<div class="star2 star active"></div>
+												<div class="star3 star"></div>
+												<div class="star4 star"></div>
+												<div class="star5 star"></div>
+											@endif
+											@if($product[0]->product_stars == '1 звезда')
+												<div class="star1 star active"></div>
+												<div class="star2 star"></div>
+												<div class="star3 star"></div>
+												<div class="star4 star"></div>
+												<div class="star5 star"></div>
+											@endif
 										</div>
 										<div class="rate" style="display:none;">
 											<div class="star5" id="1" onclick="rate_it('1','263')"></div>
@@ -231,19 +258,38 @@
 							</div>
 						</div>
 						<div class="col-lg-6 haract-block">
+							@if(!is_null($product[0]->proc))
+								<div>
+									<img src="../index_app/images/cpu.png">
+									<div class="text">{{$product[0]->proc}}</div>
+								</div>
+							@endif
+							@if(!is_null($product[0]->op_memory))
 							<div>
 								<img src="../index_app/images/ozu.png">
-								<div class="text">4096 Mb</div>
+								<div class="text">{{$product[0]->op_memory}}</div>
 							</div>
+							@endif
 							<div>
-								<img src="../index_app/images/hdd.png">
-								<div class="text">500 Gb</div>
+								@if($product[0]->type_memory == 'HDD')
+									<img src="../index_app/images/hdd.png">
+								@endif
+									@if($product[0]->type_memory == 'SSD')
+										<img src="../index_app/images/ssd.png">
+									@endif
+								<div class="text">{{$product[0]->hard_memory}}</div>
 							</div>
+								@if(!is_null($product[0]->op_system))
+									<div>
+										<img src="../index_app/images/win.png">
+										<div class="text">{{$product[0]->op_system}}</div>
+									</div>
+								@endif
 						</div>
 					</div>
 					<div class="buy_line" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 						<div class="price"><span itemprop="price">
-                        8400</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
+                        {{$product[0]->price}}</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
 						<div id="buy_block">
 							<div class="quant_block">
 								<input type="text" size="3" value="1" id="add_quant_inp"/>
@@ -251,7 +297,7 @@
 							<div class="clear"></div>
 						</div>
 						<div class="buy_button_block">
-							<div class="add_to_basket_btn" onclick="card_add('263','8400','2')">Купить</div>
+							<div class="add_to_basket_btn" onclick="card_add('263','{{$product[0]->price}}','2')">Купить</div>
 							<div id="rassrochka"><img src="../index_app/images/privat.png" alt="privatbank"/>Доступна <u>«Оплата
 							                                                                                частями»</u>
 							</div>
@@ -325,88 +371,18 @@
 							<div class="col-lg-6">
 								<table border="0" cellspacing="0" cellpadding="0">
 									<tbody>
+									@foreach($texts as $k=>$text)
+										@if(!is_null($text->first_text))
 									<tr>
 										<td width="193">
-											<p><span>Тип</span></p>
+											<p><span>{!! $text->first_text !!}</span></p>
 										</td>
 										<td width="433">
-											<p><span>Системный блок / SFF</span></p>
+											<p><span>{!! $text->second_text !!}</span></p>
 										</td>
 									</tr>
-									<tr>
-										<td width="193">
-											<p><span>Процессор</span></p>
-										</td>
-										<td width="433">
-											<p>
-												<span>Intel &nbsp;Xeon W3530, 2,8 (MHz), 6 ядер, кеш память: 12 Mb.</span>
-											</p>
-										</td>
-									</tr>
-									<tr>
-										<td width="193">
-											<p><span>Оперативная память</span></p>
-										</td>
-										<td width="433">
-											<p><span>4 (ГБ)&nbsp;</span></p>
-										</td>
-									</tr>
-									<tr>
-										<td width="193">
-											<p><span>Жесткий диск / тип</span></p>
-										</td>
-										<td width="433">
-											<p><span>500 (Гб)&nbsp;</span></p>
-										</td>
-									</tr>
-									<tr>
-										<td width="193">
-											<p><span>Видеокарта</span></p>
-										</td>
-										<td width="433">
-											<p><span>Nvidia Qadro NVS 295</span></p>
-										</td>
-									</tr>
-									<tr>
-										<td width="193">
-											<p><span>Оптический привод</span></p>
-										</td>
-										<td width="433">
-											<p><span>DVD/CD-RW</span></p>
-										</td>
-									</tr>
-									<tr>
-										<td width="193">
-											<p><span>Размер (ДхШхВ)</span></p>
-										</td>
-										<td width="433">
-											<p><span>447 х 172 х 468</span></p>
-										</td>
-									</tr>
-									<tr>
-										<td width="193">
-											<p><span>Вес</span></p>
-										</td>
-										<td width="433">
-											<p><span>8 (кг)</span></p>
-										</td>
-									</tr>
-									<tr>
-										<td width="193">
-											<p><span>Комплектация</span></p>
-										</td>
-										<td width="433">
-											<p><span>Системный блок, кабель питания</span></p>
-										</td>
-									</tr>
-									<tr>
-										<td width="193">
-											<p><span>Гарантия</span></p>
-										</td>
-										<td width="433">
-											<p><span>12 месяцев</span></p>
-										</td>
-									</tr>
+									@endif
+										@endforeach
 									</tbody>
 								</table>
 							</div>
@@ -511,13 +487,28 @@
 							<div id="comments" class="comments_blocks">
 								<div class="first_line">
 									<div class="right"><a href="#comment_place">Добавить</a></div>
-									Комментарии (0)
+									Комментарии ({{$comment_count}})
 								</div>
 								<div class="list">
+									@if(count($comments) !=0 )
+										@foreach($comments as $comment)
+									<div class="block tr1 txtbl35" style="margin-left: 0px;" itemprop="review" itemscope="" itemtype="http://schema.org/Review">
+										<div class="first">
+											<span class="name" itemprop="author">{{$comment->comment_name}}</span>,
+											<span class="date" itemprop="datePublished">{{$comment->comment_date}} {{$comment->comment_time}}</span>
+										</div>
+										<div class="text" itemprop="description">{!! $comment->comment !!}</div>
+										<div class="clear"></div>
+									</div>
+										@endforeach
+										@endif
 								</div>
 								<div class="add_block bl0 botter">
 									<a id="comment_place"></a>
 									<div class="main">
+										<form role="form" method="post" action="{{ route('add_comment') }}" enctype="multipart/form-data">
+											<input name="_token" type="hidden" value="{{ csrf_token() }}">
+											<input name="product_id" type="hidden" value="{{ $product[0]->product_id }}">
 										<div class="comment_title">Добавить комментарий</div>
 										<div class="row comments-row">
 											<div class="col-md-6 col-xs-12">
@@ -529,13 +520,14 @@
 												       placeholder="E-mail" value=""/>
 											</div>
 											<div class="col-xs-12">
-												<textarea title="Ваш комментарий" placeholder="Ваш комментарий"
+												<textarea title="Ваш комментарий" name="comment" placeholder="Ваш комментарий"
 												          class="req"></textarea>
 											</div>
 											<div class="col-xs-12">
-												<div class="send" onclick="sender('0');">Отправить</div>
+												<button type="submit" class="send">Отправить</button>
 											</div>
 										</div>
+										</form>
 
 										<div class="clear"></div>
 									</div>
@@ -558,157 +550,89 @@
 			</div>
 			<div class="similar_title inner">Похожие товары:</div>
 			<div id="product_similar" class="products_list inner products row">
-
+               @foreach($same_products as $same_product)
+				   @foreach($same_product as $product)
 				<div class="col-lg-3 col-md-4 col-xs-6">
 					<div class="product ">
 						<div class="image">
 
-							<a href="products-192.html">
+							<a href="/products/{{$product->url}}">
 								<img alt="Системный блок HP USDT dc7700" title="Системный блок HP USDT dc7700"
-								     src="../index_app/images/pictures/products/20170524154035432.jpg"/>
+								     src="../product_images/{{$product->image}}"/>
 							</a>
 
 						</div>
-						<a href="products-192.html">
-							<div class="name">Системный блок HP USDT dc7700</div>
+						<a href="/products/{{$product->url}}">
+							<div class="name">{{$product->name}}</div>
 						</a>
 						<div class="line"></div>
-						<div class="price">2'400 грн</div>
+						<div class="price">{{$product->price}} грн</div>
 					</div>
 					<div class="product product-hover">
 						<div class="image">
 
-							<a href="products-192.html">
+							<a href="/products/{{$product->url}}">
 								<img alt="Системный блок HP USDT dc7700" title="Системный блок HP USDT dc7700"
-								     src="../index_app/images/pictures/products/20170524154035432.jpg"/>
+								     src="../product_images/{{$product->image}}"/>
 							</a>
 
 						</div>
-						<a href="products-192.html">
-							<div class="name">Системный блок HP USDT dc7700</div>
+						<a href="/products/{{$product->url}}">
+							<div class="name">{{$product->name}}</div>
 						</a>
 						<div class="line"></div>
-						<div class="price">2'400 грн</div>
+						<div class="price">{{$product->price}} грн</div>
 						<div class="rating_block">
 							<div class="rating">
 								<div class="star_box not_rated" id="star_box192">
 									<div class="rate_hide">
-										<div class="star1 star active"></div>
-										<div class="star2 star active"></div>
-										<div class="star3 star active"></div>
-										<div class="star4 star active"></div>
-										<div class="star5 star active"></div>
+										@if($product->product_stars == '5 звезд')
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star active"></div>
+											<div class="star5 star active"></div>
+										@endif
+										@if($product->product_stars == '4 звезды')
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star active"></div>
+											<div class="star5 star"></div>
+										@endif
+										@if($product->product_stars == '3 звезды')
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star active"></div>
+											<div class="star4 star"></div>
+											<div class="star5 star"></div>
+										@endif
+										@if($product->product_stars == '2 звезды')
+											<div class="star1 star active"></div>
+											<div class="star2 star active"></div>
+											<div class="star3 star"></div>
+											<div class="star4 star"></div>
+											<div class="star5 star"></div>
+										@endif
+										@if($product->product_stars == '1 звезда')
+											<div class="star1 star active"></div>
+											<div class="star2 star"></div>
+											<div class="star3 star"></div>
+											<div class="star4 star"></div>
+											<div class="star5 star"></div>
+										@endif
 									</div>
 								</div>
 
 								<div class="clear"></div>
 							</div>
 						</div>
-						<div class="title_dop">Intel Core2Duo E6300 1.86GHz / 1024MB / 80GB / PCI Express x16, 6xUSB2.0,
-						                       VGA, LAN, Audio in/out
+						<div class="title_dop">{{$product->short_description}}
 						</div>
 					</div>
 				</div>
-
-				<div class="col-lg-3 col-md-4 col-xs-6">
-					<div class="product ">
-						<div class="image">
-
-							<a href="products-190.html">
-								<img alt="Системный блок HP SFF dc7700" title="Системный блок HP SFF dc7700"
-								     src="../index_app/images/pictures/products/20170524153731811.jpg"/>
-							</a>
-
-						</div>
-						<a href="products-190.html">
-							<div class="name">Системный блок HP SFF dc7700</div>
-						</a>
-						<div class="line"></div>
-						<div class="price">2'103 грн</div>
-					</div>
-					<div class="product product-hover">
-						<div class="image">
-
-							<a href="products-190.html">
-								<img alt="Системный блок HP SFF dc7700" title="Системный блок HP SFF dc7700"
-								     src="../index_app/images/pictures/products/20170524153731811.jpg"/>
-							</a>
-
-						</div>
-						<a href="products-190.html">
-							<div class="name">Системный блок HP SFF dc7700</div>
-						</a>
-						<div class="line"></div>
-						<div class="price">2'103 грн</div>
-						<div class="rating_block">
-							<div class="rating">
-								<div class="star_box not_rated" id="star_box190">
-									<div class="rate_hide">
-										<div class="star1 star active"></div>
-										<div class="star2 star active"></div>
-										<div class="star3 star active"></div>
-										<div class="star4 star active"></div>
-										<div class="star5 star active"></div>
-									</div>
-								</div>
-
-								<div class="clear"></div>
-							</div>
-						</div>
-						<div class="title_dop">Intel Core2Duo E6300 1.86GHz / 1024MB / 80GB / PCI Express x16, 6xUSB2.0,
-						                       VGA, LAN, Audio in/out
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-4 col-xs-6">
-					<div class="product ">
-						<div class="image">
-
-							<a href="products-268.html">
-								<img alt="Системный блок Dell Optipllex 760" title="Системный блок Dell Optipllex 760"
-								     src="../index_app/images/pictures/products/20170524152654536.jpg"/>
-							</a>
-
-						</div>
-						<a href="products-268.html">
-							<div class="name">Системный блок Dell Optipllex 760</div>
-						</a>
-						<div class="line"></div>
-						<div class="price">2'600 грн</div>
-					</div>
-					<div class="product product-hover">
-						<div class="image">
-
-							<a href="products-268.html">
-								<img alt="Системный блок Dell Optipllex 760" title="Системный блок Dell Optipllex 760"
-								     src="../index_app/images/pictures/products/20170524152654536.jpg"/>
-							</a>
-
-						</div>
-						<a href="products-268.html">
-							<div class="name">Системный блок Dell Optipllex 760</div>
-						</a>
-						<div class="line"></div>
-						<div class="price">2'600 грн</div>
-						<div class="rating_block">
-							<div class="rating">
-								<div class="star_box not_rated" id="star_box268">
-									<div class="rate_hide">
-										<div class="star1 star active"></div>
-										<div class="star2 star active"></div>
-										<div class="star3 star active"></div>
-										<div class="star4 star active"></div>
-									</div>
-								</div>
-
-								<div class="clear"></div>
-							</div>
-						</div>
-						<div class="title_dop">Intel Core2Duo e8400 3GHz / 4096MB / 160GB</div>
-					</div>
-				</div>
-				<div class="clear"></div>
+					@endforeach
+				   @endforeach
 			</div>
 			<div class="push"></div>
 			<div id="footer" class="inner"></div>

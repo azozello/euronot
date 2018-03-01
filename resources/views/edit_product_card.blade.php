@@ -106,6 +106,12 @@
                                             <div class="col-md-6">
                                             </div>
                                             <div class="col-md-12">
+                                                <label>Краткое описание</label>
+                                                <div class="row">
+                                                    <textarea name="short_description" id="editor31">@if(isset($product[0]->short_description)){!! $product[0]->short_description !!}@endif</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
                                                 <div class="row">
                                                     <div class="col-xs-6">
                                                         <textarea name="editor1[0]" id="editor3">@if(isset($product_text[0]->first_text)){!! $product_text[0]->first_text !!}@endif</textarea>
@@ -350,6 +356,51 @@
                                                     <input type="text" name="price"
                                                            value="@if(isset($product[0]->price)){{$product[0]->price}}@endif"
                                                            placeholder="Введите цену*">
+                                                </h5>
+                                                <h5 class="content-group text-semibold">
+                                                    <label>Процессор*</label>
+                                                    <input type="text" name="proc"
+                                                           value="@if(isset($product[0]->proc)){{$product[0]->proc}}@endif"
+                                                           placeholder="">
+                                                </h5>
+                                                <h5 class="content-group text-semibold">
+                                                    <label>Оперативная память*</label>
+                                                    <input type="text" name="op_memory"
+                                                           value="@if(isset($product[0]->op_memory)){{$product[0]->op_memory}}@endif"
+                                                           placeholder="">
+                                                </h5>
+                                                <h5 class="content-group text-semibold">
+                                                    <label>Жесткий диск*</label>
+                                                    <select class="selectpicker" name="type_memory">
+                                                        @if($product[0]->type_memory == 'HDD')
+                                                            <option selected>HDD
+                                                            </option>
+                                                            <option>SSD
+                                                            </option>
+                                                            @endif
+                                                            @if($product[0]->type_memory == 'SSD')
+                                                                <option selected>SSD
+                                                                </option>
+                                                                <option>HDD
+                                                                </option>
+                                                            @endif
+                                                            @if($product[0]->type_memory == NULL)
+                                                                <option selected>SSD
+                                                                </option>
+                                                                <option>HDD
+                                                                </option>
+                                                            @endif
+
+                                                    </select>
+                                                    <input type="text" name="hard_memory"
+                                                           value="@if(isset($product[0]->hard_memory)){{$product[0]->hard_memory}}@endif"
+                                                           placeholder="">
+                                                </h5>
+                                                <h5 class="content-group text-semibold">
+                                                    <label>Операционная система*</label>
+                                                    <input type="text" name="op_system"
+                                                           value="@if(isset($product[0]->op_system)){{$product[0]->op_system}}@endif"
+                                                           placeholder="">
                                                 </h5>
 
 

@@ -156,8 +156,14 @@ class ProductCardController extends Controller
             $data->product_garanty  = $request->product_garanty ;
             $data->product_stars  = $request->product_stars ;
             $data->product_gift  = $request->product_gift ;
+            $data->short_description  = $request->short_description ;
             $data->timer_current_time  = time() ;
             $data->timer_time  = $next_time ;
+            $data->proc  = $request->proc ;
+            $data->op_memory  = $request->op_memory ;
+            $data->type_memory  = $request->type_memory ;
+            $data->hard_memory  = $request->hard_memory ;
+            $data->op_system  = $request->op_system ;
             $data->title = $title;
             $data->description = $description;
             $data->save();
@@ -239,7 +245,7 @@ class ProductCardController extends Controller
             'timer_days' => $timer_days,
             'timer_hours' => $timer_hours,
             'timer_minutes' => $timer_minutes,
-            'timer_seconds' => $timer_seconds,
+            'timer_seconds' => $timer_seconds
         ]);
     }
     public function edit_product(Request $request){
@@ -351,7 +357,7 @@ class ProductCardController extends Controller
             else{
                 $title = $request->title[$k];
             }
-//dd($request);
+
             Products::where('product_id','=',$product_id)->where('lang_id','=',$request->language_id[$k])->update([
                 'name' => $request->name[$k],
                 'article' => $request->article[$k],
@@ -367,7 +373,13 @@ class ProductCardController extends Controller
                 'timer_current_time' => time(),
                 'timer_time' => $next_time,
                 'title' => $title,
-                'description' => $description
+                'op_memory' => $request->op_memory,
+                'hard_memory' => $request->hard_memory,
+                'proc' => $request->proc,
+                'type_memory' => $request->type_memory,
+                'op_system' => $request->op_system,
+                'description' => $description,
+                'short_description' => $request->short_description
             ]);
             ProductsTexts::where('product_id_connection','=',$product_id)->delete();
             for($i=0;$i<15;$i++){

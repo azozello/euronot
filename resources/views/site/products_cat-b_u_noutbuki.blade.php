@@ -88,32 +88,11 @@
 						$(document).ready(function () {
 							$(".filter_btn").click(function () {
 
-								if ($(this).find('input').attr('checked')) {
-									$(this).find('input').removeAttr('checked');
-								} else {
-									$(this).find('input').attr('checked', 'checked');
-								}
-								var link = '';
-								var i = 1;
-								var arr = $('.filter_btn :checked');
-								if (arr.length > 0) {
-									arr.each(function () {
-										link += $(this).val();
-										if (i < arr.length) {
-											link += ',';
-										}
-										i++;
-									});
-									link = '-fltr_' + link;
-								}
-
-								$('#products .products_box').html('<div class="loader" style="display:block!important;"><img alt="" title="" src="../index_app/images/loader.gif"/></div>');
-
-
-								location.replace("/products_cat-b_u_noutbuki" + link + ".html");
+                                $('foo').submit();
 							})
 						})
 					</script>
+					<form id="foo" role="form" method="get" action="{{ route('refresh_page') }}" enctype="multipart/form-data">
 					@foreach($filters as $filter)
 						<div class="left_block filter">
 							<div class="filter_title">{{$filter->name}}</div>
@@ -121,8 +100,8 @@
 									@foreach($attributes as $attribute)
 										@if(isset($attributes_count[$attribute->attributes_id]))
 											@if($attribute->attributes_parent_filter == $filter->filter_id)
-											<div class="check_block"><span class="checkbox_label filter_btn"><span
-															class="checkbox"></span><div><input name="attributes_id[{{$attribute->attributes_id}}]" @foreach($url_attributes as $url_attribute) @if($url_attribute == $attribute->attributes_id) checked @endif @endforeach type="checkbox" onchange="Refresh()">{{$attribute->attributes_name}}<span
+											<div class="check_block" ><span  onclick="Refresh()" class="checkbox_label filter_btn"><span
+															class="checkbox" ></span><div><input name="attributes_id[{{$attribute->attributes_id}}]" @foreach($url_attributes as $url_attribute) @if($url_attribute == $attribute->attributes_id) checked @endif @endforeach type="checkbox" >{{$attribute->attributes_name}}<span
 																class="cnt">({{$attributes_count[$attribute->attributes_id]}})</span></div></span></div>
 											@endif
 										@endif
@@ -130,7 +109,8 @@
 							</div>
 						</div>
 					@endforeach
-					
+					</form>
+
 
 					<div class="clear"></div>
 
@@ -170,908 +150,136 @@
 						<div class="clear"></div>
 					</div>
 					<div class="products_box products">
-
+                       @foreach($products as $product)
 						<div class="col-md-4 col-xs-6">
 							<div class="product ">
 								<div class="image">
 
-									<a href="products-306.html">
+									<a href="/products/{{$product->url}}">
 										<div class="label-block">
-											<div class="label-prod super">Суперцена</div>
+											@if(!is_null($product->product_status))
+											<div class="label-prod super">{{$product->product_status}}</div>
+											@endif
 											<div class="clear"></div>
 										</div>
 										<img alt="Ноутбук Fujitsu Siemens Lifebook S6420 (2,53 ГГц, 4 Гб, 120 Гб)"
 										     title="Ноутбук Fujitsu Siemens Lifebook S6420 (2,53 ГГц, 4 Гб, 120 Гб)"
-										     src="../index_app/images/pictures/products/20171120174051535.jpg"/>
+										     src="../product_images/{{$product->image}}"/>
 									</a>
 
 								</div>
-								<a href="products-306.html">
-									<div class="name">Ноутбук Fujitsu Siemens Lifebook S6420 (2,53 ГГц, 4 Гб, 120 Гб)
+								<a href="/products/{{$product->url}}">
+									<div class="name">{{$product->name}}
 									</div>
 								</a>
 								<div class="line"></div>
-								<div class="price">3'900 грн</div>
+								<div class="price">{{$product->price}} грн</div>
 							</div>
+
 							<div class="product product-hover">
 								<div class="image">
 
-									<a href="products-306.html">
+									<a href="/products/{{$product->url}}">
 										<div class="label-block">
-											<div class="label-prod super">Суперцена</div>
+											@if(!is_null($product->product_status))
+											<div class="label-prod super">{{$product->product_status}}</div>
+											@endif
 											<div class="clear"></div>
 										</div>
 
 										<img alt="Ноутбук Fujitsu Siemens Lifebook S6420 (2,53 ГГц, 4 Гб, 120 Гб)"
 										     title="Ноутбук Fujitsu Siemens Lifebook S6420 (2,53 ГГц, 4 Гб, 120 Гб)"
-										     src="../index_app/images/pictures/products/20171120174051535.jpg"/>
+										     src="../product_images/{{$product->image}}"/>
 									</a>
 
 								</div>
-								<a href="products-306.html">
-									<div class="name">Ноутбук Fujitsu Siemens Lifebook S6420 (2,53 ГГц, 4 Гб, 120 Гб)
+								<a href="/products/{{$product->url}}">
+									<div class="name">{{$product->name}}
 									</div>
 								</a>
 								<div class="line"></div>
-								<div class="price">3'900 грн</div>
+								<div class="price">{{$product->price}} грн</div>
 								<div class="rating_block">
 									<div class="rating">
 										<div class="star_box not_rated" id="star_box306">
 											<div class="rate_hide">
-												<div class="star1 star active"></div>
-												<div class="star2 star active"></div>
-												<div class="star3 star active"></div>
-												<div class="star4 star"></div>
-												<div class="star5 star"></div>
-											</div>
-										</div>
-
-										<div class="clear"></div>
-									</div>
-								</div>
-								<div class="title_dop">13.3&quot; / (1280 x 800) / Core 2 Duo P8700 2530 MHz/ 4096Mb /
-								                       120Gb / Wi-Fi / DVD-RW / Win 7
-								</div>
-								<div class="haract-block">
-									<div>
-										<img src="../index_app/images/cpu.png">
-										<div class="text">Core2Duo</div>
-									</div>
-									<div>
-										<img src="../index_app/images/ozu.png">
-										<div class="text">4096 Mb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/hdd.png">
-										<div class="text">120 Gb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/win.png">
-										<div class="text">Win7</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-xs-6">
-							<div class="product ">
-								<div class="image">
-
-									<a href="products-301.html">
-										<div class="label-block">
-											<div class="label-prod top">Хит продаж</div>
-											<div class="clear"></div>
-										</div>
-										<img alt="Ноутбук Fujitsu E753" title="Ноутбук Fujitsu E753"
-										     src="../index_app/images/pictures/products/20171018105032805.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-301.html">
-									<div class="name">Ноутбук Fujitsu E753</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">14'050 грн</div>
-							</div>
-							<div class="product product-hover">
-								<div class="image">
-
-									<a href="products-301.html">
-										<div class="label-block">
-											<div class="label-prod top">Хит продаж</div>
-											<div class="clear"></div>
-										</div>
-
-										<img alt="Ноутбук Fujitsu E753" title="Ноутбук Fujitsu E753"
-										     src="../index_app/images/pictures/products/20171018105032805.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-301.html">
-									<div class="name">Ноутбук Fujitsu E753</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">14'050 грн</div>
-								<div class="rating_block">
-									<div class="rating">
-										<div class="star_box not_rated" id="star_box301">
-											<div class="rate_hide">
+												@if($product->product_stars == '5 звезд')
 												<div class="star1 star active"></div>
 												<div class="star2 star active"></div>
 												<div class="star3 star active"></div>
 												<div class="star4 star active"></div>
 												<div class="star5 star active"></div>
+												@endif
+													@if($product->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($product->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($product->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($product->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
 											</div>
 										</div>
 
 										<div class="clear"></div>
 									</div>
 								</div>
-								<div class="title_dop">15,6&quot; WXGA 1920x1080 Full HD / Intel Core i5-3340M 2,7 ГГц /
-								                       RAM 8 ГБ /256 SSD ГБ /Intel HD Graphics 4000/ Wi-Fi / Bluetooth /
-								                       Win 7
+								<div class="title_dop">{{$product->short_description}}
 								</div>
 								<div class="haract-block">
+									@if(!is_null($product->proc))
 									<div>
 										<img src="../index_app/images/cpu.png">
-										<div class="text">i5</div>
+										<div class="text">{{$product->proc}}</div>
 									</div>
+									@endif
+										@if(!is_null($product->op_memory))
 									<div>
 										<img src="../index_app/images/ozu.png">
-										<div class="text">8192 Mb</div>
+										<div class="text">{{$product->op_memory}}</div>
 									</div>
+										@endif
+										@if(!is_null($product->hard_memory))
 									<div>
-										<img src="../index_app/images/ssd.png">
-										<div class="text">256</div>
-									</div>
-									<div>
-										<img src="../index_app/images/win.png">
-										<div class="text">Win7</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-xs-6">
-							<div class="product ">
-								<div class="image">
-
-									<a href="products-300.html">
-										<div class="label-block">
-											<div class="label-prod top">Хит продаж</div>
-											<div class="clear"></div>
-										</div>
-										<img alt="Ноутбук HP 2570p" title="Ноутбук HP 2570p"
-										     src="../index_app/images/pictures/products/20171011121324735.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-300.html">
-									<div class="name">Ноутбук HP 2570p</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">8'350 грн</div>
-							</div>
-							<div class="product product-hover">
-								<div class="image">
-
-									<a href="products-300.html">
-										<div class="label-block">
-											<div class="label-prod top">Хит продаж</div>
-											<div class="clear"></div>
-										</div>
-
-										<img alt="Ноутбук HP 2570p" title="Ноутбук HP 2570p"
-										     src="../index_app/images/pictures/products/20171011121324735.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-300.html">
-									<div class="name">Ноутбук HP 2570p</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">8'350 грн</div>
-								<div class="rating_block">
-									<div class="rating">
-										<div class="star_box not_rated" id="star_box300">
-											<div class="rate_hide">
-												<div class="star1 star active"></div>
-												<div class="star2 star active"></div>
-												<div class="star3 star active"></div>
-												<div class="star4 star"></div>
-												<div class="star5 star"></div>
-											</div>
-										</div>
-
-										<div class="clear"></div>
-									</div>
-								</div>
-								<div class="title_dop">12.5&quot; WXGA 1366x768 HD LED / Intel Core i5-3320M 2,6 ГГц /
-								                       RAM 4 ГБ /500 HDD ГБ /Intel® HD Graphics 4000/ Wi-Fi / Bluetooth
-								                       / Win 7
-								</div>
-								<div class="haract-block">
-									<div>
-										<img src="../index_app/images/cpu.png">
-										<div class="text">i5</div>
-									</div>
-									<div>
-										<img src="../index_app/images/ozu.png">
-										<div class="text">4096 Mb</div>
-									</div>
-									<div>
+										@if($product->type_memory == 'HDD')
 										<img src="../index_app/images/hdd.png">
-										<div class="text">500 Gb</div>
+										@endif
+											@if($product->type_memory == 'SSD')
+												<img src="../index_app/images/ssd.png">
+											@endif
+										<div class="text">{{$product->hard_memory}}</div>
 									</div>
+										@endif
+										@if(!is_null($product->op_system))
 									<div>
 										<img src="../index_app/images/win.png">
-										<div class="text">Win7</div>
+										<div class="text">{{$product->op_system}}</div>
 									</div>
+											@endif
 								</div>
 							</div>
 						</div>
-
-						<div class="col-md-4 col-xs-6">
-							<div class="product ">
-								<div class="image">
-
-									<a href="products-299.html">
-										<div class="label-block">
-											<div class="label-prod top">Хит продаж</div>
-											<div class="clear"></div>
-										</div>
-										<img alt="Ноутбук HP 8540W" title="Ноутбук HP 8540W"
-										     src="../index_app/images/pictures/products/20171011104242453.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-299.html">
-									<div class="name">Ноутбук HP 8540W</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">9'300 грн</div>
-							</div>
-							<div class="product product-hover">
-								<div class="image">
-
-									<a href="products-299.html">
-										<div class="label-block">
-											<div class="label-prod top">Хит продаж</div>
-											<div class="clear"></div>
-										</div>
-
-										<img alt="Ноутбук HP 8540W" title="Ноутбук HP 8540W"
-										     src="../index_app/images/pictures/products/20171011104242453.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-299.html">
-									<div class="name">Ноутбук HP 8540W</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">9'300 грн</div>
-								<div class="rating_block">
-									<div class="rating">
-										<div class="star_box not_rated" id="star_box299">
-											<div class="rate_hide">
-												<div class="star1 star active"></div>
-												<div class="star2 star active"></div>
-												<div class="star3 star active"></div>
-												<div class="star4 star active"></div>
-												<div class="star5 star active"></div>
-											</div>
-										</div>
-
-										<div class="clear"></div>
-									</div>
-								</div>
-								<div class="title_dop">15,6&quot; WXGA 1920x1080 HD LED / Intel Core i5-M540 2,53 ГГц /
-								                       RAM 8 ГБ /500 HDD ГБ /Nvidia Quadro FX880m 1Gb 128 bit/ Wi-Fi /
-								                       Bluetooth / Win 7
-								</div>
-								<div class="haract-block">
-									<div>
-										<img src="../index_app/images/cpu.png">
-										<div class="text">i5</div>
-									</div>
-									<div>
-										<img src="../index_app/images/ozu.png">
-										<div class="text">8192 Mb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/hdd.png">
-										<div class="text">500 Gb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/win.png">
-										<div class="text">Win7</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-xs-6">
-							<div class="product ">
-								<div class="image">
-
-									<a href="products-298.html">
-										<div class="label-block">
-											<div class="label-prod prodano">Продано</div>
-											<div class="clear"></div>
-										</div>
-										<img alt="Ноутбук Fujitsu E782" title="Ноутбук Fujitsu E782"
-										     src="../index_app/images/pictures/products/20171011102915652.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-298.html">
-									<div class="name">Ноутбук Fujitsu E782</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">10'400 грн</div>
-							</div>
-							<div class="product product-hover">
-								<div class="image">
-
-									<a href="products-298.html">
-										<div class="label-block">
-											<div class="label-prod prodano">Продано</div>
-											<div class="clear"></div>
-										</div>
-
-										<img alt="Ноутбук Fujitsu E782" title="Ноутбук Fujitsu E782"
-										     src="../index_app/images/pictures/products/20171011102915652.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-298.html">
-									<div class="name">Ноутбук Fujitsu E782</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">10'400 грн</div>
-								<div class="rating_block">
-									<div class="rating">
-										<div class="star_box not_rated" id="star_box298">
-											<div class="rate_hide">
-												<div class="star1 star active"></div>
-												<div class="star2 star active"></div>
-												<div class="star3 star active"></div>
-												<div class="star4 star active"></div>
-											</div>
-										</div>
-
-										<div class="clear"></div>
-									</div>
-								</div>
-								<div class="title_dop">15,6&quot; WXGA 1366x768 HD LED / Intel Core i7-3520M 2,9 ГГц /
-								                       RAM 8 ГБ /500 HDD ГБ /Intel HD Graphics 4000/ Wi-Fi / Bluetooth /
-								                       Win 7
-								</div>
-								<div class="haract-block">
-									<div>
-										<img src="../index_app/images/cpu.png">
-										<div class="text">i7</div>
-									</div>
-									<div>
-										<img src="../index_app/images/ozu.png">
-										<div class="text">8192 Mb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/hdd.png">
-										<div class="text">500 Gb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/win.png">
-										<div class="text">Win7</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-xs-6">
-							<div class="product ">
-								<div class="image">
-
-									<a href="products-297.html">
-										<div class="label-block">
-											<div class="label-prod prodano">Продано</div>
-											<div class="clear"></div>
-										</div>
-										<img alt="Ноутбук Fujitsu E752" title="Ноутбук Fujitsu E752"
-										     src="../index_app/images/pictures/products/20171011100750539.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-297.html">
-									<div class="name">Ноутбук Fujitsu E752</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">9'599 грн</div>
-							</div>
-							<div class="product product-hover">
-								<div class="image">
-
-									<a href="products-297.html">
-										<div class="label-block">
-											<div class="label-prod prodano">Продано</div>
-											<div class="clear"></div>
-										</div>
-
-										<img alt="Ноутбук Fujitsu E752" title="Ноутбук Fujitsu E752"
-										     src="../index_app/images/pictures/products/20171011100750539.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-297.html">
-									<div class="name">Ноутбук Fujitsu E752</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">9'599 грн</div>
-								<div class="rating_block">
-									<div class="rating">
-										<div class="star_box not_rated" id="star_box297">
-											<div class="rate_hide">
-												<div class="star1 star active"></div>
-												<div class="star2 star active"></div>
-												<div class="star3 star active"></div>
-												<div class="star4 star active"></div>
-												<div class="star5 star active"></div>
-											</div>
-										</div>
-
-										<div class="clear"></div>
-									</div>
-								</div>
-								<div class="title_dop">15,6&quot; WXGA 1600x900 HD LED / Intel Core i5-3230M 2,6 ГГц /
-								                       RAM 4 ГБ /500 HDD ГБ /Intel HD Graphics 4000/ Wi-Fi / Bluetooth /
-								                       Win 7
-								</div>
-								<div class="haract-block">
-									<div>
-										<img src="../index_app/images/cpu.png">
-										<div class="text">i5</div>
-									</div>
-									<div>
-										<img src="../index_app/images/ozu.png">
-										<div class="text">4096 Mb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/hdd.png">
-										<div class="text">500 Gb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/win.png">
-										<div class="text">Win7</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-xs-6">
-							<div class="product ">
-								<div class="image">
-
-									<a href="products-296.html">
-										<div class="label-block">
-											<div class="label-prod super">Суперцена</div>
-											<div class="clear"></div>
-										</div>
-										<img alt="Ультрабук Dell Latitude E7440" title="Ультрабук Dell Latitude E7440"
-										     src="../index_app/images/pictures/products/20171009103031141.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-296.html">
-									<div class="name">Ультрабук Dell Latitude E7440</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">14'100 грн</div>
-							</div>
-							<div class="product product-hover">
-								<div class="image">
-
-									<a href="products-296.html">
-										<div class="label-block">
-											<div class="label-prod super">Суперцена</div>
-											<div class="clear"></div>
-										</div>
-
-										<img alt="Ультрабук Dell Latitude E7440" title="Ультрабук Dell Latitude E7440"
-										     src="../index_app/images/pictures/products/20171009103031141.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-296.html">
-									<div class="name">Ультрабук Dell Latitude E7440</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">14'100 грн</div>
-								<div class="title_dop">14&quot; WXGA 1366x768 HD LED / Intel Core i5-4310U 2,0 ГГц / RAM
-								                       8 ГБ /256SSD ГБ /Intel® HD Graphics 4400/ Wi-Fi / Bluetooth / Win
-								                       7
-								</div>
-								<div class="haract-block">
-									<div>
-										<img src="../index_app/images/cpu.png">
-										<div class="text">i5</div>
-									</div>
-									<div>
-										<img src="../index_app/images/ozu.png">
-										<div class="text">8192 Mb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/ssd.png">
-										<div class="text">256</div>
-									</div>
-									<div>
-										<img src="../index_app/images/win.png">
-										<div class="text">Win7</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-xs-6">
-							<div class="product ">
-								<div class="image">
-
-									<a href="products-295.html">
-										<div class="label-block">
-											<div class="label-prod prodano">Продано</div>
-											<div class="clear"></div>
-										</div>
-										<img alt="Ноутбук Lenovo ThinkPad L412" title="Ноутбук Lenovo ThinkPad L412"
-										     src="../index_app/images/pictures/products/20171009190011581.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-295.html">
-									<div class="name">Ноутбук Lenovo ThinkPad L412</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">5'500 грн</div>
-							</div>
-							<div class="product product-hover">
-								<div class="image">
-
-									<a href="products-295.html">
-										<div class="label-block">
-											<div class="label-prod prodano">Продано</div>
-											<div class="clear"></div>
-										</div>
-
-										<img alt="Ноутбук Lenovo ThinkPad L412" title="Ноутбук Lenovo ThinkPad L412"
-										     src="../index_app/images/pictures/products/20171009190011581.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-295.html">
-									<div class="name">Ноутбук Lenovo ThinkPad L412</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">5'500 грн</div>
-								<div class="rating_block">
-									<div class="rating">
-										<div class="star_box not_rated" id="star_box295">
-											<div class="rate_hide">
-												<div class="star1 star active"></div>
-												<div class="star2 star active"></div>
-												<div class="star3 star active"></div>
-												<div class="star4 star active"></div>
-											</div>
-										</div>
-
-										<div class="clear"></div>
-									</div>
-								</div>
-								<div class="title_dop">14&quot; WXGA 1366x768 HD LED / Intel Core i5-M520 2,4 ГГц / RAM
-								                       4 ГБ /160 HDD ГБ /Intel HD Graphics / Wi-Fi / Bluetooth / Win 7
-								</div>
-								<div class="haract-block">
-									<div>
-										<img src="../index_app/images/cpu.png">
-										<div class="text">i5</div>
-									</div>
-									<div>
-										<img src="../index_app/images/ozu.png">
-										<div class="text">4096 Mb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/hdd.png">
-										<div class="text">160 Gb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/win.png">
-										<div class="text">Win7</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-xs-6">
-							<div class="product ">
-								<div class="image">
-
-									<a href="products-294.html">
-										<div class="label-block">
-											<div class="label-prod top">Хит продаж</div>
-											<div class="clear"></div>
-										</div>
-										<img alt="Ноутбук Dell Latitude E6320" title="Ноутбук Dell Latitude E6320"
-										     src="../index_app/images/pictures/products/20171007114818601.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-294.html">
-									<div class="name">Ноутбук Dell Latitude E6320</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">6'200 грн</div>
-							</div>
-							<div class="product product-hover">
-								<div class="image">
-
-									<a href="products-294.html">
-										<div class="label-block">
-											<div class="label-prod top">Хит продаж</div>
-											<div class="clear"></div>
-										</div>
-
-										<img alt="Ноутбук Dell Latitude E6320" title="Ноутбук Dell Latitude E6320"
-										     src="../index_app/images/pictures/products/20171007114818601.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-294.html">
-									<div class="name">Ноутбук Dell Latitude E6320</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">6'200 грн</div>
-								<div class="rating_block">
-									<div class="rating">
-										<div class="star_box not_rated" id="star_box294">
-											<div class="rate_hide">
-												<div class="star1 star active"></div>
-												<div class="star2 star active"></div>
-												<div class="star3 star active"></div>
-												<div class="star4 star active"></div>
-											</div>
-										</div>
-
-										<div class="clear"></div>
-									</div>
-								</div>
-								<div class="title_dop">13,3&quot;(1366x768) HD LED / Intel Core i5-2520M 2,5 ГГц / RAM 4
-								                       ГБ /320HDD ГБ /Intel HD Graphics 3000/ Wi-Fi / Bluetooth / Win 7
-								</div>
-								<div class="haract-block">
-									<div>
-										<img src="../index_app/images/cpu.png">
-										<div class="text">i5</div>
-									</div>
-									<div>
-										<img src="../index_app/images/ozu.png">
-										<div class="text">4096 Mb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/hdd.png">
-										<div class="text">320 Gb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/win.png">
-										<div class="text">Win7</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-xs-6">
-							<div class="product ">
-								<div class="image">
-
-									<a href="products-292.html">
-										<div class="label-block">
-											<div class="label-prod top">Хит продаж</div>
-											<div class="clear"></div>
-										</div>
-										<img alt="Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)"
-										     title="Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)"
-										     src="../index_app/images/pictures/products/20170829160612307.png"/>
-									</a>
-
-								</div>
-								<a href="products-292.html">
-									<div class="name">Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">9'290 грн</div>
-							</div>
-							<div class="product product-hover">
-								<div class="image">
-
-									<a href="products-292.html">
-										<div class="label-block">
-											<div class="label-prod top">Хит продаж</div>
-											<div class="clear"></div>
-										</div>
-
-										<img alt="Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)"
-										     title="Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)"
-										     src="../index_app/images/pictures/products/20170829160612307.png"/>
-									</a>
-
-								</div>
-								<a href="products-292.html">
-									<div class="name">Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">9'290 грн</div>
-								<div class="rating_block">
-									<div class="rating">
-										<div class="star_box not_rated" id="star_box292">
-											<div class="rate_hide">
-												<div class="star1 star active"></div>
-												<div class="star2 star active"></div>
-												<div class="star3 star active"></div>
-												<div class="star4 star active"></div>
-											</div>
-										</div>
-
-										<div class="clear"></div>
-									</div>
-								</div>
-								<div class="title_dop">14&quot; WXGA 1366x768 HD LED / Intel Core i5-3427U 1,8 ГГц / RAM
-								                       8 ГБ /128SSD ГБ / Wi-Fi / Bluetooth / Win 7
-								</div>
-								<div class="haract-block">
-									<div>
-										<img src="../index_app/images/cpu.png">
-										<div class="text">i5</div>
-									</div>
-									<div>
-										<img src="../index_app/images/ozu.png">
-										<div class="text">8192 Mb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/ssd.png">
-										<div class="text">128 Gb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/win.png">
-										<div class="text">Win7</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-xs-6">
-							<div class="product ">
-								<div class="image">
-
-									<a href="products-291.html">
-										<img alt="Ноутбук Dell Latitude E6440 (2,5 ГГц, 4 Гб, 320 Гб)"
-										     title="Ноутбук Dell Latitude E6440 (2,5 ГГц, 4 Гб, 320 Гб)"
-										     src="../index_app/images/pictures/products/20170703145019784.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-291.html">
-									<div class="name">Ноутбук Dell Latitude E6440 (2,5 ГГц, 4 Гб, 320 Гб)</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">11'050 грн</div>
-							</div>
-							<div class="product product-hover">
-								<div class="image">
-
-									<a href="products-291.html">
-
-										<img alt="Ноутбук Dell Latitude E6440 (2,5 ГГц, 4 Гб, 320 Гб)"
-										     title="Ноутбук Dell Latitude E6440 (2,5 ГГц, 4 Гб, 320 Гб)"
-										     src="../index_app/images/pictures/products/20170703145019784.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-291.html">
-									<div class="name">Ноутбук Dell Latitude E6440 (2,5 ГГц, 4 Гб, 320 Гб)</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">11'050 грн</div>
-								<div class="rating_block">
-									<div class="rating">
-										<div class="star_box not_rated" id="star_box291">
-											<div class="rate_hide">
-												<div class="star1 star active"></div>
-												<div class="star2 star active"></div>
-												<div class="star3 star active"></div>
-												<div class="star4 star active"></div>
-												<div class="star5 star active"></div>
-											</div>
-										</div>
-
-										<div class="clear"></div>
-									</div>
-								</div>
-								<div class="title_dop">14&quot; / 1366x768 / Core i5-4200M 2.5GHz / 4096Mb /320Gb /
-								                       DVD-RW / Wi-Fi, Bluetooth / Win7
-								</div>
-								<div class="haract-block">
-									<div>
-										<img src="../index_app/images/cpu.png">
-										<div class="text">I5</div>
-									</div>
-									<div>
-										<img src="../index_app/images/ozu.png">
-										<div class="text">4096 Mb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/hdd.png">
-										<div class="text">320 Gb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/win.png">
-										<div class="text">Win7</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-4 col-xs-6">
-							<div class="product ">
-								<div class="image">
-
-									<a href="products-290.html">
-										<img alt="Ноутбук Dell Latitude E6540 (2,6 ГГц, 4 Гб, 320 Гб)"
-										     title="Ноутбук Dell Latitude E6540 (2,6 ГГц, 4 Гб, 320 Гб)"
-										     src="../index_app/images/pictures/products/20171018164001652.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-290.html">
-									<div class="name">Ноутбук Dell Latitude E6540 (2,6 ГГц, 4 Гб, 320 Гб)</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">14'200 грн</div>
-							</div>
-							<div class="product product-hover">
-								<div class="image">
-
-									<a href="products-290.html">
-
-										<img alt="Ноутбук Dell Latitude E6540 (2,6 ГГц, 4 Гб, 320 Гб)"
-										     title="Ноутбук Dell Latitude E6540 (2,6 ГГц, 4 Гб, 320 Гб)"
-										     src="../index_app/images/pictures/products/20171018164001652.jpg"/>
-									</a>
-
-								</div>
-								<a href="products-290.html">
-									<div class="name">Ноутбук Dell Latitude E6540 (2,6 ГГц, 4 Гб, 320 Гб)</div>
-								</a>
-								<div class="line"></div>
-								<div class="price">14'200 грн</div>
-								<div class="title_dop">15,6&quot; / 1920x1080 / Core i5-4300M 2.6GHz / 4096Mb /320Gb /
-								                       DVD-RW / Wi-Fi, Bluetooth / Win7
-								</div>
-								<div class="haract-block">
-									<div>
-										<img src="../index_app/images/cpu.png">
-										<div class="text">i5</div>
-									</div>
-									<div>
-										<img src="../index_app/images/ozu.png">
-										<div class="text">4096 Mb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/hdd.png">
-										<div class="text">320 Gb</div>
-									</div>
-									<div>
-										<img src="../index_app/images/win.png">
-										<div class="text">Win7</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						   @endforeach
 					</div>
 					<div class="pagination col-xs-12" align="center" style="padding-right: 0;"><span
 							class="active">1</span>&nbsp;&nbsp;<a href="products_cat-b_u_noutbuki-p2.html">2</a>&nbsp;&nbsp;<a
@@ -1252,6 +460,13 @@
 
 	</div>
 </div>
+<script type="text/javascript">
+    function Refresh () {
+
+        $('#foo').submit();
+        console.log(1);
+    }
+</script>
 <script type="text/javascript">
 	$(document).ready(function(){ $('.checkbox').each(function() { if($(this).parent().find('input[type=checkbox]:checked').length==1){$(this).addClass('checked');} });
 		$('.checkbox_label').click(function(){
