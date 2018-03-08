@@ -358,6 +358,7 @@ class ProductCardController extends Controller
                 $title = $request->title[$k];
             }
 
+
             Products::where('product_id','=',$product_id)->where('lang_id','=',$request->language_id[$k])->update([
                 'name' => $request->name[$k],
                 'article' => $request->article[$k],
@@ -388,6 +389,29 @@ class ProductCardController extends Controller
                 $data->first_text = $request->editor1[$i];
                 $data->second_text = $request->editor2[$i];
                 $data->save();
+            }
+        }
+        if(!is_null($request->file('pic')[0])) {
+            $files[] = $request->file('pic')[0];
+        }
+        if($request->file('files') !== null ) {
+            foreach ($request->file('files') as $file) {
+                $files[] = $file;
+            }
+        }
+        if(isset($files)) {
+            ProductImages::where('images_product_id','=',$product_id)->delete();
+            foreach ($request->file() as $file) {
+                foreach ($file as $f) {
+                    if ($f->move(public_path('product_images'), $f->getClientOriginalName())) {
+                        $data = new ProductImages();
+                        $data->image = $f->getClientOriginalName();
+                        $data->images_product_id = $product_id;
+                        $data->save();
+                    } else {
+                        return 'Ошибка загрузки';
+                    }
+                }
             }
         }
         return redirect()->back();

@@ -24,12 +24,12 @@
                 <div class="collapse" id="exCollapsingNavbar2">
                     <div class="text-muted p-1">
                         <ul class="nav nav-bar main-menu mob">
-                            <li><a href="products_cat-b_u_noutbuki.html">Ноутбуки б/у</a></li>
-                            <li><a href="products_cat-sistemnie_bloki.html">Системные блоки б/у</a></li>
-                            <li><a href="products_cat-monitori.html">Мониторы б/у</a></li>
-                            <li><a href="products_cat-doc_stancii.html">Принтеры (NEW)</a></li>
-                            <li><a href="products_cat-remont noutbukov.html">Док Станции б/у</a></li>
-                            <li><a href="#">Игровые системники</a></li>
+                            <li><a href="/product_list/noutbuki">Ноутбуки б/у</a></li>
+                            <li><a href="/product_list/sistemnie-bloki">Системные блоки б/у</a></li>
+                            <li><a href="/product_list/monitory">Мониторы б/у</a></li>
+                            <li><a href="/product_list/printery">Принтеры (NEW)</a></li>
+                            <li><a href="/product_list/doc-stancii">Док Станции б/у</a></li>
+                            <li><a href="/product_list/igrovie-sistemniki">Игровые системники</a></li>
                         </ul>
 
                     </div>
