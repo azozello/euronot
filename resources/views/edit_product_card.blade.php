@@ -365,7 +365,7 @@
                                                 </h5>
                                                 <h5 class="content-group text-semibold">
                                                     <label>Оперативная память*</label>
-                                                    <input type="text" name="op_memory"
+                                                    <input type="text" name="op_memory_p"
                                                            value="@if(isset($product[0]->op_memory)){{$product[0]->op_memory}}@endif"
                                                            placeholder="">
                                                 </h5>
@@ -440,6 +440,135 @@
 
                             <!-- Tab panes -->
                             <div role="tabpanel" class="tab-pane fade in active" id="ru2">
+                                <label>Процессор</label>
+                                <table style="width:20%">
+                                    <tr>
+                                        <th><input type="text" name="proc_conf[0]" value="{{$products_configurations[0]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="proc_conf_price[0]" value="{{$products_configurations[0]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="proc_conf[1]" value="{{$products_configurations[1]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="proc_conf_price[1]" value="{{$products_configurations[1]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="proc_conf[2]" value="{{$products_configurations[2]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="proc_conf_price[2]" value="{{$products_configurations[2]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="proc_conf[3]" value="{{$products_configurations[3]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="proc_conf_price[3]" value="{{$products_configurations[3]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="proc_conf[4]" value="{{$products_configurations[4]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="proc_conf_price[4]" value="{{$products_configurations[4]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="proc_conf[5]" value="{{$products_configurations[5]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="proc_conf_price[5]" value="{{$products_configurations[5]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="proc_conf[6]" value="{{$products_configurations[6]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="proc_conf_price[6]" value="{{$products_configurations[6]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="proc_conf[7]" value="{{$products_configurations[7]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="proc_conf_price[7]" value="{{$products_configurations[7]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="proc_conf[8]" value="{{$products_configurations[8]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="proc_conf_price[8]" value="{{$products_configurations[8]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="proc_conf[9]" value="{{$products_configurations[9]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="proc_conf_price[9]" value="{{$products_configurations[9]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                </table>
+                                <label>Оперативная память</label>
+                                <table style="width:20%">
+                                    <tr>
+                                        <th><input type="text" name="op_memory[0]" value="{{$products_configurations[10]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="op_memory_price[0]" value="{{$products_configurations[10]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="op_memory[1]" value="{{$products_configurations[11]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="op_memory_price[1]" value="{{$products_configurations[11]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="op_memory[2]" value="{{$products_configurations[12]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="op_memory_price[2]" value="{{$products_configurations[12]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="op_memory[3]" value="{{$products_configurations[13]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="op_memory_price[3]" value="{{$products_configurations[13]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="op_memory[4]" value="{{$products_configurations[14]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="op_memory_price[4]" value="{{$products_configurations[14]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="op_memory[5]" value="{{$products_configurations[15]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="op_memory_price[5]" value="{{$products_configurations[15]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="op_memory[6]" value="{{$products_configurations[16]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="op_memory_price[6]" value="{{$products_configurations[16]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="op_memory[7]" value="{{$products_configurations[17]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="op_memory_price[7]" value="{{$products_configurations[17]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="op_memory[8]" value="{{$products_configurations[18]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="op_memory_price[8]" value="{{$products_configurations[18]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="op_memory[9]" value="{{$products_configurations[19]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="op_memory_price[9]" value="{{$products_configurations[19]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                </table>
+                                <label>Жесткий диск</label>
+                                <table style="width:20%">
+                                    <tr>
+                                        <th><input type="text" name="hard[0]" value="{{$products_configurations[20]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="hard_price[0]" value="{{$products_configurations[20]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="hard[1]" value="{{$products_configurations[21]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="hard_price[1]" value="{{$products_configurations[21]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="hard[2]" value="{{$products_configurations[22]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="hard_price[2]" value="{{$products_configurations[22]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="hard[3]" value="{{$products_configurations[23]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="hard_price[3]" value="{{$products_configurations[23]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="hard[4]" value="{{$products_configurations[24]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="hard_price[4]" value="{{$products_configurations[24]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="hard[5]" value="{{$products_configurations[25]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="hard_price[5]" value="{{$products_configurations[25]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="hard[6]" value="{{$products_configurations[26]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="hard_price[6]" value="{{$products_configurations[26]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="hard[7]" value="{{$products_configurations[27]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="hard_price[7]" value="{{$products_configurations[27]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="hard[8]" value="{{$products_configurations[28]->configuration}}" placeholder=""></th>
+                                        <th><input type="text" name="hard_price[8]" value="{{$products_configurations[28]->configuration_price}}" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="hard[9]" value="{{$products_configurations[29]->configuration}}" placeholder=""></td>
+                                        <td><input type="text" name="hard_price[9]" value="{{$products_configurations[29]->configuration_price}}" placeholder=""></td>
+                                    </tr>
+                                </table>
                                 <table class=" products-table-list no-chess table-lang table-lg table-striped"
                                        id="table-collapsed_55">
                                     <thead>

@@ -357,7 +357,7 @@
                                         </h5>
                                         <h5 class="content-group text-semibold">
                                             <label>Оперативная память*</label>
-                                            <input type="text" name="op_memory"
+                                            <input type="text" name="op_memory_p"
                                                    value=""
                                                    placeholder="">
                                         </h5>
@@ -417,6 +417,136 @@
 
                             <!-- Tab panes -->
                             <div role="tabpanel" class="tab-pane fade in active" id="ru2">
+                            <label>Процессор</label>
+                                <table style="width:20%">
+                                    <tr>
+                                        <th><input type="text" name="proc_conf[0]" value="" placeholder=""></th>
+                                        <th><input type="text" name="proc_conf_price[0]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="proc_conf[1]" value="" placeholder=""></td>
+                                        <td><input type="text" name="proc_conf_price[1]" value="" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="proc_conf[2]" value="" placeholder=""></th>
+                                        <th><input type="text" name="proc_conf_price[2]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="proc_conf[3]" value="" placeholder=""></td>
+                                        <td><input type="text" name="proc_conf_price[3]" value="" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="proc_conf[4]" value="" placeholder=""></th>
+                                        <th><input type="text" name="proc_conf_price[4]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="proc_conf[5]" value="" placeholder=""></td>
+                                        <td><input type="text" name="proc_conf_price[5]" value="" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="proc_conf[6]" value="" placeholder=""></th>
+                                        <th><input type="text" name="proc_conf_price[6]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="proc_conf[7]" value="" placeholder=""></td>
+                                        <td><input type="text" name="proc_conf_price[7]" value="" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="proc_conf[8]" value="" placeholder=""></th>
+                                        <th><input type="text" name="proc_conf_price[8]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="proc_conf[9]" value="" placeholder=""></td>
+                                        <td><input type="text" name="proc_conf_price[9]" value="" placeholder=""></td>
+                                    </tr>
+                                </table>
+                                <label>Оперативная память</label>
+                                <table style="width:20%">
+                                    <tr>
+                                        <th><input type="text" name="op_memory[0]" value="" placeholder=""></th>
+                                        <th><input type="text" name="op_memory_price[0]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="op_memory[1]" value="" placeholder=""></td>
+                                        <td><input type="text" name="op_memory_price[1]" value="" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="op_memory[2]" value="" placeholder=""></th>
+                                        <th><input type="text" name="op_memory_price[2]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="op_memory[3]" value="" placeholder=""></td>
+                                        <td><input type="text" name="op_memory_price[3]" value="" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="op_memory[4]" value="" placeholder=""></th>
+                                        <th><input type="text" name="op_memory_price[4]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="op_memory[5]" value="" placeholder=""></td>
+                                        <td><input type="text" name="op_memory_price[5]" value="" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="op_memory[6]" value="" placeholder=""></th>
+                                        <th><input type="text" name="op_memory_price[6]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="op_memory[7]" value="" placeholder=""></td>
+                                        <td><input type="text" name="op_memory_price[7]" value="" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="op_memory[8]" value="" placeholder=""></th>
+                                        <th><input type="text" name="op_memory_price[8]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="op_memory[9]" value="" placeholder=""></td>
+                                        <td><input type="text" name="op_memory_price[9]" value="" placeholder=""></td>
+                                    </tr>
+                                </table>
+                                <label>Жесткий диск</label>
+                                <table style="width:20%">
+                                    <tr>
+                                        <th><input type="text" name="hard[0]" value="" placeholder=""></th>
+                                        <th><input type="text" name="hard_price[0]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="hard[1]" value="" placeholder=""></td>
+                                        <td><input type="text" name="hard_price[1]" value="" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="hard[2]" value="" placeholder=""></th>
+                                        <th><input type="text" name="hard_price[2]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="hard[3]" value="" placeholder=""></td>
+                                        <td><input type="text" name="hard_price[3]" value="" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="hard[4]" value="" placeholder=""></th>
+                                        <th><input type="text" name="hard_price[4]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="hard[5]" value="" placeholder=""></td>
+                                        <td><input type="text" name="hard_price[5]" value="" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="hard[6]" value="" placeholder=""></th>
+                                        <th><input type="text" name="hard_price[6]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="hard[7]" value="" placeholder=""></td>
+                                        <td><input type="text" name="hard_price[7]" value="" placeholder=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="text" name="hard[8]" value="" placeholder=""></th>
+                                        <th><input type="text" name="hard_price[8]" value="" placeholder=""></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="hard[9]" value="" placeholder=""></td>
+                                        <td><input type="text" name="hard_price[9]" value="" placeholder=""></td>
+                                    </tr>
+                                </table>
+
                                 <table class=" products-table-list no-chess table-lang table-lg table-striped"
                                        id="table-collapsed_55">
                                     <thead>
