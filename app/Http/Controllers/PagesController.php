@@ -122,6 +122,12 @@ class PagesController extends Controller
 
     public function show_products($url){
         $product = Products::where('url','=',$url)->get();
+        $op_memory = App\ProductConfiguration::where('product_id_connection','=',$product[0]->product_id)->
+            where('configuration_type','=','op_memory')->get();
+        $proc = App\ProductConfiguration::where('product_id_connection','=',$product[0]->product_id)->
+        where('configuration_type','=','proc')->get();
+        $hard = App\ProductConfiguration::where('product_id_connection','=',$product[0]->product_id)->
+        where('configuration_type','=','hard')->get();
         $images = ProductImages::where('images_product_id','=',$product[0]->product_id)->get();
         $texts = ProductsTexts::where('product_id_connection','=',$product[0]->product_id)->get();
         $comments = ProductComment::where('product_id_connection','=',$product[0]->product_id)->
@@ -153,7 +159,10 @@ class PagesController extends Controller
             'texts' => $texts,
             'comments' => $comments,
             'comment_count' => count($comments),
-            'same_products' => $same_products
+            'same_products' => $same_products,
+            'hard' => $hard,
+            'proc' => $proc,
+            'op_memory' => $op_memory
         ]);
     }
     public function show_about(){

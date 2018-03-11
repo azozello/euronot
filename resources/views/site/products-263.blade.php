@@ -284,7 +284,7 @@
 							</div>
 						</div>
 						<div class="haract-block">
-							@if(!is_null($product[0]->proc))
+							@if(!is_null($proc))
 								<div class="block_flex_pr">
 									<div>
 										<img src="../index_app/images/cpu.png">
@@ -293,13 +293,16 @@
 								<p class="hidden_text_pr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nemo corporis, accusantium?</p>
 								</span>
 										<select>
-											<option>Core i5-2400</option>
-											<option>Core i5-2400</option>
+											@foreach($proc as $proc_item)
+												@if(!is_null($proc_item->configuration))
+											<option value="{{$proc_item->configuration_price}}">{{$proc_item->configuration}}</option>
+												@endif
+											@endforeach
 										</select>
 									</div>
 								</div>
 							@endif
-							@if(!is_null($product[0]->op_memory))
+							@if(!is_null($op_memory))
 								<div class="block_flex_pr">
 									<div>
 										<img src="../index_app/images/ozu.png">
@@ -308,14 +311,17 @@
 								<p class="hidden_text_pr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nemo corporis, accusantium?</p>
 								 </span>
 										<select>
-											<option>4096 Mb</option>
-											<option>4096 Mb</option>
+											@foreach($op_memory as $op_memory_item)
+												@if(!is_null($op_memory_item->configuration))
+												<option value="{{$op_memory_item->configuration_price}}">{{$op_memory_item->configuration}}</option>
+												@endif
+													@endforeach
 										</select>
 									</div>
 
 								</div>
 							@endif
-							@if(!is_null($product[0]->proc))
+							@if(!is_null($hard))
 								<div class="block_flex_pr">
 									<div>
 										<img src="../index_app/images/ssd.png">
@@ -324,8 +330,11 @@
 								<p class="hidden_text_pr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nemo corporis, accusantium?</p>
 								</span>
 										<select onchange="city_change();">
-											<option>500 Gb</option>
-											<option>500 Gb</option>
+											@foreach($hard as $hard_item)
+												@if(!is_null($hard_item->configuration))
+												<option value="{{$hard_item->configuration_price}}">{{$hard_item->configuration}}</option>
+												@endif
+													@endforeach
 										</select>
 									</div>
 
