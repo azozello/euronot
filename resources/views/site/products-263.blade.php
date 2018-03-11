@@ -257,32 +257,33 @@
 								</div>
 							</div>
 						</div>
+						@if(!is_null($product_gift[0]))
 						<div class="col-lg-8 action_block">
 							<div class="action_product">
-								<img src="../index_app/images/1079545.png">
-								<p>Акция! При покупке акционНого
-									ноутбука ASUS - сумка в подарок!</p>
+								<img src="../product_images/{{$product_gift[0]->image}}">
+								<p>{{$product[0]->product_gift_text}}</p>
 							</div>
 							<div class="time_produkt">
 								<span class="text_time">До конца осталось:</span>
 								<span class="time_time_pr">
-									<span class="dey_prod">15 :
+									<span class="dey_prod">{{$timer_days}} :
 										<p class="text_pod">Дни</p>
 									</span>
 
-									<span class="dey_prod">12 :
+									<span class="dey_prod">{{$timer_hours}} :
 										<p class="text_pod">Часы</p>
 									</span>
-									<span class="dey_prod">40 :
+									<span class="dey_prod">{{$timer_minutes}} :
 										<p class="text_pod">Мин</p>
 									</span>
-									<span class="dey_prod">60
+									<span class="dey_prod">{{$timer_seconds}}
 										<p class="text_pod">Сек</p>
 									</span>
 								</span>
 
 							</div>
 						</div>
+						@endif
 						<div class="haract-block">
 							@if(!is_null($proc))
 								<div class="block_flex_pr">
@@ -290,7 +291,7 @@
 										<img src="../index_app/images/cpu.png">
 									</div>
 									<div class="text-flex"><span class="hover_block_pr">Процесор:
-								<p class="hidden_text_pr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nemo corporis, accusantium?</p>
+								<p class="hidden_text_pr">{{$product[0]->proc}}</p>
 								</span>
 										<select>
 											@foreach($proc as $proc_item)
@@ -308,7 +309,7 @@
 										<img src="../index_app/images/ozu.png">
 									</div>
 									<div class="text-flex"><span class="hover_block_pr">Оперативна пам’ять:
-								<p class="hidden_text_pr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nemo corporis, accusantium?</p>
+								<p class="hidden_text_pr">{{$product[0]->op_memory}}</p>
 								 </span>
 										<select>
 											@foreach($op_memory as $op_memory_item)
@@ -327,7 +328,7 @@
 										<img src="../index_app/images/ssd.png">
 									</div>
 									<div class="text-flex"><span  class="hover_block_pr">Жорсткий диск:
-								<p class="hidden_text_pr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nemo corporis, accusantium?</p>
+								<p class="hidden_text_pr">{{$product[0]->hard_memory}}</p>
 								</span>
 										<select onchange="city_change();">
 											@foreach($hard as $hard_item)
@@ -340,17 +341,18 @@
 
 								</div>
 							@endif
-							@if(!is_null($product[0]->op_system))
+								@if(!is_null($product[0]->op_system_description))
 								<div class="block_flex_pr">
 									<div>
 										<img src="../index_app/images/win.png">
 									</div>
 									<div class="text-flex"><span class="hover_block_pr">Windows:
-									<p class="hidden_text_pr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nemo corporis, accusantium?</p>
-									 </span> 8</div>
+									<p class="hidden_text_pr">{{$product[0]->op_system_description}}</p>
+									 </span>{{$product[0]->op_system}}</div>
 
 								</div>
-							@endif
+									@endif
+
 						</div>
 
 					</div>

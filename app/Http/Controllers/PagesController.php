@@ -151,6 +151,36 @@ class PagesController extends Controller
                 break;
             }
         }
+        //dd($product);
+        if(!is_null($product[0]->product_gift)){
+            $product_gift = DB::table('products')->
+            where('products.product_id', $product[0]->product_gift)->
+            leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
+            groupBy('products.product_id')->
+            get();
+        }
+        else{
+            $product_gift = null;
+        }
+        $time = $product[0]->timer_time - time();
+        if($time < 0){
+            $timer_days = 0;
+            $timer_hours = 0;
+            $timer_minutes = 0;
+            $timer_seconds = 0;
+        }
+        else{
+            $month = floor( $time / 2592000 );
+
+            $timer_days = ( $time / 86400 ) % 30;
+
+            $timer_hours = ( $time / 3600 ) % 24;
+
+            $timer_minutes = ( $time / 60 ) % 60;
+
+            $timer_seconds = $time % 60;
+        }
+        //dd($product_gift);
         return view('site.products-263',[
             'organization' => Organization::get()[0],
             'cities' => OpenHours::get(),
@@ -162,7 +192,13 @@ class PagesController extends Controller
             'same_products' => $same_products,
             'hard' => $hard,
             'proc' => $proc,
-            'op_memory' => $op_memory
+            'op_memory' => $op_memory,
+            'product_gift' => $product_gift,
+            'timer_days' => $timer_days,
+            'timer_hours' => $timer_hours,
+            'timer_minutes' => $timer_minutes,
+            'timer_seconds' => $timer_seconds
+
         ]);
     }
     public function show_about(){
@@ -876,7 +912,8 @@ class PagesController extends Controller
             'array' => Languages::where('active','=',1)->get(),
             'filters' => Filters::where('is_active','=',1)->where('lang_id','=',1)->get(),
             'attributes' => ProductAttributes::where('attributes_lang_id','=',1)->get(),
-            'suppliers' => Traders::get()
+            'suppliers' => Traders::get(),
+            'present_products' => Products::get()
         ]);
     }
     public function contacts_show(){

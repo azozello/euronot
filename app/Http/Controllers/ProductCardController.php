@@ -189,6 +189,9 @@ class ProductCardController extends Controller
             $data->type_memory  = $request->type_memory ;
             $data->hard_memory  = $request->hard_memory ;
             $data->op_system  = $request->op_system ;
+            $data->op_system_description  = $request->op_system_description ;
+            $data->product_gift = $request->product_gift;
+            $data->product_gift_text = $request->present_product_text;
             $data->title = $title;
             $data->description = $description;
             $data->save();
@@ -273,7 +276,9 @@ class ProductCardController extends Controller
             'timer_hours' => $timer_hours,
             'timer_minutes' => $timer_minutes,
             'timer_seconds' => $timer_seconds,
-            'products_configurations' => $product_configurations
+            'products_configurations' => $product_configurations,
+            'present_products' => Products::get(),
+            'current_present_product' => Products::where('product_id','=',$product[0]->product_gift )->get()
         ]);
     }
     public function edit_product(Request $request){
@@ -430,6 +435,9 @@ class ProductCardController extends Controller
                 'proc' => $request->proc,
                 'type_memory' => $request->type_memory,
                 'op_system' => $request->op_system,
+                'op_system_description' => $request->op_system_description,
+                'product_gift' => $request->product_gift,
+                'product_gift_text' => $request->present_product_text,
                 'description' => $description,
                 'short_description' => $request->short_description
             ]);

@@ -290,6 +290,21 @@
                                                 <input min="0" value="@if(isset($timer_seconds)){{$timer_seconds}}@endif" max="60" id="number" style="width: 2em;" name="timer_seconds" type="number">
                                             </h5>
                                             <div class="form-content" style="padding-left: 50px;">
+                                                <h5>Подарочный товар</h5>
+                                                <select class="selectpicker" name="product_gift">
+                                                    <option value="">
+                                                    </option>
+                                                    @if(isset($current_present_product[0]->product_id))
+                                                    <option value="{{$current_present_product[0]->product_id}}">{{$current_present_product[0]->name}}
+                                                    </option>
+                                                    @endif
+                                                    @foreach($present_products as $present_product)
+                                                        <option value="{{$present_product->product_id}}">{{$present_product->name}}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                                <h5>Подпись подарочного товара</h5>
+                                                <textarea name="present_product_text">{{$product[0]->product_gift_text}}</textarea>
                                                 <h5>Статус товара</h5>
                                                 <select class="selectpicker" name="product_status">
                                                     <option>@if(isset($product[0]->product_status)){{$product[0]->product_status}}@endif
@@ -400,6 +415,12 @@
                                                     <label>Операционная система*</label>
                                                     <input type="text" name="op_system"
                                                            value="@if(isset($product[0]->op_system)){{$product[0]->op_system}}@endif"
+                                                           placeholder="">
+                                                </h5>
+                                                <h5 class="content-group text-semibold">
+                                                    <label>Описание операционной системы*</label>
+                                                    <input type="text" name="op_system_description"
+                                                           value="@if(isset($product[0]->op_system_description)){{$product[0]->op_system_description}}@endif"
                                                            placeholder="">
                                                 </h5>
 

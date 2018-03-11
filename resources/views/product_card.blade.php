@@ -288,6 +288,17 @@
                                         <input min="0" max="60" id="number" style="width: 2em;" name="timer_seconds" type="number">
                                     </h5>
                                     <div class="form-content" style="padding-left: 50px;">
+                                        <h5>Подарочный товар</h5>
+                                        <select class="selectpicker" name="product_gift">
+                                            <option>
+                                            </option>
+                                            @foreach($present_products as $present_product)
+                                            <option value="{{$present_product->product_id}}">{{$present_product->name}}
+                                            </option>
+                                            @endforeach
+                                        </select>
+                                        <h5>Подпись подарочного товара</h5>
+                                        <textarea name="present_product_text"></textarea>
                                         <h5>Статус товара</h5>
                                         <select class="selectpicker" name="product_status">
                                             <option>
@@ -376,6 +387,12 @@
                                         <h5 class="content-group text-semibold">
                                             <label>Операционная система*</label>
                                             <input type="text" name="op_system"
+                                                   value=""
+                                                   placeholder="">
+                                        </h5>
+                                        <h5 class="content-group text-semibold">
+                                            <label>Описание операционной системы*</label>
+                                            <input type="text" name="op_system_description"
                                                    value=""
                                                    placeholder="">
                                         </h5>
