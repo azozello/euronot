@@ -199,19 +199,19 @@ class PagesController extends Controller
     }
 
 
-    public function show_products($url){
-        $product = Products::where('url','=',$url)->get();
-        $images = ProductImages::where('images_product_id','=',$product[0]->product_id)->get();
-        $texts = ProductsTexts::where('product_id_connection','=',$product[0]->product_id)->get();
-        $comments = ProductComment::where('product_id_connection','=',$product[0]->product_id)->
-        where('is_active','=',0)->get();
+    public function show_products(){
+        $product = Products::where('url', '=', $url)->get();
+        $images = ProductImages::where('images_product_id', '=', $product[0]->product_id)->get();
+        $texts = ProductsTexts::where('product_id_connection', '=', $product[0]->product_id)->get();
+        $comments = ProductComment::where('product_id_connection', '=', $product[0]->product_id)->
+        where('is_active', '=', 0)->get();
         $all_products = Products::get();
         $attributes = explode(" ", $product[0]->attributes_id);
         $same_products = array();
-        foreach ($all_products as $products){
+        foreach ($all_products as $products) {
             $all_products_attributes = explode(" ", $products->attributes_id);
-            if(count(array_uintersect($attributes, $all_products_attributes, "strcasecmp")) > 0){
-                if($products->id != $product[0]->id) {
+            if (count(array_uintersect($attributes, $all_products_attributes, "strcasecmp")) > 0) {
+                if ($products->id != $product[0]->id) {
                     $same_products[] = DB::table('products')->
                     where('products.id', $products->id)->
                     leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
@@ -220,11 +220,10 @@ class PagesController extends Controller
                 }
             }
 
-            if(count($same_products) == 3){
+            if (count($same_products) == 3) {
                 break;
             }
         }
-    public function show_products(){
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -238,16 +237,16 @@ class PagesController extends Controller
         return view('site.products-263',[
             'organization' => Organization::get()[0],
             'header' => $data,
-            'cities' => OpenHours::get()
             'cities' => OpenHours::get(),
             'product' => $product,
-            'images' => $images,
+            'images' => $images,,
             'texts' => $texts,
             'comments' => $comments,
             'comment_count' => count($comments),
             'same_products' => $same_products
         ]);
     }
+
     public function show_about(){
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
@@ -270,6 +269,7 @@ class PagesController extends Controller
             'description' => AboutCompany::get()[0]->attributesToArray()['about_company_description']
         ]);
     }
+
     public function show_product_list($url = NULL){
         //dd(RequestFacade::path());
             $lang_id = 1;
