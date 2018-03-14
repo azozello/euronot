@@ -24,12 +24,17 @@
                 <div class="collapse" id="exCollapsingNavbar2">
                     <div class="text-muted p-1">
                         <ul class="nav nav-bar main-menu mob">
-                            <li><a href="products_cat-b_u_noutbuki.html">Ноутбуки б/у</a></li>
-                            <li><a href="products_cat-sistemnie_bloki.html">Системные блоки б/у</a></li>
-                            <li><a href="products_cat-monitori.html">Мониторы б/у</a></li>
-                            <li><a href="products_cat-doc_stancii.html">Принтеры (NEW)</a></li>
-                            <li><a href="products_cat-remont noutbukov.html">Док Станции б/у</a></li>
-                            <li><a href="#">Игровые системники</a></li>
+                            @foreach($header as $item)
+                                @if($item['type'] == 'down')
+                                    <li><a class="" href="{{$item['url']}}" style="cursor: pointer">{{$item['name']}}</a></li>
+                                @endif
+                            @endforeach
+                            {{--<li><a href="products_cat-b_u_noutbuki.html">Ноутбуки б/у</a></li>--}}
+                            {{--<li><a href="products_cat-sistemnie_bloki.html">Системные блоки б/у</a></li>--}}
+                            {{--<li><a href="products_cat-monitori.html">Мониторы б/у</a></li>--}}
+                            {{--<li><a href="products_cat-doc_stancii.html">Принтеры (NEW)</a></li>--}}
+                            {{--<li><a href="products_cat-remont noutbukov.html">Док Станции б/у</a></li>--}}
+                            {{--<li><a href="#">Игровые системники</a></li>--}}
                         </ul>
 
                     </div>
@@ -69,7 +74,6 @@
                         bottom: 3px;
                         float: left;
                     }
-
 
                 </style>
                 <div class="item phone_0 active">
@@ -209,13 +213,12 @@
         </div>
         <div class="top-row row hidden-md-down">
             <ul class="top-menu col-lg-6 col-md-5">
-
-                <li><a class="" onclick='location.href="{{route('show_about')}}"' style="cursor: pointer">О компании</a></li>
-                <li><a class="" onclick='location.href="{{route('show_warranty')}}"' style="cursor: pointer">Гарантия</a></li>
-                <li><a class="" onclick='location.href="{{route('show_delivery')}}"' style="cursor: pointer">Доставка и оплата</a></li>
-                <li><a class="" onclick='location.href="{{route('show_contact')}}"' style="cursor: pointer">Євронот cервіс</a></li>
-                <li><a class="" onclick='location.href="{{route('show_site_news')}}"' style="cursor: pointer">Новости</a></li>
-            </ul>
+                @foreach($header as $item)
+                    @if($item['type'] == 'top')
+                        <li><a class="" href="{{$item['url']}}" style="cursor: pointer">{{$item['name']}}</a></li>
+                    @endif
+                @endforeach
+             </ul>
             <div class="button col-lg-2 col-md-2">
                 <a href="robots.txt" style="cursor: pointer">Партнерские цены</a>
             </div>

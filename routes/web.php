@@ -271,10 +271,16 @@ Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
     Route::get('/meta_tags',['uses'=>'PagesController@meta_tags','as'=>'meta_tags']); //настрйока мета тегов
     Route::post('/default_meta_tags',['uses'=>'MetaTagsController@default_meta_tags','as'=>'default_meta_tags']);
 
+    Route::get('/menu_add',['uses' => 'PagesController@menu_add', 'as' => 'menu_add']);
     Route::get('/menu/{url?}',['uses'=>'PagesController@menu','as'=>'menu']);
     Route::get('/menu_list',['uses'=>'PagesController@menu_list','as'=>'menu_list']);
     Route::get('/menu_edit',['uses'=>'PagesController@menu_edit','as'=>'menu_edit']);
     Route::get('/menu_redirect',['uses'=>'PagesController@menu_redirect','as'=>'menu_redirect']);
+    Route::get('/edit_menu_list', ['uses' => 'PagesController@edit_menu_list', 'as' => 'edit_menu_list']);
+
+    Route::post('/menu_list_edit', ['uses' => 'EditorController@menu_list_edit', 'as' => 'menu_list_edit']);
+    Route::post('/menu_list_delete', ['uses' => 'EditorController@menu_list_delete', 'as' => 'menu_list_delete']);
+    Route::post('/menu_list_add',['uses' => 'EditorController@menu_list_add', 'as' => 'menu_list_add']);
 
     Route::get('/analytics',['uses'=>'PagesController@analytics','as'=>'analytics']);
     Route::post('/analytics_change',['uses'=>'PagesController@analytics_change','as'=>'analytics_change']);

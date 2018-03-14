@@ -35,7 +35,6 @@
                 <input type="checkbox" data-name='1' hidden>
                 <input type="checkbox" data-name='2' hidden>
                 <button type="" class="btn bg-teal-400">Сохранить</button>
-
             </div>
         </form>
 
@@ -46,7 +45,6 @@
                 <table class="  table-lang table-lg " style="margin: 50px auto;">
                     <thead>
                     <tr>
-                        <th>№</th>
                         <th>Название</th>
                         <th>Описание</th>
                         <th>Создано</th>
@@ -55,24 +53,13 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>
-                            <div class="input-group input-number" data-trigger="spinner">
-                                <input type="text" class="form-control text-center" value="1" data-rule="quantity">
-                                <div class="input-group-addon">
-                                    <a href="javascript:;" class="spin-up" data-spin="up"><i
-                                                class="fa fa-caret-up"></i></a>
-                                    <a href="javascript:;" class="spin-down" data-spin="down"><i
-                                                class="fa fa-caret-down"></i></a>
-                                </div>
-                            </div>
-                        </td>
-                        <td><a href="menu/about_us/" style="text-decoration: underline">О компании</a></td>
-                        <td>О компании</td>
+                        <td><a href="/admin/page/edit_about" style="text-decoration: underline">О компании</a></td>
+                        <td>Верхнее меню</td>
                         <td>2017-11-12 00:00:00</td>
 
                         <td>
                             <form method="get" action="{{ route('menu_redirect') }}" enctype="multipart/form-data">
-                                <input name="type" type="hidden" value='about_us'>
+                                <input name="type" type="hidden" value='top'>
                                 <!--
                                 <button type="" class="btn btn-danger"><span
                                             class="glyphicon glyphicon-trash"></span>
@@ -86,24 +73,13 @@
                     </tr>
 
                     <tr>
-                        <td>
-                            <div class="input-group input-number" data-trigger="spinner">
-                                <input type="text" class="form-control text-center" value="1" data-rule="quantity">
-                                <div class="input-group-addon">
-                                    <a href="javascript:;" class="spin-up" data-spin="up"><i
-                                                class="fa fa-caret-up"></i></a>
-                                    <a href="javascript:;" class="spin-down" data-spin="down"><i
-                                                class="fa fa-caret-down"></i></a>
-                                </div>
-                            </div>
-                        </td>
-                        <td><a href="menu/pages/" style="text-decoration: underline">Услуги</a></td>
-                        <td>Услуги</td>
+                        <td><a href="menu/pages/" style="text-decoration: underline">Ноутбуки б/у</a></td>
+                        <td>Нижнее меню</td>
                         <td>2017-11-12 00:00:00</td>
 
                         <td>
                             <form method="get" action="{{ route('menu_redirect') }}" enctype="multipart/form-data">
-                                <input name="type" type="hidden" value='pages'>
+                                <input name="type" type="hidden" value='down'>
                                 <!--
                                 <button type="" class="btn btn-danger"><span
                                             class="glyphicon glyphicon-trash"></span>
@@ -122,8 +98,6 @@
             </div>
 
         </div>
-
-
 
         <!-- /CKEditor default -->
 

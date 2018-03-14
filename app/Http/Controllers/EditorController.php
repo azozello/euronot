@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\AboutCompany;
+use App\MenuList;
 use App\ObjectImages;
 use App\Objects;
 use App\OpenHours;
@@ -537,7 +538,6 @@ class EditorController extends Controller
 
     public function edit_object(Request $request)
     {
-        //dd($request);
         if (is_null($request->name)) {
             return Redirect::back()->withErrors(['Введите название страницы']);
         }
@@ -669,5 +669,35 @@ class EditorController extends Controller
         $data->sunday = $request->sunday;
         $data->save();
         return redirect()->back();
+    }
+
+    public function menu_list_delete(Request $request) {
+        MenuList::where('id', $request->menu_id)->delete();
+        return redirect()->route('menu_list');
+    }
+
+    public function menu_list_edit(Request $request) {
+        $data = MenuList::find($request->menu_id);
+        $data->position = $request->position;
+        $data->name = $request->name;
+        $data->url = $request->url;
+        $data->type = $request->type;
+        $data->save();
+        return redirect()->route('menu_list');
+    }
+
+    public function menu_list_add(Request $request) {
+        $data = new MenuList();
+        if (isset($request->position)) {
+            $data->position = $request->position;
+        } else {
+            $position = MenuList::count()+1;
+            $data->position = $position;
+        }
+        $data->name = $request->name;
+        $data->url = $request->url;
+        $data->type = $request->type;
+        $data->save();
+        return redirect()->route('menu_list');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\MenuList;
 use App\OpenHours;
 use App\Warranty;
 use App\ArrivingOrders;
@@ -68,48 +69,126 @@ use SiteMap as SiteMapFacade;
 
 class PagesController extends Controller
 {
+
     public function show_site_index(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.index',[
             'organization' => Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get()
         ]);
     }
     public function show_cart(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.cart', [
             'organization' =>Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get()
         ]);
     }
     public function show_contact(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.contact', [
             'organization' =>Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get()
         ]);
     }
     public function show_delivery(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.delivery', [
             'organization' =>Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get()
         ]);
     }
     public function show_site_news(Request $request){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.news',[
             'organization' =>Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get(),
             'all_news' => News::where('name','!=',NULL)->where('page_lang','=',1)->paginate(30)->appends($request->all())
         ]);
     }
 
     public function show_one_news($url) {
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.news-inner',[
             'organization' =>Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get(),
             'page_array' => News::where('url',$url)->get()[0]->attributesToArray()
         ]);
     }
     public function show_warranty(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.warranty', [
             'organization' =>Organization::get()[0],
+            'header' => $data,
             'cities' => OpenHours::get(),
             'url' => Warranty::get()[0]->attributesToArray()['warranty_url'],
             'text' => Warranty::get()[0]->attributesToArray()['warranty_text'],
@@ -145,8 +224,21 @@ class PagesController extends Controller
                 break;
             }
         }
+    public function show_products(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.products-263',[
             'organization' => Organization::get()[0],
+            'header' => $data,
+            'cities' => OpenHours::get()
             'cities' => OpenHours::get(),
             'product' => $product,
             'images' => $images,
@@ -157,9 +249,20 @@ class PagesController extends Controller
         ]);
     }
     public function show_about(){
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
         return view('site.about', [
             'organization' =>Organization::get()[0],
             'cities' => OpenHours::get(),
+            'header' => $data,
             'url' => AboutCompany::get()[0]->attributesToArray()['about_company_url'],
             'text' => AboutCompany::get()[0]->attributesToArray()['about_company_text'],
             'name' => AboutCompany::get()[0]->attributesToArray()['about_company_name'],
@@ -558,7 +661,6 @@ class PagesController extends Controller
     public function organization() {
         $organization = Organization::get();
         $open_hours = OpenHours::get();
-        dd($open_hours);
         return view('organization',[
             'org' => $organization
         ]);
@@ -667,6 +769,7 @@ class PagesController extends Controller
             'language' => Languages::where('id','=',$request->id)->get()
         ]);
     }
+
     public function menu($url){
         if($url == 'about_us'){
             $pages = AboutUsMenu::get();
@@ -707,23 +810,38 @@ class PagesController extends Controller
         }
         return redirect()->back();
     }
-    public function menu_redirect(Request $request){
-        if($request->type == 'about_us'){
-            $pages = AboutUsMenu::get();
-            $menu = 1;
-        }
-        else if($request->type == 'pages'){
-            $pages = PagesNews::get();
-            $menu = 2;
-        }
-        return view('menu',[
-            'pages' => $pages,
-            'menu' => $menu
+
+    public function edit_menu_list(Request $request) {
+        return view('menu_list_edit',[
+            'page' => MenuList::find($request->menu_id)
         ]);
     }
+
+    public function menu_redirect(Request $request){
+        if($request->type == 'top'){
+            $pages = MenuList::where('type', $request->type)->get();
+            return view('menu',[
+                'pages' => $pages
+            ]);
+        }
+        else if($request->type == 'down'){
+            $pages = MenuList::where('type', $request->type)->get();
+            return view('menu',[
+                'pages' => $pages
+            ]);
+        } else {
+            return redirect()->back();
+        }
+    }
+
+    public function menu_add() {
+        return view('menu_list_add');
+    }
+
     public function menu_list(){
         return view('menu_list');
     }
+
     public function product_list(){
         $products = DB::table('products')->
         //если ошибка с group by - в конфиге датабейс поменять на 'strict' => false,
@@ -806,7 +924,7 @@ class PagesController extends Controller
             'contacts' => Contacts::get()
         ]);
     }
-    public  function contacts_edit(Request $request){
+    public function contacts_edit(Request $request){
         Contacts::truncate();
         $data = new Contacts();
         $data->contacts_name = $request->name;
