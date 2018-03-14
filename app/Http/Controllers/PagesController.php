@@ -404,7 +404,6 @@ class PagesController extends Controller
     public function organization() {
         $organization = Organization::get();
         $open_hours = OpenHours::get();
-        dd($open_hours);
         return view('organization',[
             'org' => $organization
         ]);
@@ -568,7 +567,7 @@ class PagesController extends Controller
                 'pages' => $pages
             ]);
         }
-        else if($request->type == 'pages'){
+        else if($request->type == 'down'){
             $pages = MenuList::where('type', $request->type)->get();
             return view('menu',[
                 'pages' => $pages
