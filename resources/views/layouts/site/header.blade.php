@@ -35,6 +35,12 @@
                             {{--<li><a href="products_cat-doc_stancii.html">Принтеры (NEW)</a></li>--}}
                             {{--<li><a href="products_cat-remont noutbukov.html">Док Станции б/у</a></li>--}}
                             {{--<li><a href="#">Игровые системники</a></li>--}}
+                            <li><a href="/product_list/noutbuki">Ноутбуки б/у</a></li>
+                            <li><a href="/product_list/sistemnie-bloki">Системные блоки б/у</a></li>
+                            <li><a href="/product_list/monitory">Мониторы б/у</a></li>
+                            <li><a href="/product_list/printery">Принтеры (NEW)</a></li>
+                            <li><a href="/product_list/doc-stancii">Док Станции б/у</a></li>
+                            <li><a href="/product_list/igrovie-sistemniki">Игровые системники</a></li>
                         </ul>
 
                     </div>

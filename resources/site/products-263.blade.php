@@ -163,9 +163,10 @@
 					</div>
 					<h1 class="prod_title" itemprop="name">{{$product[0]->name}}</h1>
 					<div class="row prod-block-2">
-						<div class="col-lg-6 block-left">
+						<div class="col-lg-4 block-left">
 							<div class="avail">{{$product[0]->product_isset}}</div>
 							<div class="rating_block">
+								<div class="rating_title">Производитель: Fujitsu</div>
 								<div class="rating_title"> Оценка пользователей:</div>
 								<div class="rating">
 									<script type="text/javascript">
@@ -257,113 +258,114 @@
 								</div>
 							</div>
 						</div>
-						@if(!is_null($product_gift[0]))
 						<div class="col-lg-8 action_block">
 							<div class="action_product">
-								<img src="../product_images/{{$product_gift[0]->image}}">
-								<p>{{$product[0]->product_gift_text}}</p>
+								<img src="../index_app/images/1079545.png">
+								<p>Акция! При покупке акционНого 
+									ноутбука ASUS - сумка в подарок!</p>
 							</div>
 							<div class="time_produkt">
 								<span class="text_time">До конца осталось:</span>
 								<span class="time_time_pr">
-									<span class="dey_prod">{{$timer_days}} :
+									<span class="dey_prod">15 : 
 										<p class="text_pod">Дни</p>
 									</span>
 
-									<span class="dey_prod">{{$timer_hours}} :
+									<span class="dey_prod">12 : 
 										<p class="text_pod">Часы</p>
 									</span>
-									<span class="dey_prod">{{$timer_minutes}} :
+									<span class="dey_prod">40 : 
 										<p class="text_pod">Мин</p>
 									</span>
-									<span class="dey_prod">{{$timer_seconds}}
+									<span class="dey_prod">60
 										<p class="text_pod">Сек</p>
 									</span>
 								</span>
-
+								
 							</div>
 						</div>
-						@endif
-						<div class="haract-block">
-							@if(!is_null($proc))
-								<div class="block_flex_pr">
-									<div>
-										<img src="../index_app/images/cpu.png">
-									</div>
-									<div class="text-flex"><span class="hover_block_pr">Процесор:
-								<p class="hidden_text_pr">{{$product[0]->proc}}</p>
+					</div>
+					<div>
+					
+					<div class="haract-block">
+							@if(!is_null($product[0]->proc))
+							<div class="block_flex_pr">
+								<div>
+									<img src="../index_app/images/cpu.png">
+								</div>
+								<div class="text-flex"><span class="hover_block_pr">Процесор:
+								<p class="hidden_text_pr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nemo corporis, accusantium?</p>
+								</span> 
+									<select>
+									  <option>Core i5-2400</option>
+									  <option>Core i5-2400</option>
+									</select>
+								</div>
+							</div>
+							@endif
+							@if(!is_null($product[0]->op_memory))
+							<div class="block_flex_pr">
+								<div>
+									<img src="../index_app/images/ozu.png">
+								</div>
+								<div class="text-flex"><span class="hover_block_pr">Оперативна пам’ять:
+								<p class="hidden_text_pr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nemo corporis, accusantium?</p>
+								 </span>	 
+									<select>
+									  <option>4096 Mb</option>
+									  <option>4096 Mb</option>
+									</select>
+								</div>
+								
+							</div>
+							@endif
+							@if(!is_null($product[0]->proc))
+							<div class="block_flex_pr">
+								<div>
+									<img src="../index_app/images/ssd.png">
+								</div>
+								<div class="text-flex"><span  class="hover_block_pr">Жорсткий диск:
+								<p class="hidden_text_pr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nemo corporis, accusantium?</p>
 								</span>
-										<select>
-											@foreach($proc as $proc_item)
-												@if(!is_null($proc_item->configuration))
-											<option value="{{$proc_item->configuration_price}}">{{$proc_item->configuration}}</option>
-												@endif
-											@endforeach
-										</select>
-									</div>
-								</div>
+								<select onchange="city_change();">
+								  <option>500 Gb</option>
+								  <option>500 Gb</option>
+								</select>
+								 </div>
+								
+							</div>
 							@endif
-							@if(!is_null($op_memory))
-								<div class="block_flex_pr">
-									<div>
-										<img src="../index_app/images/ozu.png">
-									</div>
-									<div class="text-flex"><span class="hover_block_pr">Оперативна пам’ять:
-								<p class="hidden_text_pr">{{$product[0]->op_memory}}</p>
-								 </span>
-										<select>
-											@foreach($op_memory as $op_memory_item)
-												@if(!is_null($op_memory_item->configuration))
-												<option value="{{$op_memory_item->configuration_price}}">{{$op_memory_item->configuration}}</option>
-												@endif
-													@endforeach
-										</select>
-									</div>
-
-								</div>
-							@endif
-							@if(!is_null($hard))
-								<div class="block_flex_pr">
-									<div>
-										<img src="../index_app/images/ssd.png">
-									</div>
-									<div class="text-flex"><span  class="hover_block_pr">Жорсткий диск:
-								<p class="hidden_text_pr">{{$product[0]->hard_memory}}</p>
-								</span>
-										<select onchange="city_change();">
-											@foreach($hard as $hard_item)
-												@if(!is_null($hard_item->configuration))
-												<option value="{{$hard_item->configuration_price}}">{{$hard_item->configuration}}</option>
-												@endif
-													@endforeach
-										</select>
-									</div>
-
-								</div>
-							@endif
-								@if(!is_null($product[0]->op_system_description))
+								@if(!is_null($product[0]->op_system))
 								<div class="block_flex_pr">
 									<div>
 										<img src="../index_app/images/win.png">
 									</div>
 									<div class="text-flex"><span class="hover_block_pr">Windows:
-									<p class="hidden_text_pr">{{$product[0]->op_system_description}}</p>
-									 </span>{{$product[0]->op_system}}</div>
-
+									<p class="hidden_text_pr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nemo corporis, accusantium?</p>
+									 </span> 8</div>
+									
 								</div>
-									@endif
-
+								@endif
 						</div>
+
 
 					</div>
 					<div class="buy_line" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+						<div class="price_i">
+							<span class="price_Top">30% знижки</span>
+							<div class="price"><span itemprop="price">
+                        6400</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
+
+						</div>
+
 						<div class="price"><span itemprop="price">
                         {{$product[0]->price}}</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
 						<div id="buy_block">
-							<div class="quant_block">
-								<input type="text" size="3" value="1" id="add_quant_inp"/>
-							</div>
-							<div class="clear"></div>
+								<div class="quant_block">
+									<input type="text" size="3" value="1" id="add_quant_inp"/>
+								</div>
+								<div class="clear"></div>
 						</div>
 						<div class="buy_button_block">
 							<div class="add_to_basket_btn" onclick="card_add('263','{{$product[0]->price}}','2')">Купить</div>
@@ -374,10 +376,10 @@
 
 
 							<div class="buy_button_block">
-								<div id="rassrochka"><img src="../index_app/images/privat.png" alt="privatbank"/>Доступна <u>«Оплата
-									</u>
-								</div>
-								<div id="kredit">
+							<div id="rassrochka"><img src="../index_app/images/privat.png" alt="privatbank"/>Доступна <u>«Оплата
+							                                                                             </u>
+							</div>
+							<div id="kredit">
 
 
 								<a href="javascript:void(0)" class="" type="button"
@@ -385,6 +387,9 @@
 								   style="margin: 5px 50px 0px 0px; text-decoration: inherit;">Выбрать кредит или
 								                                                               рассрочку</a>
 							</div>
+
+						</div>
+
 
 						</div>
 						<div class="clear"></div>

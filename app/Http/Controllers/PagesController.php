@@ -205,6 +205,17 @@ class PagesController extends Controller
         $texts = ProductsTexts::where('product_id_connection', '=', $product[0]->product_id)->get();
         $comments = ProductComment::where('product_id_connection', '=', $product[0]->product_id)->
         where('is_active', '=', 0)->get();
+        $product = Products::where('url','=',$url)->get();
+        $op_memory = App\ProductConfiguration::where('product_id_connection','=',$product[0]->product_id)->
+            where('configuration_type','=','op_memory')->get();
+        $proc = App\ProductConfiguration::where('product_id_connection','=',$product[0]->product_id)->
+        where('configuration_type','=','proc')->get();
+        $hard = App\ProductConfiguration::where('product_id_connection','=',$product[0]->product_id)->
+        where('configuration_type','=','hard')->get();
+        $images = ProductImages::where('images_product_id','=',$product[0]->product_id)->get();
+        $texts = ProductsTexts::where('product_id_connection','=',$product[0]->product_id)->get();
+        $comments = ProductComment::where('product_id_connection','=',$product[0]->product_id)->
+        where('is_active','=',0)->get();
         $all_products = Products::get();
         $attributes = explode(" ", $product[0]->attributes_id);
         $same_products = array();
@@ -234,6 +245,36 @@ class PagesController extends Controller
                 }
             }
         }
+        //dd($product);
+        if(!is_null($product[0]->product_gift)){
+            $product_gift = DB::table('products')->
+            where('products.product_id', $product[0]->product_gift)->
+            leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
+            groupBy('products.product_id')->
+            get();
+        }
+        else{
+            $product_gift = null;
+        }
+        $time = $product[0]->timer_time - time();
+        if($time < 0){
+            $timer_days = 0;
+            $timer_hours = 0;
+            $timer_minutes = 0;
+            $timer_seconds = 0;
+        }
+        else{
+            $month = floor( $time / 2592000 );
+
+            $timer_days = ( $time / 86400 ) % 30;
+
+            $timer_hours = ( $time / 3600 ) % 24;
+
+            $timer_minutes = ( $time / 60 ) % 60;
+
+            $timer_seconds = $time % 60;
+        }
+        //dd($product_gift);
         return view('site.products-263',[
             'organization' => Organization::get()[0],
             'header' => $data,
@@ -243,7 +284,16 @@ class PagesController extends Controller
             'texts' => $texts,
             'comments' => $comments,
             'comment_count' => count($comments),
-            'same_products' => $same_products
+            'same_products' => $same_products,
+            'hard' => $hard,
+            'proc' => $proc,
+            'op_memory' => $op_memory,
+            'product_gift' => $product_gift,
+            'timer_days' => $timer_days,
+            'timer_hours' => $timer_hours,
+            'timer_minutes' => $timer_minutes,
+            'timer_seconds' => $timer_seconds
+
         ]);
     }
 
@@ -269,16 +319,73 @@ class PagesController extends Controller
             'description' => AboutCompany::get()[0]->attributesToArray()['about_company_description']
         ]);
     }
+    public function show_product_list(Request $request,$category = NULL,$url = NULL){
 
     public function show_product_list($url = NULL){
         //dd(RequestFacade::path());
             $lang_id = 1;
         //dd($url);
+        //dd($category);
+        if(is_null(session('array'))){
+            $pagination_num = 24;
+            $sort_type_column = 'id';
+            $sort_type_way = 'desc';
+        }else{
+            switch(session('array')['sort_type']){
+                case 0:
+                    $sort_type_column = 'id';
+                    $sort_type_way = 'desc';
+                    break;
+                case 1:
+                    $sort_type_column = 'price';
+                    $sort_type_way = 'asc';
+                    break;
+                case 2:
+                    $sort_type_column = 'price';
+                    $sort_type_way = 'desc';
+                    break;
+                case 3:
+                    $sort_type_column = 'name';
+                    $sort_type_way = 'asc';
+                    break;
+                case 4:
+                    $sort_type_column = 'name';
+                    $sort_type_way = 'desc';
+                    break;
+                default:
+                    $sort_type_column = 'id';
+                    $sort_type_way = 'desc';
+                    break;
+            }
+            $pagination_num = session('array')['product_at_page'];
+        }
         $products = DB::table('products')->
         where('lang_id', $lang_id)->
         leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
         groupBy('products.product_id')->
+        orderBy('products.'.$sort_type_column, $sort_type_way)->
         get();
+        $category = Category::where('url','=',$category)->value('products_id');
+        $category = explode(" ", $category);
+        array_pop($category);
+
+        $where_query = array();
+        $chek_products = array();
+        foreach ($products as $k=>$prod){
+            foreach($category as $cat) {
+                if ($prod->product_id == $cat){
+                    $chek_products[] = $products[$k];
+                }
+                }
+        }
+        $products = $chek_products;
+        foreach ($products as $k=>$product){
+            unset($products[$k]);
+        }
+        foreach ($chek_products as $k=>$chek_product){
+            $products[$k] = $chek_product;
+        }
+        //dd($category);
         //dd($url);
         if ($url == NULL) {
             $filters = Filters::where('lang_id', $lang_id)->get();
@@ -346,7 +453,7 @@ class PagesController extends Controller
                     $num = 0;
 
             }
-
+            //dd($attributes_id);
             $attributes_count = array();
             $num = 0;
 //dd($attributes_string_array);
@@ -398,7 +505,7 @@ class PagesController extends Controller
         }
 
 
-        //dd($attributes_count);
+        //dd($new_products);
         foreach ($new_products as $new_product) {
             //считаем количество атрибутов у продукта
             $new_product_attributes = explode(' ', $new_product->attributes_id);
@@ -438,8 +545,20 @@ class PagesController extends Controller
         if(!isset($meta_tags)){
             $meta_tags = null;
         }
-        //dd($products);
+        if(!isset($filters)){
+            $filters = null;
+        }
+        foreach ($products as $k=>$product){
+            $where_query[] = $products[$k]->product_id;
+        }
+        $products = DB::table('products')->
+        whereIn('product_id',$where_query)->
+        leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
+        groupBy('products.product_id')->
+        orderBy('products.'.$sort_type_column, $sort_type_way)->
+        paginate($pagination_num);
         return view('site.products_cat-b_u_noutbuki', [
+            'organization' =>Organization::get()[0],
             'products' => $products,
             'filters' => $filters,
             'price' => $price,
@@ -447,7 +566,8 @@ class PagesController extends Controller
             'attributes' => $attributes,
             'attributes_count' => $attributes_count,
             'url_attributes' => $attributes_id,
-            'meta_tags' => $meta_tags
+            'meta_tags' => $meta_tags,
+            'cities' => OpenHours::get()
         ]);
     }
 
@@ -473,9 +593,10 @@ class PagesController extends Controller
         $uri_string = substr($uri_string, 0, -1);
         $referer = Redirect::back()->getTargetUrl();
         $segments = explode('/', $referer);
-        $url = 'http://'.$segments[2].'/'.$segments[3].'/'.$uri_string;
+       // dd($segments);
+        $url = 'http://'.$segments[2].'/'.$segments[3].'/'.$segments[4].'/'.$uri_string;
         //dd($url);
-        return redirect($url);
+        return redirect($url)->with('array',['sort_type' => $request->sort_type,'product_at_page' => $request->product_at_page]);
     }
     public function add_comment(Request $request){
         $data = new ProductComment();
@@ -916,7 +1037,8 @@ class PagesController extends Controller
             'array' => Languages::where('active','=',1)->get(),
             'filters' => Filters::where('is_active','=',1)->where('lang_id','=',1)->get(),
             'attributes' => ProductAttributes::where('attributes_lang_id','=',1)->get(),
-            'suppliers' => Traders::get()
+            'suppliers' => Traders::get(),
+            'present_products' => Products::get()
         ]);
     }
     public function contacts_show(){

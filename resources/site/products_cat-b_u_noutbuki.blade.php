@@ -63,7 +63,22 @@
 </div>
 <div class="content container-fluid other">
 	<div class="container">
-		<form id="foo" role="form" method="get" action="{{ route('refresh_page') }}" enctype="multipart/form-data">
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$("#type_ch").change(function () {
+					if ($(this).val() != 0) {
+						location.replace("/products_cat-b_u_noutbuki-az" + $(this).val() + ".html");
+					}
+					else {
+						location.replace("/products_cat-b_u_noutbuki.html");
+					}
+				})
+				$("#num_select span:not(.active)").click(function () {
+					setCookie('num', $(this).attr('alt'));
+					location.reload();
+				})
+			})
+		</script>
 		<div id="products" class="products_list">
 			<div class="main_tbl table row">
 				<div class="filter-button">Фильтр</div>
@@ -77,6 +92,7 @@
 							})
 						})
 					</script>
+					<form id="foo" role="form" method="get" action="{{ route('refresh_page') }}" enctype="multipart/form-data">
 					@foreach($filters as $filter)
 						<div class="left_block filter">
 							<div class="filter_title">{{$filter->name}}</div>
@@ -93,7 +109,7 @@
 							</div>
 						</div>
 					@endforeach
-
+					</form>
 
 
 					<div class="clear"></div>
@@ -118,7 +134,7 @@
 					<div class="clear"></div>
 					<div class="second_line">
 
-						<select id="type_ch" name="sort_type">
+						<select id="type_ch" name="type_ch">
 							<option value="0">Сортировка по умолчанию</option>
 							<option value="1">Сортировка по цене (0-9)</option>
 							<option value="2">Сортировка по цене (9-0)</option>
@@ -126,19 +142,13 @@
 							<option value="4">Сортировка по названию (я-а)</option>
 						</select>
 						<div class="founded hidden-md-down">Найдено:
-							<span>{{$products->total()}} товаров</span>
+							<span>120 товаров</span>
 						</div>
 						<div id="num_select" class="hidden-md-down">Товаров на странице:&nbsp;
 							<span class="active" alt="12">12</span>&nbsp;&nbsp;<span alt="24">24</span>&nbsp;&nbsp;<span
 									alt="48">48</span></div>
-						<select name="product_at_page">
-							<option value="12">12</option>
-							<option value="24">24</option>
-							<option value="48">48</option>
-						</select>
 						<div class="clear"></div>
 					</div>
-					</form>
 					<div class="products_box products">
                        @foreach($products as $product)
 						<div class="col-md-4 col-xs-6">

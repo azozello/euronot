@@ -39,6 +39,8 @@ class ProductsMigration extends Migration
             $table->text('op_memory')->nullable();
             $table->text('hard_memory')->nullable();
             $table->text('op_system')->nullable();
+            $table->text('op_system_description')->nullable();
+            $table->text('product_gift_text')->nullable();
             $table->text('type_memory')->nullable();
             $table->text('title')->nullable();
             $table->text('description')->nullable();

@@ -975,8 +975,11 @@ a:hover {
 
 .prod-block-2 {
 	margin-top: 15px;
-	padding-bottom: 25px;
-	border-bottom: 1px solid #e2e2e2
+	padding-bottom: 50px;
+	border-bottom: 1px solid #e2e2e2;
+	width: 750px;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .header .slider-row .owl-carousel .slider-block .button {
@@ -1007,7 +1010,7 @@ a:hover {
 }
 
 .haract-block {
-	padding-left: 30px;
+	padding: 30px;
 	text-align: center
 }
 
@@ -1105,7 +1108,8 @@ a:hover {
 	font-size: 13px;
 	color: #000;
 	line-height: 1.308;
-	margin-top: 32px
+	margin-top: -10px;
+    margin-left: 10px;
 }
 
 #rassrochka img {
@@ -1226,7 +1230,7 @@ img {
 }
 
 #products_in .haract-block {
-	padding-top: 20px
+	padding: 50px 0 15px 0
 }
 
 .menu-mob-1 button {
@@ -2764,4 +2768,144 @@ button.styler[disabled], input[type='button'].styler[disabled], input[type='subm
 
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
 	background: #869791
+}
+.filter_btn input{
+	margin-right: 5px;
+}
+#products_in .haract-block{
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 0;
+	justify-content: space-between;
+	width: 750px;
+}
+#products_in .haract-block .block_flex_pr{
+	display: flex;
+	flex-basis: 50%;
+	margin: 0 0 35px 0;
+	position: relative;
+	cursor: pointer;
+}
+.block_flex_pr .text-flex{
+	font-size: 18px;
+	margin-left: 10px;
+}
+.block_flex_pr .text-flex span{
+	font-size: 22px;
+	font-weight: bold;
+}
+.action_product p{
+	font-size: 20px;
+	color: red;
+	text-transform: uppercase;
+	margin-left: 10px;
+}
+.action_product img{
+	height: 60px;
+}
+.text_time{
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-right: 10px;
+}
+.dey_prod{
+	position: relative;
+	display: inline-block;
+	font-size: 32px;
+	font-weight: bold;
+}
+.text_pod{
+	position: absolute;
+	bottom: -15px;
+	font-size: 16px;
+	font-weight: 300;
+	margin: 0 0 0 5px;
+}
+.hidden_text_pr{
+	position: absolute;
+	background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 5px;
+    width: 70%;
+    top: 120%;
+    z-index: 456;
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
+    font-weight: 400;
+    font-size: 15px;
+    left: 0;
+}
+.hover_block_pr:hover .hidden_text_pr{
+	visibility: visible;
+	opacity: 1;
+}
+#products_in .buy_line .price_i .price{
+	text-decoration: line-through;
+	color: #595959;
+}
+#products_in .buy_line{
+	width: 650px;
+}
+.buy_line .price_i{
+	position: relative;
+}
+.price_i .price_Top{
+	position: absolute;
+	top: -15px;
+	color: #eb212e;
+}
+#kredit{
+	margin-top: 5px;
+}
+.action_product{
+	display: flex;
+}
+.add_to_basket_btn{
+	margin-left: 20px;
+}
+.text-flex .jq-selectbox .jq-selectbox__trigger{
+	background: #fff;
+	right: -10px;
+}
+.text-flex .jq-selectbox .jq-selectbox__select{
+	border: none;
+}
+.jq-selectbox.focused .jq-selectbox__select{
+	border: none;
+}
+.text-flex .jq-selectbox  .jq-selectbox__trigger-arrow{
+	border-top: 5px solid #504d4d;
+}
+.text-flex .jq-selectbox .jq-selectbox__dropdown{
+	bottom: auto !important;
+}
+.text-flex .jq-selectbox__select{
+	padding: 0 25px 0 3px;
+}
+@media (max-width: 1650px){
+.prod-block-2 .block-left{
+	flex-basis: 100%;
+	margin-bottom: 20px;
+}
+.action_block{
+	width: 100%;
+}
+#products_in .buy_line,
+#products_in .haract-block,
+.prod-block-2{
+	width: auto;
+}
+.buy_button_block{
+	margin: 5px;
+}
+}
+
+@media (max-width: 700px){
+	#products_in .haract-block .block_flex_pr{
+		flex-basis: 100%;
+	}
+	.time_time_pr{
+		display: block;
+	}
 }

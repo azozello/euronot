@@ -13,6 +13,7 @@ use App\Filters;
 use App\Traders;
 use App\ProductsTexts;
 use Image;
+use App\ProductConfiguration;
 use DB;
 use File;
 use Translit;
@@ -25,6 +26,7 @@ class ProductCardController extends Controller
 {
 
     public function product_card_add(Request $request){
+        //dd($request);
         //подключение изображений
         $timer_days = $request->timer_days;
         $timer_hours = $request->timer_hours;
@@ -139,7 +141,30 @@ class ProductCardController extends Controller
             else{
                 $title = $request->title[$k];
             }
-
+            for($i=0;$i<10;$i++) {
+                $data = new ProductConfiguration();
+                $data->product_id_connection = $product_id;
+                $data->configuration = $request->proc_conf[$i];
+                $data->configuration_price = $request->proc_conf_price[$i];
+                $data->configuration_type = 'proc';
+                $data->save();
+            }
+            for($i=0;$i<10;$i++) {
+                $data = new ProductConfiguration();
+                $data->product_id_connection = $product_id;
+                $data->configuration = $request->op_memory[$i];
+                $data->configuration_price = $request->op_memory_price[$i];
+                $data->configuration_type = 'op_memory';
+                $data->save();
+            }
+            for($i=0;$i<10;$i++) {
+                $data = new ProductConfiguration();
+                $data->product_id_connection = $product_id;
+                $data->configuration = $request->hard[$i];
+                $data->configuration_price = $request->hard_price[$i];
+                $data->configuration_type = 'hard';
+                $data->save();
+            }
             $data = new Products();
             $data->name = $request->name[$k];
             $data->article = $request->article[$k];
@@ -160,10 +185,13 @@ class ProductCardController extends Controller
             $data->timer_current_time  = time() ;
             $data->timer_time  = $next_time ;
             $data->proc  = $request->proc ;
-            $data->op_memory  = $request->op_memory ;
+            $data->op_memory  = $request->op_memory_p ;
             $data->type_memory  = $request->type_memory ;
             $data->hard_memory  = $request->hard_memory ;
             $data->op_system  = $request->op_system ;
+            $data->op_system_description  = $request->op_system_description ;
+            $data->product_gift = $request->product_gift;
+            $data->product_gift_text = $request->present_product_text;
             $data->title = $title;
             $data->description = $description;
             $data->save();
@@ -188,6 +216,7 @@ class ProductCardController extends Controller
         ProductsCategoriesConnection::where('product_id_connection','=',$request->product_id)->delete();
         Products::where('product_id','=',$request->product_id)->delete();
         ProductsTexts::where('product_id_connection','=',$request->product_id)->delete();
+        ProductConfiguration::where('product_id_connection','=',$request->product_id)->delete();
         return redirect()->back();
     }
     public function search_product(Request $request){
@@ -195,6 +224,7 @@ class ProductCardController extends Controller
     }
     public function edit_product_show(Request $request){
         $product = Products::where('product_id','=',$request->product_id)->get();
+        $product_configurations = ProductConfiguration::where('product_id_connection',$product[0]->product_id)->get();
         $product_text = ProductsTexts::where('product_id_connection','=',$request->product_id)->get();
         $product_pictures = ProductImages::where('images_product_id','=',$request->product_id)->get();
         $product_attributes = explode(' ',$product[0]->attributes_id);
@@ -230,7 +260,7 @@ class ProductCardController extends Controller
 
             $timer_seconds = $time % 60;
         }
-        //dd($product_text);
+        //dd($product_configurations);
         return view('edit_product_card',[
             'product_pictures' => $product_pictures,
             'product_attributes' => $product_attributes,
@@ -245,7 +275,10 @@ class ProductCardController extends Controller
             'timer_days' => $timer_days,
             'timer_hours' => $timer_hours,
             'timer_minutes' => $timer_minutes,
-            'timer_seconds' => $timer_seconds
+            'timer_seconds' => $timer_seconds,
+            'products_configurations' => $product_configurations,
+            'present_products' => Products::get(),
+            'current_present_product' => Products::where('product_id','=',$product[0]->product_gift )->get()
         ]);
     }
     public function edit_product(Request $request){
@@ -357,7 +390,31 @@ class ProductCardController extends Controller
             else{
                 $title = $request->title[$k];
             }
-
+            ProductConfiguration::where('product_id_connection','=',$product_id)->delete();
+            for($i=0;$i<10;$i++) {
+                $data = new ProductConfiguration();
+                $data->product_id_connection = $product_id;
+                $data->configuration = $request->proc_conf[$i];
+                $data->configuration_price = $request->proc_conf_price[$i];
+                $data->configuration_type = 'proc';
+                $data->save();
+            }
+            for($i=0;$i<10;$i++) {
+                $data = new ProductConfiguration();
+                $data->product_id_connection = $product_id;
+                $data->configuration = $request->op_memory[$i];
+                $data->configuration_price = $request->op_memory_price[$i];
+                $data->configuration_type = 'op_memory';
+                $data->save();
+            }
+            for($i=0;$i<10;$i++) {
+                $data = new ProductConfiguration();
+                $data->product_id_connection = $product_id;
+                $data->configuration = $request->hard[$i];
+                $data->configuration_price = $request->hard_price[$i];
+                $data->configuration_type = 'hard';
+                $data->save();
+            }
             Products::where('product_id','=',$product_id)->where('lang_id','=',$request->language_id[$k])->update([
                 'name' => $request->name[$k],
                 'article' => $request->article[$k],
@@ -373,11 +430,14 @@ class ProductCardController extends Controller
                 'timer_current_time' => time(),
                 'timer_time' => $next_time,
                 'title' => $title,
-                'op_memory' => $request->op_memory,
+                'op_memory' => $request->op_memory_p,
                 'hard_memory' => $request->hard_memory,
                 'proc' => $request->proc,
                 'type_memory' => $request->type_memory,
                 'op_system' => $request->op_system,
+                'op_system_description' => $request->op_system_description,
+                'product_gift' => $request->product_gift,
+                'product_gift_text' => $request->present_product_text,
                 'description' => $description,
                 'short_description' => $request->short_description
             ]);
@@ -388,6 +448,29 @@ class ProductCardController extends Controller
                 $data->first_text = $request->editor1[$i];
                 $data->second_text = $request->editor2[$i];
                 $data->save();
+            }
+        }
+        if(!is_null($request->file('pic')[0])) {
+            $files[] = $request->file('pic')[0];
+        }
+        if($request->file('files') !== null ) {
+            foreach ($request->file('files') as $file) {
+                $files[] = $file;
+            }
+        }
+        if(isset($files)) {
+            ProductImages::where('images_product_id','=',$product_id)->delete();
+            foreach ($request->file() as $file) {
+                foreach ($file as $f) {
+                    if ($f->move(public_path('product_images'), $f->getClientOriginalName())) {
+                        $data = new ProductImages();
+                        $data->image = $f->getClientOriginalName();
+                        $data->images_product_id = $product_id;
+                        $data->save();
+                    } else {
+                        return 'Ошибка загрузки';
+                    }
+                }
             }
         }
         return redirect()->back();
