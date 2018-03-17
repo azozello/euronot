@@ -199,7 +199,7 @@ class PagesController extends Controller
     }
 
 
-    public function show_products(){
+    public function show_products($url){
         $product = Products::where('url', '=', $url)->get();
         $images = ProductImages::where('images_product_id', '=', $product[0]->product_id)->get();
         $texts = ProductsTexts::where('product_id_connection', '=', $product[0]->product_id)->get();
@@ -239,7 +239,7 @@ class PagesController extends Controller
             'header' => $data,
             'cities' => OpenHours::get(),
             'product' => $product,
-            'images' => $images,,
+            'images' => $images,
             'texts' => $texts,
             'comments' => $comments,
             'comment_count' => count($comments),
