@@ -319,9 +319,8 @@ class PagesController extends Controller
             'description' => AboutCompany::get()[0]->attributesToArray()['about_company_description']
         ]);
     }
-    public function show_product_list(Request $request,$category = NULL,$url = NULL){
 
-    public function show_product_list($url = NULL){
+    public function show_product_list(Request $request,$category = NULL,$url = NULL){
         //dd(RequestFacade::path());
             $lang_id = 1;
         //dd($url);
@@ -559,6 +558,7 @@ class PagesController extends Controller
         paginate($pagination_num);
         return view('site.products_cat-b_u_noutbuki', [
             'organization' =>Organization::get()[0],
+            'header' => MenuList::get()->toArray(),
             'products' => $products,
             'filters' => $filters,
             'price' => $price,
@@ -596,7 +596,11 @@ class PagesController extends Controller
        // dd($segments);
         $url = 'http://'.$segments[2].'/'.$segments[3].'/'.$segments[4].'/'.$uri_string;
         //dd($url);
-        return redirect($url)->with('array',['sort_type' => $request->sort_type,'product_at_page' => $request->product_at_page]);
+        return redirect($url)->with('array',[
+            'sort_type' => $request->sort_type,
+            'product_at_page' => $request->product_at_page,
+            'header' => MenuList::get()->toArray()
+        ]);
     }
     public function add_comment(Request $request){
         $data = new ProductComment();
