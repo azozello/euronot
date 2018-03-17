@@ -364,6 +364,7 @@ class PagesController extends Controller
         groupBy('products.product_id')->
         orderBy('products.'.$sort_type_column, $sort_type_way)->
         get();
+        $category_foot = Category::where('url', $category)->value('down_text');
         $category = Category::where('url','=',$category)->value('products_id');
         $category = explode(" ", $category);
         array_pop($category);
@@ -557,6 +558,7 @@ class PagesController extends Controller
         orderBy('products.'.$sort_type_column, $sort_type_way)->
         paginate($pagination_num);
         return view('site.products_cat-b_u_noutbuki', [
+            'foot' => $category_foot,
             'organization' =>Organization::get()[0],
             'header' => MenuList::get()->toArray(),
             'products' => $products,

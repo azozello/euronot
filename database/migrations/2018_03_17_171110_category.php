@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CategoryMigration extends Migration
+class Category extends Migration
 {
     /**
      * Run the migrations.
@@ -16,6 +16,7 @@ class CategoryMigration extends Migration
         Schema::create('category', function (Blueprint $table) {
             $table->increments('id');
             $table->text('name')->nullable();
+            $table->text('down_text')->nullable();
             $table->text('text')->nullable();
             $table->integer('parent_category_id')->nullable();
             $table->integer('category_id')->nullable();

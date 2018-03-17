@@ -60,6 +60,7 @@ class CategoryController extends Controller
             $data->is_active = 1;
             $data->lang_id = $request->lang_id[$k];
             $data->title = $title;
+            $data->down_text = $request->foot[$k];
             $data->description = $description;
             $data->save();
         }
@@ -120,6 +121,7 @@ class CategoryController extends Controller
         ]);
     }
     public function categories_edit(Request $request){
+        dd($request->editor);
         if(is_null($request->parent_category)){
             $category_id = NULL;
         }
@@ -159,11 +161,11 @@ class CategoryController extends Controller
             else{
                 $title = $request->title[$k];
             }
-//dd($request);
             Category::where('category_id','=',$request->category_id)
                 ->where('lang_id','=',$request->lang_id[$k])
                 ->update([
                     'name' => $request->name[$k],
+                    'down_text' => $request->foot[$k],
                     'text' =>$request->editor[$k],
                     'parent_category_id' =>$category_id,
                     'url' =>$url,
