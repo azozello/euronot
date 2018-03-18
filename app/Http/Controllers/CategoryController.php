@@ -66,7 +66,6 @@ class CategoryController extends Controller
         }
         return redirect()->back();
     }
-
     public function categories_active(Request $request){
         //dd($request);
         $ru = $request->ru;
@@ -121,7 +120,6 @@ class CategoryController extends Controller
         ]);
     }
     public function categories_edit(Request $request){
-        dd($request->editor);
         if(is_null($request->parent_category)){
             $category_id = NULL;
         }

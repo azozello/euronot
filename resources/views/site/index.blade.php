@@ -26,25 +26,38 @@
 				<div class="collapse navbar-toggleable-md" id="navbarResponsive">
 					<ul class="nav nav-bar main-menu">
 						<li><a href="/product_list/noutbuki"><span class="sprite sprite-menu-icon-1"></span>Ноутбуки
-						                                                                                             б/у</a>
+								б/у</a>
 						</li>
 						<li><a href="/product_list/sistemnie-bloki"><span class="sprite sprite-menu-icon-2"></span>Системные
-						                                                                                                блоки
-						                                                                                                б/у</a>
+								блоки
+								б/у</a>
 						</li>
 						<li><a href="/product_list/monitory"><span class="sprite sprite-menu-icon-3"></span>Мониторы
-						                                                                                         б/у</a>
+								б/у</a>
 						</li>
 						<li><a href="/product_list/printery"><span class="sprite sprite-menu-icon-4"></span>Принтеры
-						                                                                                            (NEW)</a>
+								(NEW)</a>
 						</li>
 						<li><a href="/product_list/doc-stancii"><span
-								class="sprite sprite-menu-icon-5"></span>Док Станции б/у</a></li>
+										class="sprite sprite-menu-icon-5"></span>Док Станции б/у</a></li>
 						<li><a href="igrovie-sistemniki"><span class="sprite sprite-menu-icon-2"></span>Игровые системники</a></li>
 					</ul>
+					<ul class="nav nav-bar main-menu main-menu2">
+						<li><a href="#">
+								<span class="sprite sprite-menu-icon-1"></span>Для навчання</a>
+						</li>
+						<li><a href="#">
+								<span class="sprite sprite-menu-icon-2"></span>Для роботи</a>
+						</li>
+						<li><a href="#"><span class="sprite sprite-menu-icon-3"></span>Для
+								ігор</a>
+						</li>
+						<li><a href="#"><span class="sprite sprite-menu-icon-4"></span>Для домашнього використання</a>
+						</li>
 
-				</div>
-			</nav>
+					</ul>
+
+				</div>			</nav>
 		</div>
 
 		<div class="slider-row row">

@@ -88,6 +88,7 @@ class PagesController extends Controller
         ]);
     }
     public function show_cart(){
+        $cart = Session::get('cart');
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -101,7 +102,8 @@ class PagesController extends Controller
         return view('site.cart', [
             'organization' =>Organization::get()[0],
             'header' => $data,
-            'cities' => OpenHours::get()
+            'cities' => OpenHours::get(),
+            'cart' => $cart
         ]);
     }
     public function show_contact(){
@@ -198,6 +200,26 @@ class PagesController extends Controller
         ]);
     }
 
+    public function add_item_in_cart(Request $request){
+        if ($cart = Session::get('cart')) {
+            $cart[] = array(
+                "item" => $request->item,
+                "item_name" => $request->item_name,
+                "item_amount" => $request->item_amount,
+                "item_price" => $request->item_price,
+                "item_value" => $request->item_value);
+            Session::set('cart', $cart);
+        } else {
+            $cart = [];
+            $cart[] = array(
+                "item" => $request->item,
+                "item_name" => $request->item_name,
+                "item_amount" => $request->item_amount,
+                "item_price" => $request->item_price,
+                "item_value" => $request->item_value);
+            Session::set('cart', $cart);
+        }
+    }
 
     public function show_products($url){
         $product = Products::where('url', '=', $url)->get();

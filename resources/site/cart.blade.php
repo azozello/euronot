@@ -330,28 +330,32 @@
 						<th class="last">Удалить</th>
 					</tr>
 					<tr class="row6 other last" id="315">
-						<td class="pict">
-							<a href="products-315.html"><img alt="Ноутбук HP Compaq 6730b"
-							                                  src="images/pictures/products/20170427131100387.jpg"/></a>
-						</td>
-						<td class="title">
-							<a href="products-315.html">
-								Ноутбук HP Compaq 6730b </a>
-						</td>
-						<td class="quantity">
-							<div class="quant_block">
-								<div class="quant_down">-</div>
-								<input type="text" size="3" value="1"/>
-								<div class="quant_up">+</div>
-							</div>
-						</td>
-						<td class="price">
-							<label>4300</label>&nbsp;<span>грн</span>
-						</td>
-						<td class="sum"><label>4300</label>&nbsp;<span>грн</span></td>
-						<td class="remove">
-							<div class="del_button" onclick="del_it('315')"></div>
-						</td>
+						@if(isset($cart))
+							@foreach($$cities as $item)
+								<td class="pict">
+									<a href="products-315.html"><img alt="Ноутбук HP Compaq 6730b"
+																	 src="images/pictures/products/20170427131100387.jpg"/></a>
+								</td>
+								<td class="title">
+									<a href="{{$item['item_name']}}">
+										{{$item['item_name']}} </a>
+								</td>
+								<td class="quantity">
+									<div class="quant_block">
+										<div class="quant_down">-</div>
+										<input type="text" size="3" value="{{$item['item_amount']}}"/>
+										<div class="quant_up">+</div>
+									</div>
+								</td>
+								<td class="price">
+									<label>{{$item['item_price']}}</label>&nbsp;<span>грн</span>
+								</td>
+								<td class="sum"><label>{{$item['item_value']}}</label>&nbsp;<span>грн</span></td>
+								<td class="remove">
+									<div class="del_button" onclick="del_it('315')"></div>
+								</td>
+							@endforeach
+						@endif
 					</tr>
 					<tr style="display: none;" class="disc">
 						<td colspan="3"></td>

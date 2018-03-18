@@ -29,12 +29,6 @@
                                     <li><a class="" href="{{$item['url']}}" style="cursor: pointer">{{$item['name']}}</a></li>
                                 @endif
                             @endforeach
-                            {{--<li><a href="products_cat-b_u_noutbuki.html">Ноутбуки б/у</a></li>--}}
-                            {{--<li><a href="products_cat-sistemnie_bloki.html">Системные блоки б/у</a></li>--}}
-                            {{--<li><a href="products_cat-monitori.html">Мониторы б/у</a></li>--}}
-                            {{--<li><a href="products_cat-doc_stancii.html">Принтеры (NEW)</a></li>--}}
-                            {{--<li><a href="products_cat-remont noutbukov.html">Док Станции б/у</a></li>--}}
-                            {{--<li><a href="#">Игровые системники</a></li>--}}
                             <li><a href="/product_list/noutbuki">Ноутбуки б/у</a></li>
                             <li><a href="/product_list/sistemnie-bloki">Системные блоки б/у</a></li>
                             <li><a href="/product_list/monitory">Мониторы б/у</a></li>
@@ -42,7 +36,6 @@
                             <li><a href="/product_list/doc-stancii">Док Станции б/у</a></li>
                             <li><a href="/product_list/igrovie-sistemniki">Игровые системники</a></li>
                         </ul>
-
                     </div>
                 </div>
             </nav>
@@ -482,7 +475,7 @@
                     </div>
                 </a>
                 <div class="right">
-                    <label class='empty'><a>Корзина пуста</a>
+                    <label class='empty'><a href="/cart">Корзина пуста</a>
                         <div class="clear"></div>
                         начните ваши покупки</label>
                     <label class='card11' style='display: none;'><a href="basket.html">
