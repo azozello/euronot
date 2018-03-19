@@ -16,7 +16,6 @@
 	<link href="{{ asset('index_app/css/bootstrap.min.css') }} " rel="stylesheet"/>
 
 </head>
-
 @include('layouts.site.header')
 		<div class="menu-row row hidden-md-down">
 			<nav class="navbar navbar-light bg-faded">

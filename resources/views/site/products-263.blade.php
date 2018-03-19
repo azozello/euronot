@@ -366,12 +366,17 @@
 							<div class="clear"></div>
 						</div>
 						<div class="buy_button_block">
-							<div class="add_to_basket_btn" onclick="card_add('263','{{$product[0]->price}}','2')">Купить</div>
-
-
+							<form method="post" action="{{route('add_item_to_cart')}}" enctype="multipart/form-data" class="form-inline">
+								<input name="_token" type="hidden" value="{{ csrf_token() }}">
+								<input name="item_id" type="hidden" value="{{$product[0]['id']}}">
+								<input name="item_name" type="hidden" value="{{$product[0]['name']}}">
+								<input name="item_amount" type="hidden" value="">
+								<input name="item_price" type="hidden" value="{{$product[0]['price']}}">
+								{{--<input name="item_value" type="hidden" value="{{$product['']}}">--}}
+								<div class="add_to_basket_btn"><button type="submit">Купить</button></div>
+							</form>
 						</div>
 						<div>
-
 
 							<div class="buy_button_block">
 								<div id="rassrochka"><img src="../index_app/images/privat.png" alt="privatbank"/>Доступна <u>«Оплата

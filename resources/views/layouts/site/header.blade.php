@@ -478,7 +478,7 @@
                     <label class='empty'><a href="/cart">Корзина пуста</a>
                         <div class="clear"></div>
                         начните ваши покупки</label>
-                    <label class='card11' style='display: none;'><a href="basket.html">
+                    <label class='card11' style='display: none;'><a href="/cart">
                             <div class='text'>Ваши покупки:</div>
                         </a>
                         <div class='price'><span class="quant">0</span> <span class="word">товаров</span>, <span

@@ -37,6 +37,15 @@ Route::get('/product_list/{category?}/{url?}',['uses'=>'PagesController@show_pro
 
 Route::post('/add_comment',['uses'=>'PagesController@add_comment','as'=>'add_comment']);
 
+Route::post('/add_item_to_cart',[
+    'uses' => 'PagesController@add_item_in_cart',
+    'as' => 'add_item_to_cart'
+]);
+
+Route::post('/delete_item_from_cart',[
+    'uses' => 'PagesController@delete_item_from_cart',
+    'as' => 'delete_item_from_cart'
+]);
 
 Route::get('/news_show/{url?}',['uses' => 'PagesController@show_one_news','as' => 'news_show']);
 

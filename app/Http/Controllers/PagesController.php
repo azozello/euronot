@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProductConfiguration;
 use App\MenuList;
 use App\OpenHours;
 use App\Warranty;
@@ -54,6 +55,7 @@ use App\ProductsTexts;
 use App\Languages;
 use App\ProductImages;
 use App;
+use Illuminate\Support\Facades\Session;
 use Lang;
 use DB;
 use URL;
@@ -69,6 +71,10 @@ use SiteMap as SiteMapFacade;
 
 class PagesController extends Controller
 {
+
+    public function get_configuration_price(Request $request){
+        return ProductConfiguration::where('product_id_connection', $request->product_id)->get();
+    }
 
     public function show_site_index(){
         $data = MenuList::get()->toArray();
@@ -87,8 +93,9 @@ class PagesController extends Controller
             'cities' => OpenHours::get()
         ]);
     }
-    public function show_cart(){
-        $cart = Session::get('cart');
+    public function show_cart(Request $request){
+        $cart = $request->session()->get('cart');
+        dd($cart);
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -106,6 +113,7 @@ class PagesController extends Controller
             'cart' => $cart
         ]);
     }
+
     public function show_contact(){
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
@@ -200,25 +208,42 @@ class PagesController extends Controller
         ]);
     }
 
+    public function delete_item_from_cart(Request $request) {
+        if ($cart = $request->session()->get('cart')) {
+            $request->session()->forget('cart');
+            $new_cart = [];
+            $request->session()->put('cart', $new_cart);
+            foreach ($cart as $i=>$item) {
+                if ($item[$i]['item_id'] != $request->item_id) {
+                    $request->session()->push('cart', $item[$i]);
+                }
+            }
+        }
+    }
+
     public function add_item_in_cart(Request $request){
-        if ($cart = Session::get('cart')) {
-            $cart[] = array(
-                "item" => $request->item,
+        if ($cart = $request->session()->get('cart')) {
+            $new_item = array(
+                "item_id" => $request->item_id,
                 "item_name" => $request->item_name,
                 "item_amount" => $request->item_amount,
-                "item_price" => $request->item_price,
-                "item_value" => $request->item_value);
-            Session::set('cart', $cart);
+                "item_price" => $request->item_price
+//                "item_value" => $request->item_value
+            );
+            $request->session()->push('cart', $new_item);
         } else {
             $cart = [];
-            $cart[] = array(
-                "item" => $request->item,
+            $request->session()->put('cart', $cart);
+            $new_item = array(
+                "item_id" => $request->item_id,
                 "item_name" => $request->item_name,
                 "item_amount" => $request->item_amount,
-                "item_price" => $request->item_price,
-                "item_value" => $request->item_value);
-            Session::set('cart', $cart);
+                "item_price" => $request->item_price
+//                "item_value" => $request->item_value)
+            );
+            $request->session()->push('cart', $new_item);
         }
+        return redirect()->back();
     }
 
     public function show_products($url){
@@ -315,7 +340,6 @@ class PagesController extends Controller
             'timer_hours' => $timer_hours,
             'timer_minutes' => $timer_minutes,
             'timer_seconds' => $timer_seconds
-
         ]);
     }
 
