@@ -108,9 +108,6 @@
 
                             </li>
                             <li>
-                                <a href="{{route('non_standart_pages_show')}}"><i class="icon-bubbles4"></i> <span>Осн.Страницы</span></a>
-                            <li>
-                            <li>
                                 <a href="#"><i class="icon-home2"></i> <span>Магазин</span></a>
                                 <ul>
                                     <li>
@@ -140,6 +137,9 @@
 
                                 </ul>
                             </li>
+                            <li>
+                                <a href="{{route('main_page_edit_show')}}"><i class="icon-images2"></i> <span>Главная страница</span></a>
+                            <li>
                             <li>
                                 <a href="#"><i class="icon-files-empty"></i> <span>Страницы</span></a>
                                 <ul>

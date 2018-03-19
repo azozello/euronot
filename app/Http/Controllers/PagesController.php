@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ProductConfiguration;
 use App\MenuList;
 use App\OpenHours;
+use App\MainPage;
 use App\Warranty;
 use App\ArrivingOrders;
 use App\Cart;
@@ -76,6 +77,91 @@ class PagesController extends Controller
         return ProductConfiguration::where('product_id_connection', $request->product_id)->get();
     }
 
+    public function main_page_edit_show(){
+        return view('main_page_editor',[
+            'languages' => Languages::where('active','=',1)->get(),
+            'main_page' => MainPage::where('id','=',1)->get()
+        ]);
+    }
+    public function main_page_edit(Request $request){
+        $img0 = MainPage::where('id','=',1)->value('img_0');
+        $img1 = MainPage::where('id','=',1)->value('img_1');
+        $img2 = MainPage::where('id','=',1)->value('img_2');
+        $img3 = MainPage::where('id','=',1)->value('img_3');
+        $img4 = MainPage::where('id','=',1)->value('img_4');
+        $img5 = MainPage::where('id','=',1)->value('img_5');
+        if (isset($request->file()['pic'][0])) {
+            File::delete(public_path('images').'/'.$img0);
+            if ($request->file()['pic'][0]->move(public_path('images'), $request->file()['pic'][0]->getClientOriginalName())) {
+                $img0 = $request->file()['pic'][0]->getClientOriginalName();
+            } else {
+                return 'Ошибка загрузки';
+            }
+        }
+        if (isset($request->file()['pic'][1])) {
+            File::delete(public_path('images').'/'.$img1);
+            if ($request->file()['pic'][1]->move(public_path('images'), $request->file()['pic'][1]->getClientOriginalName())) {
+                $img1 = $request->file()['pic'][1]->getClientOriginalName();
+            } else {
+                return 'Ошибка загрузки';
+            }
+        }
+        if (isset($request->file()['pic'][2])) {
+            File::delete(public_path('images').'/'.$img2);
+            if ($request->file()['pic'][2]->move(public_path('images'), $request->file()['pic'][2]->getClientOriginalName())) {
+                $img2 = $request->file()['pic'][2]->getClientOriginalName();
+            } else {
+                return 'Ошибка загрузки';
+            }
+        }
+        if (isset($request->file()['pic'][3])) {
+            File::delete(public_path('images').'/'.$img3);
+            if ($request->file()['pic'][3]->move(public_path('images'), $request->file()['pic'][3]->getClientOriginalName())) {
+                $img3 = $request->file()['pic'][3]->getClientOriginalName();
+            } else {
+                return 'Ошибка загрузки';
+            }
+        }
+        if (isset($request->file()['pic'][4])) {
+            File::delete(public_path('images').'/'.$img4);
+            if ($request->file()['pic'][4]->move(public_path('images'), $request->file()['pic'][4]->getClientOriginalName())) {
+                $img4 = $request->file()['pic'][4]->getClientOriginalName();
+            } else {
+                return 'Ошибка загрузки';
+            }
+        }
+        if (isset($request->file()['pic'][5])) {
+            File::delete(public_path('images').'/'.$img5);
+            if ($request->file()['pic'][5]->move(public_path('images'), $request->file()['pic'][5]->getClientOriginalName())) {
+                $img5 = $request->file()['pic'][5]->getClientOriginalName();
+            } else {
+                return 'Ошибка загрузки';
+            }
+        }
+        MainPage::where('id','=',1)->update([
+            'img_0' => $img0,
+            'img_1' => $img1,
+            'img_2' => $img2,
+            'img_3' => $img3,
+            'img_4' => $img4,
+            'img_5' => $img5,
+            'img_url_0' => $request->url_0,
+            'img_url_1' => $request->url_1,
+            'img_url_2' => $request->url_2,
+            'img_url_3' => $request->url_3,
+            'img_url_4' => $request->url_4,
+            'img_url_5' => $request->url_5,
+            'text_block_0' => $request->editor0,
+            'text_block_1' => $request->editor1,
+            'text_block_2' => $request->editor2,
+            'text_block_3' => $request->editor3,
+            'text_block_4' => $request->editor4,
+            'text_block_5' => $request->editor5,
+            'text_block_6' => $request->editor6,
+            'text_block_7' => $request->editor7,
+        ]);
+        return redirect()->back();
+    }
     public function show_site_index(){
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
@@ -87,15 +173,33 @@ class PagesController extends Controller
                 }
             }
         }
+        $products_hit = DB::table('products')->
+        where('products.product_status', 'Хит продаж')->
+        leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
+        groupBy('products.product_id')->
+        get();
+        $products_rec = DB::table('products')->
+        where('products.product_status', 'Супер цена')->
+        leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
+        groupBy('products.product_id')->
+        get();
+        $products_new = DB::table('products')->
+        leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
+        groupBy('products.product_id')->
+        get();
         return view('site.index',[
             'organization' => Organization::get()[0],
             'header' => $data,
-            'cities' => OpenHours::get()
+            'cities' => OpenHours::get(),
+            'main_page' => MainPage::where('id','=',1)->get(),
+            'products_hit' => $products_hit,
+            'products_rec' => $products_rec,
+            'products_new' => $products_new
         ]);
     }
     public function show_cart(Request $request){
         $cart = $request->session()->get('cart');
-        dd($cart);
+        //dd($cart);
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {

@@ -42,16 +42,16 @@
 						<li><a href="igrovie-sistemniki"><span class="sprite sprite-menu-icon-2"></span>Игровые системники</a></li>
 					</ul>
 					<ul class="nav nav-bar main-menu main-menu2">
-						<li><a href="#">
+						<li><a href="/product_list/dlya_navchannya">
 								<span class="sprite sprite-menu-icon-1"></span>Для навчання</a>
 						</li>
-						<li><a href="#">
+						<li><a href="/product_list/dlya_roboti">
 								<span class="sprite sprite-menu-icon-2"></span>Для роботи</a>
 						</li>
-						<li><a href="#"><span class="sprite sprite-menu-icon-3"></span>Для
+						<li><a href="/product_list/dlya_іgor"><span class="sprite sprite-menu-icon-3"></span>Для
 								ігор</a>
 						</li>
-						<li><a href="#"><span class="sprite sprite-menu-icon-4"></span>Для домашнього використання</a>
+						<li><a href="/product_list/dlya_domashnyogo_vikoristannya"><span class="sprite sprite-menu-icon-4"></span>Для домашнього використання</a>
 						</li>
 
 					</ul>
@@ -62,9 +62,9 @@
 		<div class="slider-row row">
 			<div class="owl-carousel owl-carousel1">
 				<div>
-					<a class="button-wrap" href="#">
+					<a class="button-wrap" href="{{$main_page[0]->img_url_0}}">
 					<div class="img" style="margin-top: 0px;">
-						<img src="../index_app/images/slider/20171114111725934.png" alt="HP 8000">
+						<img src="../images/{{ $main_page[0]->img_0 }}" alt="HP 8000">
 					</div>
 					<div class="slider-block">
 						<!--<div class="pre-title"></div>
@@ -78,9 +78,9 @@
 					</a>
 				</div>
 				<div>
-					<a class="button-wrap" href="#">
+					<a class="button-wrap" href="{{$main_page[0]->img_url_1}}">
 					<div class="img" style="margin-top: 0px;">
-						<img src="../index_app/images/slider/20171011175607283.png" alt="новый 4">
+						<img src="../images/{{ $main_page[0]->img_1 }}" alt="новый 4">
 					</div>
 					<div class="slider-block">
 						<!--<div class="pre-title"></div>
@@ -95,9 +95,9 @@
 					</a>
 				</div>
 				<div>
-					<a class="button-wrap" href="#">
+					<a class="button-wrap" href="{{$main_page[0]->img_url_2}}">
 					<div class="img" style="margin-top: 0px;">
-						<img src="../index_app/images/slider/20171011183644378.png" alt="новый 2">
+						<img src="../images/{{ $main_page[0]->img_2 }}" alt="новый 2">
 					</div>
 					<div class="slider-block">
 						<!--<div class="pre-title"></div>
@@ -112,9 +112,9 @@
 					</a>
 				</div>
 				<div>
-					<a class="button-wrap" href="#">
+					<a class="button-wrap" href="{{$main_page[0]->img_url_3}}">
 					<div class="img" style="margin-top: 0px;">
-						<img src="../index_app/images/slider/20171011185712820.png" alt="новый 1">
+						<img src="../images/{{ $main_page[0]->img_3 }}" alt="новый 1">
 					</div>
 					<div class="slider-block">
 						<!--<div class="pre-title"></div>
@@ -129,9 +129,9 @@
 					</a>
 				</div>
 				<div>
-					<a class="button-wrap" href="#">
+					<a class="button-wrap" href="{{$main_page[0]->img_url_4}}">
 					<div class="img" style="margin-top: 0px;">
-						<img src="../index_app/images/slider/20170417164523223.png" alt="">
+						<img src="../images/{{ $main_page[0]->img_4 }}" alt="">
 					</div>
 					<div class="slider-block">
 						<!--<div class="pre-title"></div>
@@ -146,9 +146,9 @@
 					</a>
 				</div>
 				<div>
-					<a class="button-wrap" href="#">
+					<a class="button-wrap" href="{{$main_page[0]->img_url_5}}">
 					<div class="img" style="margin-top: 0px;">
-						<img src="../index_app/images/slider/20170422083315443.png" alt="">
+						<img src="../images/{{ $main_page[0]->img_5 }}" alt="">
 					</div>
 					<div class="slider-block">
 						<!--<div class="pre-title"></div>
@@ -169,7 +169,7 @@
 </div>
 <div class="main-info container-fluid">
 	<div class="container">
-		<div class="row"><h1>Интернет магазин компьютерной б/у техники &quot;Евронот&quot;</h1>
+		<div class="row"><h1>{!! $main_page[0]->text_block_0  !!}</h1>
 			<div class="col-md-6 hidden-xs-up">
 				<div class="description row">
 					<div class="col-md-2">
@@ -212,1076 +212,1897 @@
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane fade active in" id="tab_1">
 				<div class="products row">
+					@if(isset($products_hit[0]))
 					<div class="col-lg-3 col-md-4 col-xs-6">
 						<div class="product">
 							<div class="image">
 								<a href="products-263.html">
 									<img alt="Системный блок Dell Precision T3500"
 									     title="Системный блок Dell Precision T3500"
-									     src="../index_app/images/pictures/products/20170524153523553.jpg"/>
+									     src="../../product_images/{{$products_hit[0]->image}}"/>
 								</a>
 							</div>
 							<a href="products-263.html">
-								<div class="name">Системный блок Dell Precision T3500</div>
+								<div class="name">{{$products_hit[0]->name}}</div>
 							</a>
 							<div class="line"></div>
-							<div class="price">8'400 грн</div>
+							<div class="price">{{$products_hit[0]->price}} грн</div>
 						</div>
 						<div class="product product-hover">
 							<div class="image">
 								<a href="products-263.html">
 									<img alt="Системный блок Dell Precision T3500"
 									     title="Системный блок Dell Precision T3500"
-									     src="../index_app/images/pictures/products/20170524153523553.jpg"/>
+									     src="../../product_images/{{$products_hit[0]->image}}"/>
 								</a>
 							</div>
 							<a href="products-263.html">
-								<div class="name">Системный блок Dell Precision T3500</div>
+								<div class="name">{{$products_hit[0]->name}}</div>
 							</a>
 							<div class="line"></div>
-							<div class="price">8'400 грн</div>
+							<div class="price">{{$products_hit[0]->price}} грн</div>
 							<div class="rating_block">
 								<div class="rating">
 									<div class="star_box not_rated" id="star_box263">
 										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star active"></div>
-											<div class="star5 star active"></div>
+											@if($products_hit[0]->product_stars == '5 звезд')
+												<div class="star1 star active"></div>
+												<div class="star2 star active"></div>
+												<div class="star3 star active"></div>
+												<div class="star4 star active"></div>
+												<div class="star5 star active"></div>
+											@endif
+											@if($products_hit[0]->product_stars == '4 звезды')
+												<div class="star1 star active"></div>
+												<div class="star2 star active"></div>
+												<div class="star3 star active"></div>
+												<div class="star4 star active"></div>
+												<div class="star5 star"></div>
+											@endif
+											@if($products_hit[0]->product_stars == '3 звезды')
+												<div class="star1 star active"></div>
+												<div class="star2 star active"></div>
+												<div class="star3 star active"></div>
+												<div class="star4 star"></div>
+												<div class="star5 star"></div>
+											@endif
+											@if($products_hit[0]->product_stars == '2 звезды')
+												<div class="star1 star active"></div>
+												<div class="star2 star active"></div>
+												<div class="star3 star"></div>
+												<div class="star4 star"></div>
+												<div class="star5 star"></div>
+											@endif
+											@if($products_hit[0]->product_stars == '1 звезда')
+												<div class="star1 star active"></div>
+												<div class="star2 star"></div>
+												<div class="star3 star"></div>
+												<div class="star4 star"></div>
+												<div class="star5 star"></div>
+											@endif
 										</div>
 									</div>
 
 									<div class="clear"></div>
 								</div>
 							</div>
-							<div class="title_dop">Intel Xeon X5660 / 2.8GHz / 4Гб / 500GB</div>
+							<div class="title_dop">{{$products_hit[0]->short_description}}</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-300.html">
-									<img alt="Ноутбук HP 2570p" title="Ноутбук HP 2570p"
-									     src="../index_app/images/pictures/products/20171011121324735.jpg"/>
-								</a>
-							</div>
-							<a href="products-300.html">
-								<div class="name">Ноутбук HP 2570p</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">8'350 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-300.html">
-									<img alt="Ноутбук HP 2570p" title="Ноутбук HP 2570p"
-									     src="../index_app/images/pictures/products/20171011121324735.jpg"/>
-								</a>
-							</div>
-							<a href="products-300.html">
-								<div class="name">Ноутбук HP 2570p</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">8'350 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box300">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star"></div>
-											<div class="star5 star"></div>
+					@endif
+						@if(isset($products_hit[1]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[1]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[1]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[1]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[1]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[1]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[1]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_hit[1]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_hit[1]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[1]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[1]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[1]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_hit[1]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">12.5&quot; WXGA 1366x768 HD LED / Intel Core i5-3320M 2,6 ГГц / RAM 4
-							                       ГБ /500 HDD ГБ /Intel® HD Graphics 4000/ Wi-Fi / Bluetooth / Win 7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-252.html">
-									<img alt="Ноутбук HP EliteBook 8470p (2,6 ГГц, 8 Гб, 320 Гб, WebCam)"
-									     title="Ноутбук HP EliteBook 8470p (2,6 ГГц, 8 Гб, 320 Гб, WebCam)"
-									     src="../index_app/images/pictures/products/20170511142058222.jpg"/>
-								</a>
-							</div>
-							<a href="products-252.html">
-								<div class="name">Ноутбук HP EliteBook 8470p (2,6 ГГц, 8 Гб, 320 Гб, WebCam)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">9'700 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-252.html">
-									<img alt="Ноутбук HP EliteBook 8470p (2,6 ГГц, 8 Гб, 320 Гб, WebCam)"
-									     title="Ноутбук HP EliteBook 8470p (2,6 ГГц, 8 Гб, 320 Гб, WebCam)"
-									     src="../index_app/images/pictures/products/20170511142058222.jpg"/>
-								</a>
-							</div>
-							<a href="products-252.html">
-								<div class="name">Ноутбук HP EliteBook 8470p (2,6 ГГц, 8 Гб, 320 Гб, WebCam)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">9'700 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box252">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star"></div>
-											<div class="star5 star"></div>
+						@endif
+						@if(isset($products_hit[2]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[2]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[2]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[2]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[2]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[2]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[2]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_hit[2]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_hit[2]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[2]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[2]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[2]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_hit[2]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">14&quot; Core i5-3320m 2,6 GHz / 8192Mb / 320 Gb / Wi-Fi, Bluetooth,
-							                       3G,web / Win7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-294.html">
-									<img alt="Ноутбук Dell Latitude E6320" title="Ноутбук Dell Latitude E6320"
-									     src="../index_app/images/pictures/products/20171007114818601.jpg"/>
-								</a>
-							</div>
-							<a href="products-294.html">
-								<div class="name">Ноутбук Dell Latitude E6320</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">6'200 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-294.html">
-									<img alt="Ноутбук Dell Latitude E6320" title="Ноутбук Dell Latitude E6320"
-									     src="../index_app/images/pictures/products/20171007114818601.jpg"/>
-								</a>
-							</div>
-							<a href="products-294.html">
-								<div class="name">Ноутбук Dell Latitude E6320</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">6'200 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box294">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star active"></div>
+						@endif
+						@if(isset($products_hit[3]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[3]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[3]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[3]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[3]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[3]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[3]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_hit[3]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_hit[3]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[3]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[3]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[3]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_hit[3]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">13,3&quot;(1366x768) HD LED / Intel Core i5-2520M 2,5 ГГц / RAM 4 ГБ
-							                       /320HDD ГБ /Intel HD Graphics 3000/ Wi-Fi / Bluetooth / Win 7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-248.html">
-									<img alt="Ноутбук HP EliteBook 8570w (2,60 ГГц, 8 Гб, 128 SSD Гб)"
-									     title="Ноутбук HP EliteBook 8570w (2,60 ГГц, 8 Гб, 128 SSD Гб)"
-									     src="../index_app/images/pictures/products/20170511160424692.jpg"/>
-								</a>
-							</div>
-							<a href="products-248.html">
-								<div class="name">Ноутбук HP EliteBook 8570w (2,60 ГГц, 8 Гб, 128 SSD Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">14'530 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-248.html">
-									<img alt="Ноутбук HP EliteBook 8570w (2,60 ГГц, 8 Гб, 128 SSD Гб)"
-									     title="Ноутбук HP EliteBook 8570w (2,60 ГГц, 8 Гб, 128 SSD Гб)"
-									     src="../index_app/images/pictures/products/20170511160424692.jpg"/>
-								</a>
-							</div>
-							<a href="products-248.html">
-								<div class="name">Ноутбук HP EliteBook 8570w (2,60 ГГц, 8 Гб, 128 SSD Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">14'530 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box248">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star"></div>
-											<div class="star5 star"></div>
+						@endif
+						@if(isset($products_hit[4]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[4]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[4]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[4]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[4]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[4]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[4]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_hit[4]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_hit[4]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[4]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[4]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[4]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_hit[4]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">15,6 Core i7-3720qm 2,60 GHz / 8192 Mb / 128SSD Gb / Wi-Fi, Bluetooth
-							                       / Win 7 / WebCam
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-167.html">
-									<img alt="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
-									     title="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
-									     src="../index_app/images/pictures/products/20170515181331263.jpeg"/>
-								</a>
-							</div>
-							<a href="products-167.html">
-								<div class="name">Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">6'500 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-167.html">
-									<img alt="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
-									     title="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
-									     src="../index_app/images/pictures/products/20170515181331263.jpeg"/>
-								</a>
-							</div>
-							<a href="products-167.html">
-								<div class="name">Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">6'500 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box167">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star active"></div>
+						@endif
+						@if(isset($products_hit[5]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[5]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[5]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[5]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[5]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[5]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[5]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_hit[5]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_hit[5]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[5]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[5]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[5]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_hit[5]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">10,4&#039;&#039;(touch сенсорный) / 1024x768 / Core2Duo U7500 1,06Ghz
-							                       / 2048Mb / 120Gb / Wi-Fi, Bluetooth
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-304.html">
-									<img alt="Монитор NEC MyltiSync LCD2470WVX" title="Монитор NEC MyltiSync LCD2470WVX"
-									     src="../index_app/images/pictures/products/20171108131759508.jpg"/>
-								</a>
-							</div>
-							<a href="products-304.html">
-								<div class="name">Монитор NEC MyltiSync LCD2470WVX</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">2'500 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-304.html">
-									<img alt="Монитор NEC MyltiSync LCD2470WVX" title="Монитор NEC MyltiSync LCD2470WVX"
-									     src="../index_app/images/pictures/products/20171108131759508.jpg"/>
-								</a>
-							</div>
-							<a href="products-304.html">
-								<div class="name">Монитор NEC MyltiSync LCD2470WVX</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">2'500 грн</div>
-							<div class="title_dop">24&quot; 1920x1200 /1000:1 /400cd/m² / VGA, DVI, DisplayPort, USB
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-301.html">
-									<img alt="Ноутбук Fujitsu E753" title="Ноутбук Fujitsu E753"
-									     src="../index_app/images/pictures/products/20171018105032805.jpg"/>
-								</a>
-							</div>
-							<a href="products-301.html">
-								<div class="name">Ноутбук Fujitsu E753</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">14'050 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-301.html">
-									<img alt="Ноутбук Fujitsu E753" title="Ноутбук Fujitsu E753"
-									     src="../index_app/images/pictures/products/20171018105032805.jpg"/>
-								</a>
-							</div>
-							<a href="products-301.html">
-								<div class="name">Ноутбук Fujitsu E753</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">14'050 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box301">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star active"></div>
-											<div class="star5 star active"></div>
+						@endif
+						@if(isset($products_hit[6]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[6]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[6]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[6]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[6]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[6]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[6]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_hit[6]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_hit[6]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[6]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[6]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[6]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_hit[6]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">15,6&quot; WXGA 1920x1080 Full HD / Intel Core i5-3340M 2,7 ГГц / RAM
-							                       8 ГБ /256 SSD ГБ /Intel HD Graphics 4000/ Wi-Fi / Bluetooth / Win 7
+						@endif
+						@if(isset($products_hit[7]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[7]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[7]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[7]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_hit[7]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_hit[7]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_hit[7]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_hit[7]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_hit[7]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[7]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[7]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_hit[7]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
+										</div>
+									</div>
+									<div class="title_dop">{{$products_hit[7]->short_description}}</div>
+								</div>
 							</div>
-						</div>
-					</div>
+						@endif
 				</div>
 			</div>
 			<div role="tabpanel" class="tab-pane fade " id="tab_2">
 				<div class="products row">
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-232.html">
-									<img alt="Ноутбук Lenovo ThinkPad X220 tablet (2,50 ГГц, 4 Гб, 320 Гб)"
-									     title="Ноутбук Lenovo ThinkPad X220 tablet (2,50 ГГц, 4 Гб, 320 Гб)"
-									     src="../index_app/images/pictures/products/20170517120605798.jpg"/>
+					@if(isset($products_rec[0]))
+						<div class="col-lg-3 col-md-4 col-xs-6">
+							<div class="product">
+								<div class="image">
+									<a href="products-263.html">
+										<img alt="Системный блок Dell Precision T3500"
+											 title="Системный блок Dell Precision T3500"
+											 src="../../product_images/{{$products_rec[0]->image}}"/>
+									</a>
+								</div>
+								<a href="products-263.html">
+									<div class="name">{{$products_rec[0]->name}}</div>
 								</a>
+								<div class="line"></div>
+								<div class="price">{{$products_rec[0]->price}} грн</div>
 							</div>
-							<a href="products-232.html">
-								<div class="name">Ноутбук Lenovo ThinkPad X220 tablet (2,50 ГГц, 4 Гб, 320 Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">8'100 грн</div>
+							<div class="product product-hover">
+								<div class="image">
+									<a href="products-263.html">
+										<img alt="Системный блок Dell Precision T3500"
+											 title="Системный блок Dell Precision T3500"
+											 src="../../product_images/{{$products_rec[0]->image}}"/>
+									</a>
+								</div>
+								<a href="products-263.html">
+									<div class="name">{{$products_rec[0]->name}}</div>
+								</a>
+								<div class="line"></div>
+								<div class="price">{{$products_rec[0]->price}} грн</div>
+								<div class="rating_block">
+									<div class="rating">
+										<div class="star_box not_rated" id="star_box263">
+											<div class="rate_hide">
+												@if($products_rec[0]->product_stars == '5 звезд')
+													<div class="star1 star active"></div>
+													<div class="star2 star active"></div>
+													<div class="star3 star active"></div>
+													<div class="star4 star active"></div>
+													<div class="star5 star active"></div>
+												@endif
+												@if($products_rec[0]->product_stars == '4 звезды')
+													<div class="star1 star active"></div>
+													<div class="star2 star active"></div>
+													<div class="star3 star active"></div>
+													<div class="star4 star active"></div>
+													<div class="star5 star"></div>
+												@endif
+												@if($products_rec[0]->product_stars == '3 звезды')
+													<div class="star1 star active"></div>
+													<div class="star2 star active"></div>
+													<div class="star3 star active"></div>
+													<div class="star4 star"></div>
+													<div class="star5 star"></div>
+												@endif
+												@if($products_rec[0]->product_stars == '2 звезды')
+													<div class="star1 star active"></div>
+													<div class="star2 star active"></div>
+													<div class="star3 star"></div>
+													<div class="star4 star"></div>
+													<div class="star5 star"></div>
+												@endif
+												@if($products_rec[0]->product_stars == '1 звезда')
+													<div class="star1 star active"></div>
+													<div class="star2 star"></div>
+													<div class="star3 star"></div>
+													<div class="star4 star"></div>
+													<div class="star5 star"></div>
+												@endif
+											</div>
+										</div>
+
+										<div class="clear"></div>
+									</div>
+								</div>
+								<div class="title_dop">{{$products_rec[0]->short_description}}</div>
+							</div>
 						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-232.html">
-									<img alt="Ноутбук Lenovo ThinkPad X220 tablet (2,50 ГГц, 4 Гб, 320 Гб)"
-									     title="Ноутбук Lenovo ThinkPad X220 tablet (2,50 ГГц, 4 Гб, 320 Гб)"
-									     src="../index_app/images/pictures/products/20170517120605798.jpg"/>
-								</a>
-							</div>
-							<a href="products-232.html">
-								<div class="name">Ноутбук Lenovo ThinkPad X220 tablet (2,50 ГГц, 4 Гб, 320 Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">8'100 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box232">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star"></div>
-											<div class="star5 star"></div>
+					@endif
+						@if(isset($products_rec[1]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[1]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[1]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[1]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[0]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[1]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[1]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_rec[1]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_rec[1]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[1]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[1]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[1]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_rec[1]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">12.5&quot; (1366x768) HD LED IPS, матовый, поворотный / Intel Core
-							                       i5-2520M 2,5 ГГц / 4 ГБ RAM / 320 ГБ HDD / Win 7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-296.html">
-									<img alt="Ультрабук Dell Latitude E7440" title="Ультрабук Dell Latitude E7440"
-									     src="../index_app/images/pictures/products/20171009103031141.jpg"/>
-								</a>
-							</div>
-							<a href="products-296.html">
-								<div class="name">Ультрабук Dell Latitude E7440</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">14'100 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-296.html">
-									<img alt="Ультрабук Dell Latitude E7440" title="Ультрабук Dell Latitude E7440"
-									     src="../index_app/images/pictures/products/20171009103031141.jpg"/>
-								</a>
-							</div>
-							<a href="products-296.html">
-								<div class="name">Ультрабук Dell Latitude E7440</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">14'100 грн</div>
-							<div class="title_dop">14&quot; WXGA 1366x768 HD LED / Intel Core i5-4310U 2,0 ГГц / RAM 8
-							                       ГБ /256SSD ГБ /Intel® HD Graphics 4400/ Wi-Fi / Bluetooth / Win 7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-168.html">
-									<img alt="Ноутбук Panasonic Toughbook CF-19 mk4 / (1,20 ГГц, 4 Гб, 320 Гб)"
-									     title="Ноутбук Panasonic Toughbook CF-19 mk4 / (1,20 ГГц, 4 Гб, 320 Гб)"
-									     src="../index_app/images/pictures/products/20170516113202605.jpg"/>
-								</a>
-							</div>
-							<a href="products-168.html">
-								<div class="name">Ноутбук Panasonic Toughbook CF-19 mk4 / (1,20 ГГц, 4 Гб, 320 Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">14'500 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-168.html">
-									<img alt="Ноутбук Panasonic Toughbook CF-19 mk4 / (1,20 ГГц, 4 Гб, 320 Гб)"
-									     title="Ноутбук Panasonic Toughbook CF-19 mk4 / (1,20 ГГц, 4 Гб, 320 Гб)"
-									     src="../index_app/images/pictures/products/20170516113202605.jpg"/>
-								</a>
-							</div>
-							<a href="products-168.html">
-								<div class="name">Ноутбук Panasonic Toughbook CF-19 mk4 / (1,20 ГГц, 4 Гб, 320 Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">14'500 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box168">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star active"></div>
+						@endif
+						@if(isset($products_rec[2]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[2]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[2]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[2]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[2]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[2]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[2]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_rec[2]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_rec[2]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[2]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[2]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[2]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_rec[2]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">10,4&#039;&#039;(touch сенсорный) / 1024x768 / Intel Core i5-540UM
-							                       1,2 GHz/ 4Gb DDR3 / 320GB / Wi-Fi, Bluetooth, WWAN / COM / Windows 7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-138.html">
-									<img alt="Ноутбук HP EliteBook 8540p" title="Ноутбук HP EliteBook 8540p"
-									     src="../index_app/images/pictures/products/20170513135758310.png"/>
-								</a>
-							</div>
-							<a href="products-138.html">
-								<div class="name">Ноутбук HP EliteBook 8540p</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">6'690 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-138.html">
-									<img alt="Ноутбук HP EliteBook 8540p" title="Ноутбук HP EliteBook 8540p"
-									     src="../index_app/images/pictures/products/20170513135758310.png"/>
-								</a>
-							</div>
-							<a href="products-138.html">
-								<div class="name">Ноутбук HP EliteBook 8540p</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">6'690 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box138">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star"></div>
-											<div class="star5 star"></div>
+						@endif
+						@if(isset($products_rec[3]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[3]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[3]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[3]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[3]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[3]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[3]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_rec[3]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_rec[3]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[3]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[3]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[3]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_rec[3]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">15.6&quot; /Core i5-M540 2,53 GHz / 4096Mb / 500Gb / Wi-Fi,
-							                       Bluetooth, 3G/ Win7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-304.html">
-									<img alt="Монитор NEC MyltiSync LCD2470WVX" title="Монитор NEC MyltiSync LCD2470WVX"
-									     src="../index_app/images/pictures/products/20171108131759508.jpg"/>
-								</a>
-							</div>
-							<a href="products-304.html">
-								<div class="name">Монитор NEC MyltiSync LCD2470WVX</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">2'500 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-304.html">
-									<img alt="Монитор NEC MyltiSync LCD2470WVX" title="Монитор NEC MyltiSync LCD2470WVX"
-									     src="../index_app/images/pictures/products/20171108131759508.jpg"/>
-								</a>
-							</div>
-							<a href="products-304.html">
-								<div class="name">Монитор NEC MyltiSync LCD2470WVX</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">2'500 грн</div>
-							<div class="title_dop">24&quot; 1920x1200 /1000:1 /400cd/m² / VGA, DVI, DisplayPort, USB
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-167.html">
-									<img alt="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
-									     title="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
-									     src="../index_app/images/pictures/products/20170515181331263.jpeg"/>
-								</a>
-							</div>
-							<a href="products-167.html">
-								<div class="name">Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">6'500 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-167.html">
-									<img alt="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
-									     title="Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)"
-									     src="../index_app/images/pictures/products/20170515181331263.jpeg"/>
-								</a>
-							</div>
-							<a href="products-167.html">
-								<div class="name">Ноутбук Panasonic Toughbook CF-19 MK2 (1,06 ГГц, 2 Гб, 120 Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">6'500 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box167">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star active"></div>
+						@endif
+						@if(isset($products_rec[4]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[4]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[4]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[4]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[4]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[4]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[4]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_rec[4]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_rec[4]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[4]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[4]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[4]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_rec[4]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">10,4&#039;&#039;(touch сенсорный) / 1024x768 / Core2Duo U7500 1,06Ghz
-							                       / 2048Mb / 120Gb / Wi-Fi, Bluetooth
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-129.html">
-									<img alt="Ноутбук Panasonic Toughbook CF-19 mk3  (1,20 ГГц, 2 Гб, 160 Гб)"
-									     title="Ноутбук Panasonic Toughbook CF-19 mk3  (1,20 ГГц, 2 Гб, 160 Гб)"
-									     src="../index_app/images/pictures/products/20170511164349106.jpg"/>
-								</a>
-							</div>
-							<a href="products-129.html">
-								<div class="name">Ноутбук Panasonic Toughbook CF-19 mk3 (1,20 ГГц, 2 Гб, 160 Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">9'700 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-129.html">
-									<img alt="Ноутбук Panasonic Toughbook CF-19 mk3  (1,20 ГГц, 2 Гб, 160 Гб)"
-									     title="Ноутбук Panasonic Toughbook CF-19 mk3  (1,20 ГГц, 2 Гб, 160 Гб)"
-									     src="../index_app/images/pictures/products/20170511164349106.jpg"/>
-								</a>
-							</div>
-							<a href="products-129.html">
-								<div class="name">Ноутбук Panasonic Toughbook CF-19 mk3 (1,20 ГГц, 2 Гб, 160 Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">9'700 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box129">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star"></div>
-											<div class="star5 star"></div>
+						@endif
+						@if(isset($products_rec[5]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[5]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[5]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[5]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[5]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[5]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[5]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_rec[5]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_rec[5]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[5]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[5]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[5]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_rec[5]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">10,4&#039;&#039;(touch Wacom) / 1024x768 / Intel Core2 Duo U9300
-							                       1,2Ghz / 2048Mb / 160Gb / Wi-Fi, Bluetooth, COM / Win7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-302.html">
-									<img alt="Монитор Fujitsu B22W-7" title="Монитор Fujitsu B22W-7"
-									     src="../index_app/images/pictures/products/20171108120638103.jpg"/>
-								</a>
-							</div>
-							<a href="products-302.html">
-								<div class="name">Монитор Fujitsu B22W-7</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">1'900 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-302.html">
-									<img alt="Монитор Fujitsu B22W-7" title="Монитор Fujitsu B22W-7"
-									     src="../index_app/images/pictures/products/20171108120638103.jpg"/>
-								</a>
-							</div>
-							<a href="products-302.html">
-								<div class="name">Монитор Fujitsu B22W-7</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">1'900 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box302">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star active"></div>
-											<div class="star5 star active"></div>
+						@endif
+						@if(isset($products_rec[6]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[6]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[6]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[6]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[6]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[6]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[6]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_rec[6]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_rec[6]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[6]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[6]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[6]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_rec[6]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">22&quot; (1680x1050) / 1.000:1 / 250cd/m² / VGA, DVI, DisplayPort,
-							                       USB
+						@endif
+						@if(isset($products_rec[7]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[7]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[7]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[7]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[7]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[7]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[7]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_rec[7]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_rec[7]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[7]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[7]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[7]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
+										</div>
+									</div>
+									<div class="title_dop">{{$products_rec[7]->short_description}}</div>
+								</div>
 							</div>
-						</div>
-					</div>
+						@endif
 				</div>
 			</div>
 			<div role="tabpanel" class="tab-pane fade " id="tab_3">
 				<div class="products row">
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-103.html">
-									<img alt="Ноутбук HP Compaq nc6400" title="Ноутбук HP Compaq nc6400"
-									     src="../index_app/images/pictures/products/20170512115827144.jpg"/>
+					@if(isset($products_new[0]))
+						<div class="col-lg-3 col-md-4 col-xs-6">
+							<div class="product">
+								<div class="image">
+									<a href="products-263.html">
+										<img alt="Системный блок Dell Precision T3500"
+											 title="Системный блок Dell Precision T3500"
+											 src="../../product_images/{{$products_new[0]->image}}"/>
+									</a>
+								</div>
+								<a href="products-263.html">
+									<div class="name">{{$products_new[0]->name}}</div>
 								</a>
+								<div class="line"></div>
+								<div class="price">{{$products_new[0]->price}} грн</div>
 							</div>
-							<a href="products-103.html">
-								<div class="name">Ноутбук HP Compaq nc6400</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">3'300 грн</div>
+							<div class="product product-hover">
+								<div class="image">
+									<a href="products-263.html">
+										<img alt="Системный блок Dell Precision T3500"
+											 title="Системный блок Dell Precision T3500"
+											 src="../../product_images/{{$products_new[0]->image}}"/>
+									</a>
+								</div>
+								<a href="products-263.html">
+									<div class="name">{{$products_new[0]->name}}</div>
+								</a>
+								<div class="line"></div>
+								<div class="price">{{$products_new[0]->price}} грн</div>
+								<div class="rating_block">
+									<div class="rating">
+										<div class="star_box not_rated" id="star_box263">
+											<div class="rate_hide">
+												@if($products_new[0]->product_stars == '5 звезд')
+													<div class="star1 star active"></div>
+													<div class="star2 star active"></div>
+													<div class="star3 star active"></div>
+													<div class="star4 star active"></div>
+													<div class="star5 star active"></div>
+												@endif
+												@if($products_new[0]->product_stars == '4 звезды')
+													<div class="star1 star active"></div>
+													<div class="star2 star active"></div>
+													<div class="star3 star active"></div>
+													<div class="star4 star active"></div>
+													<div class="star5 star"></div>
+												@endif
+												@if($products_new[0]->product_stars == '3 звезды')
+													<div class="star1 star active"></div>
+													<div class="star2 star active"></div>
+													<div class="star3 star active"></div>
+													<div class="star4 star"></div>
+													<div class="star5 star"></div>
+												@endif
+												@if($products_new[0]->product_stars == '2 звезды')
+													<div class="star1 star active"></div>
+													<div class="star2 star active"></div>
+													<div class="star3 star"></div>
+													<div class="star4 star"></div>
+													<div class="star5 star"></div>
+												@endif
+												@if($products_new[0]->product_stars == '1 звезда')
+													<div class="star1 star active"></div>
+													<div class="star2 star"></div>
+													<div class="star3 star"></div>
+													<div class="star4 star"></div>
+													<div class="star5 star"></div>
+												@endif
+											</div>
+										</div>
+
+										<div class="clear"></div>
+									</div>
+								</div>
+								<div class="title_dop">{{$products_new[0]->short_description}}</div>
+							</div>
 						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-103.html">
-									<img alt="Ноутбук HP Compaq nc6400" title="Ноутбук HP Compaq nc6400"
-									     src="../index_app/images/pictures/products/20170512115827144.jpg"/>
-								</a>
-							</div>
-							<a href="products-103.html">
-								<div class="name">Ноутбук HP Compaq nc6400</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">3'300 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box103">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star"></div>
-											<div class="star5 star"></div>
+					@endif
+						@if(isset($products_new[1]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_new[1]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_new[1]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_new[1]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_new[1]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_new[1]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_new[1]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_new[1]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_new[1]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[1]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[1]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[1]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_new[1]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">14&quot; / Core2Duo T2500 2.0 MHz / 2048Mb / 160 Gb / DVD-RW, WI-FI,
-							                       Win7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-274.html">
-									<img alt="Ноутбук Dell Latitude E5440" title="Ноутбук Dell Latitude E5440"
-									     src="../index_app/images/pictures/products/20171018164530294.jpg"/>
-								</a>
-							</div>
-							<a href="products-274.html">
-								<div class="name">Ноутбук Dell Latitude E5440</div>
-							</a>
-							<div class="line"></div>
-							<div class="price"><span>Цену уточняйте</span></div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-274.html">
-									<img alt="Ноутбук Dell Latitude E5440" title="Ноутбук Dell Latitude E5440"
-									     src="../index_app/images/pictures/products/20171018164530294.jpg"/>
-								</a>
-							</div>
-							<a href="products-274.html">
-								<div class="name">Ноутбук Dell Latitude E5440</div>
-							</a>
-							<div class="line"></div>
-							<div class="price"><span>Цену уточняйте</span></div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box274">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star"></div>
-											<div class="star5 star"></div>
+						@endif
+						@if(isset($products_new[2]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_new[2]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_new[2]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_new[2]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_new[2]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_new[2]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_new[2]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_new[2]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_new[2]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[2]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[2]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[2]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_new[2]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">14&quot; 1600x900 HD+ / Intel Core i5-4300U 1,9 ГГц / RAM 8 ГБ / HDD
-							                       500 ГБ / Wi-Fi / Bluetooth / Win 7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-278.html">
-									<img alt="Ноутбук HP Folio 9480m (2,0 ГГц, 8 Гб, 256 SSD Гб)"
-									     title="Ноутбук HP Folio 9480m (2,0 ГГц, 8 Гб, 256 SSD Гб)"
-									     src="../index_app/images/pictures/products/20170427134154568.jpg"/>
-								</a>
-							</div>
-							<a href="products-278.html">
-								<div class="name">Ноутбук HP Folio 9480m (2,0 ГГц, 8 Гб, 256 SSD Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">14'400 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-278.html">
-									<img alt="Ноутбук HP Folio 9480m (2,0 ГГц, 8 Гб, 256 SSD Гб)"
-									     title="Ноутбук HP Folio 9480m (2,0 ГГц, 8 Гб, 256 SSD Гб)"
-									     src="../index_app/images/pictures/products/20170427134154568.jpg"/>
-								</a>
-							</div>
-							<a href="products-278.html">
-								<div class="name">Ноутбук HP Folio 9480m (2,0 ГГц, 8 Гб, 256 SSD Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">14'400 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box278">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star"></div>
-											<div class="star5 star"></div>
+						@endif
+						@if(isset($products_new[3]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_new[3]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_new[3]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_new[3]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_new[3]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_new[3]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_new[3]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_new[3]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_new[3]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[3]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[3]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[3]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_new[3]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">14&quot; (1366x768) WXGA HD / Intel Core i5-4310U 2,0 ГГц / RAM 8 ГБ
-							                       / 256 SSD ГБ / Wi-Fi / Bluetooth / Win 7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-294.html">
-									<img alt="Ноутбук Dell Latitude E6320" title="Ноутбук Dell Latitude E6320"
-									     src="../index_app/images/pictures/products/20171007114818601.jpg"/>
-								</a>
-							</div>
-							<a href="products-294.html">
-								<div class="name">Ноутбук Dell Latitude E6320</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">6'200 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-294.html">
-									<img alt="Ноутбук Dell Latitude E6320" title="Ноутбук Dell Latitude E6320"
-									     src="../index_app/images/pictures/products/20171007114818601.jpg"/>
-								</a>
-							</div>
-							<a href="products-294.html">
-								<div class="name">Ноутбук Dell Latitude E6320</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">6'200 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box294">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star active"></div>
+						@endif
+						@if(isset($products_new[4]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_new[4]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_new[4]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_new[4]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_new[4]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_new[4]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_new[4]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_new[4]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_new[4]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[4]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[4]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[4]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_new[4]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">13,3&quot;(1366x768) HD LED / Intel Core i5-2520M 2,5 ГГц / RAM 4 ГБ
-							                       /320HDD ГБ /Intel HD Graphics 3000/ Wi-Fi / Bluetooth / Win 7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-259.html">
-									<img alt="Ноутбук Dell Precision M6600" title="Ноутбук Dell Precision M6600"
-									     src="../index_app/images/pictures/products/20171018170727392.jpg"/>
-								</a>
-							</div>
-							<a href="products-259.html">
-								<div class="name">Ноутбук Dell Precision M6600</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">18'560 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-259.html">
-									<img alt="Ноутбук Dell Precision M6600" title="Ноутбук Dell Precision M6600"
-									     src="../index_app/images/pictures/products/20171018170727392.jpg"/>
-								</a>
-							</div>
-							<a href="products-259.html">
-								<div class="name">Ноутбук Dell Precision M6600</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">18'560 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box259">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star"></div>
-											<div class="star5 star"></div>
+						@endif
+						@if(isset($products_new[5]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_new[5]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_new[5]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_new[5]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_new[5]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_new[5]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_new[5]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_new[5]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_new[5]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[5]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[5]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[5]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_new[5]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">17.3&quot; / 1600x900 / Core i7-2720QM 2.2GHz / 16384Mb / 256SSD /
-							                       Nvidia Quadro 3000M/DVD-RW / Wi-Fi, Bluetooth / WebCam / Win.7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-296.html">
-									<img alt="Ультрабук Dell Latitude E7440" title="Ультрабук Dell Latitude E7440"
-									     src="../index_app/images/pictures/products/20171009103031141.jpg"/>
-								</a>
-							</div>
-							<a href="products-296.html">
-								<div class="name">Ультрабук Dell Latitude E7440</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">14'100 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-296.html">
-									<img alt="Ультрабук Dell Latitude E7440" title="Ультрабук Dell Latitude E7440"
-									     src="../index_app/images/pictures/products/20171009103031141.jpg"/>
-								</a>
-							</div>
-							<a href="products-296.html">
-								<div class="name">Ультрабук Dell Latitude E7440</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">14'100 грн</div>
-							<div class="title_dop">14&quot; WXGA 1366x768 HD LED / Intel Core i5-4310U 2,0 ГГц / RAM 8
-							                       ГБ /256SSD ГБ /Intel® HD Graphics 4400/ Wi-Fi / Bluetooth / Win 7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-292.html">
-									<img alt="Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)"
-									     title="Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)"
-									     src="../index_app/images/pictures/products/20170829160612307.png"/>
-								</a>
-							</div>
-							<a href="products-292.html">
-								<div class="name">Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">9'290 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-292.html">
-									<img alt="Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)"
-									     title="Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)"
-									     src="images/pictures/products/20170829160612307.png"/>
-								</a>
-							</div>
-							<a href="products-292.html">
-								<div class="name">Ноутбук Dell Latitude E6430U (1,8 ГГц, 8 Гб, 128SSD Гб)</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">9'290 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box292">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star active"></div>
+						@endif
+						@if(isset($products_new[6]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_new[6]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_new[6]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_new[6]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_new[6]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_new[6]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_new[6]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_new[6]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_new[6]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[6]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[6]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_new[6]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_new[6]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">14&quot; WXGA 1366x768 HD LED / Intel Core i5-3427U 1,8 ГГц / RAM 8
-							                       ГБ /128SSD ГБ / Wi-Fi / Bluetooth / Win 7
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-6">
-						<div class="product">
-							<div class="image">
-								<a href="products-293.html">
-									<img alt="Системный блок HP dc7900" title="Системный блок HP dc7900"
-									     src="../index_app/images/pictures/products/20170908160710764.png"/>
-								</a>
-							</div>
-							<a href="products-293.html">
-								<div class="name">Системный блок HP dc7900</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">1'499 грн</div>
-						</div>
-						<div class="product product-hover">
-							<div class="image">
-								<a href="products-293.html">
-									<img alt="Системный блок HP dc7900" title="Системный блок HP dc7900"
-									     src="../index_app/images/pictures/products/20170908160710764.png"/>
-								</a>
-							</div>
-							<a href="products-293.html">
-								<div class="name">Системный блок HP dc7900</div>
-							</a>
-							<div class="line"></div>
-							<div class="price">1'499 грн</div>
-							<div class="rating_block">
-								<div class="rating">
-									<div class="star_box not_rated" id="star_box293">
-										<div class="rate_hide">
-											<div class="star1 star active"></div>
-											<div class="star2 star active"></div>
-											<div class="star3 star active"></div>
-											<div class="star4 star active"></div>
+						@endif
+						@if(isset($products_new[7]))
+							<div class="col-lg-3 col-md-4 col-xs-6">
+								<div class="product">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[7]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[7]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[7]->price}} грн</div>
+								</div>
+								<div class="product product-hover">
+									<div class="image">
+										<a href="products-263.html">
+											<img alt="Системный блок Dell Precision T3500"
+												 title="Системный блок Dell Precision T3500"
+												 src="../../product_images/{{$products_rec[7]->image}}"/>
+										</a>
+									</div>
+									<a href="products-263.html">
+										<div class="name">{{$products_rec[7]->name}}</div>
+									</a>
+									<div class="line"></div>
+									<div class="price">{{$products_rec[7]->price}} грн</div>
+									<div class="rating_block">
+										<div class="rating">
+											<div class="star_box not_rated" id="star_box263">
+												<div class="rate_hide">
+													@if($products_rec[7]->product_stars == '5 звезд')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star active"></div>
+													@endif
+													@if($products_rec[7]->product_stars == '4 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star active"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[7]->product_stars == '3 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star active"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[7]->product_stars == '2 звезды')
+														<div class="star1 star active"></div>
+														<div class="star2 star active"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+													@if($products_rec[7]->product_stars == '1 звезда')
+														<div class="star1 star active"></div>
+														<div class="star2 star"></div>
+														<div class="star3 star"></div>
+														<div class="star4 star"></div>
+														<div class="star5 star"></div>
+													@endif
+												</div>
+											</div>
+
+											<div class="clear"></div>
 										</div>
 									</div>
-
-									<div class="clear"></div>
+									<div class="title_dop">{{$products_rec[7]->short_description}}</div>
 								</div>
 							</div>
-							<div class="title_dop">DualCore Intel Pentium E5300 2.6 GHz / 2048MB / 80GB</div>
-						</div>
-					</div>
+						@endif
 				</div>
 			</div>
 		</div>
 		<div class="prosmotr-ten">
-			<a href="products_cat-b_u_noutbuki.html">
+			<a href="http://evronot.compas.agency/product_list/noutbuki">
 				<div class="but all-button">Посмотреть все ноутбуки</div>
 			</a>
 		</div>
 		<div class="priemushestva row">
 			<div class="col-lg-2 col-xs-12 title">
-				Наши преимущества
+				{!! $main_page[0]->text_block_1  !!}
 				<div class="line"></div>
 			</div>
 			<div class="hidden-md-down">
@@ -1290,10 +2111,7 @@
 					<div class="block bl1">
 						<a href="#">
 						<img src="../index_app/images/preimushestva-1.png" alt="">
-						<div class="text">Постлизинговая техника.
-						                  (использовалась только
-						                  крупными компаниями
-						                  в служебных целях)
+						<div class="text">{!! $main_page[0]->text_block_2  !!}
 						</div>
 						</a>
 					</div>
@@ -1303,9 +2121,7 @@
 					<div class="block bl2">
 						<a href="#">
 						<img src="../index_app/images/preimeshestva-2.png" alt="">
-						<div class="text"> Проходит три
-						                   предпродажных теста
-						                   в Европе
+						<div class="text"> {!! $main_page[0]->text_block_3  !!}
 						</div>
 						</a>
 					</div>
@@ -1314,7 +2130,7 @@
 					<div class="block bl3">
 						<a href="#">
 						<img src="../index_app/images/preimeshestva-3.png" alt="">
-						<div class="text">Гарантия и сервис</div>
+						<div class="text">{!! $main_page[0]->text_block_4  !!}</div>
 						</a>
 					</div>
 				</div>
@@ -1322,9 +2138,7 @@
 					<div class="block bl4">
 						<a href="#">
 						<img src="../index_app/images/preimeshestva-4.png" alt="">
-						<div class="text">Отправка наложенным
-						                  платежом, без аванса
-						                  и предоплат
+						<div class="text">{!! $main_page[0]->text_block_5  !!}
 						</div>
 						</a>
 					</div>
@@ -1333,8 +2147,7 @@
 					<div class="block bl5">
 						<a href="#">
 						<img src="../index_app/images/preimeshestva-5.png" alt="">
-						<div class="text"> Сеть магазинов по
-						                   Украине
+						<div class="text"> {!! $main_page[0]->text_block_6  !!}
 						</div>
 						</a>
 					</div>
@@ -1411,53 +2224,7 @@
 <div class="footer container-fluid">
 	<div class="container">
 		<div class="tags">
-			<h2>Мировые бренды компьютерной бу техники в Украине от &laquo;Евронот&raquo;</h2>
-			<p><br/> Рынок Украины, на сегодняшний день, предлагает потребителю много разных моделей компьютерной
-			         техники от разных производителей, но далеко не все могут гарантировать высокое качество, надежность
-			         и производительность, которые можно встретить только на Европейском рынке и США. Интернет-магазин
-			         компьютерной бу техники &laquo;Евронот&raquo;, является ведущим импортером ноутбуков, планшетов,
-			         мониторов, системных блоков из Германии, качество и надежность которых завоевали мир. <br/> <br/>
-			         Что может предложить интернет-магазин &laquo;Евронот&raquo; украинскому покупателю, и какие вопросы
-			         решить?</p>
-			<p><strong>1. Надежность, качество, долгий срок службы.</strong></p>
-			<p>Частой проблемой при покупке ноутбуков, планшетов, мониторов в Украине, человек сталкивается с
-			   ненадежностью техники, которая была собрана в азиатских странах с дешевыми комплектующими под именитым
-			   брендом. С чего следуют частые поломки и дополнительные денежные, физические и моральные затраты. <br/>
-			   Магазин компьютерной бу техники Евронот, предлагает своим покупателям надежную пост лизинговую технику,
-			   которая производилась исключительно для европейских пользователей, качество и надежность для которых,
-			   является главным атрибутом. Компьютерная техника использовалась в офисах больших европейских корпорациях,
-			   в течении всего срока техника обслуживалась на официальных сервисах производителя. По окончанию
-			   лизингового договора, каждый ноутбук прошел три теста в Европе и только после этого был привезен в
-			   Украину.&nbsp;<br/> <br/><strong>2. Возможность выбрать эксклюзивные модели, также получить гарантию на
-			                                    всю технику.</strong> <br/> <br/> Покупая в нашем магазине компьютерной
-			   бу техники, <a title="Ноутбуки" href="products_cat-b_u_noutbuki.html">ноутбуки бизнес
-			                                                                          класса</a>:&nbsp;<strong>Dell,&nbsp;</strong><strong>Lenovo</strong>,
-				<strong>HP,&nbsp;</strong><strong>IBM</strong>, <strong>Fujitsu</strong>,<strong> Siemens</strong>,
-				<strong>Samsung,&nbsp;</strong><strong>Toshiba</strong>, <strong>Panasonic</strong>, вы получаете
-			   гарантию производительности, качества, надежности для ваших компьютеров. Также у нас вы найдете
-			   эксклюзивные модели, такие как <strong>Panasonic Toughbook</strong>, которые предназначены для
-			   использования в экстремальных условиях. Данные модели широко используются в военно-полевых условиях, а
-			   также в разного рода экспедициях, потому что имеют, высокий степень защиты от ударов, грязи, влаги, пыли.
-			   В подтверждение этому предоставляетcя гарантия на все модели до 2 лет. <br/> <br/><strong>3. Сервисное
-			                                                                                             обслуживание.</strong>
-			</p>
-			<p>Сотрудничаем с сервисным центром <strong>ЕвронотСервис</strong> с высококвалифицированными инженерами,
-			   которые еще раз тестируют всю технику при получении на исправность. Также предоставляют услуги по ремонту
-			   и на другие компьютеры.<br/> <br/><strong>4. Выставочные залы по всей Украине.</strong></p>
-			<p>Несмотря на то, что &laquo;Евронот&raquo; является интернет - магазином, у нас есть свой выставочный зал
-			   в Киеве по адресу<strong> Проспект Степана Бандеры 16Д</strong>, а также филиалы по Украине, куда можно
-			   прийти посмотреть, проверить и купить интересующие вас модели. Помогут вам в этом высококвалифицированные
-			   продавцы с их помощью вы несомненно сделаете правильный выбор. <br/> <br/><strong>5. Быстрая доставка по
-			                                                                                     всей Украине.</strong>
-			</p>
-			<p>Мы работаем для комфорта своих покупателей, поэтому предоставляем возможность сделать заказ на сайте и
-			   получить детальную и качественную консультацию наших менеджеров. После чего, вы можете получить выбранный
-			   вами ноутбук в кратчайшие сроки без предоплаты, Новой почтой. И оплатить при получении удобным для вас
-			   способом. <br/> Детальную информацию о доставке и оплате вы можете получить зайдя в раздел <strong>&laquo;Доставка
-			                                                                                                      и
-			                                                                                                      оплата&raquo;</strong>,
-			   а также позвонив нам по указанным в контактах номерам.</p>
-			<p>Ждем вас в своем магазине по адресу Проспект Степана Бандеры 16Д.&nbsp;</p></div>
+			{!! $main_page[0]->text_block_7  !!}</div>
 		<hr>
 		<br>
 		@include('layouts.site.footer')
