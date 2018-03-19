@@ -39,9 +39,13 @@
 						<li><a href="igrovie-sistemniki"><span class="sprite sprite-menu-icon-2"></span>Игровые системники</a></li>
 					</ul>
 					<ul class="nav nav-bar main-menu main-menu2">
-						<li><a href="#">
-								<span class="sprite sprite-menu-icon-1"></span>Для навчання</a>
-						</li>
+						@if(isset($header))
+							@foreach($header as $menu_item)
+                                @if($menu_item['type'] == 'down')
+                                    <li><a href="{{$menu_item['url']}}"><span class="sprite sprite-menu-icon-1"></span>{{$menu_item['name']}}</a></li>
+                                @endif
+							@endforeach
+						@endif
 						<li><a href="#">
 								<span class="sprite sprite-menu-icon-2"></span>Для роботи</a>
 						</li>
@@ -50,9 +54,7 @@
 						</li>
 						<li><a href="#"><span class="sprite sprite-menu-icon-4"></span>Для домашнього використання</a>
 						</li>
-
 					</ul>
-
 				</div>
 			</nav>
 		</div>

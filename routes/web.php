@@ -37,6 +37,11 @@ Route::get('/product_list/{category?}/{url?}',['uses'=>'PagesController@show_pro
 
 Route::post('/add_comment',['uses'=>'PagesController@add_comment','as'=>'add_comment']);
 
+Route::get('count_items_in_cart',[
+    'uses' => 'PagesController@count_items_in_cart',
+    'as' => 'count_items_in_cart'
+]);
+
 Route::post('/add_item_to_cart',[
     'uses' => 'PagesController@add_item_in_cart',
     'as' => 'add_item_to_cart'

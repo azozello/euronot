@@ -95,7 +95,6 @@ class PagesController extends Controller
     }
     public function show_cart(Request $request){
         $cart = $request->session()->get('cart');
-        dd($cart);
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -208,17 +207,24 @@ class PagesController extends Controller
         ]);
     }
 
+    public function count_items_in_cart(Request $request){
+        if ($cart = $request->session()->get('cart')) {
+            $items = 0;
+            foreach ($cart as $item) $items++;
+            return $items;
+        }
+    }
+
     public function delete_item_from_cart(Request $request) {
         if ($cart = $request->session()->get('cart')) {
-            $request->session()->forget('cart');
-            $new_cart = [];
-            $request->session()->put('cart', $new_cart);
-            foreach ($cart as $i=>$item) {
-                if ($item[$i]['item_id'] != $request->item_id) {
-                    $request->session()->push('cart', $item[$i]);
+            $request->session()->put('cart', []);
+            foreach ($cart as $item) {
+                if ($item['item_id'] != $request->item_id) {
+                    $request->session()->push('cart', $item);
                 }
             }
         }
+        return redirect()->back();
     }
 
     public function add_item_in_cart(Request $request){
@@ -227,8 +233,8 @@ class PagesController extends Controller
                 "item_id" => $request->item_id,
                 "item_name" => $request->item_name,
                 "item_amount" => $request->item_amount,
-                "item_price" => $request->item_price
-//                "item_value" => $request->item_value
+                "item_price" => $request->item_price,
+                "item_value" => $request->item_value
             );
             $request->session()->push('cart', $new_item);
         } else {
@@ -238,8 +244,8 @@ class PagesController extends Controller
                 "item_id" => $request->item_id,
                 "item_name" => $request->item_name,
                 "item_amount" => $request->item_amount,
-                "item_price" => $request->item_price
-//                "item_value" => $request->item_value)
+                "item_price" => $request->item_price,
+                "item_value" => $request->item_value
             );
             $request->session()->push('cart', $new_item);
         }
