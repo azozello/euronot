@@ -84,6 +84,9 @@ Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
 
     //////
 
+    Route::get('/main_page_edit_show',['uses'=>'PagesController@main_page_edit_show','as'=>'main_page_edit_show']);
+    Route::post('/main_page_edit',['uses'=>'PagesController@main_page_edit','as'=>'main_page_edit']);
+
     Route::get('/show_client_book',['uses'=>'PagesController@show_client_book','as'=>'show_client_book']);
     Route::get('/show_supplier_book',['uses'=>'PagesController@show_supplier_book','as'=>'show_supplier_book']);
     Route::get('/show_shipment_book',['uses'=>'PagesController@show_shipment_book','as'=>'show_shipment_book']);
