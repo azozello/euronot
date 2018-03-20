@@ -26,6 +26,8 @@ Route::post('/add_to_cart',['uses'=>'CartController@add_to_cart','as'=>'add_to_c
     Route::post('/add_order',['uses'=>'CartController@add_order','as'=>'add_order']);
 });
 Route::get('/',['uses'=>'PagesController@show_site_index','as'=>'show_site_index']);
+Route::post('/search_products',['uses'=>'PagesController@search_products','as'=>'search_products']);
+Route::get('/refresh_search_page',['uses'=>'PagesController@search_products','as'=>'refresh_search_page']);
 Route::get('/about',['uses'=>'PagesController@show_about','as'=>'show_about']);
 Route::get('/cart',['uses'=>'PagesController@show_cart','as'=>'show_cart']);
 Route::get('/contact',['uses'=>'PagesController@show_contact','as'=>'show_contact']);

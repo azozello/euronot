@@ -106,6 +106,71 @@ class PagesController extends Controller
             'main_page' => MainPage::where('id','=',1)->get()
         ]);
     }
+    public function search_products(Request $request){
+        //dd($request);
+        if(is_null($request->sort_type) || is_null($request->product_at_page)){
+            $pagination_num = 24;
+            $sort_type_column = 'id';
+            $sort_type_way = 'desc';
+        }else{
+            switch($request->sort_type){
+                case 0:
+                    $sort_type_column = 'id';
+                    $sort_type_way = 'desc';
+                    break;
+                case 1:
+                    $sort_type_column = 'price';
+                    $sort_type_way = 'asc';
+                    break;
+                case 2:
+                    $sort_type_column = 'price';
+                    $sort_type_way = 'desc';
+                    break;
+                case 3:
+                    $sort_type_column = 'name';
+                    $sort_type_way = 'asc';
+                    break;
+                case 4:
+                    $sort_type_column = 'name';
+                    $sort_type_way = 'desc';
+                    break;
+                default:
+                    $sort_type_column = 'id';
+                    $sort_type_way = 'desc';
+                    break;
+            }
+            $pagination_num = $request->product_at_page;
+        }
+
+        $products = DB::table('products')->
+        where('name', 'like', '%'.$request->search.'%')->
+        leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
+        orderBy('products.'.$sort_type_column, $sort_type_way)->
+        groupBy('products.product_id')->paginate(20);
+        $filters = array();
+        $price = NULL;
+        $arabica = NULL;
+        $attributes = NULL;
+        $attributes_count = NULL;
+        $attributes_id = NULL;
+        $meta_tags = NULL;
+        $category_foot = NULL;
+        return view('site.products_cat-doc_stancii', [
+            'search' => $request->search,
+            'foot' => $category_foot,
+            'organization' =>Organization::get()[0],
+            'header' => MenuList::get()->toArray(),
+            'products' => $products,
+            'filters' => $filters,
+            'price' => $price,
+            'arabica' => $arabica,
+            'attributes' => $attributes,
+            'attributes_count' => $attributes_count,
+            'url_attributes' => $attributes_id,
+            'meta_tags' => $meta_tags,
+            'cities' => OpenHours::get()
+        ]);
+    }
     public function main_page_edit(Request $request){
         $img0 = MainPage::where('id','=',1)->value('img_0');
         $img1 = MainPage::where('id','=',1)->value('img_1');
@@ -211,6 +276,7 @@ class PagesController extends Controller
         groupBy('products.product_id')->
         get();
         return view('site.index',[
+            'meta_tags' => DefaultMetaTags::where('type','=','main_page')->get()[0],
             'organization' => Organization::get()[0],
             'header' => $data,
             'cities' => OpenHours::get(),
@@ -218,6 +284,25 @@ class PagesController extends Controller
             'products_hit' => $products_hit,
             'products_rec' => $products_rec,
             'products_new' => $products_new
+        ]);
+    }
+    public function show_cart(Request $request){
+        $cart = $request->session()->get('cart');
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
+        return view('site.cart', [
+            'organization' =>Organization::get()[0],
+            'header' => $data,
+            'cities' => OpenHours::get(),
+            'cart' => $cart
         ]);
     }
 
@@ -233,6 +318,7 @@ class PagesController extends Controller
             }
         }
         return view('site.contact', [
+            'meta_tags' => DefaultMetaTags::where('type','=','service')->get()[0],
             'organization' =>Organization::get()[0],
             'header' => $data,
             'cities' => OpenHours::get()
@@ -250,6 +336,7 @@ class PagesController extends Controller
             }
         }
         return view('site.delivery', [
+            'meta_tags' => DefaultMetaTags::where('type','=','dostavka')->get()[0],
             'organization' =>Organization::get()[0],
             'header' => $data,
             'cities' => OpenHours::get()
@@ -267,6 +354,7 @@ class PagesController extends Controller
             }
         }
         return view('site.news',[
+            'meta_tags' => DefaultMetaTags::where('type','=','news_list')->get()[0],
             'organization' =>Organization::get()[0],
             'header' => $data,
             'cities' => OpenHours::get(),
@@ -285,7 +373,22 @@ class PagesController extends Controller
                 }
             }
         }
+        $news = News::where('url',$url)->get();
+        if($news[0]->title == NULL || strlen($news[0]->title)<2){
+            $title = DefaultMetaTags::where('type','=','news')->value('title');
+        }
+        else{
+            $title = $news[0]->title;
+        }
+        if($news[0]->description == NULL || strlen($news[0]->description)<2){
+            $description = DefaultMetaTags::where('type','=','news')->value('description');
+        }
+        else{
+            $description = $news[0]->description;
+        }
         return view('site.news-inner',[
+            'title' => $title,
+            'description' => $description,
             'organization' =>Organization::get()[0],
             'header' => $data,
             'cities' => OpenHours::get(),
@@ -304,6 +407,7 @@ class PagesController extends Controller
             }
         }
         return view('site.warranty', [
+            'meta_tags' => DefaultMetaTags::where('type','=','warranty')->get()[0],
             'organization' =>Organization::get()[0],
             'header' => $data,
             'cities' => OpenHours::get(),
@@ -344,6 +448,8 @@ class PagesController extends Controller
                 "item_price" => $request->item_price,
                 "item_value" => $request->item_value,
                 "item_url" => $request->item_url
+                "item_price" => $request->item_price,
+                "item_value" => $request->item_value
             );
             $request->session()->push('cart', $new_item);
         } else {
@@ -353,6 +459,8 @@ class PagesController extends Controller
                 "item_id" => $request->item_id,
                 "item_name" => $request->item_name,
                 "item_amount" => $request->item_amount,
+                "item_price" => $request->item_price,
+                "item_value" => $request->item_value
                 "item_price" => $request->item_price,
                 "item_value" => $request->item_value,
                 "item_url" => $request->item_url
@@ -464,6 +572,25 @@ class PagesController extends Controller
 
             $timer_seconds = $time % 60;
         }
+        if(!is_null($product[0]->skidka) && $product[0]->skidka > 0){
+            $skidka = $product[0]->skidka;
+            $skidka_price = ((100-$product[0]->skidka) * $product[0]->price)/100;
+        }else{
+            $skidka = NULL;
+            $skidka_price = NULL;
+        }
+        if($product[0]->title == NULL || strlen($product[0]->title)<2){
+            $title = DefaultMetaTags::where('type','=','products')->value('title');
+        }
+        else{
+            $title = $product[0]->title;
+        }
+        if($product[0]->description == NULL || strlen($product[0]->description)<2){
+            $description = DefaultMetaTags::where('type','=','products')->value('description');
+        }
+        else{
+            $description = $product[0]->description;
+        }
         if ($product[0]->skidka != null){
             foreach ($hard as $hard_item) {
                 $hard_item->configuration_price = $hard_item->configuration_price
@@ -480,6 +607,10 @@ class PagesController extends Controller
             $product[0]->price = $product[0]->price - (($product[0]->price / 100) * $product[0]->skidka);
         }
         return view('site.products-263',[
+            'title' => $title,
+            'description' => $description,
+            'skidka' => $skidka,
+            'skidka_price' => $skidka_price,
             'organization' => Organization::get()[0],
             'header' => $data,
             'cities' => OpenHours::get(),
@@ -512,6 +643,7 @@ class PagesController extends Controller
             }
         }
         return view('site.about', [
+            'meta_tags' => DefaultMetaTags::where('type','=','about_company')->get()[0],
             'organization' =>Organization::get()[0],
             'cities' => OpenHours::get(),
             'header' => $data,
@@ -567,6 +699,39 @@ class PagesController extends Controller
         groupBy('products.product_id')->
         orderBy('products.'.$sort_type_column, $sort_type_way)->
         get();
+        switch ($category){
+            case 'noutbuki':
+                $meta_name ='cat_1';
+                break;
+            case 'sistemnie-bloki':
+                $meta_name ='cat_2';
+                break;
+            case 'monitory':
+                $meta_name ='cat_3';
+                break;
+            case 'printery':
+                $meta_name ='cat_4';
+                break;
+            case 'doc-stancii':
+                $meta_name ='cat_5';
+                break;
+            case 'igrovie-sistemniki':
+                $meta_name ='cat_6';
+                break;
+            case 'dlya_navchannya':
+                $meta_name ='cat_7';
+                break;
+            case 'dlya_roboti':
+                $meta_name ='cat_8';
+                break;
+            case 'dlya_іgor':
+                $meta_name ='cat_9';
+                break;
+            case 'dlya_domashnyogo_vikoristannya':
+                $meta_name ='cat_10';
+                break;
+            default:
+        }
         $category_foot = Category::where('url', $category)->value('down_text');
         $category = Category::where('url','=',$category)->value('products_id');
         $category = explode(" ", $category);
@@ -745,9 +910,6 @@ class PagesController extends Controller
         if(!isset($arabica)){
             $arabica = 100;
         }
-        if(!isset($meta_tags)){
-            $meta_tags = null;
-        }
         if(!isset($filters)){
             $filters = null;
         }
@@ -761,6 +923,7 @@ class PagesController extends Controller
         orderBy('products.'.$sort_type_column, $sort_type_way)->
         paginate($pagination_num);
         return view('site.products_cat-b_u_noutbuki', [
+            'meta_tags' => DefaultMetaTags::where('type','=',$meta_name)->get()[0],
             'foot' => $category_foot,
             'organization' =>Organization::get()[0],
             'header' => MenuList::get()->toArray(),
@@ -771,7 +934,6 @@ class PagesController extends Controller
             'attributes' => $attributes,
             'attributes_count' => $attributes_count,
             'url_attributes' => $attributes_id,
-            'meta_tags' => $meta_tags,
             'cities' => OpenHours::get()
         ]);
     }
@@ -1102,14 +1264,24 @@ class PagesController extends Controller
     public function meta_tags(){
         return view('meta_tags',[
             'news' => DefaultMetaTags::where('type','=','news')->get(),
-            'pages' => DefaultMetaTags::where('type','=','ur')->get(),
+            'products' => DefaultMetaTags::where('type','=','products')->get(),
             'main_page' => DefaultMetaTags::where('type','=','main_page')->get(),
-            'contacts' => DefaultMetaTags::where('type','=','contacts')->get(),
-            'objects' => DefaultMetaTags::where('type','=','buh')->get(),
+            'about_company' => DefaultMetaTags::where('type','=','about_company')->get(),
+            'warranty' => DefaultMetaTags::where('type','=','warranty')->get(),
+            'dostavka' => DefaultMetaTags::where('type','=','dostavka')->get(),
+            'service' => DefaultMetaTags::where('type','=','service')->get(),
             'news_list' => DefaultMetaTags::where('type','=','news_list')->get(),
-            'object_list' => DefaultMetaTags::where('type','=','object_list')->get(),
-            'reviews' => DefaultMetaTags::where('type','=','reviews')->get(),
-            'real_news_list' => DefaultMetaTags::where('type','=','real_news_list')->get()
+            'cat_1' => DefaultMetaTags::where('type','=','cat_1')->get(),
+            'cat_2' => DefaultMetaTags::where('type','=','cat_2')->get(),
+            'cat_3' => DefaultMetaTags::where('type','=','cat_3')->get(),
+            'cat_4' => DefaultMetaTags::where('type','=','cat_4')->get(),
+            'cat_5' => DefaultMetaTags::where('type','=','cat_5')->get(),
+            'cat_6' => DefaultMetaTags::where('type','=','cat_6')->get(),
+            'cat_7' => DefaultMetaTags::where('type','=','cat_7')->get(),
+            'cat_8' => DefaultMetaTags::where('type','=','cat_8')->get(),
+            'cat_9' => DefaultMetaTags::where('type','=','cat_9')->get(),
+            'cat_10' => DefaultMetaTags::where('type','=','cat_10')->get(),
+
         ]);
     }
     public function languages(){

@@ -2,9 +2,8 @@
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>Ноутбуки б/у из Германии. Купить ноутбук бу в магазине Evronot.com.ua (044) 383 16 83</title>
-	<meta name="description"
-	      content="Ноутбуки б/у бизнес класса из Германии с высоким качеством и производительностью. Гарантия на все модели. Evronot.com.ua"/>
+	<title>{{$meta_tags->title}}</title>
+	<meta name="description" content="{{$meta_tags->description}}"/>
 	<meta name="keywords"
 	      content="Ноутбуки б/у Киев, купить бу ноутбук Петровка, ноутбук бу Днепр, доставка по Украине, наличный расчет, безналичный расчет,"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">

@@ -2,9 +2,8 @@
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>Компьютерная техника бу в интернет-магазине &quot;Евронот&quot;</title>
-	<meta name="description"
-	      content="Купить компьютерную бу технику из Европы. Гарантия. Доставка по всей Украине. Магазин «Евронот»"/>
+	<title>{{$meta_tags->title}}</title>
+	<meta name="description" content="{{$meta_tags->description}}"/>
 	<meta name="keywords"
 	      content="Компьютерная техника бу, компьтеры бу, купить ноутбук Киев, купить системник бу в Украине"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">

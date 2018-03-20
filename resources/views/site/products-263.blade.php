@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>Системный блок Dell Precision T3500. Evronot.com.ua</title>
+	<title>{{$title}}</title>
 	<meta name="description"
-	      content="Системный блок Dell Precision T3500, характеристики: Intel Xeon X5660 / 2.8GHz / 4Гб / 500GB"/>
+	      content="{{$description}}"/>
 	<meta name="keywords"
 	      content="Системный блок Dell Precision T3500, цена, Dell Precision T3500 в Киеве, Dell Precision T3500 бу, Системные блоки Dell."/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -176,30 +176,35 @@
 													$("#" + hide_id + " .rate_hide").hide();
 													$("#" + hide_id + " .rate").show();
 
-													$("#" + hide_id + " .rate .star5").hover(
-														function () {
-															var str = $(this).attr("id");
-															var fields = $("#" + hide_id + " .rate .star5");
-															$.each(fields, function (index) {
-																if ($(this).attr("id") < str) {
-																	$(this).addClass(" active");
-																}
-																else {
-																	$(this).removeClass(" active");
-																}
-															});
-															$(this).addClass(" active");
-														});
-												}
-											})
+                                                    $("#" + hide_id + " .rate .star5").hover(
+                                                        function () {
+                                                            var str = $(this).attr("id");
+                                                            var fields = $("#" + hide_id + " .rate .star5");
+                                                            $.each(fields, function (index) {
+                                                                if ($(this).attr("id") < str) {
+                                                                    $(this).addClass(" active");
+                                                                }
+                                                                else {
+                                                                    $(this).removeClass(" active");
+                                                                }
+                                                            });
+                                                            $(this).addClass(" active");
+                                                        });
+                                                }
+                                            })
 
-											$(".rating").on("mouseout", "div.not_rated", function () {
-												var hide_id = $(this).attr("id");
-												$("#" + hide_id + " .rate_hide").show();
-												$("#" + hide_id + " .rate").hide();
-											})
-										});
+                                            $(".rating").on("mouseout", "div.not_rated", function () {
+                                                var hide_id = $(this).attr("id");
+                                                $("#" + hide_id + " .rate_hide").show();
+                                                $("#" + hide_id + " .rate").hide();
+                                            })
+                                        });
 
+                                        function rate_it(val, obj) {
+                                            $("#star_box" + obj).removeClass("not_rated");
+                                            $("#star_box" + obj + " .rate").remove();
+                                            $("#star_box" + obj + " .rate_hide").show();
+                                        }
                                         function change_price() {
                                             var added_price = 0;
                                             var select_proc = document.getElementById('select_proc');
@@ -376,19 +381,40 @@
 
 					</div>
 					<div class="buy_line" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+						@if(!is_null($skidka))
+						<div class="price_i">
+							<span class="price_Top">{{$skidka}}% знижки</span>
+							<div class="price"><span itemprop="price">
 						<div class="price"><span itemprop="price" id="cena">
                         {{$product[0]->price}}</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
+
+						</div>
+						<div class="price"><span itemprop="price" id="cena">
+                        {{$skidka_price}}</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
 						<div id="buy_block">
 							<div class="quant_block">
 								<input type="text" size="3" value="1" id="add_quant_inp"/>
 							</div>
 							<div class="clear"></div>
 						</div>
+						@else
+							<div class="price"><span itemprop="price" id="cena">
+                        {{$product[0]->price}}</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
+							<div id="buy_block">
+								<div class="quant_block">
+									<input type="text" size="3" value="1" id="add_quant_inp"/>
+								</div>
+								<div class="clear"></div>
+							</div>
+						@endif
 						<div class="buy_button_block">
 							<form method="post" action="{{route('add_item_to_cart')}}" enctype="multipart/form-data" class="form-inline">
 								<input name="_token" type="hidden" value="{{ csrf_token() }}">
 								<input name="item_id" type="hidden" value="{{$product[0]['id']}}">
 								<input name="item_name" type="hidden" value="{{$product[0]['name']}}">
+								<input name="item_amount" type="hidden" value="1">
+								<input name="item_price" type="hidden" value="{{$product[0]['price']}}">
+								<input name="item_value" type="hidden" value="1">
 								<input name="item_amount" type="hidden" value="1">
 								<input name="item_price" id="result_price" type="hidden" value="{{$product[0]['price']}}">
 								<input name="item_value" type="hidden" value="1">

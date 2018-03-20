@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>{{$title}}</title>
-	<meta name="description" content="Магазин компьютерной б/у техники в интернете. Доставка, гарантия, ремонт."/>
+	<title>{{$meta_tags->title}}</title>
+	<meta name="description" content="{{$meta_tags->description}}"/>
 	<meta name="keywords"
 	      content="Магазин Евронот, купить ноутбук в интернет-магазине, купить системник Киев, купить монитор, гарантийное обслуживание."/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">

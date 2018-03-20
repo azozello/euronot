@@ -361,6 +361,12 @@
                                                    placeholder="Введите цену*">
                                         </h5>
                                         <h5 class="content-group text-semibold">
+                                            <label>Скидка в %</label>
+                                            <input type="text" name="skidka"
+                                                   value=""
+                                                   placeholder="Введите цену*">
+                                        </h5>
+                                        <h5 class="content-group text-semibold">
                                             <label>Процессор*</label>
                                             <input type="text" name="proc"
                                                    value=""

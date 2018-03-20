@@ -242,7 +242,8 @@
                     <img src="../index_app/images/logo.png" alt="Евронот" title="Евронот">
                 </a>
                 <div class="search">
-                    <form id="quick_search" action="search.html" method="post">
+                    <form id="quick_search" action="{{route('search_products')}}" method="post">
+                        {{ csrf_field() }}
 
                         <input type="text" class="search-input" name="search" size="5" title="Поиск"
                                placeholder="Поиск">
