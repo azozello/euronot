@@ -15,11 +15,15 @@ class PostMigration extends Migration
     {
         Schema::create('post', function (Blueprint $table) {
             $table->increments('id');
+            $table->mediumText('comment')->nullable();
+            $table->text('status');
+            $table->date('date');
             $table->text('name');
+            $table->integer('sum');
+            $table->string('type');
             $table->integer('phone_number')->nullable();
             $table->string('email')->nullable();
-            $table->mediumText('comment')->nullable();
-            $table->date('date');
+            $table->string('address');
             $table->string('updated_at')->nullable();
             $table->string('created_at')->nullable();
         });

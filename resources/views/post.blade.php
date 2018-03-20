@@ -29,25 +29,30 @@
 							<thead>
 								<tr>
 									<th>#</th>
-									<th>Дата заказа</th>
-					                <th>Номер заказа</th>
+									<th>Подарок</th>
 					                <th>Статус заказа</th>
+									<th>Дата</th>
+									<th>Сумма заказа</th>
 					                <th>ФИО</th>
-					                <th>Заказали</th>
-					                <th>Сумма заказа</th>
-					                <th>Тип оплаты</th>
-					                <th>Адрес доставки</th>
+					                <th>Номер телефона</th>
+									<th>E-mail</th>
+                                    <th>Тип доставки</th>
+									<th>Адрес доставки</th>
 					            </tr>
 							</thead>
 							<tbody>
 							@foreach($mails as $mail)
 								<tr>
 									<td>{{$mail->id}}</td>
+									<td>{{$mail->comment}}</td>
+					                <td>{{$mail->status}}</td>
+									<td>{{$mail->date}}</td>
+									<td>{{$mail->sum}}</td>
 									<td>{{$mail->name}}</td>
-					                <td>{{$mail->phone_number}}</td>
+									<td>{{$mail->phone_number}}</td>
 					                <td>{{$mail->email}}</td>
-					                <td>{{$mail->comment}}</td>
-					                <td>{{$mail->date}}</td>
+                                    <td>{{$mail->type}}</td>
+					                <td>{{$mail->address}}</td>
 					            </tr>
 							@endforeach()
 							</tbody>

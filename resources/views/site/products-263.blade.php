@@ -213,7 +213,10 @@
                                             var select_hard = document.getElementById('select_hard');
                                             added_price += +select_hard.options[select_hard.selectedIndex].value;
 
-                                            document.getElementById('cena').innerText = added_price+{{$product[0]->price}}
+                                            added_price += +{{$product[0]->price}};
+
+                                            document.getElementById('cena').innerText = added_price;
+											document.getElementById('result_price').value = added_price;
                                         }
 
 										function rate_it(val, obj) {
@@ -387,8 +390,9 @@
 								<input name="item_id" type="hidden" value="{{$product[0]['id']}}">
 								<input name="item_name" type="hidden" value="{{$product[0]['name']}}">
 								<input name="item_amount" type="hidden" value="1">
-								<input name="item_price" type="hidden" value="{{$product[0]['price']}}">
+								<input name="item_price" id="result_price" type="hidden" value="{{$product[0]['price']}}">
 								<input name="item_value" type="hidden" value="1">
+								<input name="item_url" type="hidden" value="{{$product[0]['url']}}">
 								<div class="add_to_basket_btn"><button type="submit">Купить</button></div>
 							</form>
 						</div>
@@ -519,13 +523,13 @@
 								$(document).ready(function () {
 									$(".add_block :input").keyup(function () {
 										check_fill(".add_block");
-									})
+									});
 									$(".add_block :input").focusout(function () {
 										check_fill(".add_block");
 									})
 
 
-								})
+								});
 
 								function sender(obj_id) {
 									var obj = ".add_block";

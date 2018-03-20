@@ -197,25 +197,6 @@ class PagesController extends Controller
             'products_new' => $products_new
         ]);
     }
-    public function show_cart(Request $request){
-        $cart = $request->session()->get('cart');
-        $data = MenuList::get()->toArray();
-        for ($x = 0; $x < count($data)-1; $x++) {
-            for ($y = $x + 1; $y < count($data); $y++) {
-                if ($data[$x]['position'] > $data[$y]['position']) {
-                    $temp = $data[$x];
-                    $data[$x] = $data[$y];
-                    $data[$y] = $temp;
-                }
-            }
-        }
-        return view('site.cart', [
-            'organization' =>Organization::get()[0],
-            'header' => $data,
-            'cities' => OpenHours::get(),
-            'cart' => $cart
-        ]);
-    }
 
     public function show_contact(){
         $data = MenuList::get()->toArray();
@@ -338,7 +319,8 @@ class PagesController extends Controller
                 "item_name" => $request->item_name,
                 "item_amount" => $request->item_amount,
                 "item_price" => $request->item_price,
-                "item_value" => $request->item_value
+                "item_value" => $request->item_value,
+                "item_url" => $request->item_url
             );
             $request->session()->push('cart', $new_item);
         } else {
@@ -349,11 +331,39 @@ class PagesController extends Controller
                 "item_name" => $request->item_name,
                 "item_amount" => $request->item_amount,
                 "item_price" => $request->item_price,
-                "item_value" => $request->item_value
+                "item_value" => $request->item_value,
+                "item_url" => $request->item_url
             );
             $request->session()->push('cart', $new_item);
         }
         return redirect()->back();
+    }
+
+    public function show_cart(Request $request){
+        $cart = $request->session()->get('cart');
+
+        $cart_price = 0;
+        foreach ($cart as $item) {
+            $cart_price += $item['item_price'];
+        }
+
+        $data = MenuList::get()->toArray();
+        for ($x = 0; $x < count($data)-1; $x++) {
+            for ($y = $x + 1; $y < count($data); $y++) {
+                if ($data[$x]['position'] > $data[$y]['position']) {
+                    $temp = $data[$x];
+                    $data[$x] = $data[$y];
+                    $data[$y] = $temp;
+                }
+            }
+        }
+        return view('site.cart', [
+            'organization' =>Organization::get()[0],
+            'header' => $data,
+            'cities' => OpenHours::get(),
+            'cart' => $cart,
+            'cart_price' => $cart_price
+        ]);
     }
 
     public function show_products($url){
@@ -431,7 +441,21 @@ class PagesController extends Controller
 
             $timer_seconds = $time % 60;
         }
-        //dd($product_gift);
+        if ($product[0]->skidka != null){
+            foreach ($hard as $hard_item) {
+                $hard_item->configuration_price = $hard_item->configuration_price
+                    - (($hard_item->configuration_price / 100) * $product[0]->skidka);
+            }
+            foreach ($proc as $proc_item) {
+                $proc_item->configuration_price = $proc_item->configuration_price
+                    - (($proc_item->configuration_price / 100) * $product[0]->skidka);
+            }
+            foreach ($op_memory as $op_memory_item) {
+                $op_memory_item->configuration_price = $op_memory_item->configuration_price
+                    - (($op_memory_item->configuration_price / 100) * $product[0]->skidka);
+            }
+            $product[0]->price = $product[0]->price - (($product[0]->price / 100) * $product[0]->skidka);
+        }
         return view('site.products-263',[
             'organization' => Organization::get()[0],
             'header' => $data,
@@ -769,6 +793,29 @@ class PagesController extends Controller
         $data->comment_time = date("H:i:s");
         $data->comment_date = date("Y-m-d");
         $data->is_active = 0;
+        $data->save();
+
+        return redirect()->back();
+    }
+
+    public function delete_order(Request $request) {
+        Post::where('id', $request->order_id)->delete();
+        return redirect()->back();
+    }
+
+    public function add_order(Request $request) {
+        $data = new Post();
+        $data->sum = $request->sum;
+        $data->name = $request->name;
+        $data->phone_number = $request->phone_number;
+        $data->email = $request->email;
+        $data->address = $request->address;
+        $data->type = $request->delivery;
+        $data->comment = $request->comment;
+
+        $date = new \DateTime('now');
+        $data->date = $date;
+
         $data->save();
 
         return redirect()->back();

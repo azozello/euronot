@@ -348,7 +348,7 @@
 							@foreach($cart as $item)
 								<tr>
 								<td class="pict">
-									<a href="products-315.html"><img alt="Ноутбук HP Compaq 6730b"
+									<a href="products/{{$item['item_url']}}"><img alt="Ноутбук HP Compaq 6730b"
 																	 src="images/pictures/products/20170427131100387.jpg"/></a>
 								</td>
 								<td class="title">
@@ -390,7 +390,7 @@
 				</table>
 				<div id="sum_prev_line" class="right_sum_line">
 					Товаров на сумму:
-					<div id="sum_prev" class="right_sum"><label>4300</label> грн</div>
+					<div id="sum_prev" class="right_sum"><label>{{$cart_price}}</label> грн</div>
 				</div>
 				<div id="delivery_line" class="right_sum_line" style="">
 					Доставка:
@@ -405,76 +405,78 @@
 			</div>
 
 			<div class="data_block row" id="data_info">
+                <form method="post" action="{{route('add_order')}}" enctype="multipart/form-data" class="form-inline">
+                    <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                    <input name="sum" type="hidden" value="{{$cart_price}}">
+                    <div class="col-lg-6 col-xs-12" id="cont_data">
+                        <div class="out">
+                            <div class="block_title">Контактная информация</div>
+                            <div class="line">
+                                <input type="text" name="name" value="" class="req" placeholder="ФИО" title="ФИО"/>
+                            </div>
+                            <div class="line">
+                                <input type="text" name="phone_number" value="" class="req" placeholder="Телефон" title="Телефон"/>
+                            </div>
+                            <div class="line">
+                                <input type="text" name="email" value="" placeholder="E-mail" class="req" title="E-mail"/>
+                            </div>
+                            <div class="line">
+                                <input type="text" name="address" value="" placeholder="Адрес доставки" class="req"
+                                       title="Адрес доставки"/>
+                            </div>
+                            <div class="line">
+                                <textarea name="comment" placeholder="Примечание" title="Примечание"></textarea>
+                            </div>
 
-				<div class="col-lg-6 col-xs-12" id="cont_data">
-					<div class="out">
-						<div class="block_title">Контактная информация</div>
-						<div class="line">
-							<input type="text" name="name" value="" class="req" placeholder="ФИО" title="ФИО"/>
-						</div>
-						<div class="line">
-							<input type="text" name="tel" value="" class="req" placeholder="Телефон" title="Телефон"/>
-						</div>
-						<div class="line">
-							<input type="text" name="email" value="" placeholder="E-mail" class="req" title="E-mail"/>
-						</div>
-						<div class="line">
-							<input type="text" name="adres" value="" placeholder="Адрес доставки" class="req"
-							       title="Адрес доставки"/>
-						</div>
-						<div class="line">
-							<textarea name="text" placeholder="Примечание" title="Примечание"></textarea>
-						</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xs-12" id="delivery_block">
+                        <div class="out">
+                            <div class="block_title">Выберите способ доставки</div>
+                            <table id="delivery" class="table">
+                                <tr>
+                                    <td><input type="radio" name="delivery" id="dlv_5" value="5"/></td>
+                                    <td class="dlv_name"><label for="dlv_5"><span>Новая почта</span>
+                                            <div>Стоимость доставки согласно тарифов компании &quot;Новая Почта&quot;</div>
+                                        </label></td>
+                                    <td><label for="dlv_5"><span class="delivery_val">0</span> грн</label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio" name="delivery" id="dlv_2" value="2" checked=""/></td>
+                                    <td class="dlv_name"><label for="dlv_2"><span>Курьерская доставка</span>
+                                            <div>Для жителей Киева</div>
+                                        </label></td>
+                                    <td><label for="dlv_2"><span class="delivery_val">100</span> грн</label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio" name="delivery" id="dlv_3" value="3"/></td>
+                                    <td class="dlv_name"><label for="dlv_3"><span>Самовывоз из магазина &quot;Евронот&quot; в ТЦ &quot;Городок&quot;</span>
+                                            <div>г. Киев, проспект Степана Бандеры 23а</div>
+                                        </label></td>
+                                    <td><label for="dlv_3"><span class="delivery_val">0</span> грн</label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio" name="delivery" id="dlv_1" value="1"/></td>
+                                    <td class="dlv_name"><label
+                                                for="dlv_1"><span>Самовывоз из магазина &quot;Евронот&quot;</span>
+                                            <div>г. Киев, проспект Степана Бандеры 16Б</div>
+                                        </label></td>
+                                    <td><label for="dlv_1"><span class="delivery_val">0</span> грн</label></td>
+                                </tr>
+                            </table>
+                            <div class="line">
+                                <div id="order_but" class="send"><button type="submit">Оформить заказ</button></div>
+                                <div id="order_desc" style="display:none;">Минимальная сумма заказа грн (без учёта
+                                    доставки)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-						<div class="clear"></div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-xs-12" id="delivery_block">
-					<div class="out">
-						<div class="block_title">Выберите способ доставки</div>
-						<table id="delivery" class="table">
-							<tr>
-								<td><input type="radio" name="delivery" id="dlv_5" value="5"/></td>
-								<td class="dlv_name"><label for="dlv_5"><span>Новая почта</span>
-									<div>Стоимость доставки согласно тарифов компании &quot;Новая Почта&quot;</div>
-								</label></td>
-								<td><label for="dlv_5"><span class="delivery_val">0</span> грн</label></td>
-							</tr>
-							<tr>
-								<td><input type="radio" name="delivery" id="dlv_2" value="2" checked=""/></td>
-								<td class="dlv_name"><label for="dlv_2"><span>Курьерская доставка</span>
-									<div>Для жителей Киева</div>
-								</label></td>
-								<td><label for="dlv_2"><span class="delivery_val">100</span> грн</label></td>
-							</tr>
-							<tr>
-								<td><input type="radio" name="delivery" id="dlv_3" value="3"/></td>
-								<td class="dlv_name"><label for="dlv_3"><span>Самовывоз из магазина &quot;Евронот&quot; в ТЦ &quot;Городок&quot;</span>
-									<div>г. Киев, проспект Степана Бандеры 23а</div>
-								</label></td>
-								<td><label for="dlv_3"><span class="delivery_val">0</span> грн</label></td>
-							</tr>
-							<tr>
-								<td><input type="radio" name="delivery" id="dlv_1" value="1"/></td>
-								<td class="dlv_name"><label
-										for="dlv_1"><span>Самовывоз из магазина &quot;Евронот&quot;</span>
-									<div>г. Киев, проспект Степана Бандеры 16Б</div>
-								</label></td>
-								<td><label for="dlv_1"><span class="delivery_val">0</span> грн</label></td>
-							</tr>
-						</table>
-						<div class="line">
-							<div id="order_but" class="send"
-							     onsubmit="ga('send', 'event', 'Forma', 'Podtverdit');return true;">Оформить заказ
-							</div>
-							<div id="order_desc" style="display:none;">Минимальная сумма заказа грн (без учёта
-							                                           доставки)
-							</div>
-						</div>
-					</div>
-				</div>
+                </form>
+
 			</div>
-
 
 			<input type="hidden" name="discount" id="discount"/>
 			<input type="hidden" name="all_orders" id="all_orders" value="0"/>

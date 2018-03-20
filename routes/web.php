@@ -52,6 +52,11 @@ Route::post('/delete_item_from_cart',[
     'as' => 'delete_item_from_cart'
 ]);
 
+Route::post('/add_order', [
+    'uses' => 'PagesController@add_order',
+    'as' => 'add_order'
+]);
+
 Route::get('/news_show/{url?}',['uses' => 'PagesController@show_one_news','as' => 'news_show']);
 
 Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
