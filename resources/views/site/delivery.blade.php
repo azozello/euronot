@@ -2,10 +2,8 @@
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>Доставка и оплата - Интернет магазин компьютерной б/у техники &quot;Евронот&quot;</title>
-	<meta name="description"
-	      content="Интернет магазин компьютерной б/у техники Евронот. Мы осуществляет доставку по всей Украине."/>
-	<meta name="keywords"
+	<title>{{$meta_tags->title}}</title>
+	<meta name="description" content="{{$meta_tags->description}}"/><meta name="keywords"
 	      content="доставка, доставка по Украине, б у, ноутбуки, Киев, самовывоз, курьером, оплата наличными, безналичный расчет, наложенный платеж, evronot"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 

@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>Системный блок Dell Precision T3500. Evronot.com.ua</title>
+	<title>{{$title}}</title>
 	<meta name="description"
-	      content="Системный блок Dell Precision T3500, характеристики: Intel Xeon X5660 / 2.8GHz / 4Гб / 500GB"/>
+	      content="{{$description}}"/>
 	<meta name="keywords"
 	      content="Системный блок Dell Precision T3500, цена, Dell Precision T3500 в Киеве, Dell Precision T3500 бу, Системные блоки Dell."/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -169,42 +169,42 @@
 								<div class="rating_title"> Оценка пользователей:</div>
 								<div class="rating">
 									<script type="text/javascript">
-										$(document).ready(function () {
-											$(".rating").on("mouseover", "div.not_rated", function () {
-												var hide_id = $(this).attr("id");
-												if ($("#" + hide_id).hasClass("not_rated")) {
-													$("#" + hide_id + " .rate_hide").hide();
-													$("#" + hide_id + " .rate").show();
+                                        $(document).ready(function () {
+                                            $(".rating").on("mouseover", "div.not_rated", function () {
+                                                var hide_id = $(this).attr("id");
+                                                if ($("#" + hide_id).hasClass("not_rated")) {
+                                                    $("#" + hide_id + " .rate_hide").hide();
+                                                    $("#" + hide_id + " .rate").show();
 
-													$("#" + hide_id + " .rate .star5").hover(
-														function () {
-															var str = $(this).attr("id");
-															var fields = $("#" + hide_id + " .rate .star5");
-															$.each(fields, function (index) {
-																if ($(this).attr("id") < str) {
-																	$(this).addClass(" active");
-																}
-																else {
-																	$(this).removeClass(" active");
-																}
-															});
-															$(this).addClass(" active");
-														});
-												}
-											})
+                                                    $("#" + hide_id + " .rate .star5").hover(
+                                                        function () {
+                                                            var str = $(this).attr("id");
+                                                            var fields = $("#" + hide_id + " .rate .star5");
+                                                            $.each(fields, function (index) {
+                                                                if ($(this).attr("id") < str) {
+                                                                    $(this).addClass(" active");
+                                                                }
+                                                                else {
+                                                                    $(this).removeClass(" active");
+                                                                }
+                                                            });
+                                                            $(this).addClass(" active");
+                                                        });
+                                                }
+                                            })
 
-											$(".rating").on("mouseout", "div.not_rated", function () {
-												var hide_id = $(this).attr("id");
-												$("#" + hide_id + " .rate_hide").show();
-												$("#" + hide_id + " .rate").hide();
-											})
-										});
+                                            $(".rating").on("mouseout", "div.not_rated", function () {
+                                                var hide_id = $(this).attr("id");
+                                                $("#" + hide_id + " .rate_hide").show();
+                                                $("#" + hide_id + " .rate").hide();
+                                            })
+                                        });
 
-										function rate_it(val, obj) {
-											$("#star_box" + obj).removeClass("not_rated");
-											$("#star_box" + obj + " .rate").remove();
-											$("#star_box" + obj + " .rate_hide").show();
-										}
+                                        function rate_it(val, obj) {
+                                            $("#star_box" + obj).removeClass("not_rated");
+                                            $("#star_box" + obj + " .rate").remove();
+                                            $("#star_box" + obj + " .rate_hide").show();
+                                        }
 									</script>
 									<div class="star_box not_rated" id="star_box263">
 										<div class="rate_hide">
@@ -293,7 +293,7 @@
 									<div class="text-flex"><span class="hover_block_pr">Процесор:
 								<p class="hidden_text_pr">{{$product[0]->proc}}</p>
 								</span>
-										<select>
+										<select id="select_proc" onchange="change_price()">
 											@foreach($proc as $proc_item)
 												@if(!is_null($proc_item->configuration))
 											<option value="{{$proc_item->configuration_price}}">{{$proc_item->configuration}}</option>
@@ -311,7 +311,7 @@
 									<div class="text-flex"><span class="hover_block_pr">Оперативна пам’ять:
 								<p class="hidden_text_pr">{{$product[0]->op_memory}}</p>
 								 </span>
-										<select>
+										<select id="select_memory" onchange="change_price()">
 											@foreach($op_memory as $op_memory_item)
 												@if(!is_null($op_memory_item->configuration))
 												<option value="{{$op_memory_item->configuration_price}}">{{$op_memory_item->configuration}}</option>
@@ -330,7 +330,7 @@
 									<div class="text-flex"><span  class="hover_block_pr">Жорсткий диск:
 								<p class="hidden_text_pr">{{$product[0]->hard_memory}}</p>
 								</span>
-										<select onchange="city_change();">
+										<select id="select_hard" onchange="change_price()">
 											@foreach($hard as $hard_item)
 												@if(!is_null($hard_item->configuration))
 												<option value="{{$hard_item->configuration_price}}">{{$hard_item->configuration}}</option>
@@ -351,28 +351,45 @@
 									 </span>{{$product[0]->op_system}}</div>
 
 								</div>
-									@endif
+								@endif
 
 						</div>
 
 					</div>
 					<div class="buy_line" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-						<div class="price"><span itemprop="price">
+						@if(!is_null($skidka))
+						<div class="price_i">
+							<span class="price_Top">{{$skidka}}% знижки</span>
+							<div class="price"><span itemprop="price">
                         {{$product[0]->price}}</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
+
+						</div>
+						<div class="price"><span itemprop="price" id="cena">
+                        {{$skidka_price}}</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
 						<div id="buy_block">
 							<div class="quant_block">
 								<input type="text" size="3" value="1" id="add_quant_inp"/>
 							</div>
 							<div class="clear"></div>
 						</div>
+						@else
+							<div class="price"><span itemprop="price" id="cena">
+                        {{$product[0]->price}}</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
+							<div id="buy_block">
+								<div class="quant_block">
+									<input type="text" size="3" value="1" id="add_quant_inp"/>
+								</div>
+								<div class="clear"></div>
+							</div>
+						@endif
 						<div class="buy_button_block">
 							<form method="post" action="{{route('add_item_to_cart')}}" enctype="multipart/form-data" class="form-inline">
 								<input name="_token" type="hidden" value="{{ csrf_token() }}">
 								<input name="item_id" type="hidden" value="{{$product[0]['id']}}">
 								<input name="item_name" type="hidden" value="{{$product[0]['name']}}">
-								<input name="item_amount" type="hidden" value="">
+								<input name="item_amount" type="hidden" value="1">
 								<input name="item_price" type="hidden" value="{{$product[0]['price']}}">
-								{{--<input name="item_value" type="hidden" value="{{$product['']}}">--}}
+								<input name="item_value" type="hidden" value="1">
 								<div class="add_to_basket_btn"><button type="submit">Купить</button></div>
 							</form>
 						</div>

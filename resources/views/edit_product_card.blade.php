@@ -373,6 +373,12 @@
                                                            placeholder="Введите цену*">
                                                 </h5>
                                                 <h5 class="content-group text-semibold">
+                                                    <label>Скидка в %</label>
+                                                    <input type="text" name="skidka"
+                                                           value="@if(isset($product[0]->skidka)){{$product[0]->skidka}}@endif"
+                                                           placeholder="Введите цену*">
+                                                </h5>
+                                                <h5 class="content-group text-semibold">
                                                     <label>Процессор*</label>
                                                     <input type="text" name="proc"
                                                            value="@if(isset($product[0]->proc)){{$product[0]->proc}}@endif"

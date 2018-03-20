@@ -2,10 +2,8 @@
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>Контактная информация. Интернет-магазин Evronot.com.ua</title>
-	<meta name="description"
-	      content="Контактная информация в Киеве, Проспект Степана Бандеры 16Б магазин Евронот, Днепр ул. Пастера, 6а, магазин &amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quot;Евронот&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quot;"/>
-	<meta name="keywords" content="Контактная информация, Киев, Днепр, Одесса, Харьков"/>
+	<title>{{$meta_tags->title}}</title>
+	<meta name="description" content="{{$meta_tags->description}}"/><meta name="keywords" content="Контактная информация, Киев, Днепр, Одесса, Харьков"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="images/favicon.ico" rel="icon" type="image/x-icon">

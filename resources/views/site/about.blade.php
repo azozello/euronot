@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>{{$title}}</title>
-	<meta name="description" content="Магазин компьютерной б/у техники в интернете. Доставка, гарантия, ремонт."/>
+	<title>{{$meta_tags->title}}</title>
+	<meta name="description" content="{{$meta_tags->description}}"/>
 	<meta name="keywords"
 	      content="Магазин Евронот, купить ноутбук в интернет-магазине, купить системник Киев, купить монитор, гарантийное обслуживание."/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,9 +39,13 @@
 						<li><a href="igrovie-sistemniki"><span class="sprite sprite-menu-icon-2"></span>Игровые системники</a></li>
 					</ul>
 					<ul class="nav nav-bar main-menu main-menu2">
-						<li><a href="#">
-								<span class="sprite sprite-menu-icon-1"></span>Для навчання</a>
-						</li>
+						@if(isset($header))
+							@foreach($header as $menu_item)
+                                @if($menu_item['type'] == 'down')
+                                    <li><a href="{{$menu_item['url']}}"><span class="sprite sprite-menu-icon-1"></span>{{$menu_item['name']}}</a></li>
+                                @endif
+							@endforeach
+						@endif
 						<li><a href="#">
 								<span class="sprite sprite-menu-icon-2"></span>Для роботи</a>
 						</li>
@@ -50,9 +54,7 @@
 						</li>
 						<li><a href="#"><span class="sprite sprite-menu-icon-4"></span>Для домашнього використання</a>
 						</li>
-
 					</ul>
-
 				</div>
 			</nav>
 		</div>

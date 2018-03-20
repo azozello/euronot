@@ -20,38 +20,21 @@
 		</div>
 	</div>
 	<div class="content meta-tags">
-		
+
 		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
 			<input name="_token" type="hidden" value="{{ csrf_token() }}">
-			<input name="type" type="hidden" value="ur">
+			<input name="type" type="hidden" value="products">
 			<div class="col-md-6">
-				<h2>Для Юр.Услуг</h2>
+				<h2>Для товаров</h2>
 				<h6 class="content-group text-semibold">
 					<label for="">Title</label>
 					<input style="width: 350px;" type="text" name="title"
-						   value="@if(isset($pages[0])){{$pages[0]->title}}@endif">
-				</h6>
-				<h6 class="content-group text-semibold">
-					<label for="">Description</label>
-					<textarea style="width: 350px;height: 150px;resize: none;border: 1px solid;	border-color: rgb(169, 169, 169);	padding: 7px 12px;	font-size: 13px;" name="description" placeholder="">@if(isset($pages[0])){{$pages[0]->description}}@endif</textarea>
-				</h6>
-				<button type="submit" class="btn btn-success">Обновить</button>
-			</div>
-		</form>
-		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
-			<input name="_token" type="hidden" value="{{ csrf_token() }}">
-			<input name="type" type="hidden" value="buh">
-			<div class="col-md-6">
-				<h2>Для Бух.Услуг</h2>
-				<h6 class="content-group text-semibold">
-					<label for="">Title</label>
-					<input style="width: 350px;" type="text" name="title"
-						   value="@if(isset($objects[0])){{$objects[0]->title}}@endif">
+						   value="@if(isset($products[0])){{$products[0]->title}}@endif">
 				</h6>
 				<h6 class="content-group text-semibold">
 					<label for="">Description</label>
 					<textarea style="width: 350px;height: 150px;resize: none;border: 1px solid;	border-color: rgb(169, 169, 169);	padding: 7px 12px;	font-size: 13px;" type="text" name="description"
-							  placeholder="">@if(isset($objects[0])){{$objects[0]->description}}@endif</textarea>
+							  placeholder="">@if(isset($products[0])){{$products[0]->description}}@endif</textarea>
 				</h6>
 				<button type="submit" class="btn btn-success">Обновить</button>
 			</div>
@@ -99,34 +82,68 @@
 		</form>
 		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
 			<input name="_token" type="hidden" value="{{ csrf_token() }}">
-			<input name="type" type="hidden" value="reviews">
+			<input name="type" type="hidden" value="about_company">
 			<div class="col-md-4">
 				<h2>О кампании</h2>
 				<h6 class="content-group text-semibold">
 					<label for="">Title</label>
-					<input type="text" name="title" value="@if(isset($reviews[0])){{$reviews[0]->title}}@endif">
+					<input type="text" name="title" value="@if(isset($about_company[0])){{$about_company[0]->title}}@endif">
 				</h6>
 				<h6 class="content-group text-semibold">
 					<label for="">Description</label>
 					<input type="text" name="description"
-						   value="@if(isset($reviews[0])){{$reviews[0]->description}}@endif">
+						   value="@if(isset($about_company[0])){{$about_company[0]->description}}@endif">
 				</h6>
 				<button type="submit" class="btn btn-success">Обновить</button>
 			</div>
 		</form>
 		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
 			<input name="_token" type="hidden" value="{{ csrf_token() }}">
-			<input name="type" type="hidden" value="contacts">
+			<input name="type" type="hidden" value="warranty">
 			<div class="col-md-4">
-				<h2>Контакты</h2>
+				<h2>Гарантия</h2>
 				<h6 class="content-group text-semibold">
 					<label for="">Title</label>
-					<input type="text" name="title" value="@if(isset($contacts[0])){{$contacts[0]->title}}@endif">
+					<input type="text" name="title" value="@if(isset($warranty[0])){{$warranty[0]->title}}@endif">
 				</h6>
 				<h6 class="content-group text-semibold">
 					<label for="">Description</label>
 					<input type="text" name="description"
-						   value="@if(isset($contacts[0])){{$contacts[0]->description}}@endif">
+						   value="@if(isset($warranty[0])){{$warranty[0]->description}}@endif">
+				</h6>
+				<button type="submit" class="btn btn-success">Обновить</button>
+			</div>
+		</form>
+		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
+			<input name="_token" type="hidden" value="{{ csrf_token() }}">
+			<input name="type" type="hidden" value="dostavka">
+			<div class="col-md-4">
+				<h2>Доставка</h2>
+				<h6 class="content-group text-semibold">
+					<label for="">Title</label>
+					<input type="text" name="title" value="@if(isset($dostavka[0])){{$dostavka[0]->title}}@endif">
+				</h6>
+				<h6 class="content-group text-semibold">
+					<label for="">Description</label>
+					<input type="text" name="description"
+						   value="@if(isset($dostavka[0])){{$dostavka[0]->description}}@endif">
+				</h6>
+				<button type="submit" class="btn btn-success">Обновить</button>
+			</div>
+		</form>
+		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
+			<input name="_token" type="hidden" value="{{ csrf_token() }}">
+			<input name="type" type="hidden" value="service">
+			<div class="col-md-4">
+				<h2>Сервис</h2>
+				<h6 class="content-group text-semibold">
+					<label for="">Title</label>
+					<input type="text" name="title" value="@if(isset($service[0])){{$service[0]->title}}@endif">
+				</h6>
+				<h6 class="content-group text-semibold">
+					<label for="">Description</label>
+					<input type="text" name="description"
+						   value="@if(isset($service[0])){{$service[0]->description}}@endif">
 				</h6>
 				<button type="submit" class="btn btn-success">Обновить</button>
 			</div>
@@ -135,7 +152,7 @@
 			<input name="_token" type="hidden" value="{{ csrf_token() }}">
 			<input name="type" type="hidden" value="news_list">
 			<div class="col-md-4">
-				<h2>Тарифы</h2>
+				<h2>Список новостей</h2>
 				<h6 class="content-group text-semibold">
 					<label for="">Title</label>
 					<input type="text" name="title" value="@if(isset($news_list[0])){{$news_list[0]->title}}@endif">
@@ -150,34 +167,170 @@
 		</form>
 		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
 			<input name="_token" type="hidden" value="{{ csrf_token() }}">
-			<input name="type" type="hidden" value="object_list">
+			<input name="type" type="hidden" value="cat_1">
 			<div class="col-md-4">
-				<h2>Акции</h2>
+				<h2>Ноутбуки б/у</h2>
 				<h6 class="content-group text-semibold">
 					<label for="">Title</label>
-					<input type="text" name="title" value="@if(isset($object_list[0])){{$object_list[0]->title}}@endif">
+					<input type="text" name="title" value="@if(isset($cat_1[0])){{$cat_1[0]->title}}@endif">
 				</h6>
 				<h6 class="content-group text-semibold">
 					<label for="">Description</label>
 					<input type="text" name="description"
-						   value="@if(isset($object_list[0])){{$object_list[0]->description}}@endif">
+						   value="@if(isset($cat_1[0])){{$cat_1[0]->description}}@endif">
 				</h6>
 				<button type="submit" class="btn btn-success">Обновить</button>
 			</div>
 		</form>
 		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
 			<input name="_token" type="hidden" value="{{ csrf_token() }}">
-			<input name="type" type="hidden" value="real_news_list">
+			<input name="type" type="hidden" value="cat_2">
 			<div class="col-md-4">
-				<h2>Список новостей</h2>
+				<h2>Системные блоки б/у</h2>
 				<h6 class="content-group text-semibold">
 					<label for="">Title</label>
-					<input type="text" name="title" value="@if(isset($real_news_list[0])){{$real_news_list[0]->title}}@endif">
+					<input type="text" name="title" value="@if(isset($cat_2[0])){{$cat_2[0]->title}}@endif">
 				</h6>
 				<h6 class="content-group text-semibold">
 					<label for="">Description</label>
 					<input type="text" name="description"
-						   value="@if(isset($real_news_list[0])){{$real_news_list[0]->description}}@endif">
+						   value="@if(isset($cat_2[0])){{$cat_2[0]->description}}@endif">
+				</h6>
+				<button type="submit" class="btn btn-success">Обновить</button>
+			</div>
+		</form>
+		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
+			<input name="_token" type="hidden" value="{{ csrf_token() }}">
+			<input name="type" type="hidden" value="cat_3">
+			<div class="col-md-4">
+				<h2>Мониторы б/у</h2>
+				<h6 class="content-group text-semibold">
+					<label for="">Title</label>
+					<input type="text" name="title" value="@if(isset($cat_3[0])){{$cat_3[0]->title}}@endif">
+				</h6>
+				<h6 class="content-group text-semibold">
+					<label for="">Description</label>
+					<input type="text" name="description"
+						   value="@if(isset($cat_3[0])){{$cat_3[0]->description}}@endif">
+				</h6>
+				<button type="submit" class="btn btn-success">Обновить</button>
+			</div>
+		</form>
+		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
+			<input name="_token" type="hidden" value="{{ csrf_token() }}">
+			<input name="type" type="hidden" value="cat_4">
+			<div class="col-md-4">
+				<h2>Принтеры</h2>
+				<h6 class="content-group text-semibold">
+					<label for="">Title</label>
+					<input type="text" name="title" value="@if(isset($cat_4[0])){{$cat_4[0]->title}}@endif">
+				</h6>
+				<h6 class="content-group text-semibold">
+					<label for="">Description</label>
+					<input type="text" name="description"
+						   value="@if(isset($cat_4[0])){{$cat_4[0]->description}}@endif">
+				</h6>
+				<button type="submit" class="btn btn-success">Обновить</button>
+			</div>
+		</form>
+		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
+			<input name="_token" type="hidden" value="{{ csrf_token() }}">
+			<input name="type" type="hidden" value="cat_5">
+			<div class="col-md-4">
+				<h2>Док станции</h2>
+				<h6 class="content-group text-semibold">
+					<label for="">Title</label>
+					<input type="text" name="title" value="@if(isset($cat_5[0])){{$cat_5[0]->title}}@endif">
+				</h6>
+				<h6 class="content-group text-semibold">
+					<label for="">Description</label>
+					<input type="text" name="description"
+						   value="@if(isset($cat_5[0])){{$cat_5[0]->description}}@endif">
+				</h6>
+				<button type="submit" class="btn btn-success">Обновить</button>
+			</div>
+		</form>
+		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
+			<input name="_token" type="hidden" value="{{ csrf_token() }}">
+			<input name="type" type="hidden" value="cat_6">
+			<div class="col-md-4">
+				<h2>Игровые системники</h2>
+				<h6 class="content-group text-semibold">
+					<label for="">Title</label>
+					<input type="text" name="title" value="@if(isset($cat_6[0])){{$cat_6[0]->title}}@endif">
+				</h6>
+				<h6 class="content-group text-semibold">
+					<label for="">Description</label>
+					<input type="text" name="description"
+						   value="@if(isset($cat_6[0])){{$cat_6[0]->description}}@endif">
+				</h6>
+				<button type="submit" class="btn btn-success">Обновить</button>
+			</div>
+		</form>
+		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
+			<input name="_token" type="hidden" value="{{ csrf_token() }}">
+			<input name="type" type="hidden" value="cat_7">
+			<div class="col-md-4">
+				<h2>Для навчання</h2>
+				<h6 class="content-group text-semibold">
+					<label for="">Title</label>
+					<input type="text" name="title" value="@if(isset($cat_7[0])){{$cat_7[0]->title}}@endif">
+				</h6>
+				<h6 class="content-group text-semibold">
+					<label for="">Description</label>
+					<input type="text" name="description"
+						   value="@if(isset($cat_7[0])){{$cat_7[0]->description}}@endif">
+				</h6>
+				<button type="submit" class="btn btn-success">Обновить</button>
+			</div>
+		</form>
+		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
+			<input name="_token" type="hidden" value="{{ csrf_token() }}">
+			<input name="type" type="hidden" value="cat_8">
+			<div class="col-md-4">
+				<h2>Для роботи</h2>
+				<h6 class="content-group text-semibold">
+					<label for="">Title</label>
+					<input type="text" name="title" value="@if(isset($cat_8[0])){{$cat_8[0]->title}}@endif">
+				</h6>
+				<h6 class="content-group text-semibold">
+					<label for="">Description</label>
+					<input type="text" name="description"
+						   value="@if(isset($cat_8[0])){{$cat_8[0]->description}}@endif">
+				</h6>
+				<button type="submit" class="btn btn-success">Обновить</button>
+			</div>
+		</form>
+		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
+			<input name="_token" type="hidden" value="{{ csrf_token() }}">
+			<input name="type" type="hidden" value="cat_9">
+			<div class="col-md-4">
+				<h2>Для игр</h2>
+				<h6 class="content-group text-semibold">
+					<label for="">Title</label>
+					<input type="text" name="title" value="@if(isset($cat_9[0])){{$cat_9[0]->title}}@endif">
+				</h6>
+				<h6 class="content-group text-semibold">
+					<label for="">Description</label>
+					<input type="text" name="description"
+						   value="@if(isset($cat_9[0])){{$cat_9[0]->description}}@endif">
+				</h6>
+				<button type="submit" class="btn btn-success">Обновить</button>
+			</div>
+		</form>
+		<form method="post" action="{{ route('default_meta_tags') }}" enctype="multipart/form-data">
+			<input name="_token" type="hidden" value="{{ csrf_token() }}">
+			<input name="type" type="hidden" value="cat_10">
+			<div class="col-md-4">
+				<h2>Для домашнего использования</h2>
+				<h6 class="content-group text-semibold">
+					<label for="">Title</label>
+					<input type="text" name="title" value="@if(isset($cat_10[0])){{$cat_10[0]->title}}@endif">
+				</h6>
+				<h6 class="content-group text-semibold">
+					<label for="">Description</label>
+					<input type="text" name="description"
+						   value="@if(isset($cat_10[0])){{$cat_10[0]->description}}@endif">
 				</h6>
 				<button type="submit" class="btn btn-success">Обновить</button>
 			</div>

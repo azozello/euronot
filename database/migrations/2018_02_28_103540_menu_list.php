@@ -13,15 +13,7 @@ class MenuList extends Migration
      */
     public function up()
     {
-        Schema::create('menu_list', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('position')->unique();
-            $table->text('name');
-            $table->text('url');
-            $table->text('type');
-            $table->string('updated_at')->nullable();
-            $table->string('created_at')->nullable();
-        });
+
     }
 
     /**

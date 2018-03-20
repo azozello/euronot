@@ -345,33 +345,35 @@
 					</tr>
 					<tr class="row6 other last" id="315">
 						@if(isset($cart))
-							@foreach($cart as $index=>$item)
+							@foreach($cart as $item)
+								<tr>
 								<td class="pict">
 									<a href="products-315.html"><img alt="Ноутбук HP Compaq 6730b"
 																	 src="images/pictures/products/20170427131100387.jpg"/></a>
 								</td>
 								<td class="title">
 									<a href="products-315.html">
-										{{$item[$index]['item_name']}} </a>
+										{{$item['item_name']}}</a>
 								</td>
 								<td class="quantity">
 									<div class="quant_block">
 										<div class="quant_down">-</div>
-										<input type="text" size="3" value="{{$item[$index]['item_amount']}}"/>
+										<input type="text" size="3" value="1"/>
 										<div class="quant_up">+</div>
 									</div>
 								</td>
 								<td class="price">
-									<label>{{$item[$index]['item_price']}}</label>&nbsp;<span>грн</span>
+									<label>{{$item['item_price']}}</label>&nbsp;<span>грн</span>
 								</td>
-								<td class="sum"><label>4300</label>&nbsp;<span>грн</span></td>
+								<td class="sum"><label>{{$item['item_price']}}</label>&nbsp;<span>грн</span></td>
 								<td class="remove">
 									<form method="post" action="{{route('delete_item_from_cart')}}" enctype="multipart/form-data" class="form-inline">
 										<input name="_token" type="hidden" value="{{ csrf_token() }}">
-										<input name="item_id" type="hidden" value="{{$item[$index]['item_id']}}">
+										<input name="item_id" type="hidden" value="{{$item['item_id']}}">
 										<div class="add_to_basket_btn"><button type="submit">Удалить</button></div>
 									</form>
 								</td>
+								</tr>
 							@endforeach
 						@endif
 					</tr>
@@ -397,7 +399,7 @@
 				<div id="sum_all_line" class="right_sum_line">
 					Всего к оплате:
 					<div id="sum_all" class="right_sum"><label>
-						4300 </label> грн
+							@if(isset($item)){{$item['item_price']}}@endif</label> грн
 					</div>
 				</div>
 			</div>

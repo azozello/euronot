@@ -212,11 +212,13 @@
         </div>
         <div class="top-row row hidden-md-down">
             <ul class="top-menu col-lg-6 col-md-5">
-                @foreach($header as $item)
-                    @if($item['type'] == 'top')
-                        <li><a class="" href="{{$item['url']}}" style="cursor: pointer">{{$item['name']}}</a></li>
-                    @endif
-                @endforeach
+                @if(isset($header))
+                    @foreach($header as $item)
+                        @if($item['type'] == 'top')
+                            <li><a class="" href="{{$item['url']}}" style="cursor: pointer">{{$item['name']}}</a></li>
+                        @endif
+                    @endforeach
+                @endif
              </ul>
             <div class="button col-lg-2 col-md-2">
                 <a href="robots.txt" style="cursor: pointer">Партнерские цены</a>
@@ -240,7 +242,8 @@
                     <img src="../index_app/images/logo.png" alt="Евронот" title="Евронот">
                 </a>
                 <div class="search">
-                    <form id="quick_search" action="search.html" method="post">
+                    <form id="quick_search" action="{{route('search_products')}}" method="post">
+                        {{ csrf_field() }}
 
                         <input type="text" class="search-input" name="search" size="5" title="Поиск"
                                placeholder="Поиск">

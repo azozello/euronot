@@ -2,10 +2,8 @@
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>{{$title}}</title>
-	<meta name="description"
-	      content="Гарантийное обслуживание компьютерной техники бизнес класса из Германии в Киеве, Днепре, Одессе, Харькове, Запорожье."/>
-	<meta name="keywords"
+	<title>{{$meta_tags->title}}</title>
+	<meta name="description" content="{{$meta_tags->description}}"/><meta name="keywords"
 	      content="гарантия, гарантия 1 год, гарантия два года, гарантия на ноутбуки, гарантия на системники"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 

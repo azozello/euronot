@@ -189,6 +189,7 @@ class ProductCardController extends Controller
             $data->type_memory  = $request->type_memory ;
             $data->hard_memory  = $request->hard_memory ;
             $data->op_system  = $request->op_system ;
+            $data->skidka  = $request->skidka ;
             $data->op_system_description  = $request->op_system_description ;
             $data->product_gift = $request->product_gift;
             $data->product_gift_text = $request->present_product_text;
@@ -212,6 +213,14 @@ class ProductCardController extends Controller
         foreach ($objects as $object) {
             //dd(public_path('objects').'/'.$object->name);
             File::delete(public_path('product_images') . '/' . $object->image);
+        }
+        $categories = Category::get();
+        foreach($categories as $category){
+            $products_id = $category->products_id;
+            $products_id = str_replace($request->product_id,"",$products_id);
+            Category::where('id','=',$category->id)->update([
+                'products_id' => $products_id
+            ]);
         }
         ProductsCategoriesConnection::where('product_id_connection','=',$request->product_id)->delete();
         Products::where('product_id','=',$request->product_id)->delete();
@@ -433,6 +442,7 @@ class ProductCardController extends Controller
                 'op_memory' => $request->op_memory_p,
                 'hard_memory' => $request->hard_memory,
                 'proc' => $request->proc,
+                'skidka' => $request->skidka,
                 'type_memory' => $request->type_memory,
                 'op_system' => $request->op_system,
                 'op_system_description' => $request->op_system_description,
