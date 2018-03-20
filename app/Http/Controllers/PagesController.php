@@ -286,25 +286,6 @@ class PagesController extends Controller
             'products_new' => $products_new
         ]);
     }
-    public function show_cart(Request $request){
-        $cart = $request->session()->get('cart');
-        $data = MenuList::get()->toArray();
-        for ($x = 0; $x < count($data)-1; $x++) {
-            for ($y = $x + 1; $y < count($data); $y++) {
-                if ($data[$x]['position'] > $data[$y]['position']) {
-                    $temp = $data[$x];
-                    $data[$x] = $data[$y];
-                    $data[$y] = $temp;
-                }
-            }
-        }
-        return view('site.cart', [
-            'organization' =>Organization::get()[0],
-            'header' => $data,
-            'cities' => OpenHours::get(),
-            'cart' => $cart
-        ]);
-    }
 
     public function show_contact(){
         $data = MenuList::get()->toArray();
@@ -448,8 +429,6 @@ class PagesController extends Controller
                 "item_price" => $request->item_price,
                 "item_value" => $request->item_value,
                 "item_url" => $request->item_url
-                "item_price" => $request->item_price,
-                "item_value" => $request->item_value
             );
             $request->session()->push('cart', $new_item);
         } else {
@@ -461,9 +440,6 @@ class PagesController extends Controller
                 "item_amount" => $request->item_amount,
                 "item_price" => $request->item_price,
                 "item_value" => $request->item_value
-                "item_price" => $request->item_price,
-                "item_value" => $request->item_value,
-                "item_url" => $request->item_url
             );
             $request->session()->push('cart', $new_item);
         }
@@ -472,7 +448,6 @@ class PagesController extends Controller
 
     public function show_cart(Request $request){
         $cart = $request->session()->get('cart');
-
         $cart_price = 0;
         foreach ($cart as $item) {
             $cart_price += $item['item_price'];
