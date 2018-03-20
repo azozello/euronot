@@ -305,6 +305,7 @@
 	<div class="container">
 		<div class="tags">
 			{{$foot}}
+			<br/>
 		</div>
 		<hr>
 		<br>

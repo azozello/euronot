@@ -122,7 +122,6 @@
                                     <li>
                                         <a href="{{route('product_card')}}">Карта товара</a>
                                     <li>
-                                    <li>
                                         <a href="{{route('filter_list')}}">Список фильтров</a>
                                     <li>
                                     <li>

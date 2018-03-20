@@ -2399,6 +2399,7 @@ return array(
     'PagesNews' => $baseDir . '/database/migrations/2017_09_18_102224_pages_news.php',
     'ParseError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ParseError.php',
     'Parsedown' => $vendorDir . '/erusev/parsedown/Parsedown.php',
+    'PartnerPrice' => $baseDir . '/database/migrations/2018_03_20_200748_partner_price.php',
     'PclZip' => $vendorDir . '/pclzip/pclzip/pclzip.lib.php',
     'PhonesForContactsFaces' => $baseDir . '/database/migrations/2018_02_06_203252_phones_for_contacts_faces.php',
     'PhotosMigration' => $baseDir . '/database/migrations/2017_10_04_120109_photos_migration.php',

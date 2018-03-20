@@ -10,9 +10,9 @@
 
 
 	<link href="images/favicon.ico" rel="icon" type="image/x-icon">
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<link href="css/main.css" rel="stylesheet" type="text/css" media="screen"/>
-	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<script src="{{ asset('index_app/js/jquery.min.js') }}"></script>
+	<link href="{{ asset('index_app/css/main.css') }} " rel="stylesheet"/>
+	<link href="{{ asset('index_app/css/bootstrap.min.css') }} " rel="stylesheet"/>
 
 </head>
 

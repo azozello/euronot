@@ -221,7 +221,7 @@
                 @endif
              </ul>
             <div class="button col-lg-2 col-md-2">
-                <a href="robots.txt" style="cursor: pointer">Партнерские цены</a>
+                <a href="{{route('get_uploaded_pdf')}}" style="cursor: pointer">Партнерские цены</a>
             </div>
             <div class="address col-lg-1 col-md-1">
                 <a class="adres" onclick='location.href="contact.html"' style="cursor: pointer">Адреса магазинов в Украине</a>

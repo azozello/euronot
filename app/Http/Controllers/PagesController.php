@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Response;
+use App\PartnerPrice;
 use App\ProductConfiguration;
 use App\MenuList;
 use App\OpenHours;
@@ -75,6 +77,27 @@ class PagesController extends Controller
 
     public function get_configuration_price(Request $request){
         return ProductConfiguration::where('product_id_connection', $request->product_id)->get();
+    }
+
+    public function upload_pdf(Request $request){
+        if (DB::table('partner_price_pdf')->count() > 0) {
+            PartnerPrice::where('id', 1)->update(
+                ['data' => file_get_contents($request->file->getRealPath())]);
+        } else {
+            $data = new PartnerPrice();
+            $data->data = file_get_contents($request->file->getRealPath());
+            $data->save();
+        }
+        return redirect()->back();
+    }
+
+    public function get_uploaded_pdf() {
+        if (DB::table('partner_price_pdf')->count() > 0) {
+            return (new Response(PartnerPrice::where('id', 1)->get()[0]->data, 200))
+                ->header('Content-Type', 'multipart/form-data');
+        } else {
+            return "Sasha - hui!";
+        }
     }
 
     public function main_page_edit_show(){

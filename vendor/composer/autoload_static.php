@@ -2806,6 +2806,7 @@ class ComposerStaticInit86b800b1575976de5fc03f618d9d5eed
         'PagesNews' => __DIR__ . '/../..' . '/database/migrations/2017_09_18_102224_pages_news.php',
         'ParseError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ParseError.php',
         'Parsedown' => __DIR__ . '/..' . '/erusev/parsedown/Parsedown.php',
+        'PartnerPrice' => __DIR__ . '/../..' . '/database/migrations/2018_03_20_200748_partner_price.php',
         'PclZip' => __DIR__ . '/..' . '/pclzip/pclzip/pclzip.lib.php',
         'PhonesForContactsFaces' => __DIR__ . '/../..' . '/database/migrations/2018_02_06_203252_phones_for_contacts_faces.php',
         'PhotosMigration' => __DIR__ . '/../..' . '/database/migrations/2017_10_04_120109_photos_migration.php',

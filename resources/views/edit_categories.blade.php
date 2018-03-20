@@ -82,7 +82,7 @@
                                                    placeholder="{{$languages[0][0]['description_placeholder']}}">
                                         </div>
                                         <textarea name="editor[0]" id="editor[0]">{{$categories[0]->text}}</textarea>
-                                        <textarea name="foot[0]" id="foot[0]"></textarea>
+                                        <textarea name="foot[0]" id="foot[0]">{{$categories[0]->down_text}}</textarea>
 
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@
                                                        placeholder="{{$languages[1][0]['description_placeholder']}}">
                                             </div>
                                             <textarea name="editor[1]" id="editor[1]">{{$categories[1]->text}}</textarea>
-                                            <textarea name="foot[1]" id="foot[1]"></textarea>
+                                            <textarea name="foot[1]" id="foot[1]">{{$categories[1]->down_text}}</textarea>
 
                                         </div>
                                     </div>

@@ -77,21 +77,19 @@
                                         </div>
                                         <div class="col-md-6">
                                             <textarea name="editor1" id="editor1">@if(isset($about_company[0]->about_company_text)){{$about_company[0]->about_company_text}}@endif</textarea>
-
                                         </div>
-
-
                                 </div>
                             </div>
                             </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
+    </form>
+    <form method="post" action="{{route('upload_pdf')}}" enctype="multipart/form-data">
+        <input name="_token" type="hidden" value="{{ csrf_token() }}">
+        <input type="file" name="file" id="file_pdf">
+        <input type="submit" value="Обновить партнёрские цены">
     </form>
         <!-- /CKEditor default -->
 

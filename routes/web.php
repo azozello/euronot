@@ -57,6 +57,15 @@ Route::post('/add_order', [
     'as' => 'add_order'
 ]);
 
+Route::get('get_uploaded_pdf', [
+    'uses' => 'PagesController@get_uploaded_pdf',
+    'as' => 'get_uploaded_pdf'
+]);
+
+Route::post('/upload_pdf',[
+    'uses' => 'PagesController@upload_pdf',
+    'as' => 'upload_pdf'
+]);
 Route::get('/news_show/{url?}',['uses' => 'PagesController@show_one_news','as' => 'news_show']);
 
 Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
