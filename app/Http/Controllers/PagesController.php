@@ -439,7 +439,8 @@ class PagesController extends Controller
                 "item_name" => $request->item_name,
                 "item_amount" => $request->item_amount,
                 "item_price" => $request->item_price,
-                "item_value" => $request->item_value
+                "item_value" => $request->item_value,
+                "item_url" => $request->item_url
             );
             $request->session()->push('cart', $new_item);
         }
@@ -447,10 +448,16 @@ class PagesController extends Controller
     }
 
     public function show_cart(Request $request){
-        $cart = $request->session()->get('cart');
         $cart_price = 0;
-        foreach ($cart as $item) {
-            $cart_price += $item['item_price'];
+        $cart = [];
+
+        if ($request->session()->has('cart')) {
+            $cart = $request->session()->get('cart');
+            foreach ($cart as $item) {
+                $cart_price += $item['item_price'];
+            }
+        } else {
+            $request->session()->put('cart', $cart);
         }
 
         $data = MenuList::get()->toArray();
@@ -480,7 +487,7 @@ class PagesController extends Controller
         where('is_active', '=', 0)->get();
         $product = Products::where('url','=',$url)->get();
         $op_memory = App\ProductConfiguration::where('product_id_connection','=',$product[0]->product_id)->
-            where('configuration_type','=','op_memory')->get();
+        where('configuration_type','=','op_memory')->get();
         $proc = App\ProductConfiguration::where('product_id_connection','=',$product[0]->product_id)->
         where('configuration_type','=','proc')->get();
         $hard = App\ProductConfiguration::where('product_id_connection','=',$product[0]->product_id)->
@@ -566,20 +573,8 @@ class PagesController extends Controller
         else{
             $description = $product[0]->description;
         }
-        if ($product[0]->skidka != null){
-            foreach ($hard as $hard_item) {
-                $hard_item->configuration_price = $hard_item->configuration_price
-                    - (($hard_item->configuration_price / 100) * $product[0]->skidka);
-            }
-            foreach ($proc as $proc_item) {
-                $proc_item->configuration_price = $proc_item->configuration_price
-                    - (($proc_item->configuration_price / 100) * $product[0]->skidka);
-            }
-            foreach ($op_memory as $op_memory_item) {
-                $op_memory_item->configuration_price = $op_memory_item->configuration_price
-                    - (($op_memory_item->configuration_price / 100) * $product[0]->skidka);
-            }
-            $product[0]->price = $product[0]->price - (($product[0]->price / 100) * $product[0]->skidka);
+        if ($product[0]->skidka != null) {
+            $skidka_price = $product[0]->price - (($product[0]->price / 100) * $product[0]->skidka);
         }
         return view('site.products-263',[
             'title' => $title,
@@ -632,7 +627,7 @@ class PagesController extends Controller
 
     public function show_product_list(Request $request,$category = NULL,$url = NULL){
         //dd(RequestFacade::path());
-            $lang_id = 1;
+        $lang_id = 1;
         //dd($url);
         //dd($category);
         if(is_null(session('array'))){
@@ -719,7 +714,7 @@ class PagesController extends Controller
                 if ($prod->product_id == $cat){
                     $chek_products[] = $products[$k];
                 }
-                }
+            }
         }
         $products = $chek_products;
         foreach ($products as $k=>$product){
@@ -782,18 +777,18 @@ class PagesController extends Controller
                 $minus_var = $minus_var + ($array_count-1);
             }
             foreach ($products as $product) {
-                   //получение продуктов,в которых есть атрибуты переданные в url
-                    $id_array = explode(' ', $product->attributes_id);
-                    array_pop($id_array);
-                    foreach ($id_array as $array) {
-                        if (in_array($array, $attributes_id)) {
-                            $num++;
-                        }
+                //получение продуктов,в которых есть атрибуты переданные в url
+                $id_array = explode(' ', $product->attributes_id);
+                array_pop($id_array);
+                foreach ($id_array as $array) {
+                    if (in_array($array, $attributes_id)) {
+                        $num++;
                     }
-                    if (count($attributes_id) - $minus_var == $num) {    //есть ли в продекте все аттрибуты из url, кроме повторяющихся оп фильтру (пр. Шоколадный вкус,Банановый вкус)
-                        $new_products[] = $product;
-                    }
-                    $num = 0;
+                }
+                if (count($attributes_id) - $minus_var == $num) {    //есть ли в продекте все аттрибуты из url, кроме повторяющихся оп фильтру (пр. Шоколадный вкус,Банановый вкус)
+                    $new_products[] = $product;
+                }
+                $num = 0;
 
             }
             //dd($attributes_id);
@@ -805,43 +800,43 @@ class PagesController extends Controller
             foreach ($all_attributes as $attributes) {      //лагает когда на 1 атегории больше 1 и еще 1 на другой категории
                 foreach ($products as $product) {
                     //dd($product->product_type);
-                        //проверка на совпадение по цене и %арабики
-                        $id_all_product_array = explode(' ', $product->attributes_id);
-                        array_pop($id_all_product_array);
+                    //проверка на совпадение по цене и %арабики
+                    $id_all_product_array = explode(' ', $product->attributes_id);
+                    array_pop($id_all_product_array);
 
-                        $local_attributes_id = $attributes_id;
+                    $local_attributes_id = $attributes_id;
 
 
-                        while ($value = current($local_attributes_id)) {    //удаляем из локальной переменной если атрибуты с одного фильтра
-                            if ($filter_attributes_id[current($local_attributes_id)] == $filter_attributes_id[$attributes->attributes_id] && !in_array($attributes->attributes_id, $local_attributes_id)) {
-                                unset($local_attributes_id[key($local_attributes_id)]);
-                            }
-                            next($local_attributes_id);
+                    while ($value = current($local_attributes_id)) {    //удаляем из локальной переменной если атрибуты с одного фильтра
+                        if ($filter_attributes_id[current($local_attributes_id)] == $filter_attributes_id[$attributes->attributes_id] && !in_array($attributes->attributes_id, $local_attributes_id)) {
+                            unset($local_attributes_id[key($local_attributes_id)]);
                         }
+                        next($local_attributes_id);
+                    }
 
-                        foreach ($local_attributes_id as $attrib_id) {     //проверяет сколько совпадений атрибутов url и продукта
-                            foreach ($id_all_product_array as $id_all_array) {
-                                if ($attrib_id == $id_all_array) {
-                                    $num++;
+                    foreach ($local_attributes_id as $attrib_id) {     //проверяет сколько совпадений атрибутов url и продукта
+                        foreach ($id_all_product_array as $id_all_array) {
+                            if ($attrib_id == $id_all_array) {
+                                $num++;
 
-                                }
                             }
                         }
+                    }
 
-                        if (in_array($attributes->attributes_id, $id_all_product_array)) {
-                            $num++;
+                    if (in_array($attributes->attributes_id, $id_all_product_array)) {
+                        $num++;
+                    } else {
+                        $num--;
+                    }
+
+                    if (($num - 1) == (count($local_attributes_id) - $minus_var)) {
+                        if (empty($attributes_count[$attributes->attributes_id])) {
+                            $attributes_count[$attributes->attributes_id] = 1;
                         } else {
-                            $num--;
+                            $attributes_count[$attributes->attributes_id]++;
                         }
-
-                        if (($num - 1) == (count($local_attributes_id) - $minus_var)) {
-                            if (empty($attributes_count[$attributes->attributes_id])) {
-                                $attributes_count[$attributes->attributes_id] = 1;
-                            } else {
-                                $attributes_count[$attributes->attributes_id]++;
-                            }
-                        }
-                        $num = 0;
+                    }
+                    $num = 0;
 
                 }
             }
@@ -935,7 +930,7 @@ class PagesController extends Controller
         $uri_string = substr($uri_string, 0, -1);
         $referer = Redirect::back()->getTargetUrl();
         $segments = explode('/', $referer);
-       // dd($segments);
+        // dd($segments);
         $url = 'http://'.$segments[2].'/'.$segments[3].'/'.$segments[4].'/'.$uri_string;
         //dd($url);
         return redirect($url)->with('array',[
