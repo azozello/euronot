@@ -367,15 +367,46 @@ class PagesController extends Controller
         else{
             $description = $news[0]->description;
         }
+
+        if (DB::table('news')->count > 1) {
+            if (DB::table('news')->count > 2) {
+                $index = 0;
+                foreach ($next_news = News::where('url', '!=',$url)->get() as $news) {
+                    if ($index == 2) break;
+                    else {
+                        if ($index == 0) {
+                            $prev_news = $news;
+                        } else {
+                            $next_news = $news;
+                            $see_also_news = $news;
+                        }
+                        $index++;
+                    }
+                }
+            } else {
+                $prev_news = News::where('url', '!=',$url)->get()[0];
+                $next_news = News::where('url', '!=',$url)->get()[0];
+                $see_also_news = News::where('url', '!=' ,$url)->get()[0];
+            }
+        } else {
+            $prev_news = News::where('url', $url)->get()[0];
+            $next_news = News::where('url', $url)->get()[0];
+            $see_also_news = News::where('url', $url)->get()[0];
+        }
+
         return view('site.news-inner',[
             'title' => $title,
             'description' => $description,
             'organization' =>Organization::get()[0],
             'header' => $data,
             'cities' => OpenHours::get(),
-            'page_array' => News::where('url',$url)->get()[0]->attributesToArray()
+            'page_array' => News::where('url', $url)->get()[0]->attributesToArray(),
+            'next' => $next_news,
+            'prev' => $prev_news,
+            'also' => $see_also_news
         ]);
     }
+
     public function show_warranty(){
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {

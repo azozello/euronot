@@ -13,33 +13,6 @@
 
 </head>
 @include('layouts.site.header')
-<div class="menu-row row hidden-md-down">
-	<nav class="navbar navbar-light bg-faded">
-		<button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
-				data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-				aria-label="Toggle navigation"></button>
-		<div class="collapse navbar-toggleable-md" id="navbarResponsive">
-			<ul class="nav nav-bar main-menu">
-				<li><a href="/product_list/noutbuki"><span class="sprite sprite-menu-icon-1"></span>Ноутбуки
-						б/у</a>
-				</li>
-				<li><a href="/product_list/sistemnie-bloki"><span class="sprite sprite-menu-icon-2"></span>Системные
-						блоки
-						б/у</a>
-				</li>
-				<li><a href="/product_list/monitory"><span class="sprite sprite-menu-icon-3"></span>Мониторы
-						б/у</a>
-				</li>
-				<li><a href="/product_list/printery"><span class="sprite sprite-menu-icon-4"></span>Принтеры
-						(NEW)</a>
-				</li>
-				<li><a href="/product_list/doc-stancii"><span
-								class="sprite sprite-menu-icon-5"></span>Док Станции б/у</a></li>
-				<li><a href="igrovie-sistemniki"><span class="sprite sprite-menu-icon-2"></span>Игровые системники</a></li>
-			</ul>
-
-		</div>			</nav>
-</div>
 </div>
 </div>
 <div class="content container-fluid other">
@@ -110,18 +83,14 @@
 			<div id="navigate">
 				<div class="row">
 					<div class="col-sm-4 left-nav">
-						<a href="#" class="prev"><i
+						<a href="news_show/{{$prev['url']}}" class="prev"><i
 								class="glyphicon glyphicon-chevron-left"></i>Предыдущая статья</a>
 					</div>
 					<div class="col-sm-4 mid-nav">
-						<a href="#" class="back"><i class="glyphicon glyphicon-repeat"></i>перейти
-						                                                                   к
-						                                                                   списку</a>
+						<a href="{{route('show_site_news')}}" class="back"><i class="glyphicon glyphicon-repeat"></i>перейти к списку</a>
 					</div>
 					<div class="col-sm-4 right-nav">
-						<a href="#" class="next">Следующая
-						                         статья<i
-									class="glyphicon glyphicon-chevron-right"></i></a>
+						<a href="news_show/{{$next['url']}}" class="next">Следующая статья<i class="glyphicon glyphicon-chevron-right"></i></a>
 					</div>
 				</div>
 			</div>
@@ -135,19 +104,16 @@
 	line-height: 12px;">ЕЩЕ СТАТЬИ:</h2>
 			<div class="list page_block news">
 				<div class="block" id="preimucshestvo_kompyuternoy_tehniki_biznes_klassa">
-					<a href="/news-inner.html">
+					<a href="news_show/{{$also['url']}}">
 						<div class="image" style="background-image: url('images/news/20170816184257126.jpg');">
 						</div>
 					</a>
 					<div class="date">24.05.2017</div>
 					<div class="title">
-						<a class="title" href="/news-inner.html">Lorem ipsum dolor sit amet, consectetur adipisicing
+						<a class="title" href="news_show/{{$also['url']}}">Lorem ipsum dolor sit amet, consectetur adipisicing
 						                                         elit. Animi, iste.</a>
 					</div>
-
 				</div>
-
-
 			</div>
 		</div>
 		<div class="clear"></div>

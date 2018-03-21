@@ -492,6 +492,7 @@
                 </div>
             </div>
         </div>
+
         <script type="text/javascript"
                 src="https://maps.google.com/maps/api/js?key=AIzaSyDFZheD4LS-qwom8GeDyp_RMEZvDKcF-ec" async></script>
         <script type="text/javascript">
@@ -706,6 +707,43 @@
         </script>
         <div id="map_block" class="row">
             <div id="map_canvas" style="height: 370px;"></div>
+        </div>
+        <div class="menu-row row hidden-md-down">
+            <nav class="navbar navbar-light bg-faded">
+                <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
+                        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                        aria-label="Toggle navigation"></button>
+                <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+                    <ul class="nav nav-bar main-menu">
+                        <li><a href="/product_list/noutbuki"><span class="sprite sprite-menu-icon-1"></span>Ноутбуки
+                                б/у</a>
+                        </li>
+                        <li><a href="/product_list/sistemnie-bloki"><span class="sprite sprite-menu-icon-2"></span>Системные
+                                блоки
+                                б/у</a>
+                        </li>
+                        <li><a href="/product_list/monitory"><span class="sprite sprite-menu-icon-3"></span>Мониторы
+                                б/у</a>
+                        </li>
+                        <li><a href="/product_list/printery"><span class="sprite sprite-menu-icon-4"></span>Принтеры
+                                (NEW)</a>
+                        </li>
+                        <li><a href="/product_list/doc-stancii"><span
+                                        class="sprite sprite-menu-icon-5"></span>Док Станции б/у</a></li>
+                        <li><a href="igrovie-sistemniki"><span class="sprite sprite-menu-icon-2"></span>Игровые системники</a></li>
+                    </ul>
+                    <ul class="nav nav-bar main-menu main-menu2">
+                        @if(isset($header))
+                            @foreach($header as $i=>$menu_item)
+                                @if($menu_item['type'] == 'down')
+                                    <li><a href="{{$menu_item['url']}}"><span class="sprite sprite-menu-icon-
+                                        @if($i < 4)i@else1@endif"></span>{{$menu_item['name']}}</a></li>
+                                @endif
+                            @endforeach
+                        @endif
+                    </ul>
+                </div>
+            </nav>
         </div>
 @yield('main_pages')
 </body>
