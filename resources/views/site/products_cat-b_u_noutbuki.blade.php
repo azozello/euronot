@@ -120,6 +120,11 @@
 									</div>
 								</a>
 								<div class="line"></div>
+								@if($product->skidka != null)
+									<div class="price">{{$product->skidka}} грн</div>
+								@else
+									<div class="price">{{$product->price}} грн</div>
+								@endif
 								<div class="price">{{$product->price}} грн</div>
 							</div>
 

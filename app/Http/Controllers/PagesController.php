@@ -74,11 +74,6 @@ use SiteMap as SiteMapFacade;
 
 class PagesController extends Controller
 {
-
-    public function get_configuration_price(Request $request){
-        return ProductConfiguration::where('product_id_connection', $request->product_id)->get();
-    }
-
     public function upload_pdf(Request $request){
         if (DB::table('partner_price_pdf')->count() > 0) {
             PartnerPrice::where('id', 1)->update(
@@ -107,7 +102,13 @@ class PagesController extends Controller
         ]);
     }
     public function search_products(Request $request){
-        //dd($request);
+        $items_in_cart = 0;
+
+        if ($request->session()->get('cart')) {
+            foreach ($request->session()->get('cart') as $item) {
+                $items_in_cart++;
+            }
+        }
         if(is_null($request->sort_type) || is_null($request->product_at_page)){
             $pagination_num = 24;
             $sort_type_column = 'id';
@@ -168,10 +169,19 @@ class PagesController extends Controller
             'attributes_count' => $attributes_count,
             'url_attributes' => $attributes_id,
             'meta_tags' => $meta_tags,
-            'cities' => OpenHours::get()
+            'cities' => OpenHours::get(),
+            'items_in_cart' => $items_in_cart
         ]);
     }
+
     public function main_page_edit(Request $request){
+        $items_in_cart = 0;
+
+        if ($request->session()->get('cart')) {
+            foreach ($request->session()->get('cart') as $item) {
+                $items_in_cart++;
+            }
+        }
         $img0 = MainPage::where('id','=',1)->value('img_0');
         $img1 = MainPage::where('id','=',1)->value('img_1');
         $img2 = MainPage::where('id','=',1)->value('img_2');
@@ -250,7 +260,15 @@ class PagesController extends Controller
         ]);
         return redirect()->back();
     }
-    public function show_site_index(){
+
+    public function show_site_index(Request $request) {
+        $items_in_cart = 0;
+
+        if ($request->session()->get('cart')) {
+            foreach ($request->session()->get('cart') as $item) {
+                $items_in_cart++;
+            }
+        }
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -283,11 +301,19 @@ class PagesController extends Controller
             'main_page' => MainPage::where('id','=',1)->get(),
             'products_hit' => $products_hit,
             'products_rec' => $products_rec,
-            'products_new' => $products_new
+            'products_new' => $products_new,
+            'items_in_cart' => $items_in_cart
         ]);
     }
 
-    public function show_contact(){
+    public function show_contact(Request $request){
+        $items_in_cart = 0;
+
+        if ($request->session()->get('cart')) {
+            foreach ($request->session()->get('cart') as $item) {
+                $items_in_cart++;
+            }
+        }
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -302,10 +328,18 @@ class PagesController extends Controller
             'meta_tags' => DefaultMetaTags::where('type','=','service')->get()[0],
             'organization' =>Organization::get()[0],
             'header' => $data,
-            'cities' => OpenHours::get()
+            'cities' => OpenHours::get(),
+            'items_in_cart' => $items_in_cart
         ]);
     }
-    public function show_delivery(){
+    public function show_delivery(Request $request){
+        $items_in_cart = 0;
+
+        if ($request->session()->get('cart')) {
+            foreach ($request->session()->get('cart') as $item) {
+                $items_in_cart++;
+            }
+        }
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -320,10 +354,19 @@ class PagesController extends Controller
             'meta_tags' => DefaultMetaTags::where('type','=','dostavka')->get()[0],
             'organization' =>Organization::get()[0],
             'header' => $data,
-            'cities' => OpenHours::get()
+            'cities' => OpenHours::get(),
+            'items_in_cart' => $items_in_cart
         ]);
     }
-    public function show_site_news(Request $request){
+    public function show_site_news(Request $request) {
+        $items_in_cart = 0;
+
+        if ($request->session()->get('cart')) {
+            foreach ($request->session()->get('cart') as $item) {
+                $items_in_cart++;
+            }
+        }
+
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -339,11 +382,20 @@ class PagesController extends Controller
             'organization' =>Organization::get()[0],
             'header' => $data,
             'cities' => OpenHours::get(),
-            'all_news' => News::where('name','!=',NULL)->where('page_lang','=',1)->paginate(30)->appends($request->all())
+            'all_news' => News::where('name','!=',NULL)->where('page_lang','=',1)->paginate(30)->appends($request->all()),
+            'items_in_cart' => $items_in_cart
         ]);
     }
 
-    public function show_one_news($url) {
+    public function show_one_news(Request $request, $url) {
+        $items_in_cart = 0;
+
+        if ($request->session()->get('cart')) {
+            foreach ($request->session()->get('cart') as $item) {
+                $items_in_cart++;
+            }
+        }
+
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -394,7 +446,7 @@ class PagesController extends Controller
             $see_also_news = News::where('url', $url)->get()[0];
         }
 
-        return view('site.news-inner',[
+        return view('site.news-inner', [
             'title' => $title,
             'description' => $description,
             'organization' =>Organization::get()[0],
@@ -403,11 +455,20 @@ class PagesController extends Controller
             'page_array' => News::where('url', $url)->get()[0]->attributesToArray(),
             'next' => $next_news,
             'prev' => $prev_news,
-            'also' => $see_also_news
+            'also' => $see_also_news,
+            'items_in_cart' => $items_in_cart,
+            'items_in_cart' => $items_in_cart
         ]);
     }
 
-    public function show_warranty(){
+    public function show_warranty(Request $request){
+        $items_in_cart = 0;
+
+        if ($request->session()->get('cart')) {
+            foreach ($request->session()->get('cart') as $item) {
+                $items_in_cart++;
+            }
+        }
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -427,7 +488,8 @@ class PagesController extends Controller
             'text' => Warranty::get()[0]->attributesToArray()['warranty_text'],
             'name' => Warranty::get()[0]->attributesToArray()['warranty_name'],
             'title' => Warranty::get()[0]->attributesToArray()['warranty_title'],
-            'description' => Warranty::get()[0]->attributesToArray()['warranty_description']
+            'description' => Warranty::get()[0]->attributesToArray()['warranty_description'],
+            'items_in_cart' => $items_in_cart
         ]);
     }
 
@@ -479,6 +541,13 @@ class PagesController extends Controller
     }
 
     public function show_cart(Request $request){
+        $items_in_cart = 0;
+
+        if ($request->session()->get('cart')) {
+            foreach ($request->session()->get('cart') as $item) {
+                $items_in_cart++;
+            }
+        }
         $cart_price = 0;
         $cart = [];
 
@@ -506,11 +575,19 @@ class PagesController extends Controller
             'header' => $data,
             'cities' => OpenHours::get(),
             'cart' => $cart,
-            'cart_price' => $cart_price
+            'cart_price' => $cart_price,
+            'items_in_cart' => $items_in_cart
         ]);
     }
 
-    public function show_products($url){
+    public function show_products(Request $request, $url) {
+        $items_in_cart = 0;
+
+        if ($request->session()->get('cart')) {
+            foreach ($request->session()->get('cart') as $item) {
+                $items_in_cart++;
+            }
+        }
         $product = Products::where('url', '=', $url)->get();
         $images = ProductImages::where('images_product_id', '=', $product[0]->product_id)->get();
         $texts = ProductsTexts::where('product_id_connection', '=', $product[0]->product_id)->get();
@@ -628,11 +705,19 @@ class PagesController extends Controller
             'timer_days' => $timer_days,
             'timer_hours' => $timer_hours,
             'timer_minutes' => $timer_minutes,
-            'timer_seconds' => $timer_seconds
+            'timer_seconds' => $timer_seconds,
+            'items_in_cart' => $items_in_cart
         ]);
     }
 
-    public function show_about(){
+    public function show_about(Request $request){
+        $items_in_cart = 0;
+
+        if ($request->session()->get('cart')) {
+            foreach ($request->session()->get('cart') as $item) {
+                $items_in_cart++;
+            }
+        }
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -652,13 +737,19 @@ class PagesController extends Controller
             'text' => AboutCompany::get()[0]->attributesToArray()['about_company_text'],
             'name' => AboutCompany::get()[0]->attributesToArray()['about_company_name'],
             'title' => AboutCompany::get()[0]->attributesToArray()['about_company_title'],
-            'description' => AboutCompany::get()[0]->attributesToArray()['about_company_description']
+            'description' => AboutCompany::get()[0]->attributesToArray()['about_company_description'],
+            'items_in_cart' => $items_in_cart
         ]);
     }
 
     public function show_product_list(Request $request,$category = NULL,$url = NULL){
-        //dd(RequestFacade::path());
-        $lang_id = 1;
+        $items_in_cart = 0;
+
+        if ($request->session()->get('cart')) {
+            foreach ($request->session()->get('cart') as $item) {
+                $items_in_cart++;
+            }
+        }        $lang_id = 1;
         //dd($url);
         //dd($category);
         if(is_null(session('array'))){
@@ -935,15 +1026,20 @@ class PagesController extends Controller
             'attributes' => $attributes,
             'attributes_count' => $attributes_count,
             'url_attributes' => $attributes_id,
-            'cities' => OpenHours::get()
+            'cities' => OpenHours::get(),
+            'items_in_cart' => $items_in_cart
         ]);
     }
 
     public function refresh_page(Request $request){
-        //dd($request);
-        $uri = RequestFacade::path(); //получаем URI
+        $items_in_cart = 0;
+
+        if ($request->session()->get('cart')) {
+            foreach ($request->session()->get('cart') as $item) {
+                $items_in_cart++;
+            }
+        }        $uri = RequestFacade::path(); //получаем URI
         $segmentsURI = explode('/',$uri); //делим на части по разделителю "/"
-//dd($request);
         $attributes = ProductAttributes::where('attributes_lang_id','=',1)->get();
         $array_key = AppliedMethods::get_key_array($request->attributes_id);
         //$array_key = array_reverse($array_key);
@@ -967,7 +1063,8 @@ class PagesController extends Controller
         return redirect($url)->with('array',[
             'sort_type' => $request->sort_type,
             'product_at_page' => $request->product_at_page,
-            'header' => MenuList::get()->toArray()
+            'header' => MenuList::get()->toArray(),
+            'items_in_cart' => $items_in_cart
         ]);
     }
     public function add_comment(Request $request){

@@ -24,17 +24,19 @@
                 <div class="collapse" id="exCollapsingNavbar2">
                     <div class="text-muted p-1">
                         <ul class="nav nav-bar main-menu mob">
-                            @foreach($header as $item)
-                                @if($item['type'] == 'down')
-                                    <li><a class="" href="{{$item['url']}}" style="cursor: pointer">{{$item['name']}}</a></li>
-                                @endif
-                            @endforeach
                             <li><a href="/product_list/noutbuki">Ноутбуки б/у</a></li>
                             <li><a href="/product_list/sistemnie-bloki">Системные блоки б/у</a></li>
                             <li><a href="/product_list/monitory">Мониторы б/у</a></li>
                             <li><a href="/product_list/printery">Принтеры (NEW)</a></li>
                             <li><a href="/product_list/doc-stancii">Док Станции б/у</a></li>
                             <li><a href="/product_list/igrovie-sistemniki">Игровые системники</a></li>
+                            @if($header != null)
+                                @foreach($header as $item)
+                                    @if($item['type'] == 'down')
+                                        <li><a class="" href="{{$item['url']}}" style="cursor: pointer">{{$item['name']}}</a></li>
+                                    @endif
+                                @endforeach
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -434,39 +436,6 @@
                                 </div>
                             @endif
                         @endforeach
-                        {{--<div class="item grafik_0 active">--}}
-                            {{--пн.-пт. 10:00-19:00<br/>сб.-вс. 10:30-17:00--}}
-                        {{--</div>--}}
-                        {{--<div class="item grafik_1 line_3">--}}
-                            {{--ул.Преображенская<br/>пн.-пт. 09:00-19:00<br/>сб. 10:00-17:00<br/>вс. выходной--}}
-                        {{--</div>--}}
-                        {{--<div class="item grafik_2 line_3">--}}
-                            {{--ул.Ришельевская<br/>пн.-сб. 09:00-19:00<br/>вс. 10:00- 17:00--}}
-                        {{--</div>--}}
-                        {{--<div class="item grafik_3 line_3">--}}
-                            {{--пн.-пт. 09:00-18:00<br/>сб. 09:00-16:00<br/>вс. выходной--}}
-                        {{--</div>--}}
-                        {{--<div class="item grafik_4">--}}
-                            {{--пн.-пт. 09:00-18:00<br/>сб.-вс. 10:00-17:00--}}
-                        {{--</div>--}}
-                        {{--<div class="item grafik_5">--}}
-                            {{--пн.-пт. 08:00-15:00<br/>сб.-вс. 09:00-16:00--}}
-                        {{--</div>--}}
-                        {{--<div class="item grafik_6">--}}
-                            {{--пн.-пт. 08:00-15:00<br/>сб.-вс. 09:00-16:00--}}
-                        {{--</div>--}}
-                        {{--<div class="item grafik_7">--}}
-                            {{--пн.-пт. 09:00-18:00<br/>сб.-вс. 09:00-18:00--}}
-                        {{--</div>--}}
-                        {{--<div class="item grafik_8">--}}
-                            {{--пн.-пт. 09:00-19:00<br/>сб.-вс. 09:00-17:00--}}
-                        {{--</div>--}}
-                        {{--<div class="item grafik_9">--}}
-                            {{--пн.-пт. 09:00-19:00<br/>сб.-вс. 10:00-17:00--}}
-                        {{--</div>--}}
-                        {{--<div class="item grafik_10">--}}
-                            {{--пн.-пт. 10:00-20:00<br/>сб.-вс. 10:00-20:00--}}
-                        {{--</div>--}}
                     </div>
                 </div>
             </div>
@@ -474,7 +443,7 @@
             <div class="col-lg-3 col-md-3 basket" id="quick_basket">
                 <a>
                     <div class="button">
-                        <div class="count">0</div>
+                        <div class="count">{{$items_in_cart}}</div>
                     </div>
                 </a>
                 <div class="right">
