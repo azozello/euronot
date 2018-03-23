@@ -705,8 +705,7 @@
                         @if(isset($header))
                             @foreach($header as $i=>$menu_item)
                                 @if($menu_item['type'] == 'down')
-                                    <li><a href="{{$menu_item['url']}}"><span class="sprite sprite-menu-icon-
-                                        @if($i < 4)i@else1@endif"></span>{{$menu_item['name']}}</a></li>
+                                    <li><a href="{{$menu_item['url']}}"><span class="sprite sprite-menu-icon-1"></span>{{$menu_item['name']}}</a></li>
                                 @endif
                             @endforeach
                         @endif
