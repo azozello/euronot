@@ -16,6 +16,7 @@
 @include('layouts.site.header')
 	</div>
 </div>
+
 <div class="content container-fluid other">
 	<div class="container">
 		<script>
@@ -211,7 +212,7 @@
 					$(".disc").hide();
 					$("#discounter label.val").text('');
 					$("#discounter label.proc").text('');
-					$("#sum_all label").text(sum_prev);
+					$("#sum_all label").text(sum_prev + sum);
 				}
 				$("#discount").val(discounter);
 			}
@@ -290,7 +291,10 @@
 				<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span
 						itemprop="title">Компьютерная техника бу</span></a>&nbsp;&nbsp;>&nbsp;&nbsp;<span>Оформление заказа</span></span>
 			</div>
-			<h1 class="page_title">Оформление заказа</h1>
+			@if($items_in_cart == 0)
+				<h1 class="page_title">В Вашей корзине нет товаров.</h1>
+			@else
+				<h1 class="page_title">Оформление заказа</h1>
 			<div id="after_ord_block">
 				<table class="prod_card table">
 					<tr>
@@ -306,7 +310,7 @@
 							@foreach($cart as $item)
 								<tr>
 								<td class="pict">
-									<a href="products/{{$item['item_url']}}"><img alt="Ноутбук HP Compaq 6730b"
+									<a href="products/{{$item['item_url']}}"><img alt="{{$item['item_name']}}"
 																	 src="images/pictures/products/20170427131100387.jpg"/></a>
 								</td>
 								<td class="title">
@@ -316,14 +320,14 @@
 								<td class="quantity">
 									<div class="quant_block">
 										<div class="quant_down">-</div>
-										<input type="text" size="3" value="1"/>
+										<input type="text" size="3" value="{{$item['item_amount']}}"/>
 										<div class="quant_up">+</div>
 									</div>
 								</td>
 								<td class="price">
 									<label>{{$item['item_price']}}</label>&nbsp;<span>грн</span>
 								</td>
-								<td class="sum"><label>{{$item['item_price']}}</label>&nbsp;<span>грн</span></td>
+								<td class="sum"><label>{{$item['item_value']}}</label>&nbsp;<span>грн</span></td>
 								<td class="remove">
 									<form method="post" action="{{route('delete_item_from_cart')}}" enctype="multipart/form-data" class="form-inline">
 										<input name="_token" type="hidden" value="{{ csrf_token() }}">
@@ -356,8 +360,7 @@
 				</div>
 				<div id="sum_all_line" class="right_sum_line">
 					Всего к оплате:
-					<div id="sum_all" class="right_sum"><label>
-							@if(isset($item)){{$item['item_price']}}@endif</label> грн
+					<div id="sum_all" class="right_sum"><label>{{$cart_price}}</label> грн
 					</div>
 				</div>
 			</div>
@@ -440,7 +443,7 @@
 			<input type="hidden" name="all_orders" id="all_orders" value="0"/>
 			<input type="hidden" name="min_order" id="min_order" value=""/>
 			<input type="hidden" name="free_delivery" id="free_delivery" value=""/>
-
+			@endif
 
 			<div class="page_text">
 				<div style="max-width: 600px; margin: 0 auto; font-size: 20px; text-align: center;">Оператор перезвонит

@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Facades\AppliedMethods;
+use App\ProductComment;
 use Illuminate\Http\Request;
 use App\Review;
 use FileAction;
 use File;
 class ReviewController extends Controller
 {
-    public function make_new(){
-            $data = new Review();
-            $data->title = '';
-            $data->text = '';
-            $data->image = '';
-            $data->save();
+    public function make_new(Request $request){
+            $keys = AppliedMethods::get_key_array($request->is_active);
+            foreach ($keys as $key) {
+                ProductComment::where('product_comment_id', '=',$key)->update([
+                    'is_active' => $request->is_active[$key]
+                ]);
+                }
         return redirect()->back();
     }
     public function reviews_update(Request $request){

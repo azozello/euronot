@@ -1,1 +1,7 @@
-<p><img alt="" src="<?php echo $message->embed('/Users/user/work/admin_panel/public/images/flags/2017-10-03 23.17.33.jpg'); ?>" style="height:100px; width:128px" /></p>
+<p>ФИО - {{$name}}</p>
+
+<p>Email - {{$email}}</p>
+
+<p>Телефон - {{$phone}}</p>
+
+<p>Комментарий - {{$comment}}</p>

@@ -2189,6 +2189,11 @@
 	</div>
 </div>
 
+<div style="background-image: url(../index_app/images/slider/20171011175607283.png)" class="block_baner_right">
+	<div class="hidden_baner_lg">
+		+
+	</div>
+</div>
 
 <script type="text/javascript">
 	$(document).ready(function(){ $('.checkbox').each(function() { if($(this).parent().find('input[type=checkbox]:checked').length==1){$(this).addClass('checked');} });
@@ -2450,6 +2455,23 @@
 		if(bot_pos<=130){bot_val=130-bot_pos;if(bot_val<10){bot_val=10;}$('#go_top').css('bottom',bot_val+'px');}
 		else{$('#go_top').css('bottom','10px');}
 	}
+	
+(function() {
+  		setTimeout(function() {
+			$(".block_baner_right").css({"right": "0"});
+  		}, 5000);
+})();
+
+$(".hidden_baner_lg").click(function(){
+	$(".block_baner_right").css({"right": "-320px"});
+});
+
+$(window).resize(function(){
+if($(window).width() < 1700){
+	$(".block_baner_right").css({"right": "-320px"});
+}
+});
+
 </script>
 <link href="{{ asset('index_app/css/main2.css') }} " rel="stylesheet"/>
 <script src="{{ asset('index_app/plugins/cusel.js') }}"></script>

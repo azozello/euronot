@@ -103,12 +103,18 @@ class PagesController extends Controller
     }
     public function search_products(Request $request){
         $items_in_cart = 0;
-
-        if ($request->session()->get('cart')) {
-            foreach ($request->session()->get('cart') as $item) {
-                $items_in_cart++;
+        $cart_price = 0;
+        if($request->session()->get('cart') !== null){
+            $cart_poducts = $request->session()->get('cart');
+            foreach ($cart_poducts as $item) {
+                $items_in_cart += $item['item_amount'];
+                $cart_price += $item['item_value'];
             }
         }
+        else{
+            $cart_poducts = NULL;
+        }
+
         if(is_null($request->sort_type) || is_null($request->product_at_page)){
             $pagination_num = 24;
             $sort_type_column = 'id';
@@ -170,18 +176,13 @@ class PagesController extends Controller
             'url_attributes' => $attributes_id,
             'meta_tags' => $meta_tags,
             'cities' => OpenHours::get(),
-            'items_in_cart' => $items_in_cart
+            'items_in_cart' => $items_in_cart,
+            'cart_products' => $cart_poducts,
+            'cart_price' => $cart_price
         ]);
     }
 
     public function main_page_edit(Request $request){
-        $items_in_cart = 0;
-
-        if ($request->session()->get('cart')) {
-            foreach ($request->session()->get('cart') as $item) {
-                $items_in_cart++;
-            }
-        }
         $img0 = MainPage::where('id','=',1)->value('img_0');
         $img1 = MainPage::where('id','=',1)->value('img_1');
         $img2 = MainPage::where('id','=',1)->value('img_2');
@@ -263,11 +264,16 @@ class PagesController extends Controller
 
     public function show_site_index(Request $request) {
         $items_in_cart = 0;
-
-        if ($request->session()->get('cart')) {
-            foreach ($request->session()->get('cart') as $item) {
-                $items_in_cart++;
+        $cart_price = 0;
+        if($request->session()->get('cart') !== null){
+            $cart_poducts = $request->session()->get('cart');
+            foreach ($cart_poducts as $item) {
+                $items_in_cart += $item['item_amount'];
+                $cart_price += $item['item_value'];
             }
+        }
+        else{
+            $cart_poducts = NULL;
         }
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
@@ -302,18 +308,59 @@ class PagesController extends Controller
             'products_hit' => $products_hit,
             'products_rec' => $products_rec,
             'products_new' => $products_new,
-            'items_in_cart' => $items_in_cart
+            'items_in_cart' => $items_in_cart,
+            'cart_products' => $cart_poducts,
+            'cart_price' => $cart_price
         ]);
     }
 
-    public function show_contact(Request $request){
-        $items_in_cart = 0;
-
-        if ($request->session()->get('cart')) {
-            foreach ($request->session()->get('cart') as $item) {
-                $items_in_cart++;
+    public function contacts_show(Request $request) {
+        return view('contacts',[
+            'blocks' => Contacts::get(),
+            'num' => 0
+        ]);
+    }
+    public function contact_update(Request $request) {
+        //dd($request->file());
+        $img = Contacts::where('id','=',$request->id)->value('image_block');
+        if (isset($request->file()['image'])) {
+            if ($request->file()['image']->move(public_path('images'), $request->file()['image']->getClientOriginalName())) {
+                $img = $request->file()['image']->getClientOriginalName();
+            } else {
+                return 'Ошибка загрузки';
             }
         }
+        Contacts::where('id','=',$request->id)->update([
+            'text_block_1' => $request->text_block_1,
+            'text_block_2' => $request->text_block_2,
+            'image_block' => $img
+        ]);
+        return redirect()->back();
+    }
+
+    public function contact_delete(Request $request) {
+        Contacts::where('id','=',$request->id)->delete();
+        return redirect()->back();
+    }
+    public function make_new_contact(){
+        $data = new Contacts();
+        $data->save();
+        return redirect()->back();
+    }
+    public function show_contact(Request $request){
+        $items_in_cart = 0;
+        $cart_price = 0;
+        if($request->session()->get('cart') !== null){
+            $cart_poducts = $request->session()->get('cart');
+            foreach ($cart_poducts as $item) {
+                $items_in_cart += $item['item_amount'];
+                $cart_price += $item['item_value'];
+            }
+        }
+        else{
+            $cart_poducts = NULL;
+        }
+
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -329,17 +376,26 @@ class PagesController extends Controller
             'organization' =>Organization::get()[0],
             'header' => $data,
             'cities' => OpenHours::get(),
-            'items_in_cart' => $items_in_cart
+            'items_in_cart' => $items_in_cart,
+            'cart_price' => $cart_price,
+            'contacts' => Contacts::get(),
+            'num' => 0
         ]);
     }
     public function show_delivery(Request $request){
         $items_in_cart = 0;
-
-        if ($request->session()->get('cart')) {
-            foreach ($request->session()->get('cart') as $item) {
-                $items_in_cart++;
+        $cart_price = 0;
+        if($request->session()->get('cart') !== null){
+            $cart_poducts = $request->session()->get('cart');
+            foreach ($cart_poducts as $item) {
+                $items_in_cart += $item['item_amount'];
+                $cart_price += $item['item_value'];
             }
         }
+        else{
+            $cart_poducts = NULL;
+        }
+
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -355,16 +411,23 @@ class PagesController extends Controller
             'organization' =>Organization::get()[0],
             'header' => $data,
             'cities' => OpenHours::get(),
-            'items_in_cart' => $items_in_cart
+            'items_in_cart' => $items_in_cart,
+            'cart_products' => $cart_poducts,
+            'cart_price' => $cart_price
         ]);
     }
     public function show_site_news(Request $request) {
         $items_in_cart = 0;
-
-        if ($request->session()->get('cart')) {
-            foreach ($request->session()->get('cart') as $item) {
-                $items_in_cart++;
+        $cart_price = 0;
+        if($request->session()->get('cart') !== null){
+            $cart_poducts = $request->session()->get('cart');
+            foreach ($cart_poducts as $item) {
+                $items_in_cart += $item['item_amount'];
+                $cart_price += $item['item_value'];
             }
+        }
+        else{
+            $cart_poducts = NULL;
         }
 
         $data = MenuList::get()->toArray();
@@ -383,17 +446,24 @@ class PagesController extends Controller
             'header' => $data,
             'cities' => OpenHours::get(),
             'all_news' => News::where('name','!=',NULL)->where('page_lang','=',1)->paginate(30)->appends($request->all()),
-            'items_in_cart' => $items_in_cart
+            'items_in_cart' => $items_in_cart,
+            'cart_products' => $cart_poducts,
+            'cart_price' => $cart_price
         ]);
     }
 
     public function show_one_news(Request $request, $url) {
         $items_in_cart = 0;
-
-        if ($request->session()->get('cart')) {
-            foreach ($request->session()->get('cart') as $item) {
-                $items_in_cart++;
+        $cart_price = 0;
+        if($request->session()->get('cart') !== null){
+            $cart_poducts = $request->session()->get('cart');
+            foreach ($cart_poducts as $item) {
+                $items_in_cart += $item['item_amount'];
+                $cart_price += $item['item_value'];
             }
+        }
+        else{
+            $cart_poducts = NULL;
         }
 
         $data = MenuList::get()->toArray();
@@ -420,8 +490,8 @@ class PagesController extends Controller
             $description = $news[0]->description;
         }
 
-        if (DB::table('news')->count > 1) {
-            if (DB::table('news')->count > 2) {
+        if (DB::table('news')->count() > 1) {
+            if (DB::table('news')->count() > 2) {
                 $index = 0;
                 foreach ($next_news = News::where('url', '!=',$url)->get() as $news) {
                     if ($index == 2) break;
@@ -457,18 +527,25 @@ class PagesController extends Controller
             'prev' => $prev_news,
             'also' => $see_also_news,
             'items_in_cart' => $items_in_cart,
-            'items_in_cart' => $items_in_cart
+            'cart_products' => $cart_poducts,
+            'cart_price' => $cart_price
         ]);
     }
 
     public function show_warranty(Request $request){
         $items_in_cart = 0;
-
-        if ($request->session()->get('cart')) {
-            foreach ($request->session()->get('cart') as $item) {
-                $items_in_cart++;
+        $cart_price = 0;
+        if($request->session()->get('cart') !== null){
+            $cart_poducts = $request->session()->get('cart');
+            foreach ($cart_poducts as $item) {
+                $items_in_cart += $item['item_amount'];
+                $cart_price += $item['item_value'];
             }
         }
+        else{
+            $cart_poducts = NULL;
+        }
+
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -489,14 +566,18 @@ class PagesController extends Controller
             'name' => Warranty::get()[0]->attributesToArray()['warranty_name'],
             'title' => Warranty::get()[0]->attributesToArray()['warranty_title'],
             'description' => Warranty::get()[0]->attributesToArray()['warranty_description'],
-            'items_in_cart' => $items_in_cart
+            'items_in_cart' => $items_in_cart,
+            'cart_products' => $cart_poducts,
+            'cart_price' => $cart_price
         ]);
     }
 
     public function count_items_in_cart(Request $request){
         if ($cart = $request->session()->get('cart')) {
             $items = 0;
-            foreach ($cart as $item) $items++;
+            foreach ($cart as $item) {
+                $items += $item['item_amount'];
+            }
             return $items;
         }
     }
@@ -515,15 +596,28 @@ class PagesController extends Controller
 
     public function add_item_in_cart(Request $request){
         if ($cart = $request->session()->get('cart')) {
-            $new_item = array(
-                "item_id" => $request->item_id,
-                "item_name" => $request->item_name,
-                "item_amount" => $request->item_amount,
-                "item_price" => $request->item_price,
-                "item_value" => $request->item_value,
-                "item_url" => $request->item_url
-            );
-            $request->session()->push('cart', $new_item);
+            $flag_index = -1;
+            foreach ($cart as $i => $item) {
+                if ($item['item_id'] == $request->item_id) {
+                    $flag_index = $i;
+                    break;
+                }
+            }
+            if ($flag_index != -1) {
+                $cart[$flag_index]['item_amount'] += $request->item_amount;
+                $cart[$flag_index]['item_value'] += $request->item_amount * $request->item_price;
+                $request->session()->put('cart', $cart);
+            } else {
+                $new_item = array(
+                    "item_id" => $request->item_id,
+                    "item_name" => $request->item_name,
+                    "item_amount" => $request->item_amount,
+                    "item_price" => $request->item_price,
+                    "item_value" => $request->item_amount * $request->item_price,
+                    "item_url" => $request->item_url
+                );
+                $request->session()->push('cart', $new_item);
+            }
         } else {
             $cart = [];
             $request->session()->put('cart', $cart);
@@ -532,7 +626,7 @@ class PagesController extends Controller
                 "item_name" => $request->item_name,
                 "item_amount" => $request->item_amount,
                 "item_price" => $request->item_price,
-                "item_value" => $request->item_value,
+                "item_value" => $request->item_amount * $request->item_price,
                 "item_url" => $request->item_url
             );
             $request->session()->push('cart', $new_item);
@@ -542,20 +636,22 @@ class PagesController extends Controller
 
     public function show_cart(Request $request){
         $items_in_cart = 0;
-
-        if ($request->session()->get('cart')) {
-            foreach ($request->session()->get('cart') as $item) {
-                $items_in_cart++;
+        $cart_price = 0;
+        if($request->session()->get('cart') !== null){
+            $cart_poducts = $request->session()->get('cart');
+            foreach ($cart_poducts as $item) {
+                $items_in_cart += $item['item_amount'];
+                $cart_price += $item['item_value'];
             }
         }
-        $cart_price = 0;
+        else{
+            $cart_poducts = NULL;
+        }
+
         $cart = [];
 
         if ($request->session()->has('cart')) {
             $cart = $request->session()->get('cart');
-            foreach ($cart as $item) {
-                $cart_price += $item['item_price'];
-            }
         } else {
             $request->session()->put('cart', $cart);
         }
@@ -576,18 +672,26 @@ class PagesController extends Controller
             'cities' => OpenHours::get(),
             'cart' => $cart,
             'cart_price' => $cart_price,
-            'items_in_cart' => $items_in_cart
+            'items_in_cart' => $items_in_cart,
+            'cart_products' => $cart_poducts
         ]);
     }
 
     public function show_products(Request $request, $url) {
+        $show_down = true;
         $items_in_cart = 0;
-
-        if ($request->session()->get('cart')) {
-            foreach ($request->session()->get('cart') as $item) {
-                $items_in_cart++;
+        $cart_price = 0;
+        if($request->session()->get('cart') !== null){
+            $cart_poducts = $request->session()->get('cart');
+            foreach ($cart_poducts as $item) {
+                $items_in_cart += $item['item_amount'];
+                $cart_price += $item['item_value'];
             }
         }
+        else{
+            $cart_poducts = NULL;
+        }
+
         $product = Products::where('url', '=', $url)->get();
         $images = ProductImages::where('images_product_id', '=', $product[0]->product_id)->get();
         $texts = ProductsTexts::where('product_id_connection', '=', $product[0]->product_id)->get();
@@ -603,7 +707,7 @@ class PagesController extends Controller
         $images = ProductImages::where('images_product_id','=',$product[0]->product_id)->get();
         $texts = ProductsTexts::where('product_id_connection','=',$product[0]->product_id)->get();
         $comments = ProductComment::where('product_id_connection','=',$product[0]->product_id)->
-        where('is_active','=',0)->get();
+        where('is_active','=',1)->get();
         $all_products = Products::get();
         $attributes = explode(" ", $product[0]->attributes_id);
         $same_products = array();
@@ -685,6 +789,7 @@ class PagesController extends Controller
             $skidka_price = $product[0]->price - (($product[0]->price / 100) * $product[0]->skidka);
         }
         return view('site.products-263',[
+            'show' => $show_down,
             'title' => $title,
             'description' => $description,
             'skidka' => $skidka,
@@ -706,18 +811,26 @@ class PagesController extends Controller
             'timer_hours' => $timer_hours,
             'timer_minutes' => $timer_minutes,
             'timer_seconds' => $timer_seconds,
-            'items_in_cart' => $items_in_cart
+            'items_in_cart' => $items_in_cart,
+            'cart_products' => $cart_poducts,
+            'cart_price' => $cart_price
         ]);
     }
 
     public function show_about(Request $request){
         $items_in_cart = 0;
-
-        if ($request->session()->get('cart')) {
-            foreach ($request->session()->get('cart') as $item) {
-                $items_in_cart++;
+        $cart_price = 0;
+        if($request->session()->get('cart') !== null){
+            $cart_poducts = $request->session()->get('cart');
+            foreach ($cart_poducts as $item) {
+                $items_in_cart += $item['item_amount'];
+                $cart_price += $item['item_value'];
             }
         }
+        else{
+            $cart_poducts = NULL;
+        }
+
         $data = MenuList::get()->toArray();
         for ($x = 0; $x < count($data)-1; $x++) {
             for ($y = $x + 1; $y < count($data); $y++) {
@@ -738,18 +851,27 @@ class PagesController extends Controller
             'name' => AboutCompany::get()[0]->attributesToArray()['about_company_name'],
             'title' => AboutCompany::get()[0]->attributesToArray()['about_company_title'],
             'description' => AboutCompany::get()[0]->attributesToArray()['about_company_description'],
-            'items_in_cart' => $items_in_cart
+            'items_in_cart' => $items_in_cart,
+            'cart_products' => $cart_poducts,
+            'cart_price' => $cart_price
         ]);
     }
 
     public function show_product_list(Request $request,$category = NULL,$url = NULL){
+        $show_down = true;
         $items_in_cart = 0;
-
-        if ($request->session()->get('cart')) {
-            foreach ($request->session()->get('cart') as $item) {
-                $items_in_cart++;
+        $cart_price = 0;
+        if($request->session()->get('cart') !== null){
+            $cart_poducts = $request->session()->get('cart');
+            foreach ($cart_poducts as $item) {
+                $items_in_cart += $item['item_amount'];
+                $cart_price += $item['item_value'];
             }
-        }        $lang_id = 1;
+        }
+        else{
+            $cart_poducts = NULL;
+        }
+        $lang_id = 1;
         //dd($url);
         //dd($category);
         if(is_null(session('array'))){
@@ -1015,6 +1137,7 @@ class PagesController extends Controller
         orderBy('products.'.$sort_type_column, $sort_type_way)->
         paginate($pagination_num);
         return view('site.products_cat-b_u_noutbuki', [
+            'show' => $show_down,
             'meta_tags' => DefaultMetaTags::where('type','=',$meta_name)->get()[0],
             'foot' => $category_foot,
             'organization' =>Organization::get()[0],
@@ -1027,18 +1150,27 @@ class PagesController extends Controller
             'attributes_count' => $attributes_count,
             'url_attributes' => $attributes_id,
             'cities' => OpenHours::get(),
-            'items_in_cart' => $items_in_cart
+            'items_in_cart' => $items_in_cart,
+            'cart_products' => $cart_poducts,
+            'cart_price' => $cart_price
         ]);
     }
 
     public function refresh_page(Request $request){
         $items_in_cart = 0;
-
-        if ($request->session()->get('cart')) {
-            foreach ($request->session()->get('cart') as $item) {
-                $items_in_cart++;
+        $cart_price = 0;
+        if($request->session()->get('cart') !== null){
+            $cart_poducts = $request->session()->get('cart');
+            foreach ($cart_poducts as $item) {
+                $items_in_cart += $item['item_amount'];
+                $cart_price += $item['item_value'];
             }
-        }        $uri = RequestFacade::path(); //получаем URI
+        }
+        else{
+            $cart_poducts = NULL;
+        }
+
+        $uri = RequestFacade::path(); //получаем URI
         $segmentsURI = explode('/',$uri); //делим на части по разделителю "/"
         $attributes = ProductAttributes::where('attributes_lang_id','=',1)->get();
         $array_key = AppliedMethods::get_key_array($request->attributes_id);
@@ -1064,7 +1196,9 @@ class PagesController extends Controller
             'sort_type' => $request->sort_type,
             'product_at_page' => $request->product_at_page,
             'header' => MenuList::get()->toArray(),
-            'items_in_cart' => $items_in_cart
+            'items_in_cart' => $items_in_cart,
+            'cart_products' => $cart_poducts,
+            'cart_price' => $cart_price
         ]);
     }
     public function add_comment(Request $request){
@@ -1251,9 +1385,15 @@ class PagesController extends Controller
     public function reviews(){
 
         SessionVariables::set_session_variable('floder','images');
-
+        $blocks = DB::table('product_comment')->
+        leftJoin('products', 'product_comment.product_id_connection', '=', 'products.product_id')->
+        groupBy('product_comment.product_comment_id')->
+        get();
+        $is_active_block = DB::table('product_comment')->get();
+        //dd($blocks);
         return view('reviews',[
-            'blocks' => Review::paginate(6),
+            'blocks' => $blocks,
+            'is_active_block' => $is_active_block,
             'num' => 0
         ]);
     }
@@ -1267,7 +1407,7 @@ class PagesController extends Controller
         SessionVariables::set_session_variable('floder','images');
 
         return view('subscription',[
-            'emails' => Subscription::paginate(20),
+            'emails' => Post::paginate(30),
             'subscription' => SubscriptionTemplate::get()
         ]);
     }
@@ -1478,12 +1618,14 @@ class PagesController extends Controller
         foreach ($products_categories_connection_list as $list){
             $categories_list[$list->product_id_connection][] = $list->category_name_connection;
         }
+        //dd($categories_list);
         return view('product_list',[
             'products' => $products,
             'categories' => $categories,
             'categories_list' => $categories_list
         ]);
     }
+
     public function attribute_list(){
         $attributes = DB::table('product_attributes')->
         where('product_attributes.attributes_lang_id',1)->
@@ -1543,11 +1685,13 @@ class PagesController extends Controller
             'present_products' => Products::get()
         ]);
     }
+    /*
     public function contacts_show(){
         return view('contacts_editor',[
             'contacts' => Contacts::get()
         ]);
     }
+    */
     public function contacts_edit(Request $request){
         Contacts::truncate();
         $data = new Contacts();

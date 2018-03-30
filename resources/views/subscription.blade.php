@@ -32,13 +32,16 @@
 	<div class="content">
 
 		<!-- Task manager table -->
-		<div class="col-md-4">
+		<div class="col-md-12">
 			<div class="panel panel-white">
 				<table class="table tasks-list table-lg">
 					<thead>
 					<tr>
 						<th>#</th>
 						<th>Email</th>
+						<th>Имя</th>
+						<th>Телефон</th>
+						<th>Коммент</th>
 						<th>Дата</th>
 					</tr>
 					</thead>
@@ -47,6 +50,9 @@
 						<tr>
 							<td>{{$email->id}}</td>
 							<td>{{$email->email}}</td>
+							<td>{{$email->name}}</td>
+							<td>{{$email->phone_number}}</td>
+							<td>{{$email->comment}}</td>
 							<td>{{$email->date}}</td>
 						</tr>
 					@endforeach()
@@ -54,24 +60,6 @@
 				</table>
 				{{$emails->links()}}
 			</div>
-		</div>
-		<div class="col-md-8">
-			<form method="post" action="{{ route('subscription_template') }}" enctype="multipart/form-data">
-				<input name="_token" type="hidden" value="{{ csrf_token() }}">
-				<h6 class="content-group text-semibold">
-					<input type="text" name="title" value="@if(isset($subscription[0])){{$subscription[0]->title}}@endif"
-						   placeholder="Тайтл">
-				</h6>
-				<textarea name="text" id="editor1">
-            @if(isset($subscription[0])){{$subscription[0]->text}}@endif
-                           </textarea>
-				<button type="submit" class="btn btn-success">Обновить</button>
-			</form>
-			<br>
-
-				<input name="_token" type="hidden" value="{{ csrf_token() }}">
-				<button type="submit" class="btn btn-success">Отправить тестовый email</button>
-			
 		</div>
 		<script type="text/javascript">
             var ckeditor1 = CKEDITOR.replace( 'editor1' );

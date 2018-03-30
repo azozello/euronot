@@ -24,28 +24,28 @@
     <div class="content">
         <form role="form" method="post" action="{{route('product_card_add')}}" enctype="multipart/form-data">
             <input name="_token" type="hidden" value="{{ csrf_token() }}">
-            <div class="form-button">
+            <div class="form-button button_th_pn">
                 <button type="submit" class="btn bg-teal-400">Обновить</button>
             </div>
             <!-- CKEditor default -->
             <ul class="nav nav-tabs nav-tabs-product" role="tablist">
-                <li role="presentation"><a href="#common" aria-controls="common" role="tab"
+                <li role="presentation" class="active"><a href="#common" aria-controls="common" role="tab"
                                            data-toggle="tab">Общее</a></li>
                 <li role="presentation"><a href="#communications" aria-controls="" role="tab"
                                            data-toggle="tab">Связи</a></li>
-                <li role="presentation" class="active"><a href="#characteristics" aria-controls="" role="tab"
+                <li role="presentation"><a href="#characteristics" aria-controls="" role="tab"
                                                           data-toggle="tab">Характеристики</a></li>
 
             </ul>
             <div class="tab-content">
-                <div role="tabpanel" class="common tab-pane fade " id="common">
+                <div role="tabpanel" class="common tab-pane fade active in" id="common">
                     @if($errors->any())
                         <div class="alert alert-danger">
                             <strong>{{$errors->first()}}</strong>
                         </div>
                     @endif
                     <div class="panel panel-flat">
-                        <div class="product-content">
+                        <div class="product-content padding-block_ad">
 
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
@@ -66,7 +66,7 @@
                                     <div role="tabpanel" class="tab-pane fade in active " id="{{$languages[0]->language_url}}">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <div class="form-content" style="padding-left: 50px;">
+                                                <div class="form-content">
                                                     <input name="language_id[0]" type="hidden" value="{{$languages[0]->id}}">
                                                     <h5 class="content-group text-semibold">
                                                         <label>Название*</label>
@@ -97,15 +97,14 @@
                                                         <textarea placeholder="{{$languages[0]->description_placeholder}}" name="description[0]"
                                                                   id=""></textarea>
                                                     </h5>
-
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                             </div>
                                             <div class="col-md-12">
-                                                <label>Краткое описание</label>
+                                                <label style="text-align: left; padding-left: 10px;">Краткое описание</label>
                                                 <div class="row">
-                                                        <textarea name="short_description" id="editor31"></textarea>
+                                                        <textarea name="short_description" class="mn_cl_bad" id="editor31"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -279,8 +278,8 @@
                                     </div>
                                 @endif
 
-                                <div class="common-right">
-                                    <h5 class="content-group text-semibold">
+                                <div class="common-right block_bottom_time">
+                                    <h5 class="content-group text-semibold cl_select_mn">
                                         <label>Таймер Акции</label>
                                         <input min="0" max="1000" id="number" style="width: 2em;" name="timer_days" type="number">
                                         <input min="0" max="24" id="number" style="width: 2em;" name="timer_hours" type="number">
@@ -299,60 +298,73 @@
                                         </select>
                                         <h5>Подпись подарочного товара</h5>
                                         <textarea name="present_product_text"></textarea>
-                                        <h5>Статус товара</h5>
-                                        <select class="selectpicker" name="product_status">
-                                            <option>
-                                            </option>
-                                            <option>Супер цена
-                                            </option>
-                                            <option>Акция
-                                            </option>
-                                            <option>Хит продаж
-                                            </option>
-                                            <option>Продано
-                                            </option>
-                                        </select>
-                                        <h5>Наличие</h5>
-                                        <select class="selectpicker" name="product_isset">
-                                            <option>В наличии
-                                            </option>
-                                            <option>Нет в наличии
-                                            </option>
-                                        </select>
-                                        <h5>Гарантия</h5>
-                                        <select class="selectpicker" name="product_garanty">
-                                            <option>3 месяца
-                                            </option>
-                                            <option>6 месяцев
-                                            </option>
-                                            <option>12 месяцев
-                                            </option>
-                                            <option>24 месяца
-                                            </option>
-                                        </select>
-                                        <h5>Оценка пользователя</h5>
-                                        <select class="selectpicker" name="product_stars">
-                                            <option>5 звезд
-                                            </option>
-                                            <option>4 звезды
-                                            </option>
-                                            <option>3 звезды
-                                            </option>
-                                            <option>2 звезды
-                                            </option>
-                                            <option>1 звезда
-                                            </option>
-                                        </select>
+                                        <h5>
+                                            <label>Обозначение</label> 
+                                            <select class="selectpicker" name="product_status">
+                                                <option>
+                                                </option>
+                                                <option>Супер цена
+                                                </option>
+                                                <option>Акция
+                                                </option>
+                                                <option>Хит продаж
+                                                </option>
+                                                <option>Продано
+                                                </option>
+                                            </select> 
+                                        </h5>
+                                        
+                                        <h5><label>Статус товара</label>
+                                             <select class="selectpicker" name="product_isset">
+                                                <option>В наличии
+                                                </option>
+                                                <option>Нет в наличии
+                                                </option>
+                                            </select>
+
+                                        </h5>
+                                       
+                                        <h5><label>Гарантия</label>
+                                             <select class="selectpicker" name="product_garanty">
+                                                <option>3 месяца
+                                                </option>
+                                                <option>6 месяцев
+                                                </option>
+                                                <option>12 месяцев
+                                                </option>
+                                                <option>24 месяца
+                                                </option>
+                                            </select>
+                                        </h5>
+                                       
+                                        <h5><label>Оценка пользователя</label>
+                                            <select class="selectpicker" name="product_stars">
+                                                <option>5 звезд
+                                                </option>
+                                                <option>4 звезды
+                                                </option>
+                                                <option>3 звезды
+                                                </option>
+                                                <option>2 звезды
+                                                </option>
+                                                <option>1 звезда
+                                                </option>
+                                            </select>
+                                        </h5>
+                                        
+                                        
                                         @if(isset($products))
-                                        <h5>Подарочный товар</h5>
-                                        <select class="selectpicker" name="product_gift">
-                                            <option>
-                                            </option>
-                                            @foreach($products as $product)
-                                            <option>{{$product->name}}
-                                            </option>
-                                            @endforeach
-                                        </select>
+                                        <h5>
+                                            <label>Подарочный товар</label>
+                                            <select class="selectpicker" name="product_gift">
+                                                <option>
+                                                </option>
+                                                @foreach($products as $product)
+                                                <option>{{$product->name}}
+                                                </option>
+                                                @endforeach
+                                            </select>
+                                        </h5>
                                         @endif
                                         <h5 class="content-group text-semibold">
                                             <label>Цена*</label>
@@ -380,7 +392,7 @@
                                         </h5>
                                         <h5 class="content-group text-semibold">
                                             <label>Жесткий диск*</label>
-                                            <select class="selectpicker" name="type_memory">
+                                            <select class="selectpicker select_admin_mn" name="type_memory">
                                                 <option>HDD
                                                 </option>
                                                 <option>SSD
@@ -405,7 +417,7 @@
 
 
                                         <div class="upload-photos">
-                                            <div class="input-file-row-1">
+                                            <div class="input-file-row-1 photo_admin_ben">
 
                                                 <div class="upload-file-container">
                                                     <img id="image" src="#" alt=""/>
@@ -431,145 +443,158 @@
                         </div>
                     </div>
                 </div>
+                </div>
+
                 <!-- Связи  -->
                 <div role="tabpanel" class="communications tab-pane fade  " id="communications">
                     <div class="panel panel-flat">
-                        <div class="product-content">
+                        <div class="product-content padding-block_ad">
 
                             <!-- Nav tabs -->
 
                             <!-- Tab panes -->
                             <div role="tabpanel" class="tab-pane fade in active" id="ru2">
-                            <label>Процессор</label>
-                                <table style="width:20%">
-                                    <tr>
-                                        <th><input type="text" name="proc_conf[0]" value="" placeholder=""></th>
-                                        <th><input type="text" name="proc_conf_price[0]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="proc_conf[1]" value="" placeholder=""></td>
-                                        <td><input type="text" name="proc_conf_price[1]" value="" placeholder=""></td>
-                                    </tr>
-                                    <tr>
-                                        <th><input type="text" name="proc_conf[2]" value="" placeholder=""></th>
-                                        <th><input type="text" name="proc_conf_price[2]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="proc_conf[3]" value="" placeholder=""></td>
-                                        <td><input type="text" name="proc_conf_price[3]" value="" placeholder=""></td>
-                                    </tr>
-                                    <tr>
-                                        <th><input type="text" name="proc_conf[4]" value="" placeholder=""></th>
-                                        <th><input type="text" name="proc_conf_price[4]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="proc_conf[5]" value="" placeholder=""></td>
-                                        <td><input type="text" name="proc_conf_price[5]" value="" placeholder=""></td>
-                                    </tr>
-                                    <tr>
-                                        <th><input type="text" name="proc_conf[6]" value="" placeholder=""></th>
-                                        <th><input type="text" name="proc_conf_price[6]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="proc_conf[7]" value="" placeholder=""></td>
-                                        <td><input type="text" name="proc_conf_price[7]" value="" placeholder=""></td>
-                                    </tr>
-                                    <tr>
-                                        <th><input type="text" name="proc_conf[8]" value="" placeholder=""></th>
-                                        <th><input type="text" name="proc_conf_price[8]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="proc_conf[9]" value="" placeholder=""></td>
-                                        <td><input type="text" name="proc_conf_price[9]" value="" placeholder=""></td>
-                                    </tr>
-                                </table>
-                                <label>Оперативная память</label>
-                                <table style="width:20%">
-                                    <tr>
-                                        <th><input type="text" name="op_memory[0]" value="" placeholder=""></th>
-                                        <th><input type="text" name="op_memory_price[0]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="op_memory[1]" value="" placeholder=""></td>
-                                        <td><input type="text" name="op_memory_price[1]" value="" placeholder=""></td>
-                                    </tr>
-                                    <tr>
-                                        <th><input type="text" name="op_memory[2]" value="" placeholder=""></th>
-                                        <th><input type="text" name="op_memory_price[2]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="op_memory[3]" value="" placeholder=""></td>
-                                        <td><input type="text" name="op_memory_price[3]" value="" placeholder=""></td>
-                                    </tr>
-                                    <tr>
-                                        <th><input type="text" name="op_memory[4]" value="" placeholder=""></th>
-                                        <th><input type="text" name="op_memory_price[4]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="op_memory[5]" value="" placeholder=""></td>
-                                        <td><input type="text" name="op_memory_price[5]" value="" placeholder=""></td>
-                                    </tr>
-                                    <tr>
-                                        <th><input type="text" name="op_memory[6]" value="" placeholder=""></th>
-                                        <th><input type="text" name="op_memory_price[6]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="op_memory[7]" value="" placeholder=""></td>
-                                        <td><input type="text" name="op_memory_price[7]" value="" placeholder=""></td>
-                                    </tr>
-                                    <tr>
-                                        <th><input type="text" name="op_memory[8]" value="" placeholder=""></th>
-                                        <th><input type="text" name="op_memory_price[8]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="op_memory[9]" value="" placeholder=""></td>
-                                        <td><input type="text" name="op_memory_price[9]" value="" placeholder=""></td>
-                                    </tr>
-                                </table>
-                                <label>Жесткий диск</label>
-                                <table style="width:20%">
-                                    <tr>
-                                        <th><input type="text" name="hard[0]" value="" placeholder=""></th>
-                                        <th><input type="text" name="hard_price[0]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="hard[1]" value="" placeholder=""></td>
-                                        <td><input type="text" name="hard_price[1]" value="" placeholder=""></td>
-                                    </tr>
-                                    <tr>
-                                        <th><input type="text" name="hard[2]" value="" placeholder=""></th>
-                                        <th><input type="text" name="hard_price[2]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="hard[3]" value="" placeholder=""></td>
-                                        <td><input type="text" name="hard_price[3]" value="" placeholder=""></td>
-                                    </tr>
-                                    <tr>
-                                        <th><input type="text" name="hard[4]" value="" placeholder=""></th>
-                                        <th><input type="text" name="hard_price[4]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="hard[5]" value="" placeholder=""></td>
-                                        <td><input type="text" name="hard_price[5]" value="" placeholder=""></td>
-                                    </tr>
-                                    <tr>
-                                        <th><input type="text" name="hard[6]" value="" placeholder=""></th>
-                                        <th><input type="text" name="hard_price[6]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="hard[7]" value="" placeholder=""></td>
-                                        <td><input type="text" name="hard_price[7]" value="" placeholder=""></td>
-                                    </tr>
-                                    <tr>
-                                        <th><input type="text" name="hard[8]" value="" placeholder=""></th>
-                                        <th><input type="text" name="hard_price[8]" value="" placeholder=""></th>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="hard[9]" value="" placeholder=""></td>
-                                        <td><input type="text" name="hard_price[9]" value="" placeholder=""></td>
-                                    </tr>
-                                </table>
+                                <div class="flex_table_mn">
+                                    <div class="block_fl_table">
+                                        <label class="title_table_ad">Процессор</label>
+                                        <table style="width:20%" class="table_admin_ln">
+                                            <tr>
+                                                <th><input type="text" name="hard[0]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[0]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[1]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[1]" value="" placeholder=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="text" name="hard[2]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[2]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[3]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[3]" value="" placeholder=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="text" name="hard[4]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[4]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[5]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[5]" value="" placeholder=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="text" name="hard[6]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[6]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[7]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[7]" value="" placeholder=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="text" name="hard[8]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[8]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[9]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[9]" value="" placeholder=""></td>
+                                            </tr>
+                                        </table>
+                                    </div>
 
+                                     <div class="block_fl_table">
+                                        <label class="title_table_ad">Оперативная память</label>
+                                        <table style="width:20%" class="table_admin_ln">
+                                            <tr>
+                                                <th><input type="text" name="hard[0]" value="" placeholder=""></th>
+                                
+                                                <th><input type="text" name="hard_price[0]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[1]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[1]" value="" placeholder=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="text" name="hard[2]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[2]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[3]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[3]" value="" placeholder=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="text" name="hard[4]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[4]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[5]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[5]" value="" placeholder=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="text" name="hard[6]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[6]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[7]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[7]" value="" placeholder=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="text" name="hard[8]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[8]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[9]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[9]" value="" placeholder=""></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <div class="block_fl_table">
+                                        <label class="title_table_ad">Жесткий диск</label>
+                                        <table style="width:20%" class="table_admin_ln">
+                                            <tr>
+                                                <th><input type="text" name="hard[0]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[0]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[1]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[1]" value="" placeholder=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="text" name="hard[2]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[2]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[3]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[3]" value="" placeholder=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="text" name="hard[4]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[4]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[5]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[5]" value="" placeholder=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="text" name="hard[6]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[6]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[7]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[7]" value="" placeholder=""></td>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="text" name="hard[8]" value="" placeholder=""></th>
+                                                <th><input type="text" name="hard_price[8]" value="" placeholder=""></th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="hard[9]" value="" placeholder=""></td>
+                                                <td><input type="text" name="hard_price[9]" value="" placeholder=""></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                
                                 <table class=" products-table-list no-chess table-lang table-lg table-striped"
                                        id="table-collapsed_55">
                                     <thead>
@@ -604,11 +629,11 @@
                 </div>
                 <div role="tabpanel" class="characteristics tab-pane fade " id="characteristics">
                     <div class="panel panel-flat">
-                        <div class="product-content">
+                        <div class="product-content padding-block_ad">
 
                             <!-- Nav tabs -->
 
-                            <div class="tab-content tab-flex">
+                            <div class="tab-content tab-flex tab_03_block">
                                 <div role="tabpanel" class="tab-pane fade in active" id="ru3">
                                     <table class="no-chess table-lang table-lg table-striped"
                                            style="" id="table-collapsed_5">

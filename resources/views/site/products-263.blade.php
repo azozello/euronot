@@ -135,7 +135,7 @@
 					</div>
 					<h1 class="prod_title" itemprop="name">{{$product[0]->name}}</h1>
 					<div class="row prod-block-2">
-						<div class="col-lg-6 block-left">
+						<div class="col-lg-4 block-left">
 							<div class="avail">{{$product[0]->product_isset}}</div>
 							<div class="rating_block">
 								<div class="rating_title"> Оценка пользователей:</div>
@@ -196,6 +196,12 @@
                                             document.getElementById('result_price').value = added_price;
                                         }
 
+
+                                        function update_item_amount() {
+                                            document.getElementById('item_amount').value
+												= document.getElementById('add_quant_inp').value;
+                                        }
+
                                         function change_price_s() {
                                             var skidka = +{{$skidka}};
 
@@ -203,7 +209,6 @@
                                             var select_proc = document.getElementById('select_proc');
                                             added_price +=
                                                 +select_proc.options[select_proc.selectedIndex].value;
-
 
                                             var select_memory = document.getElementById('select_memory');
                                             added_price += +select_memory.options[select_memory.selectedIndex].value;
@@ -287,27 +292,28 @@
 								</div>
 								<div class="time_produkt">
 									<span class="text_time">До конца осталось:</span>
-									<span class="time_time_pr">
-									<span class="dey_prod">{{$timer_days}} :
+								<span class="time_time_pr" id="timer">
+									<span class="dey_prod"><span id="days">{{$timer_days}}</span> :
 										<p class="text_pod">Дни</p>
 									</span>
 
-									<span class="dey_prod">{{$timer_hours}} :
+									<span class="dey_prod"><span id="hours">{{$timer_hours}}</span> :
 										<p class="text_pod">Часы</p>
 									</span>
-									<span class="dey_prod">{{$timer_minutes}} :
+									<span class="dey_prod"><span id="minutes">{{$timer_minutes}}</span> :
 										<p class="text_pod">Мин</p>
 									</span>
-									<span class="dey_prod">{{$timer_seconds}}
+									<span class="dey_prod"><span id="seconds">{{$timer_seconds}}</span>
 										<p class="text_pod">Сек</p>
 									</span>
 								</span>
+								
 
 								</div>
 							</div>
 						@endif
 						<div class="haract-block">
-							@if(!is_null($proc))
+							@if(!is_null($proc[0]->configuration))
 								<div class="block_flex_pr">
 									<div>
 										<img src="../index_app/images/cpu.png">
@@ -329,7 +335,7 @@
 									</div>
 								</div>
 							@endif
-							@if(!is_null($op_memory))
+							@if(!is_null($op_memory[0]->configuration))
 								<div class="block_flex_pr">
 									<div>
 										<img src="../index_app/images/ozu.png">
@@ -352,7 +358,7 @@
 
 								</div>
 							@endif
-							@if(!is_null($hard))
+							@if(!is_null($hard[0]->configuration))
 								<div class="block_flex_pr">
 									<div>
 										<img src="../index_app/images/ssd.png">
@@ -394,16 +400,18 @@
 						@if(!is_null($skidka))
 							<div class="price_i">
 								<span class="price_Top">{{$skidka}}% знижки</span>
-								<div class="price"><span itemprop="price">
+						<div class="price"><span itemprop="price">
 						<div class="price"><span itemprop="price" id="cena">
                         {{$product[0]->price}}</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
 
-								</div>
+									</div>
+							</div>
 								<div class="price"><span itemprop="price" id="cena_s">
                         {{$skidka_price}}</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
+							
 								<div id="buy_block">
 									<div class="quant_block">
-										<input type="text" size="3" value="1" id="add_quant_inp"/>
+										<input type="text" size="3" value="1" id="add_quant_inp" onchange="update_item_amount()"/>
 									</div>
 									<div class="clear"></div>
 								</div>
@@ -412,7 +420,7 @@
                         {{$product[0]->price}}</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
 									<div id="buy_block">
 										<div class="quant_block">
-											<input type="text" size="3" value="1" id="add_quant_inp"/>
+											<input type="text" size="3" value="1" id="add_quant_inp" onchange="update_item_amount()"/>
 										</div>
 										<div class="clear"></div>
 									</div>
@@ -422,15 +430,14 @@
 										<input name="_token" type="hidden" value="{{ csrf_token() }}">
 										<input name="item_id" type="hidden" value="{{$product[0]['id']}}">
 										<input name="item_name" type="hidden" value="{{$product[0]['name']}}">
-										<input name="item_amount" type="hidden" value="1">
-										<input name="item_value" type="hidden" value="1">
+										<input name="item_amount" type="hidden" value="1" id="item_amount">
 										@if(!is_null($skidka))
 											<input name="item_price" id="result_price" type="hidden" value="{{$skidka_price}}">
 										@else
 											<input name="item_price" id="result_price" type="hidden" value="{{$product[0]['price']}}">
 										@endif
 										<input name="item_url" type="hidden" value="{{$product[0]['url']}}">
-										<div class="add_to_basket_btn"><button type="submit">Купить</button></div>
+										<div class="add_to_basket_btn"><button style = " background-color: rgba(1,1,1,0); border: none; " type="submit">Купить</button></div>
 									</form>
 								</div>
 								<div>
@@ -449,6 +456,7 @@
 										</div>
 
 									</div>
+								</div>
 									<div class="clear"></div>
 									<div class="block-metki clear row">
 										<div class="col-sm-3 col-xs-6">
@@ -1080,6 +1088,43 @@
                 autoplay: true,
                 loop: true
             });
+			
+var timer;
+
+var compareDate = new Date();
+compareDate.setDate(compareDate.getDate() + 7); //just for this demo today + 7 days
+
+timer = setInterval(function() {
+  timeBetweenDates(compareDate);
+}, 1000);
+
+function timeBetweenDates(toDate) {
+  var dateEntered = toDate;
+  var now = new Date();
+  var difference = dateEntered.getTime() - now.getTime();
+
+  if (difference <= 0) {
+
+    // Timer done
+    clearInterval(timer);
+  
+  } else {
+    
+    var seconds = Math.floor(difference / 1000);
+    var minutes = Math.floor(seconds / 60);
+    var hours = Math.floor(minutes / 60);
+    var days = Math.floor(hours / 24);
+
+    hours %= 24;
+    minutes %= 60;
+    seconds %= 60;
+
+    $("#days").text(days);
+    $("#hours").text(hours);
+    $("#minutes").text(minutes);
+    $("#seconds").text(seconds);
+  }
+}
 		</script>
 		</body>
 </html>

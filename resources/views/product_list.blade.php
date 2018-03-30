@@ -103,9 +103,11 @@
                             </div>
                         </a></th>
                     <th>
-                        @foreach($categories_list[$product->product_id] as $list)
-                            @if(isset($list)){{$list}}@endif
-                        @endforeach
+                        @if(isset($categories_list[$product->product_id]))
+                            @foreach($categories_list[$product->product_id] as $list)
+                                @if(isset($list)){{$list}}@endif
+                            @endforeach
+                        @endif
                     </th>
                     <th>{{$product->quantity}}</th>
                     <th><label class="switch">

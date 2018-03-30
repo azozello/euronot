@@ -83,14 +83,14 @@
 			<div id="navigate">
 				<div class="row">
 					<div class="col-sm-4 left-nav">
-						<a href="news_show/{{$prev['url']}}" class="prev"><i
+						<a href="{{$prev['url']}}" class="prev"><i
 								class="glyphicon glyphicon-chevron-left"></i>Предыдущая статья</a>
 					</div>
 					<div class="col-sm-4 mid-nav">
 						<a href="{{route('show_site_news')}}" class="back"><i class="glyphicon glyphicon-repeat"></i>перейти к списку</a>
 					</div>
 					<div class="col-sm-4 right-nav">
-						<a href="news_show/{{$next['url']}}" class="next">Следующая статья<i class="glyphicon glyphicon-chevron-right"></i></a>
+						<a href="{{$next['url']}}" class="next">Следующая статья<i class="glyphicon glyphicon-chevron-right"></i></a>
 					</div>
 				</div>
 			</div>
@@ -104,13 +104,13 @@
 	line-height: 12px;">ЕЩЕ СТАТЬИ:</h2>
 			<div class="list page_block news">
 				<div class="block" id="preimucshestvo_kompyuternoy_tehniki_biznes_klassa">
-					<a href="news_show/{{$also['url']}}">
+					<a href="{{$also['url']}}">
 						<div class="image" style="background-image: url('images/news/20170816184257126.jpg');">
 						</div>
 					</a>
 					<div class="date">24.05.2017</div>
 					<div class="title">
-						<a class="title" href="news_show/{{$also['url']}}">Lorem ipsum dolor sit amet, consectetur adipisicing
+						<a class="title" href="{{$also['url']}}">Lorem ipsum dolor sit amet, consectetur adipisicing
 						                                         elit. Animi, iste.</a>
 					</div>
 				</div>

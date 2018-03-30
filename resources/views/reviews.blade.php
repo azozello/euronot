@@ -15,13 +15,6 @@
                 <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Отзывы</span></h4>
             </div>
 
-            <div class="page-header-btn-right">
-            <form method="get" action="{{route('make_new')}}" enctype="multipart/form-data" style="height: 40px;">
-
-                <button type="submit" class="btn bg-teal-400 upload page-header-btn-right" style="">Добавить отзыв</button>
-
-            </form>
-            </div>
 
         </div>
 
@@ -40,72 +33,40 @@
     <!-- Detached content -->
         <div class="container-detached">
             <div class="content-detached">
+                <form method="get" action="{{route('make_new')}}" enctype="multipart/form-data" style="height: 40px;">
+                    <button type="" class="btn bg-teal-400 ">Сохранить</button>
+                <div class="panel panel-padding panel-flat">
+                    <table class="table table-lang table-lg">
+                        <thead>
+                        <tr>
+                            <th>Продукт</th>
+                            <th>Комментарий</th>
+                            <th>Имя</th>
+                            <th>Email</th>
+                            <th>Время</th>
+                            <th>Дата</th>
+                            <th>Состояние</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($blocks as $k => $block)
+                            <tr>
+                                <th class="text-center">{{$block->name}}</th>
+                                <th class="text-center">{!!  $block->comment  !!}</th>
+                                <th>{{$block->comment_name}}</th>
+                                <th>{{$block->comment_email}}</th>
+                                <th>{{$block->comment_time}}</th>
+                                <th>{{$block->comment_date}}</th>
+                                <th><input type="text" class="req" name="is_active[{{$block->product_comment_id}}]" title="Имя" placeholder="Имя" value="{{$is_active_block[$k]->is_active}}"/></th>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
 
 
+                </div>
+                </form>
 
-                @foreach($blocks as $k=>$block)
-
-                    <div class="col-md-6 panel-body-reviews">
-
-                        <div class="panel-body " style="padding: 0;">
-                            <form method="post" action="{{ route('reviews_update') }}" enctype="multipart/form-data">
-                                <input name="id" type="hidden" value="{{$block->id}}">
-
-                                <div class="panel panel-flat panel-reviews" style="margin: 0;">
-                                    <div class="main-text-block">
-                                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                                        <div class="btn bg-teal-400 file_upload">Выбрать фото <input type="file" multiple name="image"></div>
-                                        <div>
-                                            <input type="text" name="title" placeholder="Заголовок" value="{{$block->title}}">
-                                        </div>
-                                    </div>
-
-                                    <div class="panel-heading">
-                                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                                        <input name="name" type="hidden" value="img1">
-                                        <textarea name="text" id="editor{{$k}}">{{$block->text}}</textarea>
-
-                                    </div>
-                                    <button type="submit" class="btn bg-teal-400 upload" >Обновить</button>
-                                </div>
-                            </form>
-                        </div>
-
-                        <form class="panel-reviews-trash" method="post" action="{{ route('reviews_delete') }}" enctype="multipart/form-data">
-                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                            <div class="panel-footer panel-footer-condensed">
-
-                                <input name="id" type="hidden" value="{{$block->id}}">
-                                <button type="" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
-
-                            </div>
-                        </form>
-                    </div>
-
-                    <div id="detail1" style="display: none;">{{$num++}}}</div>
-                    @if($num>1)
-
-                        <div id="detail1" style="display: none;">{{$num = 0}}}</div>
-
-                    @endif
-                @endforeach
-
-            </div>
-        {{$blocks->links()}}
-        <!-- Footer -->
-            @foreach($blocks as $k=>$block)
-                <script type="text/javascript">
-
-                    var ckeditor1 = CKEDITOR.replace('editor{{$k}}');
-                    AjexFileManager.init({
-                        returnTo: 'ckeditor',
-                        editor: ckeditor1
-                    });
-                </script>
-            @endforeach
-            <div class="footer text-muted">
-                &copy; 2017.  by <a href="https://github.com/sayron97" target="_blank">Oleksandr Yefremov</a>
-            </div>
             <!-- /footer -->
         </div>
         <!-- /content area -->
