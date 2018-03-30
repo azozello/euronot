@@ -332,6 +332,7 @@
 									<form method="post" action="{{route('delete_item_from_cart')}}" enctype="multipart/form-data" class="form-inline">
 										<input name="_token" type="hidden" value="{{ csrf_token() }}">
 										<input name="item_id" type="hidden" value="{{$item['item_id']}}">
+										<input name="item_value" type="hidden" value="{{$item['item_value']}}">
 										<div class="add_to_basket_btn"><button type="submit">Удалить</button></div>
 									</form>
 								</td>
@@ -369,6 +370,17 @@
                 <form method="post" action="{{route('add_order')}}" enctype="multipart/form-data" class="form-inline">
                     <input name="_token" type="hidden" value="{{ csrf_token() }}">
                     <input name="sum" type="hidden" value="{{$cart_price}}">
+					@foreach($cart_products as $i => $item)
+						@if($item['proc'] != null)
+							<input name="{{$i}}_proc" type="hidden" value="{{$item['proc']}}">
+						@endif
+							@if($item['hard'] != null)
+								<input name="{{$i}}_hard" type="hidden" value="{{$item['hard']}}">
+							@endif
+							@if($item['op_memory'] != null)
+								<input name="{{$i}}_op_memory" type="hidden" value="{{$item['op_memory']}}">
+							@endif
+					@endforeach
                     <div class="col-lg-6 col-xs-12" id="cont_data">
                         <div class="out">
                             <div class="block_title">Контактная информация</div>
@@ -434,7 +446,6 @@
                             </div>
                         </div>
                     </div>
-
                 </form>
 
 			</div>
@@ -483,7 +494,6 @@
 		@include('layouts.site.footer')
 	</div>
 </div>
-
 
 <script type="text/javascript">
 	$(document).ready(function () {

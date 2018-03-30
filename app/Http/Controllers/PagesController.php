@@ -586,7 +586,8 @@ class PagesController extends Controller
         if ($cart = $request->session()->get('cart')) {
             $request->session()->put('cart', []);
             foreach ($cart as $item) {
-                if ($item['item_id'] != $request->item_id) {
+                if ($item['item_id'] != $request->item_id &&
+                    $item['item_value'] != $request->item_value) {
                     $request->session()->push('cart', $item);
                 }
             }
@@ -595,10 +596,14 @@ class PagesController extends Controller
     }
 
     public function add_item_in_cart(Request $request){
+        $hard = null;
+        $proc = null;
+        $op_memory = null;
         if ($cart = $request->session()->get('cart')) {
             $flag_index = -1;
             foreach ($cart as $i => $item) {
-                if ($item['item_id'] == $request->item_id) {
+                if ($item['item_id'] == $request->item_id &&
+                    $item['item_value'] == $request->item_price) {
                     $flag_index = $i;
                     break;
                 }
@@ -608,17 +613,26 @@ class PagesController extends Controller
                 $cart[$flag_index]['item_value'] += $request->item_amount * $request->item_price;
                 $request->session()->put('cart', $cart);
             } else {
+                if ($request->proc) $proc = $request->proc;
+                if ($request->hard) $hard = $request->hard;
+                if ($request->op_memory) $op_memory = $request->op_memory;
                 $new_item = array(
                     "item_id" => $request->item_id,
                     "item_name" => $request->item_name,
                     "item_amount" => $request->item_amount,
                     "item_price" => $request->item_price,
                     "item_value" => $request->item_amount * $request->item_price,
-                    "item_url" => $request->item_url
+                    "item_url" => $request->item_url,
+                    "op_memory" => $op_memory,
+                    "hard" => $hard,
+                    "proc" => $proc
                 );
                 $request->session()->push('cart', $new_item);
             }
         } else {
+            if ($request->proc) $proc = $request->proc;
+            if ($request->hard) $hard = $request->hard;
+            if ($request->op_memory) $op_memory = $request->op_memory;
             $cart = [];
             $request->session()->put('cart', $cart);
             $new_item = array(
@@ -627,7 +641,10 @@ class PagesController extends Controller
                 "item_amount" => $request->item_amount,
                 "item_price" => $request->item_price,
                 "item_value" => $request->item_amount * $request->item_price,
-                "item_url" => $request->item_url
+                "item_url" => $request->item_url,
+                "op_memory" => $op_memory,
+                "hard" => $hard,
+                "proc" => $proc
             );
             $request->session()->push('cart', $new_item);
         }
@@ -666,6 +683,7 @@ class PagesController extends Controller
                 }
             }
         }
+
         return view('site.cart', [
             'organization' =>Organization::get()[0],
             'header' => $data,
@@ -707,7 +725,7 @@ class PagesController extends Controller
         $images = ProductImages::where('images_product_id','=',$product[0]->product_id)->get();
         $texts = ProductsTexts::where('product_id_connection','=',$product[0]->product_id)->get();
         $comments = ProductComment::where('product_id_connection','=',$product[0]->product_id)->
-        where('is_active','=',1)->get();
+        where('is_active','=',0)->get();
         $all_products = Products::get();
         $attributes = explode(" ", $product[0]->attributes_id);
         $same_products = array();
@@ -858,7 +876,7 @@ class PagesController extends Controller
     }
 
     public function show_product_list(Request $request,$category = NULL,$url = NULL){
-        $show_down = true;
+        $show_down = false;
         $items_in_cart = 0;
         $cart_price = 0;
         if($request->session()->get('cart') !== null){
@@ -913,15 +931,18 @@ class PagesController extends Controller
         groupBy('products.product_id')->
         orderBy('products.'.$sort_type_column, $sort_type_way)->
         get();
+        dd($category);
         switch ($category){
             case 'noutbuki':
                 $meta_name ='cat_1';
+                $show_down = true;
                 break;
             case 'sistemnie-bloki':
                 $meta_name ='cat_2';
                 break;
             case 'monitory':
                 $meta_name ='cat_3';
+                $show_down = true;
                 break;
             case 'printery':
                 $meta_name ='cat_4';
@@ -968,7 +989,6 @@ class PagesController extends Controller
             $products[$k] = $chek_product;
         }
         //dd($category);
-        //dd($url);
         if ($url == NULL) {
             $filters = Filters::where('lang_id', $lang_id)->get();
             $attributes = DB::table('filters')->
