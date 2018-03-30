@@ -876,7 +876,7 @@ class PagesController extends Controller
     }
 
     public function show_product_list(Request $request,$category = NULL,$url = NULL){
-        $show_down = true;
+        $show_down = false;
         $items_in_cart = 0;
         $cart_price = 0;
         if($request->session()->get('cart') !== null){
@@ -931,15 +931,18 @@ class PagesController extends Controller
         groupBy('products.product_id')->
         orderBy('products.'.$sort_type_column, $sort_type_way)->
         get();
+        dd($category);
         switch ($category){
             case 'noutbuki':
                 $meta_name ='cat_1';
+                $show_down = true;
                 break;
             case 'sistemnie-bloki':
                 $meta_name ='cat_2';
                 break;
             case 'monitory':
                 $meta_name ='cat_3';
+                $show_down = true;
                 break;
             case 'printery':
                 $meta_name ='cat_4';
@@ -986,7 +989,6 @@ class PagesController extends Controller
             $products[$k] = $chek_product;
         }
         //dd($category);
-        //dd($url);
         if ($url == NULL) {
             $filters = Filters::where('lang_id', $lang_id)->get();
             $attributes = DB::table('filters')->
