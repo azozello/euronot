@@ -30,12 +30,14 @@
                             <li><a href="/product_list/printery">Принтеры (NEW)</a></li>
                             <li><a href="/product_list/doc-stancii">Док Станции б/у</a></li>
                             <li><a href="/product_list/igrovie-sistemniki">Игровые системники</a></li>
-                            @if($header != null)
-                                @foreach($header as $item)
-                                    @if($item['type'] == 'down')
-                                        <li><a class="" href="{{$item['url']}}" style="cursor: pointer">{{$item['name']}}</a></li>
-                                    @endif
-                                @endforeach
+                            @if(isset($show))
+                                @if($header != null)
+                                    @foreach($header as $item)
+                                        @if($item['type'] == 'down')
+                                            <li><a class="" href="{{$item['url']}}" style="cursor: pointer">{{$item['name']}}</a></li>
+                                        @endif
+                                    @endforeach
+                                @endif
                             @endif
                         </ul>
                     </div>
@@ -226,7 +228,7 @@
                 <a href="{{route('get_uploaded_pdf')}}" style="cursor: pointer">Партнерские цены</a>
             </div>
             <div class="address col-lg-1 col-md-1">
-                <a class="adres" onclick='location.href="contact.html"' style="cursor: pointer">Адреса магазинов в Украине</a>
+                <a class="adres" onclick='location.href="{{route('show_contact')}}"' style="cursor: pointer">Адреса магазинов в Украине</a>
             </div>
 
 
@@ -441,23 +443,34 @@
             </div>
 
             <div class="col-lg-3 col-md-3 basket" id="quick_basket">
-                <a>
+                @if($items_in_cart > 0)
+                        <a href="/cart">
+                            <div class="button">
+                                <div class="count">{{$items_in_cart}}</div>
+                            </div>
+                        </a>
+                    @else
                     <div class="button">
                         <div class="count">{{$items_in_cart}}</div>
                     </div>
-                </a>
+                @endif
                 <div class="right">
-                    <label class='empty'><a href="/cart">Корзина пуста</a>
-                        <div class="clear"></div>
-                        начните ваши покупки</label>
-                    <label class='card11' style='display: none;'><a href="/cart">
+                    @if($items_in_cart == 0)
+                    <label class='empty'>
+                        Корзина пуста<div class="clear"></div>начните ваши покупки
+                    </label>
+                    @else
+                    <label class='card11'>
+                        <a href="/cart">
                             <div class='text'>Ваши покупки:</div>
                         </a>
-                        <div class='price'><span class="quant">0</span> <span class="word">товаров</span>, <span
-                                    class="price">0</span> грн
+                        <div class='price'>
+                            <span class="word">товаров </span>
+                            <span class="quant">@if(isset($items_in_cart)){{$items_in_cart}}@endif</span>,
+                            <span class="price">@if(isset($cart_price)){{$cart_price}}@endif</span> грн
                         </div>
                     </label>
-
+                    @endif
                 </div>
             </div>
         </div>
@@ -702,12 +715,14 @@
                         <li><a href="igrovie-sistemniki"><span class="sprite sprite-menu-icon-2"></span>Игровые системники</a></li>
                     </ul>
                     <ul class="nav nav-bar main-menu main-menu2">
-                        @if(isset($header))
-                            @foreach($header as $i=>$menu_item)
-                                @if($menu_item['type'] == 'down')
-                                    <li><a href="{{$menu_item['url']}}"><span class="sprite sprite-menu-icon-1"></span>{{$menu_item['name']}}</a></li>
-                                @endif
-                            @endforeach
+                        @if(isset($show))
+                            @if($header != null)
+                                @foreach($header as $item)
+                                    @if($item['type'] == 'down')
+                                        <li><a class="" href="{{$item['url']}}" style="cursor: pointer">{{$item['name']}}</a></li>
+                                    @endif
+                                @endforeach
+                            @endif
                         @endif
                     </ul>
                 </div>

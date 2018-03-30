@@ -61,156 +61,28 @@
 					<p><strong>Компания "Евронот"</strong> - адреса магазинов б/у техники из Германии.</p>
 					<br/><br/>
 					<div class="row">
+						@foreach($contacts as $contact)
 						<div class="col-xl-6 col-xs-12">
 							<div class="col-lg-4 col-xs-4"><img
-									src="upload/image/%D0%95%D0%B2%D1%80%D0%BE%D0%BD%D0%BE%D1%82.jpg" alt=""
+									src="../../images/{{$contact->image_block}}" alt=""
 									width="170" height="130"/></div>
 							<div class="col-md-8 col-xs-8">
-								<div class="address"><strong>г. Киев</strong>, проспект Степана Бандеры, 16 Б,<br/>магазин
-								                                             "Евронот"
+								<div class="address">{!! $contact->text_block_1 !!}
 								</div>
 								<div class="phones row">
-									<div class="col-md-4">044 383 16 83<br/>099 100 25 66<br/>067 239 39 21<br/>073 451
-									                      52 66<br/>095 317 42 38&nbsp;
+									<div class="col-md-4">{!! $contact->text_block_2 !!}
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-6 col-xs-12">
-							<div class="col-lg-4 col-xs-4"><img
-									src="upload/image/%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0(1).png" alt="Одесса 1"
-									width="170" height="130"/></div>
-							<div class="col-md-8 col-xs-8">
-								<div class="address"><strong>г. Одесса</strong>, ул. Ришельевская 78, Магазин "EL_MAG"
-								</div>
-								<div class="phones row">
-									<div class="col-md-4">067 136 78 78<br/>063 623 78 78</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xl-6 col-xs-12">
-							<div class="col-lg-4 col-xs-4"><img src="upload/image/IMG_6399.JPG" alt="" width="170"
-							                                    height="135"/></div>
-							<div class="col-md-8 col-xs-8">
-								<div class="address"><strong>г. Одесса</strong>, ул. Преображенская, 48<br/>(Тираспольская
-								                                               пл.), магазин "Евронот"
-								</div>
-								<div class="phones row">
-									<div class="col-md-4">073 155 75 70<br/>067 324 00 86</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-6 col-xs-12">
-							<div class="col-lg-4 col-xs-4"><img
-									src="upload/image/%D0%A5%D0%B0%D1%80%D1%8C%D0%BA%D0%BE%D0%B2.png" alt=""
-									width="170" height="135"/></div>
-							<div class="col-md-8 col-xs-8">
-								<div class="address"><strong>г. Харьков</strong>, ул. Отакара Яроша 21,<br/>магазин
-								                                                "Nokia"
-								</div>
-								<div class="phones row">
-									<div class="col-md-4">067 324 00 68<br/>073 155 75 35<br/>050 326 27 07</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xl-6 col-xs-12">
-							<div class="col-lg-4 col-xs-4"><img src="upload/image/office_4.jpg" alt="" width="170"
-							                                    height="135"/></div>
-							<div class="col-md-8 col-xs-8">
-								<div class="address"><strong>г. Кропивницкий (Кировоград)</strong>,<br/>ул. 50 Лет
-								                                                                  октября 27, магазин
-								                                                                  "Евронот"
-								</div>
-								<div class="phones row">
-									<div class="col-md-4">050 608 17 54<br/>068 143 03 29</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-6 col-xs-12">
-							<div class="col-lg-4 col-xs-4"><img src="upload/image/office_5.jpg" alt="" width="170"
-							                                    height="135"/></div>
-							<div class="col-md-8 col-xs-8">
-								<div class="address"><strong>г. Каменское (Днепродзержинск)</strong>,<br/>ул. Ленина
-								                                                                    (Проспект Свободы),
-								                                                                    30/1,<br/>магазин
-								                                                                    "Кнопка"
-								</div>
-								<div class="phones row">
-									<div class="col-md-4">067 959 05 59<br/>063 519 29 40&nbsp;</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xl-6 col-xs-12">
-							<div class="col-lg-4 col-xs-4"><img
-									src="upload/image/%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D0%BE%D0%B6%D1%8C%D0%B5.png"
-									alt="" width="170" height="135"/></div>
-							<div class="col-md-8 col-xs-8">
-								<div class="address"><strong>г. Запорожье</strong>, ул.Жуковского, 32,<br/> магазин
-								                                                  "Мобільна Країна"
-								</div>
-								<div class="phones row">
-									<div class="col-md-4">095 744 53 55<br/>067 353 13 90</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-6 col-xs-12">
-							<div class="col-lg-4 col-xs-4"><img
-									src="upload/image/%D0%98%D0%B2%D0%B0%D0%BD%D0%BE-%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA.png"
-									alt="" width="170" height="135"/></div>
-							<div class="col-md-8 col-xs-8">
-								<div class="address"><strong>г. Ивано-Франковск</strong>, ул.Независимости, 83,<br/>магазин
-								                                                        "Медиасофт"
-								</div>
-								<div class="phones row">
-									<div class="col-md-4">050 337 1000</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xl-6 col-xs-12">
-							<div class="col-lg-4 col-xs-4"><img src="upload/image/office_9.jpg" alt="" width="170"
-							                                    height="135"/></div>
-							<div class="col-md-8 col-xs-8">
-								<div class="address"><strong>г. Сарны</strong>, ул. Широкая 14,<br/>магазин "Смарт"
-								</div>
-								<div class="phones row">
-									<div class="col-md-4">097 330 29 80&nbsp;</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-6 col-xs-12">
-							<div class="col-lg-4 col-xs-4"><img
-									src="upload/image/%D0%91%D1%80%D0%BE%D0%B2%D0%B0%D1%80%D1%8B.png" alt=""
-									width="170" height="135"/></div>
-							<div class="col-md-8 col-xs-8">
-								<div class="address"><strong>г. Бровары</strong>, ул. Владимира Савченко 1,<br/>магазин
-								                                                "RC"
-								</div>
-								<div class="phones row">
-									<div class="col-md-4">050 771 33 57<br/>093 202 96 11<br/>098 514 20 45</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xl-6 col-xs-12">
-							<div class="col-lg-4 col-xs-4"><img
-									src="upload/image/%D0%94%D0%BD%D0%B5%D0%BF%D1%80(1).png" alt="" width="170"
-									height="135"/></div>
-							<div class="col-md-8 col-xs-8">
-								<div class="address">Днепр, ул.Пастера, 6а (ТК на Пастера)</div>
-								<div class="phones row">
-									<div class="col-md-4">050 363 45 53<br/>067 326 72 05</div>
-								</div>
-							</div>
-						</div>
+							<div id="detail1" style="display: none;">{{$num++}}}</div>
+							@if($num>1)
+					         </div>
+					         <div class="row">
+								<div id="detail1" style="display: none;">{{$num = 0}}}</div>
+
+							@endif
+						@endforeach
 					</div>
 				</div>
 				<div class="clear"></div>

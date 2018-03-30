@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TradersPhonesForContactsFaces extends Migration
+class OrderItems extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class TradersPhonesForContactsFaces extends Migration
      */
     public function up()
     {
-        Schema::create('traders_phones_for_contacts_faces',function (Blueprint $table){
+        Schema::create('order_items', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('traders_phones_for_contacts_contacts_id')->nullable();
-            $table->text('traders_phones_for_contacts_faces_phone_number')->nullable();
-            $table->text('traders_phones_for_contacts_faces_comment')->nullable();
-            $table->boolean('traders_phones_for_contacts_faces_is_main')->nullable();
+            $table->integer('order_id');
+            $table->integer('item_id');
+            $table->integer('item_price');
+            $table->integer('item_value');
+            $table->integer('item_amount');
+            $table->integer('op');
+            $table->integer('hard');
+            $table->integer('proc');
             $table->string('updated_at')->nullable();
             $table->string('created_at')->nullable();
         });

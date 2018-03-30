@@ -182,7 +182,6 @@
                                             var select_proc = document.getElementById('select_proc');
                                             added_price += +select_proc.options[select_proc.selectedIndex].value;
 
-
                                             var select_memory = document.getElementById('select_memory');
                                             added_price += +select_memory.options[select_memory.selectedIndex].value;
 
@@ -196,6 +195,12 @@
                                             document.getElementById('result_price').value = added_price;
                                         }
 
+
+                                        function update_item_amount() {
+                                            document.getElementById('item_amount').value
+												= document.getElementById('add_quant_inp').value;
+                                        }
+
                                         function change_price_s() {
                                             var skidka = +{{$skidka}};
 
@@ -204,15 +209,20 @@
                                             added_price +=
                                                 +select_proc.options[select_proc.selectedIndex].value;
 
-
                                             var select_memory = document.getElementById('select_memory');
                                             added_price += +select_memory.options[select_memory.selectedIndex].value;
-
 
                                             var select_hard = document.getElementById('select_hard');
                                             added_price += +select_hard.options[select_hard.selectedIndex].value;
 
                                             added_price += +{{$product[0]->price}};
+
+                                            document.getElementById('hard_input').value
+                                                = select_hard.options[select_hard.selectedIndex].label;
+                                            document.getElementById('proc_input').value
+                                                = select_proc.options[select_proc.selectedIndex].label;
+                                            document.getElementById('op_input').value
+                                                = select_memory.options[select_memory.selectedIndex].label;
 
                                             document.getElementById('cena').innerText = added_price;
 
@@ -403,7 +413,7 @@
                         {{$skidka_price}}</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
 								<div id="buy_block">
 									<div class="quant_block">
-										<input type="text" size="3" value="1" id="add_quant_inp"/>
+										<input type="text" size="3" value="1" id="add_quant_inp" onchange="update_item_amount()"/>
 									</div>
 									<div class="clear"></div>
 								</div>
@@ -412,7 +422,7 @@
                         {{$product[0]->price}}</span> <span itemprop="priceCurrency" content="UAH">грн</span></div>
 									<div id="buy_block">
 										<div class="quant_block">
-											<input type="text" size="3" value="1" id="add_quant_inp"/>
+											<input type="text" size="3" value="1" id="add_quant_inp" onchange="update_item_amount()"/>
 										</div>
 										<div class="clear"></div>
 									</div>
@@ -422,8 +432,16 @@
 										<input name="_token" type="hidden" value="{{ csrf_token() }}">
 										<input name="item_id" type="hidden" value="{{$product[0]['id']}}">
 										<input name="item_name" type="hidden" value="{{$product[0]['name']}}">
-										<input name="item_amount" type="hidden" value="1">
-										<input name="item_value" type="hidden" value="1">
+										<input name="item_amount" type="hidden" value="1" id="item_amount">
+										@if(!is_null($op_memory))
+											<input name="op_memory" id="op_input" type="hidden" value="{{$product[0]->op_memory}}">
+										@endif
+										@if(!is_null($hard))
+											<input name="hard" id="hard_input" type="hidden" value="{{$product[0]->hard}}">
+										@endif
+										@if(!is_null($proc))
+											<input name="proc" id="proc_input" type="hidden" value="{{$product[0]->proc}}">
+										@endif
 										@if(!is_null($skidka))
 											<input name="item_price" id="result_price" type="hidden" value="{{$skidka_price}}">
 										@else

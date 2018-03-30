@@ -121,11 +121,10 @@
 								</a>
 								<div class="line"></div>
 								@if($product->skidka != null)
-									<div class="price">{{$product->skidka}} грн</div>
+									<div class="price">{{($product->price - (($product->price / 100) * $product->skidka))}} грн</div>
 								@else
 									<div class="price">{{$product->price}} грн</div>
 								@endif
-								<div class="price">{{$product->price}} грн</div>
 							</div>
 
 							<div class="product product-hover">

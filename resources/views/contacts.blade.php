@@ -16,11 +16,11 @@
             </div>
 
             <div class="page-header-btn-right">
-            <form method="get" action="{{route('make_new')}}" enctype="multipart/form-data" style="height: 40px;">
+                <form method="post" action="{{route('make_new_contact')}}" enctype="multipart/form-data" style="height: 40px;">
+                    <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                    <button type="submit" class="btn bg-teal-400 upload page-header-btn-right" style="">Добавить блок</button>
 
-                <button type="submit" class="btn bg-teal-400 upload page-header-btn-right" style="">Добавить отзыв</button>
-
-            </form>
+                </form>
             </div>
 
         </div>
@@ -28,15 +28,15 @@
     </div>
     <!-- Content area -->
     <div class="content">
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li><strong>{{ $error }}</strong></li>
-                        @endforeach
-                    </ul>
-                </div>
-        @endif
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li><strong>{{ $error }}</strong></li>
+                    @endforeach
+                </ul>
+            </div>
+    @endif
     <!-- Detached content -->
         <div class="container-detached">
             <div class="content-detached">
@@ -48,30 +48,29 @@
                     <div class="col-md-6 panel-body-reviews">
 
                         <div class="panel-body " style="padding: 0;">
-                            <form method="post" action="{{ route('reviews_update') }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('contact_update') }}" enctype="multipart/form-data">
+                                <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                 <input name="id" type="hidden" value="{{$block->id}}">
 
                                 <div class="panel panel-flat panel-reviews" style="margin: 0;">
                                     <div class="main-text-block">
-                                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                                        <div class="btn bg-teal-400 file_upload">Выбрать фото <input type="file" multiple name="image"></div>
-                                        <div>
-                                            <input type="text" name="title" placeholder="Заголовок" value="{{$block->title}}">
-                                        </div>
+                                        <div class="btn bg-teal-400 file_upload">Выбрать фото <input type="file" name="image"></div>
                                     </div>
+                                    <span>
+											{!!  Html::image('images/'.$block->image_block,'pic',array('height'=>'400px', 'width'=>'400px'))  !!}
+										</span>
 
                                     <div class="panel-heading">
-                                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                         <input name="name" type="hidden" value="img1">
-                                        <textarea name="text" id="editor{{$k}}">{{$block->text}}</textarea>
-
+                                        <textarea name="text_block_1" id="editor{{$k+1}}">{!! $block->text_block_1 !!}</textarea>
+                                        <textarea name="text_block_2" id="editor{{$k+2}}">{!! $block->text_block_2 !!}</textarea>
                                     </div>
                                     <button type="submit" class="btn bg-teal-400 upload" >Обновить</button>
                                 </div>
                             </form>
                         </div>
 
-                        <form class="panel-reviews-trash" method="post" action="{{ route('reviews_delete') }}" enctype="multipart/form-data">
+                        <form class="panel-reviews-trash" method="post" action="{{ route('contact_delete') }}" enctype="multipart/form-data">
                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                             <div class="panel-footer panel-footer-condensed">
 
@@ -91,18 +90,8 @@
                 @endforeach
 
             </div>
-        {{$blocks->links()}}
         <!-- Footer -->
-            @foreach($blocks as $k=>$block)
-                <script type="text/javascript">
 
-                    var ckeditor1 = CKEDITOR.replace('editor{{$k}}');
-                    AjexFileManager.init({
-                        returnTo: 'ckeditor',
-                        editor: ckeditor1
-                    });
-                </script>
-            @endforeach
             <div class="footer text-muted">
                 &copy; 2017.  by <a href="https://github.com/sayron97" target="_blank">Oleksandr Yefremov</a>
             </div>

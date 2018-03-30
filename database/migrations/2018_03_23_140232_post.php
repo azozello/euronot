@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ProductImagesMigration extends Migration
+class Post extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,18 @@ class ProductImagesMigration extends Migration
      */
     public function up()
     {
-        Schema::create('product_images', function (Blueprint $table) {
+        Schema::create('post', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('image')->nullable();
-            $table->integer('images_product_id')->nullable();
+            $table->mediumText('comment')->nullable();
+            $table->text('status');
+            $table->date('date');
+            $table->text('name');
+            $table->integer('sum');
+            $table->string('type');
+            $table->integer('phone_number')->nullable();
+            $table->string('email')->nullable();
+            $table->string('gift')->nullable();
+            $table->string('address');
             $table->string('updated_at')->nullable();
             $table->string('created_at')->nullable();
         });

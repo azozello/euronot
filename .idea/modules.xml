@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/euronot.iml" filepath="$PROJECT_DIR$/.idea/euronot.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/evronot.iml" filepath="$PROJECT_DIR$/.idea/evronot.iml" />
     </modules>
   </component>
 </project>

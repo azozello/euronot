@@ -144,6 +144,7 @@
                                 <ul>
                                     <li><a href="{{route('show_editor')}}">Создать страницу</a></li>
                                     <li><a href="{{route('pages_list')}}">Список страниц</a></li>
+                                    <li><a href="{{route('contacts_show')}}">Контакты</a></li>
                                 </ul>
                             </li>
                             <li>
