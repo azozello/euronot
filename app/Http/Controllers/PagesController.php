@@ -244,6 +244,11 @@ class PagesController extends Controller
             'img_3' => $img3,
             'img_4' => $img4,
             'img_5' => $img5,
+            'url_1' => $request->url1,
+            'url_2' => $request->url2,
+            'url_3' => $request->url3,
+            'url_4' => $request->url4,
+            'url_5' => $request->url5,
             'img_url_0' => $request->url_0,
             'img_url_1' => $request->url_1,
             'img_url_2' => $request->url_2,
@@ -755,7 +760,6 @@ class PagesController extends Controller
                 }
             }
         }
-        //dd($product);
         if(!is_null($product[0]->product_gift)){
             $product_gift = DB::table('products')->
             where('products.product_id', $product[0]->product_gift)->
@@ -890,8 +894,6 @@ class PagesController extends Controller
             $cart_poducts = NULL;
         }
         $lang_id = 1;
-        //dd($url);
-        //dd($category);
         if(is_null(session('array'))){
             $pagination_num = 24;
             $sort_type_column = 'id';
@@ -931,7 +933,6 @@ class PagesController extends Controller
         groupBy('products.product_id')->
         orderBy('products.'.$sort_type_column, $sort_type_way)->
         get();
-        dd($category);
         switch ($category){
             case 'noutbuki':
                 $meta_name ='cat_1';

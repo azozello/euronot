@@ -716,7 +716,7 @@
                     </ul>
                     <ul class="nav nav-bar main-menu main-menu2">
                         @if(isset($show))
-                            @if($header != null)
+                            @if($header != null and $show == true)
                                 @foreach($header as $item)
                                     @if($item['type'] == 'down')
                                         <li><a class="" href="{{$item['url']}}" style="cursor: pointer">{{$item['name']}}</a></li>

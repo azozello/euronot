@@ -181,10 +181,15 @@
                                         <textarea rows="10" name="editor0" id="editor0">{!! $main_page[0]->text_block_0  !!}</textarea>
                                         <textarea rows="10" name="editor1" id="editor1">{!! $main_page[0]->text_block_1  !!}</textarea>
                                         <textarea rows="10" name="editor2" id="editor2">{!! $main_page[0]->text_block_2  !!}</textarea>
+                                        <textarea rows="1" name="url1">@if(isset($main_page[0]->url_1)){{$main_page[0]->url_1}}@endif</textarea>
                                         <textarea rows="10" name="editor3" id="editor3">{!! $main_page[0]->text_block_3  !!}</textarea>
+                                        <textarea rows="1" name="url2">@if(isset($main_page[0]->url_2)){{$main_page[0]->url_2}}@endif</textarea>
                                         <textarea rows="10" name="editor4" id="editor4">{!! $main_page[0]->text_block_4  !!}</textarea>
+                                        <textarea rows="1" name="url3">@if(isset($main_page[0]->url_3)){{$main_page[0]->url_3}}@endif</textarea>
                                         <textarea rows="10" name="editor5" id="editor5">{!! $main_page[0]->text_block_5  !!}</textarea>
+                                        <textarea rows="1" name="url4">@if(isset($main_page[0]->url_4)){{$main_page[0]->url_4}}@endif</textarea>
                                         <textarea rows="10" name="editor6" id="editor6">{!! $main_page[0]->text_block_6  !!}</textarea>
+                                        <textarea rows="1" name="url5">@if(isset($main_page[0]->url_5)){{$main_page[0]->url_5}}@endif</textarea>
                                         <textarea rows="10" name="editor7" id="editor7">{!! $main_page[0]->text_block_7  !!}</textarea>
                                     </div>
                                 </div>

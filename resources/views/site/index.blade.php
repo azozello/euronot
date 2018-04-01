@@ -2067,7 +2067,7 @@
 				<div class="col-lg-2 col-xs-3">
 
 					<div class="block bl1">
-						<a href="#">
+						<a href="{{$main_page[0]->url_1}}">
 						<img src="../index_app/images/preimushestva-1.png" alt="">
 						<div class="text">{!! $main_page[0]->text_block_2  !!}
 						</div>
@@ -2077,7 +2077,7 @@
 				</div>
 				<div class="col-lg-2 col-xs-3">
 					<div class="block bl2">
-						<a href="#">
+						<a href="{{$main_page[0]->url_2}}">
 						<img src="../index_app/images/preimeshestva-2.png" alt="">
 						<div class="text"> {!! $main_page[0]->text_block_3  !!}
 						</div>
@@ -2086,7 +2086,7 @@
 				</div>
 				<div class="col-lg-2 col-xs-3">
 					<div class="block bl3">
-						<a href="#">
+						<a href="{{$main_page[0]->url_3}}">
 						<img src="../index_app/images/preimeshestva-3.png" alt="">
 						<div class="text">{!! $main_page[0]->text_block_4  !!}</div>
 						</a>
@@ -2094,7 +2094,7 @@
 				</div>
 				<div class="col-lg-2 col-xs-3">
 					<div class="block bl4">
-						<a href="#">
+						<a href="{{$main_page[0]->url_4}}">
 						<img src="../index_app/images/preimeshestva-4.png" alt="">
 						<div class="text">{!! $main_page[0]->text_block_5  !!}
 						</div>
@@ -2103,7 +2103,7 @@
 				</div>
 				<div class="col-lg-2 col-xs-3">
 					<div class="block bl5">
-						<a href="#">
+						<a href="{{$main_page[0]->url_5}}">
 						<img src="../index_app/images/preimeshestva-5.png" alt="">
 						<div class="text"> {!! $main_page[0]->text_block_6  !!}
 						</div>
