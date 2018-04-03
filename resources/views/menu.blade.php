@@ -63,7 +63,6 @@
                                         @if(isset($page->type))
                                             @if($page->type == 'top')Верхнее меню@endif
                                             @if($page->type == 'down')Нижнее меню@endif
-                                            @if($page->type == 'mid')Среднее меню@endif
                                         @endif
                                     </p>
                                 </td>

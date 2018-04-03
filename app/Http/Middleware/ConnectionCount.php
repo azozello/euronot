@@ -17,6 +17,12 @@ class ConnectionCount
     public function handle($request, Closure $next)
     {
         session_start();
+        if(isset($_SESSION['banner_count'])){
+            $_SESSION['banner_count']++;
+        }
+        else{
+            $_SESSION['banner_count'] = 1;
+        }
         if( !isset($_SESSION['counted']) ){
             $_SESSION['counted'] = "value";
 

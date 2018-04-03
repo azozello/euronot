@@ -62,14 +62,10 @@
 					<div class="hidden-md-down">
 						<div id="breadcrumbs" class="hidden-sm-down">
 							<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span
-									itemprop="title">Компьютерная техника бу</span></a>&nbsp;&nbsp;>&nbsp;&nbsp;<span>Ноутбуки б/у</span></span>
+									itemprop="title">Компьютерная техника бу</span></a>&nbsp;&nbsp;>&nbsp;&nbsp;<span>{{$name}}</span></span>
 						</div>
 					</div>
-					<h1 class="page_title">Ноутбуки б/у</h1>
-					<div class="page_text"><p>Продаём пост лизинговые ноутбуки из европы по очень выгодным ценам, с
-					                          гарантией и доставкой без предоплаты. Все ноутбуки прошли тестирование и
-					                          проверку, кроме того их качество значительно выше чем у новых ноутбуков
-					                          продаваемых в магазинах Украины.</p>
+					<div class="page_text">{!! $middle !!}
 						<div class="clear"></div>
 					</div>
 					<div class="clear"></div>
@@ -149,7 +145,11 @@
 									</div>
 								</a>
 								<div class="line"></div>
-								<div class="price">{{$product->price}} грн</div>
+								@if($product->skidka != null)
+									<div class="price">{{($product->price - (($product->price / 100) * $product->skidka))}} грн</div>
+								@else
+									<div class="price">{{$product->price}} грн</div>
+								@endif
 								<div class="rating_block">
 									<div class="rating">
 										<div class="star_box not_rated" id="star_box306">
@@ -255,16 +255,18 @@
 <div class="footer container-fluid">
 	<div class="container">
 		<div class="tags">
-			{{$foot}}
+			{!! $foot !!}
 		@include('layouts.site.footer')
 	</div>
 </div>
 
-<div style="background-image: url(../index_app/images/slider/20171011175607283.png)" class="block_baner_right">
-	<div class="hidden_baner_lg">
-		+
-	</div>
-</div>
+	@if(isset($banner_count) && $banner_count < 4)
+		<div style="background-image: url(../images/{{$banner}})" class="block_baner_right">
+			<div class="hidden_baner_lg">
+				+
+			</div>
+		</div>
+	@endif
 
 <script type="text/javascript">
     function Refresh () {
@@ -508,6 +510,19 @@
 		else if(last1 == 1){word = '';}
 		else{word = '';}
 		return word;
+	}
+	function city_change(){
+		var city = parseInt($('.cities1#cities').val());
+		setCookie("city", city);
+		$('.phones#phones1 .active, .grafik#grafik1 .active').removeClass('active');
+		$('.phones#phones1 .phone_'+city+', .grafik#grafik1 .grafik_'+city).addClass('active');
+	}
+	function city_change2(){
+		var city = parseInt($('#cities.cities2').val());
+		setCookie("city", city);
+		$('.phones#phones2 .active, .grafik#grafik2 .active').removeClass('active');
+		$('.phones#phones2 .phone_'+city+', .grafik#grafik2 .grafik_'+city).addClass('active');
+
 	}
 	$(document).ready(function(){$('#go_top').click(function(){$(window).scrollTop(0);})})
 	$(window).scroll(function(){go_top();})

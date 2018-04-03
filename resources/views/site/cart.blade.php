@@ -21,7 +21,6 @@
 	<div class="container">
 		<script>
 			$(document).ready(function () {
-			    alert('HTML до выполнения js при загрузки страницы');
 				delivery_check();
 				check_sum();
 
@@ -78,8 +77,6 @@
 						$("#quick_basket .card11").hide();
 					}
 					check_sum();
-                    alert(inp_val);
-                    console.log(sessionStorage.getItem('cart'));
 				});
 
 				$("#basket .quantity input").keyup(function () {
@@ -294,22 +291,7 @@
 				<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span
 						itemprop="title">Компьютерная техника бу</span></a>&nbsp;&nbsp;>&nbsp;&nbsp;<span>Оформление заказа</span></span>
 			</div>
-			@if(1 == 0)
-				<div class="page_text">
-					<div style="max-width: 600px; margin: 0 auto; font-size: 20px; text-align: center;">Оператор перезвонит
-						Вам в ближайшее
-						время для
-						подтверждения заказа
-						в рабочие дни с
-						10.00 до 19.00, а
-						если Вы оформляете
-						заказ в выходные, то
-						в ближайший рабочий
-						день.
-					</div>
-					<div class="clear"></div>
-				</div>
-			@elseif($items_in_cart == 0)
+			@if($items_in_cart == 0)
 				<h1 class="page_title">В Вашей корзине нет товаров.</h1>
 			@else
 				<h1 class="page_title">Оформление заказа</h1>
@@ -472,8 +454,22 @@
 			<input type="hidden" name="all_orders" id="all_orders" value="0"/>
 			<input type="hidden" name="min_order" id="min_order" value=""/>
 			<input type="hidden" name="free_delivery" id="free_delivery" value=""/>
-
 			@endif
+
+			<div class="page_text">
+				<div style="max-width: 600px; margin: 0 auto; font-size: 20px; text-align: center;">Оператор перезвонит
+				                                                                                    Вам в ближайшее
+				                                                                                    время для
+				                                                                                    подтверждения заказа
+				                                                                                    в рабочие дни с
+				                                                                                    10.00 до 19.00, а
+				                                                                                    если Вы оформляете
+				                                                                                    заказ в выходные, то
+				                                                                                    в ближайший рабочий
+				                                                                                    день.
+				</div>
+				<div class="clear"></div>
+			</div>
 
 		</div>
 		<div class="clear"></div>
@@ -797,6 +793,21 @@
 			word = '';
 		}
 		return word;
+	}
+
+	function city_change() {
+		var city = parseInt($('.cities1#cities').val());
+		setCookie("city", city);
+		$('.phones#phones1 .active, .grafik#grafik1 .active').removeClass('active');
+		$('.phones#phones1 .phone_' + city + ', .grafik#grafik1 .grafik_' + city).addClass('active');
+	}
+
+	function city_change2() {
+		var city = parseInt($('#cities.cities2').val());
+		setCookie("city", city);
+		$('.phones#phones2 .active, .grafik#grafik2 .active').removeClass('active');
+		$('.phones#phones2 .phone_' + city + ', .grafik#grafik2 .grafik_' + city).addClass('active');
+
 	}
 
 	$(document).ready(function () {

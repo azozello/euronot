@@ -989,6 +989,8 @@ class PagesController extends Controller
             default:
         }
         $category_foot = Category::where('url', $category)->value('down_text');
+        $category_middle = Category::where('url', $category)->value('middle_text');
+        $cat_name = Category::where('url', $category)->value('name');
         $category = Category::where('url','=',$category)->value('products_id');
         $category = explode(" ", $category);
         array_pop($category);
@@ -1187,6 +1189,8 @@ class PagesController extends Controller
             'show' => $show_down,
             'meta_tags' => DefaultMetaTags::where('type','=',$meta_name)->get()[0],
             'foot' => $category_foot,
+            'middle' => $category_middle,
+            'name' => $cat_name,
             'organization' =>Organization::get()[0],
             'header' => MenuList::get()->toArray(),
             'products' => $products,

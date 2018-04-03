@@ -61,6 +61,7 @@ class CategoryController extends Controller
             $data->lang_id = $request->lang_id[$k];
             $data->title = $title;
             $data->down_text = $request->foot[$k];
+            $data->middle_text = $request->middle_text;
             $data->description = $description;
             $data->save();
         }
@@ -164,6 +165,7 @@ class CategoryController extends Controller
                 ->update([
                     'name' => $request->name[$k],
                     'down_text' => $request->foot[$k],
+                    'middle_text' => $request->middle_text,
                     'text' =>$request->editor[$k],
                     'parent_category_id' =>$category_id,
                     'url' =>$url,

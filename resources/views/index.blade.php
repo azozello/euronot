@@ -174,13 +174,13 @@
 					<div class="col-lg-3 col-md-4 col-xs-6">
 						<div class="product">
 							<div class="image">
-								<a href="/products/{{$products_hit[0]->url}}">
+								<a href="products-263.html">
 									<img alt="Системный блок Dell Precision T3500"
 									     title="Системный блок Dell Precision T3500"
 									     src="../../product_images/{{$products_hit[0]->image}}"/>
 								</a>
 							</div>
-							<a href="/products/{{$products_hit[0]->url}}">
+							<a href="products-263.html">
 								<div class="name">{{$products_hit[0]->name}}</div>
 							</a>
 							<div class="line"></div>
@@ -188,13 +188,13 @@
 						</div>
 						<div class="product product-hover">
 							<div class="image">
-								<a href="/products/{{$products_hit[0]->url}}">
+								<a href="products-263.html">
 									<img alt="Системный блок Dell Precision T3500"
 									     title="Системный блок Dell Precision T3500"
 									     src="../../product_images/{{$products_hit[0]->image}}"/>
 								</a>
 							</div>
-							<a href="/products/{{$products_hit[0]->url}}">
+							<a href="products-263.html">
 								<div class="name">{{$products_hit[0]->name}}</div>
 							</a>
 							<div class="line"></div>
@@ -252,13 +252,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_hit[1]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[1]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[1]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[1]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -266,13 +266,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_hit[1]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[1]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[1]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[1]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -330,13 +330,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_hit[2]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[2]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[2]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[2]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -344,13 +344,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_hit[2]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[2]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[2]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[2]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -408,13 +408,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_hit[3]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[3]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[3]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[3]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -422,13 +422,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_hit[3]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[3]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[3]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[3]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -486,13 +486,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_hit[4]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[4]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[4]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[4]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -500,13 +500,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_hit[4]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[4]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[4]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[4]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -564,13 +564,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_hit[5]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[5]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[5]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[5]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -578,13 +578,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_hit[5]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[5]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[5]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[5]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -642,13 +642,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_hit[6]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[6]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[6]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[6]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -656,13 +656,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_hit[6]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[6]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[6]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[6]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -720,13 +720,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_hit[7]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[7]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[7]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[7]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -734,13 +734,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_hit[7]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_hit[7]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_hit[7]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_hit[7]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -802,13 +802,13 @@
 						<div class="col-lg-3 col-md-4 col-xs-6">
 							<div class="product">
 								<div class="image">
-									<a href="/products/{{$products_rec[0]->url}}">
+									<a href="products-263.html">
 										<img alt="Системный блок Dell Precision T3500"
 											 title="Системный блок Dell Precision T3500"
 											 src="../../product_images/{{$products_rec[0]->image}}"/>
 									</a>
 								</div>
-								<a href="/products/{{$products_rec[0]->url}}">
+								<a href="products-263.html">
 									<div class="name">{{$products_rec[0]->name}}</div>
 								</a>
 								<div class="line"></div>
@@ -816,13 +816,13 @@
 							</div>
 							<div class="product product-hover">
 								<div class="image">
-									<a href="/products/{{$products_rec[0]->url}}">
+									<a href="products-263.html">
 										<img alt="Системный блок Dell Precision T3500"
 											 title="Системный блок Dell Precision T3500"
 											 src="../../product_images/{{$products_rec[0]->image}}"/>
 									</a>
 								</div>
-								<a href="/products/{{$products_rec[0]->url}}">
+								<a href="products-263.html">
 									<div class="name">{{$products_rec[0]->name}}</div>
 								</a>
 								<div class="line"></div>
@@ -880,13 +880,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_rec[1]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[1]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[1]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[1]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -894,13 +894,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_rec[1]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[0]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[1]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[1]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -958,13 +958,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_rec[2]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[2]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[2]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[2]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -972,13 +972,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_rec[2]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[2]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[2]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[2]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1036,13 +1036,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_rec[3]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[3]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[3]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[3]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1050,13 +1050,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_rec[3]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[3]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[3]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[3]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1114,13 +1114,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_rec[4]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[4]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[4]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[4]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1128,13 +1128,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_rec[4]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[4]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[4]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[4]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1192,13 +1192,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_rec[5]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[5]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[5]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[5]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1206,13 +1206,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_rec[5]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[5]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[5]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[5]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1270,13 +1270,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_rec[6]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[6]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[6]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[6]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1284,13 +1284,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_rec[6]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[6]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[6]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[6]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1348,13 +1348,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_rec[7]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[7]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[7]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[7]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1362,13 +1362,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_rec[7]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[7]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_rec[7]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[7]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1430,13 +1430,13 @@
 						<div class="col-lg-3 col-md-4 col-xs-6">
 							<div class="product">
 								<div class="image">
-									<a href="/products/{{$products_new[0]->url}}">
+									<a href="products-263.html">
 										<img alt="Системный блок Dell Precision T3500"
 											 title="Системный блок Dell Precision T3500"
 											 src="../../product_images/{{$products_new[0]->image}}"/>
 									</a>
 								</div>
-								<a href="/products/{{$products_new[0]->url}}">
+								<a href="products-263.html">
 									<div class="name">{{$products_new[0]->name}}</div>
 								</a>
 								<div class="line"></div>
@@ -1444,13 +1444,13 @@
 							</div>
 							<div class="product product-hover">
 								<div class="image">
-									<a href="/products/{{$products_new[0]->url}}">
+									<a href="products-263.html">
 										<img alt="Системный блок Dell Precision T3500"
 											 title="Системный блок Dell Precision T3500"
 											 src="../../product_images/{{$products_new[0]->image}}"/>
 									</a>
 								</div>
-								<a href="/products/{{$products_new[0]->url}}">
+								<a href="products-263.html">
 									<div class="name">{{$products_new[0]->name}}</div>
 								</a>
 								<div class="line"></div>
@@ -1508,13 +1508,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_new[1]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_new[1]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[1]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_new[1]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1522,13 +1522,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_new[1]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_new[1]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[1]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_new[1]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1586,13 +1586,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_new[2]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_new[2]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[2]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_new[2]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1600,13 +1600,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_new[2]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_new[2]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[2]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_new[2]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1664,13 +1664,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_new[3]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_new[3]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[3]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_new[3]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1678,13 +1678,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_new[3]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_new[3]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[3]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_new[3]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1742,13 +1742,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_new[4]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_new[4]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[4]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_new[4]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1756,13 +1756,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_new[4]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_new[4]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[4]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_new[4]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1820,13 +1820,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_new[5]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_new[5]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[5]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_new[5]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1834,13 +1834,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_new[5]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_new[5]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[5]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_new[5]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1898,13 +1898,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_new[6]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_new[6]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[6]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_new[6]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1912,13 +1912,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_new[6]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_new[6]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[6]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_new[6]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1976,13 +1976,13 @@
 							<div class="col-lg-3 col-md-4 col-xs-6">
 								<div class="product">
 									<div class="image">
-										<a href="/products/{{$products_new[7]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[7]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[7]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[7]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -1990,13 +1990,13 @@
 								</div>
 								<div class="product product-hover">
 									<div class="image">
-										<a href="/products/{{$products_new[7]->url}}">
+										<a href="products-263.html">
 											<img alt="Системный блок Dell Precision T3500"
 												 title="Системный блок Dell Precision T3500"
 												 src="../../product_images/{{$products_rec[7]->image}}"/>
 										</a>
 									</div>
-									<a href="/products/{{$products_new[7]->url}}">
+									<a href="products-263.html">
 										<div class="name">{{$products_rec[7]->name}}</div>
 									</a>
 									<div class="line"></div>
@@ -2067,7 +2067,7 @@
 				<div class="col-lg-2 col-xs-3">
 
 					<div class="block bl1">
-						<a href="{{$main_page[0]->url_1}}">
+						<a href="{{$main_page[0]->url1}}">
 						<img src="../index_app/images/preimushestva-1.png" alt="">
 						<div class="text">{!! $main_page[0]->text_block_2  !!}
 						</div>
@@ -2077,7 +2077,7 @@
 				</div>
 				<div class="col-lg-2 col-xs-3">
 					<div class="block bl2">
-						<a href="{{$main_page[0]->url_2}}">
+						<a href="{{$main_page[0]->url2}}">
 						<img src="../index_app/images/preimeshestva-2.png" alt="">
 						<div class="text"> {!! $main_page[0]->text_block_3  !!}
 						</div>
@@ -2086,24 +2086,24 @@
 				</div>
 				<div class="col-lg-2 col-xs-3">
 					<div class="block bl3">
-						<a href="{{$main_page[0]->url_3}}">
+						<a href="{{$main_page[0]->url3}}">
 						<img src="../index_app/images/preimeshestva-3.png" alt="">
 						<div class="text">{!! $main_page[0]->text_block_4  !!}</div>
 						</a>
 					</div>
 				</div>
-				<div class="col-lg-2 col-xs-3">
-					<div class="block bl4">
-						<a href="{{$main_page[0]->url_4}}">
-						<img src="../index_app/images/preimeshestva-4.png" alt="">
-						<div class="text">{!! $main_page[0]->text_block_5  !!}
-						</div>
-						</a>
-					</div>
-				</div>
+				{{--<div class="col-lg-2 col-xs-3">--}}
+					{{--<div class="block bl4">--}}
+						{{--<a href="{{$main_page[0]->url4}}">--}}
+						{{--<img src="../index_app/images/preimeshestva-4.png" alt="">--}}
+						{{--<div class="text">{!! $main_page[0]->text_block_5  !!}--}}
+						{{--</div>--}}
+						{{--</a>--}}
+					{{--</div>--}}
+				{{--</div>--}}
 				<div class="col-lg-2 col-xs-3">
 					<div class="block bl5">
-						<a href="{{$main_page[0]->url_5}}">
+						<a href="{{$main_page[0]->url5}}">
 						<img src="../index_app/images/preimeshestva-5.png" alt="">
 						<div class="text"> {!! $main_page[0]->text_block_6  !!}
 						</div>
@@ -2188,13 +2188,12 @@
 		@include('layouts.site.footer')
 	</div>
 </div>
-@if(isset($banner_count) && $banner_count < 4)
-<div style="background-image: url(../images/{{$banner}})" class="block_baner_right">
+
+<div style="background-image: url(../index_app/images/slider/20171011175607283.png)" class="block_baner_right">
 	<div class="hidden_baner_lg">
 		+
 	</div>
 </div>
-@endif
 
 <script type="text/javascript">
 	$(document).ready(function(){ $('.checkbox').each(function() { if($(this).parent().find('input[type=checkbox]:checked').length==1){$(this).addClass('checked');} });
@@ -2432,7 +2431,19 @@
 		else{word = '';}
 		return word;
 	}
+	function city_change(){
+		var city = parseInt($('.cities1#cities').val());
+		setCookie("city", city);
+		$('.phones#phones1 .active, .grafik#grafik1 .active').removeClass('active');
+		$('.phones#phones1 .phone_'+city+', .grafik#grafik1 .grafik_'+city).addClass('active');
+	}
+	function city_change2(){
+		var city = parseInt($('#cities.cities2').val());
+		setCookie("city", city);
+		$('.phones#phones2 .active, .grafik#grafik2 .active').removeClass('active');
+		$('.phones#phones2 .phone_'+city+', .grafik#grafik2 .grafik_'+city).addClass('active');
 
+	}
 	$(document).ready(function(){$('#go_top').click(function(){$(window).scrollTop(0);})});
 	$(window).scroll(function(){go_top();});
 	$(window).resize(function(){go_top();});

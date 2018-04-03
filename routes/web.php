@@ -35,7 +35,7 @@ Route::get('/delivery',['uses'=>'PagesController@show_delivery','as'=>'show_deli
 Route::get('/news',['uses'=>'PagesController@show_site_news','as'=>'show_site_news']);
 Route::get('/warranty',['uses'=>'PagesController@show_warranty','as'=>'show_warranty']);
 Route::get('/products/{url?}',['uses'=>'PagesController@show_products','as'=>'show_products']);
-Route::get('/product_list/{category?}/{url?}',['uses'=>'PagesController@show_product_list','as'=>'show_product_list']);
+Route::get('/product-list/{category?}/{url?}',['uses'=>'PagesController@show_product_list','as'=>'show_product_list']);
 });
 Route::post('/add_comment',['uses'=>'PagesController@add_comment','as'=>'add_comment']);
 
@@ -68,7 +68,6 @@ Route::post('/upload_pdf',[
     'uses' => 'PagesController@upload_pdf',
     'as' => 'upload_pdf'
 ]);
-Route::get('/change_item_amount', ['uses' => 'PagesController@change_item_amount', 'as' => 'change_item_amount']);
 Route::get('/news_show/{url?}',['uses' => 'PagesController@show_one_news','as' => 'news_show']);
 
 Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){

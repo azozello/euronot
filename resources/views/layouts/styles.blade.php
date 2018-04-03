@@ -182,9 +182,6 @@
                                 </ul>
                             </li> -->
                             <li>
-                                <a href="{{route('photos')}}"><i class="icon-images2"></i> <span>Галерея</span></a>
-                            <li>
-                            <li>
                                 <a href="{{route('reviews')}}"><i class="icon-bubbles4"></i> <span>Отзывы</span></a>
                             <li>
 
@@ -198,8 +195,8 @@
                             <li>
                                 <a href="#"><i class="icon-cog"></i> <span>Глобальные настройки</span></a>
                                 <ul>
+                                    <li><a href="{{route('banner_show')}}">Баннер</a></li>
                                     <li><a href="{{route('organization')}}">Про организацию</a></li>
-                                    <li><a href="{{route('sliders')}}">Слайдер </a></li>
                                     <!--<li><a href="{{/*route('text_blocks')*/route('feedback')}}">Текстовые блоки</a></li>-->
                                     <li><a href="{{route('feedback')}}">Форма обратной связи</a></li>
                                     <li><a href="{{route('languages')}}">Языки</a></li>
@@ -219,7 +216,6 @@
                                     <li><a href="{{route('site_map')}}">Карта сайта</a></li>
                                     <li><a href="{{route('robots')}}">robots.txt</a></li>
                                     <li><a href="{{route('analytics')}}">Аналитика</a></li>
-                                    <li><a href="{{route('images_zip')}}">Сжатие изображений</a></li>
                                     <li><a href="{{route('redirect')}}">Перенаправление</a></li>
                                     <li><a href="{{route('cache')}}">Кеширование</a></li>
                                     <li><a href="{{route('meta_tags')}}">Шаблон мета-тегов</a></li>

@@ -281,11 +281,11 @@
                                 <tbody>
                                 @foreach($orders as $order)
                                     <tr>
-                                        <td>{{$order->order_number}}</td>
-                                        <td>{{$order->user_name}}</td>
-                                        <td>{{$order->user_phone_number}}</td>
-                                        <td>{{$order->user_order_email}}</td>
-                                        <td>{{$order->creating_order_date}}</td>
+                                        <td>{{$order->id}}</td>
+                                        <td>{{$order->name}}</td>
+                                        <td>{{$order->phone_number}}</td>
+                                        <td>{{$order->email}}</td>
+                                        <td>{{$order->created_at}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -295,7 +295,7 @@
                     </div>
                 </div>
                 <div class="form-button">
-                    <a href="#">
+                    <a href="/admin/page/post">
                         <button type="submit" class="btn bg-teal-400">Больше</button>
                     </a>
                 </div>

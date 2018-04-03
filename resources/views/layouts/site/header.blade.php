@@ -719,11 +719,11 @@
                         @if($header != null)
                             @foreach($header as $index=>$item)
                                 @if($item['type'] == 'mid')
-                                    @if(isset($hui_pizda) and $hui_pizda < 5)
-                                        <li><a href="{{$item['url']}}"><span class="sprite sprite-menu-icon-{{$hui_pizda++}}"></span>{{$item['name']}}</a>
+                                    @if($index < 5)
+                                        <li><a href="{{$item['url']}}"><span class="sprite sprite-menu-icon-{{($index+1)}}"></span>{{$item['name']}}</a>
                                         </li>
                                     @else
-                                        <li><a href="{{$item['url']}}"><span class="sprite sprite-menu-icon-2"></span>{{$item['name']}}</a>
+                                        <li><a href="{{$item['url']}}"><span class="sprite sprite-menu-icon-3"></span>{{$item['name']}}</a>
                                         </li>
                                     @endif
                                 @endif

@@ -82,6 +82,9 @@
                                                    placeholder="{{$languages[0][0]['description_placeholder']}}">
                                         </div>
                                         <textarea name="editor[0]" id="editor[0]">{{$categories[0]->text}}</textarea>
+                                        Текст над товаром
+                                        <textarea name="middle_text" id="middle_text[0]">{{$categories[0]->middle_text}}</textarea>
+                                        Текст подвала
                                         <textarea name="foot[0]" id="foot[0]">{{$categories[0]->down_text}}</textarea>
 
                                     </div>
@@ -111,8 +114,10 @@
                                                        placeholder="{{$languages[1][0]['description_placeholder']}}">
                                             </div>
                                             <textarea name="editor[1]" id="editor[1]">{{$categories[1]->text}}</textarea>
+                                            Текст над товаром
+                                            <textarea name="middle_text" id="middle_text[1]">{{$categories[1]->middle_text}}</textarea>
+                                            Текст подвала
                                             <textarea name="foot[1]" id="foot[1]">{{$categories[1]->down_text}}</textarea>
-
                                         </div>
                                     </div>
                             </div>
@@ -133,28 +138,38 @@
         </div>
         <!-- /footer -->
         <script type="text/javascript">
-	        var ckeditor1 = CKEDITOR.replace('editor[0]');
-	        AjexFileManager.init({
-		        returnTo: 'ckeditor',
-		        editor: ckeditor1
-	        });
-
-	        var ckeditor2 = CKEDITOR.replace('editor[1]');
-	        AjexFileManager.init({
-		        returnTo: 'ckeditor',
-		        editor: ckeditor2
-	        });
-
-            var feditor1 = CKEDITOR.replace('foot[0]');
+            var ckeditor1 = CKEDITOR.replace('editor[0]');
             AjexFileManager.init({
                 returnTo: 'ckeditor',
-                editor: feditor1
+                editor: ckeditor1
             });
-
-            var feditor2 = CKEDITOR.replace('foot[1]');
+        </script>
+        <script type="text/javascript">
+            var ckeditor1 = CKEDITOR.replace('foot[0]');
             AjexFileManager.init({
                 returnTo: 'ckeditor',
-                editor: feditor2
+                editor: ckeditor1
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('foot[0]');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('middle_text[0]');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
+            });
+        </script>
+        <script type="text/javascript">
+            var ckeditor2 = CKEDITOR.replace('middle_text[1]');
+            AjexFileManager.init({
+                returnTo: 'ckeditor',
+                editor: ckeditor2
             });
         </script>
 

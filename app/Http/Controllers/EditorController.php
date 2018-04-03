@@ -8,6 +8,7 @@ use App\MenuList;
 use App\ObjectImages;
 use App\Objects;
 use App\OpenHours;
+use App\Photos;
 use App\SiteMap;
 use App\Warranty;
 use Illuminate\Http\Request;
@@ -155,7 +156,26 @@ class EditorController extends Controller
             'pages' => $pages,
         ]);
     }
-
+    public function banner_show(){
+        return view('banner',[
+            'banner' => Photos::where('id','=',1)->value('name')
+        ]);
+    }
+    public function banner_edit(Request $request){
+        $file = $request->file();
+        foreach ($file as $f) {
+            Photos::truncate();
+            if (Image::make($f)
+                ->save(public_path('images') . '/' . $f->getClientOriginalName())) {
+                $data = new Photos();
+                $data->name = $f->getClientOriginalName();
+                $data->save();
+            } else {
+                return 'Ошибка загрузки';
+            }
+        }
+        return redirect()->back();
+    }
     public function edit_page(Request $request)
     {
         $title = NULL;
