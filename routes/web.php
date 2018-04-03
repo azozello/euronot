@@ -23,8 +23,8 @@ Route::post('/add_to_cart',['uses'=>'CartController@add_to_cart','as'=>'add_to_c
     Route::post('/delete_from_cart',['uses'=>'CartController@delete_from_cart','as'=>'delete_from_cart']);
     Route::post('/quantity_change',['uses'=>'CartController@quantity_change','as'=>'quantity_change']);
     Route::post('/issue_order',['uses'=>'CartController@issue_order','as'=>'issue_order']);
-    Route::post('/add_order',['uses'=>'CartController@add_order','as'=>'add_order']);
 });
+Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale(),'middleware'=>['connection_count']], function() {
 Route::get('/',['uses'=>'PagesController@show_site_index','as'=>'show_site_index']);
 Route::post('/search_products',['uses'=>'PagesController@search_products','as'=>'search_products']);
 Route::get('/refresh_search_page',['uses'=>'PagesController@search_products','as'=>'refresh_search_page']);
@@ -36,7 +36,7 @@ Route::get('/news',['uses'=>'PagesController@show_site_news','as'=>'show_site_ne
 Route::get('/warranty',['uses'=>'PagesController@show_warranty','as'=>'show_warranty']);
 Route::get('/products/{url?}',['uses'=>'PagesController@show_products','as'=>'show_products']);
 Route::get('/product_list/{category?}/{url?}',['uses'=>'PagesController@show_product_list','as'=>'show_product_list']);
-
+});
 Route::post('/add_comment',['uses'=>'PagesController@add_comment','as'=>'add_comment']);
 
 Route::get('count_items_in_cart',[
@@ -68,6 +68,7 @@ Route::post('/upload_pdf',[
     'uses' => 'PagesController@upload_pdf',
     'as' => 'upload_pdf'
 ]);
+Route::get('/change_item_amount', ['uses' => 'PagesController@change_item_amount', 'as' => 'change_item_amount']);
 Route::get('/news_show/{url?}',['uses' => 'PagesController@show_one_news','as' => 'news_show']);
 
 Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
@@ -97,6 +98,9 @@ Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
     Route::get('/page_12',['uses'=>'NonStandartPagesController@page_12','as'=>'page_12']);
     Route::get('/page_13',['uses'=>'NonStandartPagesController@page_13','as'=>'page_13']);
     Route::get('/cms_14',['uses'=>'NonStandartPagesController@cms_14','as'=>'cms_14']);
+
+    Route::get('/banner_show',['uses'=>'EditorController@banner_show','as'=>'banner_show']);
+    Route::post('/banner_edit',['uses'=>'EditorController@banner_edit','as'=>'banner_edit']);
 
     //////
 
@@ -133,6 +137,11 @@ Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
     Route::get('/addDbStreets',['uses'=>'CitiesController@addDbStreets','as'=>'addDbStreets']);
 
     Route::get('/show_index',['uses'=>'PagesController@show_index','as'=>'show_index']);
+
+    Route::get('/contacts_show',['uses'=>'PagesController@contacts_show','as'=>'contacts_show']);
+    Route::post('/make_new_contact',['uses'=>'PagesController@make_new_contact','as'=>'make_new_contact']);
+    Route::post('/contact_update',['uses'=>'PagesController@contact_update','as'=>'contact_update']);
+    Route::post('/contact_delete',['uses'=>'PagesController@contact_delete','as'=>'contact_delete']);
 
     Route::get('/show_clients_list',['uses'=>'PagesController@show_clients_list','as'=>'show_clients_list']);    //список пользователей
     Route::post('/save_clients_list',['uses'=>'ClientListController@save_clients_list','as'=>'save_clients_list']);
@@ -195,6 +204,18 @@ Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
     Route::post('/add_news',['uses'=>'EditorController@add_news','as'=>'add_news']);
     Route::post('/delete_news',['uses'=>'EditorController@delete_news','as'=>'delete_news']);
     Route::get('/search_news',['uses'=>'PagesController@search_news','as'=>'search_news']);
+
+
+    Route::get('/delivery_edit',[
+        'uses' => 'EditorController@delivery_edit_show',
+        'as' => 'delivery_edit'
+    ]);
+
+    Route::post('/edit_delivery',[
+        'uses' => 'EditorController@delivery_company_edit',
+        'as' => 'edit_delivery'
+    ]);
+
 
     Route::get('/edit_about',[
         'uses' => 'EditorController@about_company_edit_show',
@@ -272,6 +293,9 @@ Route::group(['prefix'=>'admin/page','middleware'=>['auth']],function(){
 
     Route::post('/mail',['uses'=>'PostController@mail','as'=>'mail']); //почта
     Route::get('/post',['uses'=>'PagesController@post','as'=>'post']);
+    Route::get('/change_post_stats', ['uses' => 'PagesController@change_post_stats', 'as' => 'change_post_stats']);
+    Route::get('/order_items/{order_id?}',['uses'=>'PagesController@order_items','as'=>'order_items']);
+
 
     Route::get('/subscription',['uses'=>'PagesController@subscription','as'=>'subscription']); //подписки
     Route::post('/subscription_template',['uses'=>'PostController@subscription_template','as'=>'subscription_template']);

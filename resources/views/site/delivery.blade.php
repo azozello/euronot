@@ -22,55 +22,10 @@
 			<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span
 					itemprop="title">Компьютерная техника бу</span></a>&nbsp;&nbsp;>&nbsp;&nbsp;<span>Доставка и оплата</span></span>
 		</div>
-		<h1 class="page_title ">Доставка и оплата</h1>
-		<div class="page_text"><p style="text-align: center;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-		                                                              &nbsp; &nbsp;Доставка курьером по Киеву<img
-					style="float: right; margin: 10px;" src="upload/image/dostavka.jpg" alt="" width="300"/></strong>
-		</p>
-			<p style="text-align: justify;">Доставка осуществляется только по г. Киев. Стоимость доставки <strong>100
-			                                                                                                      грн.&nbsp;&nbsp;</strong>
-			</p>
-			<p style="text-align: justify;">Если заказ был оформлен до 12.00, то доставка происходит в тот-же день до
-			                                21.00, если заказ был оформлен после 12.00 - доставка происходит на
-			                                следующий день.</p>
-			<p style="text-align: center;"><strong><br/></strong></p>
-			<p style="text-align: center;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Самовывоз </strong>
-			</p>
-			<p style="text-align: justify;">Самовывоз производится из магазинов нашей сети, по адресам:</p>
-			<p style="text-align: justify;">г.Киев, Московский проспект 16Б</p>
-			<p style="text-align: justify;"><span>г.Киев, Московский проспект 32А ТЦ "Городок"</span></p>
-			<p style="text-align: justify;"><em>(при предварительном согласовании с менеджером)</em>.<strong> </strong>
-			</p>
-			<p style="text-align: center;"><strong><br/></strong></p>
-			<p style="text-align: center;"><strong>Доставка по Украине &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-			                                       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-			                                       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong>
-			</p>
-			<p style="text-align: justify;">Доставка по Украине осуществляется с помощью службы доставки&nbsp;<strong>Новая
-			                                                                                                          почта</strong>
-			                                или любой другой службой доставки на выбор покупателя. Заказы доставляются
-			                                на склад компании "Новая Почта" в Вашем городе. Адрес ближайшего
-			                                представительства можно узнать <a href="https://novaposhta.ua/ru"
-			                                                                  target="_blank">здесь</a>.</p>
-			<p style="text-align: center;"><strong>Оплата<img style="float: right;" src="upload/image/pos.jpg" alt=""
-			                                                  width="300" height="200"/></strong></p>
-			<p style="padding-left: 30px;">- Наличными;</p>
-			<p style="padding-left: 30px;">- Безналичный расчет;</p>
-			<p style="padding-left: 30px;">- Наложенный платеж;</p>
-			<p style="padding-left: 30px;">- Банковской картой.</p>
-			<div class="clear"></div>
-		</div>
-		<div class="clear"></div>
-		<div id="wrap_out" class="row">
-			<div id="header" class="inner"></div>
-			<div class="clear"></div>
-			<div id="wrapper" class="inner">
-				<div id="content"></div>
-				<div class="clear"></div>
-			</div>
-			<div class="push"></div>
-			<div id="footer" class="inner"></div>
-		</div>
+		<h1 class="page_title">Доставка и оплата</h1>
+		@if(isset($text))
+			{!! $text !!}
+		@endif
 	</div>
 </div>
 <div class="footer container-fluid">
@@ -328,19 +283,7 @@
 		else{word = '';}
 		return word;
 	}
-	function city_change(){
-		var city = parseInt($('.cities1#cities').val());
-		setCookie("city", city);
-		$('.phones#phones1 .active, .grafik#grafik1 .active').removeClass('active');
-		$('.phones#phones1 .phone_'+city+', .grafik#grafik1 .grafik_'+city).addClass('active');
-	}
-	function city_change2(){
-		var city = parseInt($('#cities.cities2').val());
-		setCookie("city", city);
-		$('.phones#phones2 .active, .grafik#grafik2 .active').removeClass('active');
-		$('.phones#phones2 .phone_'+city+', .grafik#grafik2 .grafik_'+city).addClass('active');
 
-	}
 	$(document).ready(function(){$('#go_top').click(function(){$(window).scrollTop(0);})})
 	$(window).scroll(function(){go_top();})
 	$(window).resize(function(){go_top();})

@@ -447,7 +447,7 @@
 										@endif
 										@if(!is_null($skidka))
 											<input name="item_price" id="result_price" type="hidden" value="{{$skidka_price}}">
-										@else
+										@elseconfiguration
 											<input name="item_price" id="result_price" type="hidden" value="{{$product[0]['price']}}">
 										@endif
 										<input name="item_url" type="hidden" value="{{$product[0]['url']}}">
@@ -1043,19 +1043,6 @@
                 else if(last1 == 1){word = '';}
                 else{word = '';}
                 return word;
-            }
-            function city_change(){
-                var city = parseInt($('.cities1#cities').val());
-                setCookie("city", city);
-                $('.phones#phones1 .active, .grafik#grafik1 .active').removeClass('active');
-                $('.phones#phones1 .phone_'+city+', .grafik#grafik1 .grafik_'+city).addClass('active');
-            }
-            function city_change2(){
-                var city = parseInt($('#cities.cities2').val());
-                setCookie("city", city);
-                $('.phones#phones2 .active, .grafik#grafik2 .active').removeClass('active');
-                $('.phones#phones2 .phone_'+city+', .grafik#grafik2 .grafik_'+city).addClass('active');
-
             }
             $(document).ready(function(){$('#go_top').click(function(){$(window).scrollTop(0);})})
             $(window).scroll(function(){go_top();});

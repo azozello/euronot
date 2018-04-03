@@ -161,6 +161,12 @@
                                 </ul>
                             </li>
                             <li>
+                                <a href="#"><i class="icon-newspaper"></i><span>Доставка и оплата</span></a>
+                                <ul>
+                                    <li><a href="{{route('delivery_edit')}}">Редактировать</a></li>
+                                </ul>
+                            </li>
+                            <li>
                                 <a href="#"><i class="icon-newspaper"></i><span>Гарантии</span></a>
                                 <ul>
                                     <li><a href="{{route('edit_warranty')}}">Редактировать</a></li>

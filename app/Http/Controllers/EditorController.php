@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\AboutCompany;
+use App\Delivery;
 use App\MenuList;
 use App\ObjectImages;
 use App\Objects;
@@ -610,16 +611,24 @@ class EditorController extends Controller
         ]);
     }
 
-    public function about_company_edit(Request $request)
+    public function delivery_edit_show()
     {
-        AboutCompany::truncate();
-        $data = new AboutCompany();
-        $data->about_company_lang = 1;
-        $data->about_company_text = $request->editor1;
-        $data->about_company_name = $request->name;
-        $data->about_company_url = $request->url;
-        $data->about_company_description = $request->description;
-        $data->about_company_title = $request->title;
+        $about = Delivery::get();
+        return view('delivery', [
+            'about_company' => $about,
+        ]);
+    }
+
+    public function delivery_company_edit(Request $request)
+    {
+        Delivery::truncate();
+        $data = new Delivery();
+        $data->delivery_lang = 1;
+        $data->delivery_text = $request->editor1;
+        $data->delivery_name = "";
+        $data->delivery_url = "";
+        $data->delivery_description = "";
+        $data->delivery_title = "";
         $data->save();
         return redirect()->back();
     }

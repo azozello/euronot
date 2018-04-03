@@ -1,4 +1,12 @@
 <body id="_body">
+<div class="dlb"></div>
+<div class="dl">
+  <div class="dl__container">
+    <div class="dl__corner--top"></div>
+    <div class="dl__corner--bottom"></div>
+  </div>
+  <div class="dl__square"></div>
+</div>
 <div class="header container-fluid ">
     <div class="container">
         <div class="top-row mob hidden-lg-up row">
@@ -24,12 +32,12 @@
                 <div class="collapse" id="exCollapsingNavbar2">
                     <div class="text-muted p-1">
                         <ul class="nav nav-bar main-menu mob">
-                            <li><a href="/product_list/noutbuki">Ноутбуки б/у</a></li>
-                            <li><a href="/product_list/sistemnie-bloki">Системные блоки б/у</a></li>
-                            <li><a href="/product_list/monitory">Мониторы б/у</a></li>
-                            <li><a href="/product_list/printery">Принтеры (NEW)</a></li>
-                            <li><a href="/product_list/doc-stancii">Док Станции б/у</a></li>
-                            <li><a href="/product_list/igrovie-sistemniki">Игровые системники</a></li>
+                            <li><a href="/product-list/noutbuki">Ноутбуки б/у</a></li>
+                            <li><a href="/product-list/sistemnie-bloki">Системные блоки б/у</a></li>
+                            <li><a href="/product-list/monitory">Мониторы б/у</a></li>
+                            <li><a href="/product-list/printery">Принтеры (NEW)</a></li>
+                            <li><a href="/product-list/doc-stancii">Док Станции б/у</a></li>
+                            <li><a href="/product-list/igrovie-sistemniki">Игровые системники</a></li>
                             @if(isset($show))
                                 @if($header != null)
                                     @foreach($header as $item)
@@ -204,10 +212,9 @@
                 </div>
             </div>
             <div class="city-select mob">
-                <select name="cities" class="cities2" id="cities" onchange="city_change2();">
-                    <option value="0" selected="selected">{{$cities[0]['city_name']}}</option>
-                    @foreach($cities as $city)
-                        <option value="1">{{$city['city_name']}}</option>
+                <select name="cities" class="cities1" id="cities" onchange="city_change()">
+                    @foreach($cities as $index=>$city)
+                        <option value="{{$index}}">{{$city['city_name']}}</option>
                     @endforeach
                 </select>
 
@@ -257,10 +264,9 @@
                 </div>
             </div>
             <div class="city-select col-lg-2 col-md-2">
-                <select name="cities" class="cities1" id="cities" onchange="city_change();">
-                    <option value="0" selected="selected">{{$cities[0]['city_name']}}</option>
-                    @foreach($cities as $city)
-                        <option value="1">{{$city['city_name']}}</option>
+                <select name="cities" class="cities1" id="citie" onchange="city_change()">
+                    @foreach($cities as $index=>$city)
+                        <option value="{{$index}}">{{$city['city_name']}}</option>
                     @endforeach
                 </select>
 
@@ -422,7 +428,7 @@
                 <div>
                     <div class="title">График работы:</div>
                     <div class="text">
-                        <div class="item grafik_0 active">
+                        <div id="hui_0" class="item grafik_0 active">
                             @if(isset($cities[0]['street']))ул.{{$cities[0]['street']}}<br/>@endif
                             пн.-пт. {{$cities[0]['working_days']}}<br/>
                             сб. {{$cities[0]['saturday']}}<br/>
@@ -430,7 +436,7 @@
                         </div>
                         @foreach($cities as $index=>$city)
                             @if($index != 0)
-                                <div class="item grafik_{{$index}}">
+                                <div id="hui_{{$index}}" class="item grafik_{{$index}}">
                                     @if(isset($city['street']))ул.{{$city['street']}}<br/>@endif
                                     пн.-пт. {{$city['working_days']}}<br/>
                                     сб. {{$city['saturday']}}<br/>
@@ -479,6 +485,19 @@
                 src="https://maps.google.com/maps/api/js?key=AIzaSyDFZheD4LS-qwom8GeDyp_RMEZvDKcF-ec" async></script>
         <script type="text/javascript">
             var map;
+
+            function city_change() {
+                var e = document.getElementById("citie");
+                var pizda = "hui_"+e.options[e.selectedIndex].value;
+
+                var children = e.children;
+                for (var i = 0; i < +{{count($cities)}}; i++) {
+                    var zalupa = "hui_"+i;
+                    document.getElementById(zalupa).className = "item grafik_0";
+                }
+                document.getElementById('hui_0').className = "item grafik_0";
+                document.getElementById(pizda).className = document.getElementById(pizda).className+" active";
+            }
 
             function initialize() {
                 var bounds = new google.maps.LatLngBounds();
@@ -697,22 +716,19 @@
                         aria-label="Toggle navigation"></button>
                 <div class="collapse navbar-toggleable-md" id="navbarResponsive">
                     <ul class="nav nav-bar main-menu">
-                        <li><a href="/product_list/noutbuki"><span class="sprite sprite-menu-icon-1"></span>Ноутбуки
-                                б/у</a>
-                        </li>
-                        <li><a href="/product_list/sistemnie-bloki"><span class="sprite sprite-menu-icon-2"></span>Системные
-                                блоки
-                                б/у</a>
-                        </li>
-                        <li><a href="/product_list/monitory"><span class="sprite sprite-menu-icon-3"></span>Мониторы
-                                б/у</a>
-                        </li>
-                        <li><a href="/product_list/printery"><span class="sprite sprite-menu-icon-4"></span>Принтеры
-                                (NEW)</a>
-                        </li>
-                        <li><a href="/product_list/doc-stancii"><span
-                                        class="sprite sprite-menu-icon-5"></span>Док Станции б/у</a></li>
-                        <li><a href="igrovie-sistemniki"><span class="sprite sprite-menu-icon-2"></span>Игровые системники</a></li>
+                        @if($header != null)
+                            @foreach($header as $index=>$item)
+                                @if($item['type'] == 'mid')
+                                    @if(isset($hui_pizda) and $hui_pizda < 5)
+                                        <li><a href="{{$item['url']}}"><span class="sprite sprite-menu-icon-{{$hui_pizda++}}"></span>{{$item['name']}}</a>
+                                        </li>
+                                    @else
+                                        <li><a href="{{$item['url']}}"><span class="sprite sprite-menu-icon-2"></span>{{$item['name']}}</a>
+                                        </li>
+                                    @endif
+                                @endif
+                            @endforeach
+                        @endif
                     </ul>
                     <ul class="nav nav-bar main-menu main-menu2">
                         @if(isset($show))
@@ -728,6 +744,13 @@
                 </div>
             </nav>
         </div>
+		<script>
+			$(window).on('load', function () {
+				var preloader = jQuery('.dl');
+				preloader.delay(500).fadeOut('slow');
+				$('.dlb').delay(500).fadeOut('slow');
+			});
+		</script>	
 @yield('main_pages')
 </body>
 </html>

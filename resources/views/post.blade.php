@@ -17,6 +17,27 @@
 		</div>
 
 	</div>
+	<script>
+		function status(id) {
+            var status = prompt("Введите статус заказа", "хуятус");
+            var dto = {id : id, status : status};
+            $.ajax({
+                url : "/admin/page/change_post_stats",
+                contentType : 'application/json',
+                data : dto,
+                type : 'GET',
+                success: function(data) {
+                    console.log(data);
+                    document.getElementById(id).innerText = status;
+                },
+                error:  function(xhr, str){
+                    alert('Возникла ошибка: ' + xhr + str);
+                    console.log(xhr);
+                    console.log(str);
+                }
+            });
+        }
+	</script>
 
 
 				<!-- Content area -->
@@ -43,9 +64,9 @@
 							<tbody>
 							@foreach($mails as $mail)
 								<tr>
-									<td>{{$mail->id}}</td>
+									<td><a href="/admin/page/order_items/{{$mail->id}}">{{$mail->id}}</a></td>
 									<td>{{$mail->comment}}</td>
-					                <td>{{$mail->status}}</td>
+					                <td onclick="status({{$mail->id}})" id="{{$mail->id}}">{{$mail->status}}</td>
 									<td>{{$mail->date}}</td>
 									<td>{{$mail->sum}}</td>
 									<td>{{$mail->name}}</td>

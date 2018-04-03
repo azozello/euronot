@@ -72,6 +72,7 @@
                                 <td>
                                     <select name="type">
                                         <option value="top">Верхнее меню</option>
+                                        <option value="mid">Среднее меню</option>
                                         <option value="down">Нижнее меню</option>
                                     </select>
                                 </td>

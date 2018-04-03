@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Delivery;
 use Illuminate\Http\Response;
+use App\OrderItems;
 use App\PartnerPrice;
 use App\ProductConfiguration;
 use App\MenuList;
@@ -71,7 +73,6 @@ use GraphGenerate;
 use SiteMap as SiteMapFacade;
 
 
-
 class PagesController extends Controller
 {
     public function upload_pdf(Request $request){
@@ -91,7 +92,7 @@ class PagesController extends Controller
             return (new Response(PartnerPrice::where('id', 1)->get()[0]->data, 200))
                 ->header('Content-Type', 'multipart/form-data');
         } else {
-            return "Sasha - hui!";
+            return "Error";
         }
     }
 
@@ -178,6 +179,7 @@ class PagesController extends Controller
             'cities' => OpenHours::get(),
             'items_in_cart' => $items_in_cart,
             'cart_products' => $cart_poducts,
+            'hui_pizda' => 1,
             'cart_price' => $cart_price
         ]);
     }
@@ -304,6 +306,12 @@ class PagesController extends Controller
         leftJoin('product_images', 'products.product_id', '=', 'product_images.images_product_id')->
         groupBy('products.product_id')->
         get();
+        if(isset($_SESSION['banner_count'])) {
+            $banner_count = $_SESSION['banner_count'];
+        }
+        else{
+            $banner_count = 1;
+        }
         return view('site.index',[
             'meta_tags' => DefaultMetaTags::where('type','=','main_page')->get()[0],
             'organization' => Organization::get()[0],
@@ -315,7 +323,10 @@ class PagesController extends Controller
             'products_new' => $products_new,
             'items_in_cart' => $items_in_cart,
             'cart_products' => $cart_poducts,
-            'cart_price' => $cart_price
+            'hui_pizda' => 1,
+            'cart_price' => $cart_price,
+            'banner' => Photos::where('id','=',1)->value('name'),
+            'banner_count' => $banner_count
         ]);
     }
 
@@ -384,6 +395,7 @@ class PagesController extends Controller
             'items_in_cart' => $items_in_cart,
             'cart_price' => $cart_price,
             'contacts' => Contacts::get(),
+            'hui_pizda' => 1,
             'num' => 0
         ]);
     }
@@ -418,6 +430,8 @@ class PagesController extends Controller
             'cities' => OpenHours::get(),
             'items_in_cart' => $items_in_cart,
             'cart_products' => $cart_poducts,
+            'text' => Delivery::get()[0]->delivery_text,
+            'hui_pizda' => 1,
             'cart_price' => $cart_price
         ]);
     }
@@ -453,6 +467,7 @@ class PagesController extends Controller
             'all_news' => News::where('name','!=',NULL)->where('page_lang','=',1)->paginate(30)->appends($request->all()),
             'items_in_cart' => $items_in_cart,
             'cart_products' => $cart_poducts,
+            'hui_pizda' => 1,
             'cart_price' => $cart_price
         ]);
     }
@@ -533,6 +548,7 @@ class PagesController extends Controller
             'also' => $see_also_news,
             'items_in_cart' => $items_in_cart,
             'cart_products' => $cart_poducts,
+            'hui_pizda' => 1,
             'cart_price' => $cart_price
         ]);
     }
@@ -573,6 +589,7 @@ class PagesController extends Controller
             'description' => Warranty::get()[0]->attributesToArray()['warranty_description'],
             'items_in_cart' => $items_in_cart,
             'cart_products' => $cart_poducts,
+            'hui_pizda' => 1,
             'cart_price' => $cart_price
         ]);
     }
@@ -696,6 +713,7 @@ class PagesController extends Controller
             'cart' => $cart,
             'cart_price' => $cart_price,
             'items_in_cart' => $items_in_cart,
+            'hui_pizda' => 1,
             'cart_products' => $cart_poducts
         ]);
     }
@@ -827,6 +845,7 @@ class PagesController extends Controller
             'same_products' => $same_products,
             'hard' => $hard,
             'proc' => $proc,
+            'hui_pizda' => 1,
             'op_memory' => $op_memory,
             'product_gift' => $product_gift,
             'timer_days' => $timer_days,
@@ -868,6 +887,7 @@ class PagesController extends Controller
             'organization' =>Organization::get()[0],
             'cities' => OpenHours::get(),
             'header' => $data,
+            'hui_pizda' => 1,
             'url' => AboutCompany::get()[0]->attributesToArray()['about_company_url'],
             'text' => AboutCompany::get()[0]->attributesToArray()['about_company_text'],
             'name' => AboutCompany::get()[0]->attributesToArray()['about_company_name'],
@@ -1157,6 +1177,12 @@ class PagesController extends Controller
         groupBy('products.product_id')->
         orderBy('products.'.$sort_type_column, $sort_type_way)->
         paginate($pagination_num);
+        if(isset($_SESSION['banner_count'])) {
+            $banner_count = $_SESSION['banner_count'];
+        }
+        else{
+            $banner_count = 1;
+        }
         return view('site.products_cat-b_u_noutbuki', [
             'show' => $show_down,
             'meta_tags' => DefaultMetaTags::where('type','=',$meta_name)->get()[0],
@@ -1166,6 +1192,7 @@ class PagesController extends Controller
             'products' => $products,
             'filters' => $filters,
             'price' => $price,
+            'hui_pizda' => 1,
             'arabica' => $arabica,
             'attributes' => $attributes,
             'attributes_count' => $attributes_count,
@@ -1173,7 +1200,9 @@ class PagesController extends Controller
             'cities' => OpenHours::get(),
             'items_in_cart' => $items_in_cart,
             'cart_products' => $cart_poducts,
-            'cart_price' => $cart_price
+            'cart_price' => $cart_price,
+            'banner' => Photos::where('id','=',1)->value('name'),
+            'banner_count' => $banner_count
         ]);
     }
 
@@ -1218,6 +1247,7 @@ class PagesController extends Controller
             'product_at_page' => $request->product_at_page,
             'header' => MenuList::get()->toArray(),
             'items_in_cart' => $items_in_cart,
+            'hui_pizda' => 1,
             'cart_products' => $cart_poducts,
             'cart_price' => $cart_price
         ]);
@@ -1241,21 +1271,84 @@ class PagesController extends Controller
         return redirect()->back();
     }
 
+    public function change_item_amount(Request $request) {
+        $cart = $request->session()->get('cart');
+        if ($cart != null) {
+            foreach ($cart as $item) {
+                if ($request->id == $item->item_id) {
+                    $item->item_amount = $request->amount;
+                    return $item->item_amount;
+                }
+            }
+        }
+    }
+
     public function add_order(Request $request) {
-        $data = new Post();
-        $data->sum = $request->sum;
-        $data->name = $request->name;
-        $data->phone_number = $request->phone_number;
-        $data->email = $request->email;
-        $data->address = $request->address;
-        $data->type = $request->delivery;
-        $data->comment = $request->comment;
+        $cart = $request->session()->get('cart');
+        if ($cart != null) {
+            $data = new Post();
+            $data->sum = $request->sum;
+            if ($request->name == null) return redirect()->back();
+            $data->name = $request->name;
+            $data->phone_number = $request->phone_number;
+            if ($request->phone_number == null) return redirect()->back();
+            $data->email = $request->email;
+            if ($request->email == null) return redirect()->back();
+            $data->address = $request->address;
+            switch ($request->delivery) {
+                case 2:
+                    $data->type = "Курьерская";
+                    break;
+                case 5:
+                    $data->type = "Новая почта";
+                    break;
+                default:
+                    $data->type = "Самовывоз";
+                    break;
+            }
+            $data->comment = $request->comment;
 
-        $date = new \DateTime('now');
-        $data->date = $date;
+            $date = new \DateTime('now');
+            $data->date = $date;
+            $data->status = "Обрабатывается";
+            $data->gift = "";
 
-        $data->save();
+            $data->save();
 
+            foreach ($cart as $item) {
+                $item_data = new OrderItems();
+
+                $item_data->order_id = $data->id;
+
+                $item_data->item_id = $item['item_id'];
+                $item_data->item_price = $item['item_price'];
+                $item_data->item_value = $item['item_value'];
+                $item_data->item_id = $item['item_id'];
+                $item_data->item_amount = $item['item_amount'];
+
+                if ($item['op_memory'] != null) {
+                    $item_data->op = $item['op_memory'];
+                } else {
+                    $item_data->op = "";
+                }
+
+                if ($item['hard'] != null) {
+                    $item_data->hard = $item['hard'];
+                } else {
+                    $item_data->hard = "";
+                }
+
+                if ($item['proc'] != null) {
+                    $item_data->proc = $item['proc'];
+                } else {
+                    $item_data->proc = "";
+                }
+
+                $item_data->save();
+            }
+            $request->session()->put('cart', []);
+        }
+        //dd($cart);
         return redirect()->back();
     }
     ////////////////////////////////////////////////////////////////////////////
@@ -1418,6 +1511,27 @@ class PagesController extends Controller
             'num' => 0
         ]);
     }
+
+    public function order_items($order_id) {
+        $order_items = OrderItems::where('order_id', $order_id)->get();
+        $names = [];
+
+        foreach ($order_items as $item) {
+            $names[] = Products::where('id', $item->item_id)->get()[0]->name;
+        }
+        return view('order_items', [
+            'mails' => $order_items,
+            'names' => $names
+        ]);
+    }
+
+    public function change_post_stats(Request $request) {
+        Post::where('id','=',$request->id)->update([
+            'status' => $request->status
+        ]);
+        return $request->toArray();
+    }
+
     public function post(){
         return view('post',[
             'mails' => Post::orderBy('id','DESC')->paginate(20)
@@ -1609,6 +1723,11 @@ class PagesController extends Controller
             ]);
         }
         else if($request->type == 'down'){
+            $pages = MenuList::where('type', $request->type)->get();
+            return view('menu',[
+                'pages' => $pages
+            ]);
+        } else if($request->type == 'mid'){
             $pages = MenuList::where('type', $request->type)->get();
             return view('menu',[
                 'pages' => $pages

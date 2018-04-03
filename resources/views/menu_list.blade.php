@@ -74,6 +74,26 @@
 
                     <tr>
                         <td><a href="menu/pages/" style="text-decoration: underline">Ноутбуки б/у</a></td>
+                        <td>Среднее меню</td>
+                        <td>2017-11-12 00:00:00</td>
+
+                        <td>
+                            <form method="get" action="{{ route('menu_redirect') }}" enctype="multipart/form-data">
+                                <input name="type" type="hidden" value='mid'>
+                                <!--
+                                <button type="" class="btn btn-danger"><span
+                                            class="glyphicon glyphicon-trash"></span>
+                                </button>
+                                -->
+                                <button type="" class="btn bg-teal-400"><span
+                                            class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="menu/pages/" style="text-decoration: underline">Для навчання</a></td>
                         <td>Нижнее меню</td>
                         <td>2017-11-12 00:00:00</td>
 
